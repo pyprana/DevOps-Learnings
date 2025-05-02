@@ -23,6 +23,12 @@ remote_user=ubuntu
 become=true
 host_key_checking=false
 
+anisble.cfg(configuration file)
+- inventory - Specifies the default inventory file avoid manually specifying it every time.
+- remote - user - defines the user ansible should connect as (e.g./ ubuntu, ec2-user etc.
+- become-true - Enables priviliges escalation (like sudo) for administrative tasks.
+- host-key-checking : False -disables strict hosts key checking to prevent connection issues on first time ssh connectiones (use carefully in production)
+
 2.inventory.yml
 all:
     hosts:
@@ -32,3 +38,27 @@ all:
         ansiblehost:192.168.1.101
     vars:
         ansiblepythoninterpreter:
+
+inventory.yml(inventory file)
+- Why its required.
+- Defines your infrastructure, grouping, servers under all.
+- Specifies host ips for connectivity.
+The anisble-python-interpreter:/usr/bin/python.
+
+
+3.playbook.yml
+- name:web application deployment 
+  hosts:all
+  roles:
+    -  webserver
+
+
+
+playbook.yml(Main Playbook file)
+- Why its required.
+- This is the entry point of your deployment 
+- hosts : all - Targets all servers defined in the inventory file
+- roles : Uses a modular approach to separate concerns via roles(best practice for scalability)
+  
+ 
+
