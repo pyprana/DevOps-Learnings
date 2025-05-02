@@ -52,13 +52,30 @@ The anisble-python-interpreter:/usr/bin/python.
   roles:
     -  webserver
 
-
-
 playbook.yml(Main Playbook file)
 - Why its required.
 - This is the entry point of your deployment 
 - hosts : all - Targets all servers defined in the inventory file
 - roles : Uses a modular approach to separate concerns via roles(best practice for scalability)
-  
- 
+
+4.roles/webserver/tasks/main.yaml(main role task file)
+- name: Install required packages
+import-tasks:install.yml
+- name: deploy application
+import-tasks:deploy.yml
+- name: Configuration Services
+import-tasks:Configure.yml
+
+5.roles/webserver/tasks/install.yml(Installation Tasks)
+- name: Update package cache
+apt: 
+    Update-cache:yes
+- name: Install nginx and dependencies
+apt:
+  name:
+  - nginx
+  - git
+  - pythob3-pip
+state:present
+
 
