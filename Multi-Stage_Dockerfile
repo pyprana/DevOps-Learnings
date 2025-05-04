@@ -1,0 +1,50 @@
+Multi-Stage Dockerfile 
+- In modern DevOps, image size and build efficiency matter. 
+- A multi-stage Dockerfile is a powerful way to keep your Docker images clean, lightweight, and production-ready.
+
+i.) What is it?
+- A Dockerfile that uses multiple FROM statements.
+- Each FROM creates a separate build stage.
+
+ii.) Why use it?
+- Reduces final image size.
+- Removes unnecessary build tools and files.
+- Keeps the runtime environment minimal and secure.
+
+iii.) When to use?
+- When building applications that need compilation (e.g., Go, Java, Node.js).
+- In CI/CD pipelines where clean images are pushed to production.
+
+iv.) How it works 
+dockerfile
+# Build Stage
+FROM golang:1.21 AS builder
+WORKDIR /app
+COPY . .
+RUN go build -o myapp
+
+# Run Stage
+FROM alpine:latest
+WORKDIR /root/
+COPY --from=builder /app/myapp .
+CMD ["./myapp"]
+
+v.) Benefits:
+- Clean separation between build and runtime.
+- Final image contains only what’s needed to run the app.
+- Easy to maintain and version in large teams.
+
+vi.) Difference:
+i.) Single-stage 
+- Build + run together
+- Larger image
+
+ii.) Multi-stage
+- Build and run separated
+- Optimized final image
+
+vii.) Use Case:
+- Multi-stage builds are used in CI/CD to produce minimal Docker images for Kubernetes or production servers—ensuring faster deployment and lower attack surface.
+
+Mastering multi-stage Dockerfiles helps you write more efficient, scalable containers for real-world deployments. 
+hashtag
