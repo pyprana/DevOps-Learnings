@@ -1,0 +1,31 @@
+CloudWatch Scenario-Based Use Cases
+
+1. EC2 CPU Spike Alert
+ • What: CPU usage went above 85% for 5 mins.
+ • Why: App under sudden load.
+ • Action: CloudWatch alarm triggered -> SNS -> DevOps team notified.
+ • Fix: Auto Scaling Group increased instances.
+
+2. Memory Utilization Missing
+ • What: Team needed memory metrics on EC2.
+ • Why: By default, CloudWatch doesn’t capture memory.
+ • Action: Installed CloudWatch Agent with custom config.
+ • Fix: Memory + disk usage now visible in dashboards.
+
+3. Application Error Rate Monitoring
+ • What: App logs showed high 5xx errors.
+ • Why: Bug in recent deployment.
+ • Action: CloudWatch Logs + Metric Filter + Alarm on error count.
+ • Fix: Auto rollback triggered using Lambda.
+
+4. S3 Access Pattern Alert
+ • What: Sudden spike in S3 GET requests.
+ • Why: Suspicious script or DDoS.
+ • Action: CloudWatch + CloudTrail integration.
+ • Fix: Blocked IP via WAF, alerted security team.
+
+5. Cost Optimization with Custom Metrics
+ • What: Need to monitor EBS burst balance and optimize cost.
+ • Why: Burst credits exhausted, I/O throttling.
+ • Action: Custom dashboard + alert on low burst balance.
+ • Fix: Moved to gp3 volume to avoid credit limits.
