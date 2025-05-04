@@ -1,0 +1,68 @@
+AWS KMS Structure
+
+1. Key Types
+ • AWS Managed Keys – Created, managed, and used by AWS services automatically.
+ • Customer Managed Keys (CMK) – Created and controlled by you; customizable key policies.
+ • Customer Master Keys (legacy term) – Now just referred to as KMS keys.
+
+
+2. Key Components
+ • Key ID & Alias – Unique identifier and friendly name for reference.
+ • Key Material – Actual encryption data (can be AWS-generated or imported).
+ • Key Policy – JSON-based IAM-style document that controls who can use or manage the key.
+ • Grants – Temporary permissions to use a key without changing the policy.
+
+
+3. Key States
+ • Enabled – Ready for encryption/decryption.
+ • Disabled – Temporarily inactive; can’t be used.
+ • Pending Deletion – Scheduled for removal after retention period.
+
+4. Key Usage
+ • Encrypt / Decrypt – Secure data with symmetric/asymmetric keys.
+ • Generate Data Key – For envelope encryption (small key encrypts large data).
+ • Sign / Verify – For digital signatures (asymmetric keys).
+
+5. Integration
+ • Used by AWS Services – S3, EBS, RDS, Lambda, Secrets Manager, etc.
+ • Audited via – AWS CloudTrail for full key usage tracking.
+
+AWS KMS – Scenario-Based Use Cases
+ • Encrypt S3 Data
+Use KMS for server-side encryption (SSE-KMS) of sensitive files stored in S3.
+Example: Store customer documents or logs securely.
+
+ • EBS Volume Encryption
+Use KMS to encrypt EC2 EBS volumes (boot/data).
+Example: Protect data at rest on production EC2 instances.
+
+ • Encrypt Lambda Environment Variables
+KMS encrypts sensitive Lambda environment variables like DB credentials.
+Example: Decryption happens securely at runtime.
+
+ • RDS Encryption
+Use KMS while creating an RDS instance to encrypt data, logs, and snapshots.
+Example: Financial data in MySQL/PostgreSQL RDS.
+ • Envelope Encryption for Large Files
+Use KMS to generate a data key → encrypt large data with it.
+Example: Encrypt application backup files before storing.
+
+ • Cross-Account S3 Access with KMS
+Share KMS-encrypted S3 objects between AWS accounts via KMS key policy.
+Example: Central logging S3 bucket accessed by multiple accounts.
+
+ • CI/CD Secrets Handling
+Use KMS to encrypt secrets stored in AWS Parameter Store or Secrets Manager.
+Example: Store GitHub token or database password in CodePipeline.
+
+ • Customer Managed Key (CMK) for Compliance
+Create and control your own keys with CMKs, enable audit via CloudTrail.
+Example: Required for PCI-DSS or HIPAA workloads.
+
+ • Encrypt Amazon EFS
+Enable KMS encryption for Elastic File System storage.
+Example: Secure file share for web application instances.
+
+ • IoT Data Protection
+Encrypt telemetry data from IoT devices using KMS.
+Example: Smart home data securely sent to AWS backend.
