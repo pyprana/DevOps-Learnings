@@ -16,5 +16,15 @@ iii.) Memory Utilization.
 iv.) Even the number of requests that are failed or passed.
 - Observaility doesnt stop there it will also help you understand why is your system in that state, but it will help you understad why its in a particular state.
 - Lets say there are 100 http requests, in that why 5 requests are failed what is the reason for it, which part of the applicatin the request is failing what is the reason for it.
-In which part of the application the request is failing you can get the complete information about the faiure and also understand why is there a memory leak by a particular app.
-- 
+- In which part of the application the request is failing you can get the complete information about the faiure and also understand why is there a memory leak by a particular app.
+- How to fix 5 http requests that are failing
+So you can get complete traces of this http requests, How the http requests has passed through the load balancer when did it reach the front end application then to the backend 
+and then to the database, where exactly is the http request failing. once you get the information you can fix the particular request same happens with the memory leak as well
+as application is using more amount of memoery using these traces. You can understand wich part of the application is using more extensivley and how to fix it.
+- Three Pillars of Obsevability
+- Metrics
+- Logging
+- Traces
+- If you have set of metrics, logs and traces for your application and you have the application in place for tracking the metrics logging and tracing uou have set of observaolity
+so the metrics part is basically responsible what is the state of the system
+- Logging part is responsibele system in the state and traces will help you understand how to fix that particular state,
