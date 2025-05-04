@@ -1,0 +1,65 @@
+ Cordon means marking a node as unschedulable, so no new pods are scheduled on it.
+- It prevents new pods from being scheduled, but existing pods keep running.
+- Command - kubectl cordon <node-name>
+
+Why:
+- For maintenance, troubleshooting, or decommissioning a node without affecting running workloads.
+
+When:
+- Before draining or rebooting a node.
+
+Where:
+- Used in Kubernetes cluster node management.
+Example: kubectl cordon worker-node-1
+
+Cordon
+- Marks a node as unschedulable.
+- No new pods will be scheduled.
+- Existing pods keep running.
+- Used before maintenance or debugging.
+- Command - kubectl cordon <node-name>
+
+Use Cases for cordon
+- Preparing a node for maintenance (e.g., OS patch, disk cleanup).
+- Preventing new workloads during performance issues.
+- Staging node replacement without disrupting current pods.
+- Debugging a node without affecting existing running pods.
+
+AWS EKS – Use Case - cordon
+- Before running SSM Patch Manager on EC2 nodes.
+- Pausing pod scheduling during ENI/network issue debugging.
+
+drain
+- Evicts all pods from the node.
+- Also cordons the node.
+- Skips DaemonSet pods by default.
+- Deletes emptyDir data (unless configured otherwise).
+- Used before shutdown, scaling, or updates.
+- Command - kubectl drain <node-name> --ignore-daemonsets --delete-emptydir-data
+
+drain Use Cases
+- Safely rebooting or shutting down a node.
+- Rolling update of Kubernetes nodes (e.g., AMI upgrade in EKS).
+- Node autoscaling (scale-in): remove workloads cleanly.
+- Decommissioning or replacing a node.
+- Moving pods during a zone outage simulation or chaos testing.
+
+drain AWS EKS – Use Case
+- During Auto Scaling Group (ASG) rolling updates using new AMI.
+- Pre-stop hook in spot instance termination lifecycle to drain pods.
+- Evicting pods before resizing instance types (e.g., t3.medium → m5.large).
+
+uncordon
+- Makes a node schedulable again.
+- Allows new pods to be scheduled.
+- Used after maintenance.
+- Command: kubectl uncordon <node-name>
+
+uncordon Use Cases
+- Bringing a node back into production after maintenance.
+- Rejoining the node to the pool after draining and validation.
+- Rebalancing workloads across available nodes.
+
+uncordon
+- After completing EBS volume expansion and node reboot.
+- Post-maintenance (e.g., after upgrading kubelet).
