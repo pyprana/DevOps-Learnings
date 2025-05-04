@@ -1,0 +1,67 @@
+Structure of S3
+S3
+ └── Bucket (Top-level container)
+ └── Folder (Logical, like directories)
+ └── Object (Files: data + metadata + key)
+
+Key Components
+- Component Description
+- Bucket - Global namespace, stores all objects. Unique across AWS.
+- Object - Actual data stored (file + metadata).
+- Key - Unique identifier for each object in a bucket (acts like a path).
+- Prefix - Path-like structure in key name (folder/file.txt).
+- Version - Optional; stores multiple versions if versioning is enabled.
+- Storage Class - Defines access frequency/cost (e.g., Standard, Glacier).
+
+- Example
+- Bucket: my-project-bucket
+- Object Key: logs/2025/may/report.csv
+- Full path: s3://my-project-bucket/logs/2025/may/report.csv
+
+Unlocking S3 Scenarios – 
+
+- Static Website Hosting:
+- Host HTML content via S3 by enabling static site hosting and making the bucket public.
+
+- Prevent Accidental Deletion:
+- Use versioning + MFA delete to safeguard important data.
+
+- Cost Optimization:
+- Move cold data to Glacier using Lifecycle Rules or Intelligent-Tiering.
+
+- Cross-Account Access:
+ - Grant access using bucket policies or IAM roles across AWS accounts.
+
+- Data Compliance:
+- Use Object Lock (compliance mode) to retain data for 7 years.
+
+- Cross-Region Replication:
+- Use CRR with versioning to auto-copy data across AWS regions.
+
+- Secure File Upload from Web App:
+- Use pre-signed URLs for controlled client uploads.
+
+- Enable Access Logs:
+- Activate server access logging for auditing.
+
+- Data Encryption:
+- Use SSE-S3, SSE-KMS, or SSE-C to encrypt data at rest.
+- When to Use
+- SSE-S3 → Simple, default use case (logs, backups).
+- SSE-KMS → When you need control/audit (compliance, finance, healthcare).
+- SSE-C → For full key control, highly regulated/custom environments.
+
+- Multipart Uploads:
+- For large files (e.g. 10 GB), split and upload parts in parallel.
+
+- Access Denied Errors:
+- Check IAM + bucket policies and Block Public Access settings.
+
+- Query Files Without Download:
+- Use S3 Select or Athena to run SQL directly on S3 data.
+
+- Auto Delete Old Files:
+- Set lifecycle rules to delete files older than 90 days.
+
+- Archive to Glacier:
+- Automatically transition unused files to Glacier/Deep Archive.
