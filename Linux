@@ -1,0 +1,11 @@
+Q - You need to find out why a server is running slowly, what steps would you take
+A - You can start by checking the overall load on the system so for this we can make use of 
+- top command
+- htop command
+Which will basically look the usage of your cpu and also memoery and then check the processes which are consuming execssive resources, so when we run the htop or top
+command this will give us the CPU utilization and the memory utilization for the respective processesand we can look at that to see which process is consuming more resources.
+- We can also use of Iostat command and the itop commandto check the disk input, output we can make use of free -m to check the memory usage df -h command to check for the disk
+space utilization and we can also check for network issues by making use of the netstat commandor the ss commandthen we can finally review the system logs which are available in
+the /var/log/ path for any errors or any warnings.
+- So that is how we troubleshoot slowness of the system.
+
