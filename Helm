@@ -8,15 +8,32 @@ Sructure of Helm Chart
 
 Q - What is helm?
 A - Helm is a kubernetes package manager
-Simplifies deployment of complex applications.
-Use when you need repeatble versioned kubernetes deployments
-Used in CICD pipelines local, dev, production.
-Ex: Installing NGINX with a single helm install.
+- Simplifies deployment of complex applications.
+- Use when you need repeatble versioned kubernetes deployments
+- Used in CICD pipelines local, dev, production.
+- Ex: Installing NGINX with a single helm install.
 
-What are helm Charts?
-- A helm chart is a collection of YAML files that define kubernetes resources.
+Q - What are helm Charts?
+A - A helm chart is a collection of YAML files that define kubernetes resources.
 - Package Kubernetes Manifests for reuse and resharing.
 - When deploying an app or service to Kubernetes.
 - Stored in helm repos or local directories.
-Ex: Bitnami/Nginx charts install NGINX.
+- Ex: Bitnami/Nginx charts install NGINX.
 
+Q - What is values.yaml?
+A - Default configuration for templates.
+- Central place to manage variables.
+- Set global or service-specific config.
+- Located in chart tool.
+- Ex: replicaCount:3, image: tag:"1.2"
+
+Q - How does values.yaml work?
+A - Inject values into templates via{{.values<key>}}.
+- To separate config from code.
+- Customize depoyments without modifying templates.
+- Ex - Overwirte with --set image.tag=2.0
+
+Q - What is helm release.?
+A - A deployed instance of helm chart.
+- Manage state/version/history of an app.
+- Each install/upgrade = new release version.
