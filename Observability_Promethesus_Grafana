@@ -1,0 +1,20 @@
+- System(Application + Infrastructure) - App + Networking - Observability.
+- State of the application.
+- Failures you can understand.
+- State of your infrastructure.
+- State of Networking.
+- Latency.
+- Http Traffic.
+- Disk utilization of a particular node on my kubernetes cluster over the last 24 hours.
+- CPU utilization of a prticular node of the Kubernetes Cluster.
+- Memory Utlization.
+- Out of 100 Http Requests or out of 100 API calls that are made to the application, How many are successful.What are the number of requests that were failure.
+- State of the system like 
+i.) Disk Utilization.
+ii.) CPU Utlization.
+iii.) Memory Utilization.
+iv.) Even the number of requests that are failed or passed.
+- Observaility doesnt stop there it will also help you understand why is your system in that state, but it will help you understad why its in a particular state.
+- Lets say there are 100 http requests, in that why 5 requests are failed what is the reason for it, which part of the applicatin the request is failing what is the reason for it.
+In which part of the application the request is failing you can get the complete information about the faiure and also understand why is there a memory leak by a particular app.
+- 
