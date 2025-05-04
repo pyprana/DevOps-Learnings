@@ -1,0 +1,28 @@
+Nexus Repository Manager
+- Nexus Repository (by Sonatype) is a tool that helps you store, manage, and share files like .jar, .war, .zip, Docker images, and more. 
+- It supports formats like Maven, npm, Docker, and NuGet.
+
+- What does it do?
+- It acts like a central storage for all your build artifacts (files created after building your apps).
+
+- Why use it?
+- To organize, secure, and easily share your files across different teams and automate CI/CD pipelines.
+
+- When do you use it?
+- During build, test, and deploy stages.
+
+- Example: After your app is built, the output files are stored in Nexus for others to use.
+
+- Where is it used?
+- You can set it up on your own servers (on-premises) or run it on cloud servers.
+
+- How does it work?
+- Developers or automation tools push files to Nexus.
+- Nexus stores them safely.
+- Other teams or applications download the files when needed.
+
+- Example Flow:
+nginx
+Developer → Jenkins CI Build → Nexus Repository → Deployment Servers
+ 
+- You build a Java app → You upload the .jar file to Nexus → Another team downloads it and deploys it in production!
