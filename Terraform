@@ -1,0 +1,17 @@
+Terraform Commands
+
+- Initialization
+- terraform init
+→ Initializes the working directory with Terraform configuration.
+
+- Validation & Formatting
+- terraform validate
+→ Validates the configuration files.
+
+- terraform fmt
+→ Formats configuration files to canonical style.
+
+- Planning
+- terraform plan
+→ Shows what Terraform will do without applying changes.
+
