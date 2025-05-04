@@ -1,0 +1,53 @@
+In Docker, storage volumes are placed in the following default directory on the host:
+/var/lib/docker/volumes/
+
+- Each volume gets its own directory under this path.
+- Docker manages the contents of these volumes directly.
+
+You can also specify a custom location using volume drivers or bind mounts.
+
+Docker: Custom Storage Location
+
+1.Bind Mounts
+- You directly mount a host path into the container.
+- Syntax in docker run
+docker run -v /host/path:/container/path my-image
+- Host-controlled. You decide where data lives.
+
+2.Named Volumes with Custom Drivers
+- You can use volume plugins (like local, nfs, glusterfs, etc.)
+- Example:
+docker volume create --driver local --opt type=none --opt device=/custom/path --opt o=bind my-volume
+docker run -v my-volume:/container/path my-image
+- Custom device points to any host directory.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- In Kubernetes, storage volumes are placed on the node under:
+/var/lib/kubelet/pods/<pod-uid>/volumes/
+
+- Each Pod has its own directory (pod-uid = unique ID of the Pod).
+- Inside it, volumes are organized by volume type and name.
+- If you use external storage (like AWS EBS, NFS, CSI drivers), the actual volume may be mounted elsewhere on the node.
+
+- Kubernetes: Custom Storage Location
+i.) hostPath Volume
+- Mounts a specific path on the node into the Pod.
+- Example YAML
+volumes:
+- name: my-hostpath
+ hostPath:
+ path: /custom/host/path
+ type: Directory
+- Not portable across nodes (dangerous for production).
+
+ii.) Persistent Volumes (PVs) with StorageClass
+- External storages (EBS, NFS, Ceph, CSI plugins) define where/how the volume is stored.
+- You can define parameters in StorageClass to control backend storage behavior.
+- Example (for EBS):
+storageClassName: gp2
+volumeHandle: aws://us-west-2a/vol-0abcd1234
+
+- Summary
+- Context - How to specify custom locationDockerBind mounts (-v /path:/path), or custom volume drivers
+- Kubernetes - hostPath, or use StorageClass-backed PVs pointing to external/custom storage
