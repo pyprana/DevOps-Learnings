@@ -1,0 +1,14 @@
+Different Types of Kubernetes Clusters 
+- Single-Node Cluster: One node handles both control and workloads. (Best for Dev/Test)
+
+- Multi-Node Cluster: Separate master and multiple workers. (Used in Production)
+
+- On-Premises Cluster: Runs inside your own data center. (Private Cloud Setup)
+
+- Cloud-Managed Cluster: Hosted by cloud providers like EKS, GKE, AKS. (Easy Scaling)
+
+- Hybrid Cluster: Combines on-prem and cloud nodes. (Smooth Cloud Migration)
+
+- Edge Cluster: Deployed near users/devices. (Ideal for IoT, Low Latency)
+
+- Multi-Cluster Setup: Multiple clusters working together. (Disaster Recovery, High Availability)
