@@ -1,0 +1,76 @@
+Ansible Production Issues
+1. Connectivity Issues
+- UNREACHABLE! errors, timeout issues, or SSH failures.
+- Causes: Network issues, incorrect SSH keys, or unreachable hosts.
+Solutions:
+- Verify inventory file IPs/hostnames.
+- Ensure SSH keys are correctly configured (ssh-add may be needed).
+- Use ansible -m ping all to test connectivity.
+- Adjust ansible_ssh_common_args for custom SSH settings.
+
+2. Authentication Problems
+- Permission denied or sudo password errors.
+- Causes: Incorrect user permissions, missing sudo configuration.
+Solutions:
+- Use become: yes or become_method: sudo.
+- Add proper sudo permissions in /etc/sudoers.
+- Set ansible_become_password securely using ansible-vault.
+
+3. Playbook Failures Due to Idempotency Issues
+- Tasks running repeatedly despite desired state already being achieved.
+- Causes: Incorrect when conditions or missing changed_when.
+Solutions:
+- Ensure all tasks are idempotent.
+- Use check_mode: yes to test idempotency.
+
+4. Variable and Fact Issues
+- Incorrect variable values, undefined variable errors.
+Causes: Variable scope confusion or missing facts.
+Solutions:
+- Use ansible-playbook -e to pass extra vars.
+- Ensure gather_facts: yes is enabled in playbooks.
+- Check variable precedence carefully.
+
+5. Module Dependency Issues
+- Specific Ansible modules fail during execution.
+Causes: Missing Python libraries or incompatible module versions.
+Solutions:
+- Run ansible -m setup to gather system details.
+- Ensure dependent Python packages are installed.
+- For missing libraries, use pip install <package>.
+
+6. Performance Problems
+- Slow playbook execution or resource exhaustion.
+Causes: Inefficient looping, redundant tasks, or lack of parallelism.
+Solutions:
+- Use forks in ansible.cfg to increase parallel execution.
+- Avoid redundant register variables unless necessary.
+- Use async and poll for long-running tasks.
+
+7. Inventory Management Challenges
+- Hosts missing from the playbook execution.
+Causes: Incorrect inventory paths or syntax errors.
+Solutions:
+- Use ansible-inventory --list to validate inventory files.
+- Maintain dynamic inventory scripts for cloud environments.
+
+8. Configuration Drift
+- Servers diverge from expected configurations over time.
+Causes: Manual changes outside Ansible or non-idempotent tasks.
+Solutions:
+- Regularly run Ansible for state enforcement.
+- Implement CI/CD pipelines for automated enforcement.
+
+9. Secret Management Issues
+- Credentials exposed in playbooks or logs.
+Causes: Hardcoded secrets or poor security practices.
+Solutions:
+- Use ansible-vault for sensitive data.
+- Integrate with secure vault systems like HashiCorp Vault or AWS Secrets Manager.
+
+10. YAML Syntax Errors
+- Playbooks failing to parse correctly.
+Causes: Indentation issues or incorrect YAML structure.
+Solutions:
+- Use ansible-lint to validate syntax.
+- Follow consistent indentation and syntax practices.
