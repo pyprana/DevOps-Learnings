@@ -1,0 +1,30 @@
+Placement Groups in AWS – 
+- A Placement Group is a logical grouping of EC2 instances to control how they are placed on AWS hardware.
+
+- Why:
+ They're used to improve performance (like network throughput), reduce latency, or increase fault tolerance depending on workload needs.
+
+- When:
+You use them when your application demands high-speed communication between instances, low-latency performance, or resilience to hardware failure.
+
+- Where:
+They are applied within a single Availability Zone (Cluster & Spread) or across multiple partitions in one AZ (Partition).
+
+Placement Groups in AWS :
+Cluster Placement Group
+- Used for: High-performance computing like Hadoop, Spark
+- Benefit: Very low latency and high network throughput
+- Note: All instances are placed close together in one Availability Zone.
+
+Partition Placement Group.
+- Used for: Distributed databases like Cassandra, HDFS
+- Benefit: Fault isolation – one partition failure won’t impact others
+- Note: Instances are grouped into isolated partitions on separate hardware.
+
+Spread Placement Group
+- Used for: Small critical services like DNS, web servers
+- Benefit: High availability – each instance is placed on different hardware.
+- Note: Best for a few critical instances, not suited for large numbers.
+
+Note:
+- Some instance types (like GPU instances) perform better with placement groups.
