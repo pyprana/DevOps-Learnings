@@ -1,0 +1,78 @@
+Open-Source Web Servers:
+
+Apache HTTP Server (Apache) – Most widely used, highly customizable.
+docker run -d --name apache -p 8080:80 httpd
+
+NGINX – Lightweight, high-performance, good for load balancing.
+docker run -d --name nginx -p 8081:80 nginx
+
+Caddy – Modern web server with automatic HTTPS.
+docker run -d --name caddy -p 8082:80 caddy
+
+LiteSpeed – High-performance alternative to Apache, supports event-driven architecture.
+docker run -d --name litespeed -p 8083:80 litespeedtech/openlitespeed
+
+HAProxy – Primarily a load balancer but can serve static content.
+docker run -d --name haproxy -p 8084:80 haproxy
+
+Tomcat – Java-based, used for running Java Servlets and JSP.
+docker run -d --name tomcat -p 8085:8080 tomcat
+
+Jetty – Lightweight Java web server.
+docker run -d --name jetty -p 8086:8080 jetty
+
+Node.js (Express.js, Fastify, Koa, etc.) – JavaScript runtime that can act as a web server.
+docker run -d --name nodejs -p 8087:3000 node
+
+OpenLiteSpeed – Open-source version of LiteSpeed.
+docker run -d --name openlitespeed -p 8088:7080 litespeedtech/openlitespeed
+
+Cherokee – Flexible and user-friendly.
+docker run -d --name cherokee -p 8089:80 cherokee
+
+H2O – Optimized for HTTP/2 performance.
+docker run -d --name h2o -p 8090:80 h2o/h2o
+
+Zope – Python-based web server and application framework.
+docker run -d --name zope -p 8091:8080 plone
+
+Enterprise and Commercial Web Servers:
+Microsoft IIS (Internet Information Services) – Windows-based web server.
+docker run -d --name iis -p 8092:80 mcr.microsoft.com/windows/servercore/iis
+
+Oracle WebLogic Server – Java EE server.
+docker run -d --name weblogic -p 8093:7001 container-registry.oracle.com/middleware/weblogic
+
+IBM WebSphere – Enterprise Java web server.
+docker run -d --name websphere -p 8094:9080 ibmcom/websphere-traditional
+
+NGINX Plus – Commercial version of NGINX with additional features.
+docker run -d --name nginx-plus -p 8095:80 nginx-plus
+
+LiteSpeed Enterprise – Faster than Apache and NGINX, used for high-traffic websites.
+docker run -d --name litespeed-enterprise -p 8096:7080 litespeedtech/litespeed
+
+Cloud-Based and Specialized Web Servers:
+AWS Elastic Load Balancer (ALB, NLB, CLB) – Managed load balancing and web serving.
+docker run -d --name aws-elb -p 8097:80 amazon/aws-elb
+
+Google Cloud HTTP(S) Load Balancer – Cloud-native web-serving solution.
+docker run -d --name gcp-loadbalancer -p 8098:80 gcr.io/google_containers/nginx
+
+Cloudflare Workers & Pages – Serverless web hosting and edge computing.
+docker run -d --name cloudflare -p 8099:80 cloudflare/cloudflared
+
+To delete all unused images
+docker rmi $(docker images -q) -f
+
+docker images -q → Lists all image IDs.
+docker rmi → Removes the listed images.
+-f (optional) → Forces deletion (useful if images are in use by containers).
+
+If you want to delete all unused images (dangling and unused ones), use:
+
+docker image prune -a -f
+
+docker rm -f $(docker ps -aq)
+Before deleting an image, ensure no containers are using it. You can remove all running and stopped containers with:
+docker rm -f $(docker ps -aq)
