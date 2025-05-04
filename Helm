@@ -1,0 +1,14 @@
+Q - What is helm?
+A - Helm is a kubernetes package manager
+Simplifies deployment of complex applications.
+Use when you need repeatble versioned kubernetes deployments
+Used in CICD pipelines local, dev, production.
+Ex: Installing NGINX with a single helm install.
+
+What are helm Charts?
+- A helm chart is a collection of YAML files that define kubernetes resources.
+- Package Kubernetes Manifests for reuse and resharing.
+- When deploying an app or service to Kubernetes.
+- Stored in helm repos or local directories.
+Ex: Bitnami/Nginx charts install NGINX.
+
