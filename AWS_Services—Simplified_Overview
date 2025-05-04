@@ -1,0 +1,97 @@
+AWS Services — Simplified Overview.
+
+Compute
+ • EC2: Virtual machines in the cloud.
+ • Lambda: Run code without servers.
+ • Elastic Beanstalk: Easy app hosting.
+ • ECS/EKS: Run containers or Kubernetes.
+ • Lightsail: Simple cloud for small apps.
+ • Batch: Run jobs at any scale.
+
+Storage
+ • S3: Store any file, anytime.
+ • EBS: Hard drives for EC2.
+ • EFS: Shared file system.
+ • FSx: Fast Windows & HPC file systems.
+ • Glacier: Cheap long-term storage.
+ • Storage Gateway: Connect on-prem to AWS.
+
+Databases
+ • RDS: Managed SQL databases.
+ • DynamoDB: Fast NoSQL database.
+ • Aurora: High-performance SQL.
+ • Redshift: Big data warehouse.
+ • DocumentDB: MongoDB-compatible database.
+ • ElastiCache: Fast in-memory cache.
+
+Networking
+ • VPC: Private cloud network.
+ • CloudFront: Speed up websites.
+ • Route 53: DNS and domain routing.
+ • API Gateway: Build and manage APIs.
+ • Direct Connect: Link AWS to your office.
+
+Security
+ • IAM: Control who can do what.
+ • Cognito: User sign-up & sign-in.
+ • Secrets Manager: Store sensitive data.
+ • Shield: Protect from DDoS.
+ • WAF: Block web attacks.
+ • KMS: Encrypt and manage keys.
+
+Analytics
+ • Athena: Query S3 like a database.
+ • Kinesis: Real-time data streams.
+ • Glue: ETL (data prepare/move).
+ • QuickSight: Dashboards & reports.
+ • EMR: Big data processing (like Hadoop).
+
+Machine Learning
+ • SageMaker: Build & deploy ML models.
+ • Rekognition: Detect faces/images.
+ • Textract: Read text from files.
+ • Polly: Text to speech.
+ • Comprehend: Analyze text meaning.
+
+DevOps & CI/CD
+ • CodePipeline: Automate deployment.
+ • CodeDeploy: Push code to servers.
+ • CodeBuild: Build/test code.
+ • CloudFormation: Write infra as code.
+ • OpsWorks: Config mgmt with Chef/Puppet.
+
+Monitoring & Management
+ • CloudWatch: Logs & metrics.
+ • CloudTrail: API usage audit.
+ • Config: Track resource changes.
+ • Trusted Advisor: Health checks & tips.
+
+Migration & Transfer
+ • DMS: Move databases to AWS.
+ • SMS: Migrate servers.
+ • Snowball: Move large data with devices.
+
+Business Tools
+ • WorkSpaces: Virtual desktops.
+ • Chime: Video meetings.
+ • WorkDocs: Team file sharing.
+ • SES: Send emails from apps.
+
+IoT
+ • IoT Core: Connect smart devices.
+ • Greengrass: Local compute for IoT.
+ • FreeRTOS: OS for IoT microcontrollers.
+
+Game Development
+ • Gamelift: Multiplayer game servers.
+
+Blockchain
+ • Managed Blockchain: Set up networks.
+ • QLDB: Immutable, verifiable ledger.
+
+Customer Engagement
+ • Pinpoint: Campaigns & analytics.
+ • Connect: Call center in the cloud.
+
+AR/VR
+ • Sumerian: Build 3D/AR/VR apps easily.
