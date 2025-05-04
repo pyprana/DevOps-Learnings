@@ -36,15 +36,15 @@ v.) Benefits:
 
 vi.) Difference:
 i.) Single-stage 
-- Build + run together
-- Larger image
+- Build + run together.
+- Larger image.
 
 ii.) Multi-stage
-- Build and run separated
-- Optimized final image
+- Build and run separated.
+- Optimized final image.
 
 vii.) Use Case:
 - Multi-stage builds are used in CI/CD to produce minimal Docker images for Kubernetes or production servers—ensuring faster deployment and lower attack surface.
 
 Mastering multi-stage Dockerfiles helps you write more efficient, scalable containers for real-world deployments. 
-hashtag
+
