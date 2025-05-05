@@ -1,0 +1,21 @@
+- Dynatrace, a full-stack observability platform harnessing AI-powered insights for real-time monitoring.
+- From infrastructure to user experience, it offers automated root cause analysis, APM, and cloud-native observability. 
+- Ideal for DevOps, SRE, and performance engineering teams in cloud/hybrid environments.
+
+Key Features:
+- AI-powered problem detection (Davis AI)
+- Real user monitoring (RUM)
+- Synthetic monitoring
+- Infrastructure & APM
+- Kubernetes & microservices support
+
+- Splunk, a data analytics and log management solution.
+- It excels in searching, monitoring, and analyzing machine-generated big data through a user-friendly web interface. 
+- Perfect for log aggregation, security monitoring (SIEM), and real-time analytics, it finds its place in IT operations, security, compliance, and DevSecOps realms.
+
+Key Features:
+- Log ingestion from multiple sources
+- Splunk Query Language (SPL)
+- Dashboards & visualizations
+- Security & compliance (Splunk Enterprise Security)
+- Seamless integration with DevOps tools
