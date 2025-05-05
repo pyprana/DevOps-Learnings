@@ -1,0 +1,49 @@
+Best Security Practices for Production Kubernetes Clusters:
+1. RBAC (Access Control)
+- Give users only the access they need.
+- Don’t give apps full admin access.
+- Set access rules for each team or project.
+
+2. Network Policies
+- Block all network traffic by default.
+- Allow only what’s needed between apps.
+- Use tools like Calico or Cilium to enforce it.
+
+3. Pod Security
+- Follow strict rules for running pods safely.
+- Don’t allow containers to run with full system access.
+- Run containers as regular users, not as root.
+- Make the container’s file system read-only if possible.
+
+4. Secrets Management
+- Store sensitive info like passwords in secure tools (Vault, AWS Secrets Manager).
+- Don’t use ConfigMaps for secrets.
+- Turn on encryption to protect secrets.
+
+5. Image Security
+- Use images from safe, trusted places.
+- Check images for security issues using tools like Trivy.
+- Lock images to specific versions.
+
+6. Logging & Monitoring
+- Use Prometheus and Grafana to monitor the system.
+- Collect logs with ELK, EFK, or Loki.
+- Use Falco to watch for suspicious activity.
+
+7. Audit Logging
+- Turn on logs that track who does what in the cluster.
+- Look out for strange or risky actions.
+
+8. Authentication
+- Use secure logins like single sign-on (SSO).
+- Change access tokens and certificates often.
+
+9. API Server Exposure
+- Keep the API server private.
+- Use a firewall to control access.
+- Protect Ingress traffic with login or other checks.
+
+10. Cluster Maintenance
+- Keep Kubernetes up to date
+- Apply security updates quickly
+- Back up the main database (etcd) often
