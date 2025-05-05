@@ -9,3 +9,7 @@ space utilization and we can also check for network issues by making use of the 
 the /var/log/ path for any errors or any warnings.
 - So that is how we troubleshoot slowness of the system.
 
+Q - You need to automate backups of a directory to a remote server..How would you do it..?
+A - Use rsync for efficient file transfers.
+  - Setups SSH based authentication
+  - So basically from source to destination machine we can setup SSH authentication.
