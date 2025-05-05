@@ -30,6 +30,10 @@ so the metrics part is basically responsible what is the state of the system
 - Logging part is responsibele system in the state and traces will help you understand how to fix that particular state,
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q - How did you implement Prometheus, Grafana in EKS?
+- Prometheus collects metrics.
+- Grafana visualizes metrics.
+- Helm is used to deploy both in the EKS cluster
 
 Q - How does Prometheus get the server logs? (mechanism of Prometheus)
 - Prometheus is a monitoring tool that collects and stores metrics data.
