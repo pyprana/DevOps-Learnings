@@ -1,0 +1,25 @@
+Kubernetes Cluster Architecture – Quick Guide for DevOps Engineers
+A Kubernetes Cluster = Control Plane + Worker Nodes
+Here's how it all fits together ↓
+Control Plane – Brain of the cluster:
+kube-apiserver: API entry
+etcd: Stores all configs/state
+kube-scheduler: Assigns Pods
+kube-controller-manager: Runs background checks
+cloud-controller-manager: Manages cloud integration
+
+Node Components – Where your apps live:
+kubelet: Runs your Pods
+kube-proxy: Routes traffic
+containerd or CRI-O: Executes containers
+
+Add-ons:
+DNS, Monitoring, Dashboard, CNI plugins
+
+Deployment Models:
+Static | Self-hosted | Managed (EKS/GKE/AKS)
+
+Why It Matters:
+Modular
+Scalable
+Resilient
