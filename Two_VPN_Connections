@@ -55,3 +55,38 @@ Options for connecting VPCs include:
 3. VPN/Direct Connect: Ideal for cross-region or on-premises connectivity needs.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- Network segmentation is the practice of dividing a computer network into smaller, isolated segments or subnets. 
+- This process improves network performance and security by controlling traffic flow between these segments. 
+- Essentially, it compartmentalizes the network, allowing for granular control over which devices and users can communicate with each other.
+
+- Why is Network Segmentation Used?
+- Enhanced Security:
+- By isolating segments, a breach in one part of the network is less likely to spread to other critical areas, limiting the potential damage. 
+
+- Improved Performance:
+- Reducing the scope of the network for devices to interact with can improve network efficiency and speed. 
+
+- Compliance:
+- It can be used to meet industry regulations that require specific security measures, such as PCI DSS for financial institutions or HIPAA for healthcare. 
+
+- Granular Control:
+- Network administrators can implement specific security policies for each segment, tailoring access restrictions to the needs of each group of devices or users. 
+
+- How is Network Segmentation Achieved?
+- VLANs (Virtual Local Area Networks):
+- VLANs create logical segments within a physical network, allowing devices to be grouped together even if they are physically on different switches. 
+
+- Subnetting:
+- Using IP addresses to define different network segments, allowing for more control over which devices can communicate with each other. 
+
+- Firewalls:
+- Firewalls can be placed between network segments to control the flow of traffic, enforcing specific access policies. 
+
+- Microsegmentation:
+- A more granular approach where individual workloads or applications are isolated from each other.
+
+Examples of Network Segmentation:
+- A large company might segment its network into departments: (e.g., HR, Finance, IT) to restrict access to sensitive data within each department. 
+- A hospital might segment its network to protect patient records, restricting access to medical professionals and other authorized personnel. 
+- An online retailer might segment its network to protect credit card information, isolating the payment processing systems from the rest of the network. 
