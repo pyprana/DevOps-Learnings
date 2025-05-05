@@ -9,6 +9,10 @@ space utilization and we can also check for network issues by making use of the 
 the /var/log/ path for any errors or any warnings.
 - So that is how we troubleshoot slowness of the system.
 
+Q - A users home directory is filling up disk space on the root partition. How would you resolve this..?
+  - For this we need to check disk usage of the user so for this we can make use of the command du -sh/home/user and then the path of the user directory and this command will help
+    us identify the large files or directories that are available with the path if possible we can move these large files or directories that are available with the path
+
 Q - You need to automate backups of a directory to a remote server..How would you do it..?
 A - Use rsync for efficient file transfers.
   - Setups SSH based authentication
