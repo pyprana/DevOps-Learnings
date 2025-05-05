@@ -29,6 +29,9 @@ as application is using more amount of memoery using these traces. You can under
 so the metrics part is basically responsible what is the state of the system
 - Logging part is responsibele system in the state and traces will help you understand how to fix that particular state,
 
+                                                                    Promethesus Architecture - Retrieval Time
+                                                                     /          |            \
+                                                            Alert Manager   Push Gateway     Series Database
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Q - How did you implement Prometheus, Grafana in EKS?
 - Prometheus collects metrics.
