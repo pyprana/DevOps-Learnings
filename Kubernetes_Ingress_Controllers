@@ -1,0 +1,16 @@
+Kubernetes Ingress Controllers:
+- NGINX Ingress Controller: Widely used, offers support for annotations & ConfigMaps enabling customization.
+- Kong Ingress Controller: Functions as an API gateway with features like authentication, rate-limiting, and transformations.
+- Traefik Ingress Controller: Lightweight option facilitating automatic TLS via Let’s Encrypt for enhanced security.
+- HAProxy Ingress Controller: Known for high performance and reliability, boasting advanced TCP/HTTP routing capabilities.
+- Contour Ingress Controller: Powered by Envoy Proxy, specifically crafted for achieving high scalability.
+
+Cloud Provider-Specific Ingress Controllers:
+- AWS ALB Ingress Controller: AWS ALB for dynamic routing and load balancing functionalities.
+- GCE Ingress Controller: Google Cloud’s native solution for managing ingress.
+- Azure Application Gateway Ingress Controller: Seamlessly integrates with Azure’s L7 load balancer for efficient operations.
+
+Ingress Controllers Based on Service Mesh:
+- Istio Ingress Gateway: Collaborates with Istio to streamline traffic management and support security measures.
+- Linkerd Ingress Controller: Seamlessly integrated with Linkerd to enhance mTLS & observability features.
+- Consul Ingress Controller: Developed by HashiCorp, focuses on ensuring secure service-to-service communication within the architecture. 
