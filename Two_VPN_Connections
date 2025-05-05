@@ -43,3 +43,15 @@ Here's a breakdown of how to achieve this:
 - Create a new VPN connection, linking it to the existing Virtual Private Gateway or Transit Gateway. 
 - Use the same routing type as the first connection (static or dynamic)
 - You can optionally use BGP(Border Gateway Protocol) for dynamic routing. 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- Connecting two VPCs facilitates communication between resources in different VPCs. 
+- This is beneficial for various scenarios like microservices, shared services, multi-account setups, or network segmentation. 
+- It is ideal when secure and scalable communication between VPCs is required.
+
+Options for connecting VPCs include:
+1. VPC Peering: Offers a simple, one-to-one connection.
+2. Transit Gateway: Utilizes a hub-and-spoke model, suitable for connecting many VPCs efficiently.
+3. VPN/Direct Connect: Ideal for cross-region or on-premises connectivity needs.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
