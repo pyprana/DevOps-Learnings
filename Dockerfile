@@ -39,3 +39,8 @@ Each line builds the image step-by-step.
 [Docker Container] 
  ↓ deploy
 Production Environment (ECS / Kubernetes / On-prem)
+
+- How to Use a Dockerfile:
+- Create the Dockerfile: Write the Dockerfile with the desired instructions. 
+- Build the Image: Use the docker build command to build the Docker image from the Dockerfile. 
+- Run the Container: Use the docker run command to create and run a container based on the built image.
