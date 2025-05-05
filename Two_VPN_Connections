@@ -14,6 +14,16 @@ Here's a more detailed explanation of each method:
 - You would need a VPN client that supports split tunneling and a separate VPN client to connect to a second VPN service.
 - For example, you could configure split tunneling to route all traffic for a particular app through a VPN, while other traffic uses the default internet connection or another VPN.
 
+Important Considerations:
+- Latency:
+- Using two VPN connections can increase latency (delay) as your traffic has to pass through multiple tunnels. 
+
+- Routing Conflicts:
+- You need to ensure that your VPN clients and the operating system's routing table are configured correctly to avoid conflicts between the two VPN connections
+
+- Security:
+- While using two VPNs can enhance security, it also adds complexity. Make sure you understand the routing paths and security implications of your configuration. 
+
 - VPN Client Compatibility:
 - Not all VPN clients support split tunneling or multiple simultaneous connections. Check your VPN client's documentation for specific features. 
 
