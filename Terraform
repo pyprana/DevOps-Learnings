@@ -79,4 +79,14 @@ terraform plan
 terraform apply
 Then repeat with another profile or region.
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Terraform Script to Create 5 IAM Users
 
+variable "iam_users" {
+  default = ["user1", "user2", "user3", "user4", "user5"]
+}
+
+resource "aws_iam_user" "users" {
+  for_each = toset(var.iam_users)
+  name     = each.value
+}
