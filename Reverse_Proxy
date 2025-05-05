@@ -1,0 +1,20 @@
+Reverse Proxy
+A reverse proxy, a server positioned in front of backend servers, directs client requests to them efficiently.
+- Facilitates load balancing.
+- Enables SSL termination.
+- Enhances caching mechanisms.
+- Provides security by concealing the backend structure.
+- Supports centralized authentication.
+
+Ideal for:
+- High-traffic applications.
+- Distributing content from various servers.
+- Establishing an API gateway.
+
+Used in front of:
+- Web servers.
+- App servers.
+- APIs (e.g., Nginx, HAProxy, Apache).
+
+- Example:
+- Upon a client requesting abcd.com, Nginx intervenes, directing the request to one of multiple backend servers.
