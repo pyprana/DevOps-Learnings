@@ -15,3 +15,68 @@ Terraform Commands
 - terraform plan
 → Shows what Terraform will do without applying changes.
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. What:
+- Deploying infrastructure across multiple regions and subscriptions (AWS accounts or Azure subscriptions) ensures high availability, disaster recovery, and better 
+cost/governance separation.
+
+2. How:
+- Use Terraform or Pulumi to define infrastructure as code.
+
+- Use provider aliases to handle different regions or subscriptions within the same configuration.
+
+- Maintain separate state files per region/subscription for isolation and parallel deployment.
+
+- Use local execution, Jenkins, or AWS CodePipeline to run Terraform.
+
+- Authenticate using assume role, AWS CLI profiles, or Azure service principals.
+
+- Use terraform workspace or naming conventions to distinguish between environments.
+
+- Store secrets securely using AWS Secrets Manager, Azure Key Vault, or .tfvars files encrypted with Vault.
+
+3. When to Use:
+- You need disaster recovery setups.
+
+- You have teams operating in different regions or accounts.
+
+- You want to isolate environments or departments (e.g., dev, staging, prod).
+
+4. Where:
+- Across AWS regions like us-east-1, ap-south-1.
+
+- Across Azure subscriptions for different business units or billing scopes.
+
+- Example (AWS - Terraform Multi-Region & Multi-Account):
+
+provider "aws" {
+  alias  = "us_east"
+  region = "us-east-1"
+  profile = "dev-account"
+}
+
+provider "aws" {
+  alias  = "ap_south"
+  region = "ap-south-1"
+  profile = "prod-account"
+}
+
+module "infra_us" {
+  source    = "./modules/vpc"
+  providers = { aws = aws.us_east }
+}
+
+module "infra_india" {
+  source    = "./modules/vpc"
+  providers = { aws = aws.ap_south }
+}
+
+Execution Commands:
+export AWS_PROFILE=dev-account
+terraform init
+terraform plan
+terraform apply
+Then repeat with another profile or region.
+
+
