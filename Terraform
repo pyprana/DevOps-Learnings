@@ -95,3 +95,13 @@ Save as main.tf
 - terraform init
 - terraform apply
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - Descirbe a scenario where you might need to use terraform workspaces and how would you structure your project to take advantage of them..?
+A - Terraform Workspaces can be used when you want to use single configuration file for multiple environments(Dev, Prod).
+  - So thats where we can make use of workspaces.
+  - So lets say we have a config fileand want to execute that same config file for my different environments.
+  - So I want one single file and executes it in the environments thats where we can make use of workspaces.
+  - So for each environment we can use workspace which is nothing but a copy of this config file.
+  - So when i execute the config file in the respective workspaces it will get executed in the respective environment
+  - So this is where we can make use of workspaces.
