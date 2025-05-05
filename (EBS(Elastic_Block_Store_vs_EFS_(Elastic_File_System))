@@ -1,0 +1,9 @@
+- EBS (Elastic Block Store):
+- Block Storage: Provides block-level storage for use with EC2 instances.
+- Single Instance: Attached to only one EC2 instance at a time.
+- Use Case: Suitable for applications that require low-latency, high-performance storage, such as databases.
+
+- EFS (Elastic File System):
+- File Storage: Provides file-level storage that can be mounted to multiple instances.
+- Multiple Instances: Can be accessed concurrently by multiple EC2 instances.
+- Use Case: Ideal for applications that require shared file storage, such as content management systems and home directories.
