@@ -124,14 +124,10 @@ terraform apply
 
 Each workspace keeps its own state file, e.g., .terraform/ contains terraform.tfstate.d/<workspace_name>/terraform.tfstate.
 
-
-
 Here's a **Terraform workspace example**:
 
 ### 🧩 What is a Workspace?
 A **workspace** in Terraform allows you to manage **multiple states** (like dev, staging, prod) using the **same code base**.
-
----
 
 ### ✅ Example: Creating and Using Workspaces
 
@@ -158,4 +154,46 @@ Deploying **identical infrastructure** in different environments:
 - `dev` workspace → creates `dev` resources
 - `prod` workspace → creates `prod` resources
 
+Example of using workspaces with environment-specific variables in Terraform
 
+main.tf
+variables.tf
+env/
+├── dev.tfvars
+├── prod.tfvars
+
+
+variable "instance_type" {
+  description = "EC2 instance type"
+  type        = string
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0abcdef1234567890"
+  instance_type = var.instance_type
+}
+
+variables.tf
+variable "instance_type" {
+  type        = string
+  description = "Type of instance"
+}
+
+env/dev.tfvars
+instance_type = "t2.micro"
+
+env/prod.tfvars
+instance_type = "t3.medium"
+
+- Workspace Usage
+# Create and switch to workspace
+terraform workspace new dev
+
+# Apply using dev variables
+terraform apply -var-file="env/dev.tfvars"
+
+# Switch to prod workspace
+terraform workspace new prod
+
+# Apply using prod variables
+terraform apply -var-file="env/prod.tfvars"
