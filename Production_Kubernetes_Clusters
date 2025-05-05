@@ -47,3 +47,9 @@ Best Security Practices for Production Kubernetes Clusters:
 - Keep Kubernetes up to date
 - Apply security updates quickly
 - Back up the main database (etcd) often
+
+- Resource limits exceeding node capacity.
+- DNS resolution issues inside the cluster.
+- Persistent Volume Claims(PVC) binding failures.
+- Node taint issues affecting pod scheduling.
+- Ingress misconfigurations blocking external traffic.
