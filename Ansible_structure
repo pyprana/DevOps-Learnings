@@ -76,6 +76,17 @@ apt:
   - nginx
   - git
   - pythob3-pip
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Ansible: A tool for automating IT tasks.
+Usage in Project:
+Configuration Management: Ensuring that all systems are set up correctly and consistently.
+Deployment: Automating the process of deploying applications to multiple servers.
+Orchestration: Coordinating complex multi-step processes across multiple systems.
 state:present
 
-
+Q - Tell me about the playbook you used for the deployment of the new changes. 
+A - Playbook: A file with a list of tasks for Ansible to execute.
+  - Used For Deployment:
+  - Hosts: Specifies the target servers.
+  - Tasks: Define the steps to apply the new changes.
