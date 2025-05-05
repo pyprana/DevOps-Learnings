@@ -15,4 +15,7 @@ Here's a more detailed explanation of each method:
 - For example, you could configure split tunneling to route all traffic for a particular app through a VPN, while other traffic uses the default internet connection or another VPN.
 
 - VPN Client Compatibility:
- Not all VPN clients support split tunneling or multiple simultaneous connections. Check your VPN client's documentation for specific features. 
+- Not all VPN clients support split tunneling or multiple simultaneous connections. Check your VPN client's documentation for specific features. 
+
+- Mobile Devices:
+- On mobile devices, such as Android and iOS, the OpenVPN protocol implementation generally allows only one VPN connection at a time. 
