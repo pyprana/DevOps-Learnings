@@ -1,0 +1,12 @@
+Kubernetes
+Q - How you manage secrets and variables in Kubernetes?
+A - Secrets: Store and manage sensitive data securely.
+- ConfigMaps: Store and manage non-sensitive configuration data.
+- Both can be used in pods as volumes or environment variables for secure and efficient configuration management.
+
+Q - How to troubleshot issues when  pod failed?
+A - Check Pod Status: Use the command kubectl get pods to check the status of the pod.
+- Describe Pod: Use kubectl describe pod <pod-name> to get detailed information about the pod, including events and error messages.
+- View Logs: Use kubectl logs <pod-name> to view the logs of the pod's containers for error messages.
+- Check Events: Use kubectl get events to check for cluster-wide events that might affect the pod.
+- Inspect YAML: Review the pod's YAML configuration for any misconfigurations.
