@@ -342,7 +342,13 @@ Q - How to do changes in the configuration of already created resources using te
 
 Q - When the terraform runs state file gets created..? What do you do with state file? Where you can store it or find it..?
 A Terraform maintains a state file that maps the current status of the infrastructure with the configuration file so if the state file is commonly stored either on a local 
-machine or a remote storage location like storage account in azure or s3 bucket in aws  we can also store in terraform cloud by default its tsored in local machine and
-it is named as terraform.pf file.
+machine or a remote storage location like storage account in azure or s3 bucket in aws  we can also store in terraform cloud by default its stored in local machine and
+it is named as terraform.pf file that state file can include sensistive information so it is always recommended that it is always stored on the media that is encrypeted 
+at the result.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - Lets say you some how loose the state file in terraform so how to resolve the issue..?
+  - As 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
