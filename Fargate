@@ -1,0 +1,74 @@
+1. Fargate Overview
+What: Serverless compute engine for containers on ECS and EKS.
+
+Why: Avoids managing EC2 instances; pay only for used resources.
+
+When: Use when you want to run containers without provisioning infrastructure.
+
+Where: AWS ECS (Elastic Container Service), EKS (Elastic Kubernetes Service).
+
+How: Define container specs in ECS Task Definition or EKS PodSpec.
+
+Example: Run a Python Flask app in Docker on ECS Fargate.
+
+Use Case: Microservices, batch jobs, scheduled containers.
+
+Difference: Unlike EC2 launch type, no server management.
+
+Diagram: ECS → Fargate → Task → Container → VPC networking.
+
+Production Use Case: Auto-scaled API backend using Fargate + ALB.
+
+2. Fargate with ECS
+What: Run container tasks directly via ECS using Fargate launch type.
+
+Why: Simplifies container orchestration with minimal ops.
+
+How:
+
+Create a Task Definition.
+
+Launch service with Fargate launch type.
+
+Attach to VPC, subnets, security groups.
+
+Example: ECS service with NGINX + sidecar logging container.
+
+Production Use Case: Multi-container app with logging and metrics agents.
+
+3. Fargate with EKS
+What: Run Kubernetes pods using Fargate profiles.
+
+Why: Run specific Kubernetes workloads serverlessly.
+
+How:
+
+Create a Fargate profile.
+
+Match pods via labels/namespaces.
+
+Fargate runs the pods matching the selector.
+
+Example: EKS pod in “dev” namespace with Fargate profile.
+
+Production Use Case: Development/test workloads on EKS with Fargate, saving infra cost.
+
+4. Fargate Task Definition (ECS)
+What: JSON/YAML describing container specs.
+
+Why: Used to configure containers (CPU, memory, ports, images, etc.)
+
+How: Define via console, CLI, or Terraform.
+
+Example:
+
+json
+{
+  "containerDefinitions": [{
+    "name": "web",
+    "image": "nginx",
+    "cpu": 256,
+    "memory": 512,
+    "essential": true
+  }]
+}
