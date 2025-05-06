@@ -1,0 +1,161 @@
+
+1. EKS Cluster
+What: Managed Kubernetes control plane by AWS
+
+Why: To run containerized workloads easily without managing control plane
+
+Where: Deployed in AWS VPC
+
+When: Used when running Kubernetes workloads in AWS
+
+Example: eksctl create cluster
+
+2. Node Groups
+What: EC2 instances (worker nodes) part of EKS cluster
+
+Types: Managed Node Group, Self-managed Node Group, Fargate
+
+Why: Run your containers (pods)
+
+When: You want more control over compute (EC2/Fargate)
+
+Example: eksctl create nodegroup
+
+3. Fargate Profiles
+What: Serverless nodes for running pods without EC2
+
+Why: Reduce ops overhead, pay-per-use
+
+Where: Best for short-lived jobs
+
+When: Prefer cost-effective, managed compute
+
+Example: aws eks create-fargate-profile
+
+4. IAM Roles and Policies
+What: Permissions for EKS components (nodes, service accounts)
+
+Why: Secure access to AWS resources
+
+When: Binding AWS access with Kubernetes resources
+
+Example: IRSA (IAM Roles for Service Accounts)
+
+5. EKS Add-ons
+What: AWS-managed add-ons like CoreDNS, KubeProxy, VPC CNI
+
+Why: Automatic version updates and management
+
+When: You want less manual maintenance
+
+Example: aws eks create-addon --addon-name coredns
+
+6. VPC & Networking
+What: Underlying networking infrastructure
+
+Includes: Subnets (public/private), VPC CNI plugin
+
+Why: Needed for pod communication, service discovery
+
+When: Setting up a new cluster
+
+Example: eksctl utils associate-iam-oidc-provider
+
+7. Kubeconfig
+What: Configuration file for kubectl to access cluster
+
+Why: Needed to interact with the cluster
+
+When: After cluster is created
+
+Example: aws eks update-kubeconfig --name my-cluster
+
+8. Ingress & Load Balancer
+What: Route external traffic to services (ALB/ELB)
+
+Why: Handle HTTP/HTTPS traffic securely
+
+When: Exposing apps publicly
+
+Example: AWS ALB Ingress Controller
+
+9. EBS CSI Driver / EFS CSI Driver
+What: Storage solutions for persistent volumes
+
+Why: Required for stateful workloads
+
+When: Need dynamic storage provisioning
+
+Example: kubectl apply -f ebs-csi-driver.yaml
+
+10. Cluster Autoscaler
+What: Auto scales EC2 worker nodes
+
+Why: Adjusts nodes based on workload
+
+When: Running dynamic workloads
+
+Example: Deploy with Helm
+
+11. Horizontal Pod Autoscaler (HPA)
+What: Scales pods based on CPU/memory
+
+Why: Handle fluctuating traffic
+
+When: Web apps or APIs
+
+Example: kubectl autoscale deployment
+
+12. Security Groups & NACLs
+What: Network-level access control
+
+Why: Control traffic to nodes and pods
+
+When: Setting secure access to workloads
+
+Example: Allow 443 for ALB access
+
+13. IRSA (IAM Roles for Service Accounts)
+What: Map IAM roles to Kubernetes service accounts
+
+Why: Fine-grained IAM permissions per pod
+
+When: Pods access AWS services
+
+Example: Configure with eksctl and kubectl
+
+14. Logging & Monitoring
+Tools: CloudWatch, Prometheus, Grafana
+
+Why: Observability, debugging, health monitoring
+
+When: Production deployments
+
+Example: Enable via CloudWatch Container Insights
+
+15. Upgrades (K8s Version & Node Group)
+What: Periodic upgrades for cluster and nodes
+
+Why: Security, features, stability
+
+When: Based on AWS upgrade schedule
+
+Example: eksctl upgrade cluster
+
+16. Service Mesh (App Mesh, Istio)
+What: Manage microservice traffic
+
+Why: Secure, observe, and control service-to-service traffic
+
+When: Complex microservice architecture
+
+Example: Use App Mesh Injector
+
+17. EKS Blueprints
+What: Terraform/CDK templates to bootstrap EKS
+
+Why: Reusable EKS setups
+
+When: Automating EKS provisioning
+
+Example: AWS EKS Blueprints GitHub repo
