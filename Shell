@@ -1,0 +1,131 @@
+1. What is Shell Scripting?
+A shell script is a file with a sequence of shell commands that the shell executes in order.
+
+2. Basic Concepts
+Shebang (#!): Indicates the interpreter, e.g., #!/bin/bash
+
+Variables: name="Pranay"; Access with $name
+
+Echo: Outputs text, e.g., echo "Hello"
+
+Comments: # This is a comment
+
+Exit Status: $? stores last command's result
+
+3. Control Structures
+If Statement:
+
+bash
+Copy
+Edit
+if [ $x -eq 5 ]; then
+  echo "x is 5"
+fi
+If-Else:
+
+bash
+Copy
+Edit
+if [ $x -gt 10 ]; then
+  echo "Big"
+else
+  echo "Small"
+fi
+Case Statement:
+
+bash
+Copy
+Edit
+case $x in
+  1) echo "One";;
+  2) echo "Two";;
+  *) echo "Other";;
+esac
+Loops:
+
+For:
+
+bash
+Copy
+Edit
+for i in 1 2 3; do echo $i; done
+While:
+
+bash
+Copy
+Edit
+while [ $x -lt 5 ]; do echo $x; x=$((x+1)); done
+Until:
+
+bash
+Copy
+Edit
+until [ $x -gt 5 ]; do echo $x; x=$((x+1)); done
+4. Functions
+bash
+Copy
+Edit
+function greet() {
+  echo "Hello $1"
+}
+greet "User"
+5. Command Substitution
+bash
+Copy
+Edit
+today=$(date)
+echo "Today is $today"
+6. Reading User Input
+bash
+Copy
+Edit
+read -p "Enter name: " name
+echo "Welcome $name"
+7. Arrays
+bash
+Copy
+Edit
+arr=(one two three)
+echo "${arr[1]}"   # two
+8. File Operations
+Redirection: >, >>, <
+
+Input from file: while read line; do echo $line; done < file.txt
+
+9. String Operations
+bash
+Copy
+Edit
+str="Hello"
+len=${#str}         # 5
+sub=${str:1:3}      # ell
+10. Arithmetic
+bash
+Copy
+Edit
+x=$((5 + 3))
+11. Error Handling
+bash
+Copy
+Edit
+command || echo "Failed"
+command && echo "Success"
+12. Debugging
+Run with: bash -x script.sh
+
+13. Cron Jobs
+Automate with crontab -e:
+0 5 * * * /path/to/script.sh
+
+14. Logging
+bash
+Copy
+Edit
+echo "Start" >> /var/log/script.log
+15. Permissions
+Make executable:
+
+bash
+Copy
+Edit
+chmod +x script.sh
