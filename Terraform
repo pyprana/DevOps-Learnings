@@ -1,3 +1,82 @@
+1. Providers
+What: Plugin to interact with cloud or services (e.g., AWS, Azure).
+
+Why: Tells Terraform how to manage resources.
+
+Example: provider "aws" { region = "us-east-1" }
+
+2. Resources
+What: Block that defines infrastructure (e.g., EC2, S3).
+
+Why: Actual infrastructure components you manage.
+
+Example: resource "aws_instance" "web" { ... }
+
+3. Modules
+What: Reusable blocks of Terraform config.
+
+Why: Promotes DRY and organized code.
+
+Example: A module to create a VPC reused in many projects.
+
+4. Variables
+What: Inputs to parameterize configs.
+
+Why: Reuse and flexibility.
+
+Example: variable "instance_type" { default = "t2.micro" }
+
+5. Outputs
+What: Return values from Terraform.
+
+Why: Share info between modules or after apply.
+
+Example: output "instance_ip" { value = aws_instance.web.public_ip }
+
+6. State
+What: Tracks real infrastructure.
+
+Why: Syncs Terraform config and actual infra.
+
+Example: Stored in terraform.tfstate
+
+7. Data Sources
+What: Read-only data from existing resources.
+
+Why: Reference infra not managed by Terraform.
+
+Example: data "aws_ami" "ubuntu" { ... }
+
+8. Backend
+What: Where state file is stored (local, S3, etc.).
+
+Why: Collaboration and locking.
+
+Example: backend "s3" { ... }
+
+9. Workspaces
+What: Isolated state files within a project.
+
+Why: Support multiple environments.
+
+Example: terraform workspace new dev
+
+10. Terraform CLI Commands
+What: Commands like init, plan, apply.
+
+Why: Control Terraform lifecycle.
+
+Example: terraform apply
+
+11. Expressions & Functions
+What: Logic in HCL (interpolation, conditions).
+
+Why: Dynamic and intelligent config.
+
+Example: count = var.create ? 1 : 0
+
+
+--------------------------------------------------------
 Terraform Commands
 
 - Initialization
