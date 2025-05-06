@@ -43,3 +43,74 @@
 - Use Case:
 - Used in SaaS companies, banks, e-commerce, and telecom during downtime to restore SLAs quickly.
 
+- Diagram
+[Incident Detected] 
+     ↓
+[IM Activated] 
+     ↓
+[Team Mobilized] → [Mitigation Started]
+     ↓                    ↓
+[Communication Ongoing]  → [Resolution]
+     ↓
+[Postmortem & RCA]
+
+What:
+Incident Management is the structured process to detect, respond, resolve, and learn from service disruptions or system failures.
+
+🔹 Why:
+Minimize downtime (MTTR)
+
+Maintain SLAs/SLOs
+
+Ensure customer trust and service reliability
+
+Enable root cause identification and prevention
+
+🔹 When:
+Triggered during:
+
+Outages (P0/P1)
+
+Performance issues
+
+Security breaches
+
+Infrastructure/resource failures
+
+🔹 Where:
+Applied in:
+
+Production environments
+
+Cloud & on-prem systems
+
+Monitoring/alerting tools (PagerDuty, Opsgenie)
+
+Communication tools (Slack, MS Teams)
+
+🔹 How (Lifecycle Steps):
+Detection: Monitoring tools (e.g., Prometheus, CloudWatch) trigger alerts
+
+Triage: Incident classified (P0–P4)
+
+Response: On-call engineer or Incident Manager assigned
+
+Mitigation: Temporary fix or rollback
+
+Resolution: Full recovery and fix
+
+Postmortem: RCA + action items to avoid recurrence
+
+🔹 Example:
+An API latency spike triggers an alert via Grafana → PagerDuty notifies on-call SRE → IM coordinates rollback of last deployment → Latency stabilizes → Postmortem conducted.
+
+🔹 Production Tools:
+Alerting: Prometheus, CloudWatch, New Relic
+
+On-Call Mgmt: PagerDuty, Opsgenie, VictorOps
+
+Incident Tracking: Jira, ServiceNow, Statuspage
+
+Collaboration: Slack, Zoom, Google Meet
+
+
