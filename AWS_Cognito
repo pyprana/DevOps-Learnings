@@ -41,3 +41,68 @@ Use Case: MFA, OTP-based login, or custom challenge.
 
 Production Use: Secure login flow using SRP or custom challenges.
 
+4. Multi-Factor Authentication (MFA)
+What: Adds a second step in login (SMS/OTP/TOTP).
+
+Why: Enhance security beyond password.
+
+When: For sensitive apps/data access.
+
+Where: Enabled in Cognito User Pool settings.
+
+Example: After entering a password, user gets an OTP via SMS.
+
+Production Use: Banking or enterprise login security.
+
+5. Triggers & Lambda Hooks
+What: Custom code triggered at various auth events.
+
+Why: Customize behavior (e.g., validate signups, modify tokens).
+
+When: Events like Pre Sign-up, Post Authentication, etc.
+
+Where: Integrates with AWS Lambda.
+
+Example: Prevent signup from a blocked email domain.
+
+Use Case: Custom business logic in auth lifecycle.
+
+Production Use: Dynamic policy enforcement or analytics logging.
+
+6. Hosted UI
+What: Pre-built login/signup UI provided by Cognito.
+
+Why: Speeds up integration without building frontend.
+
+When: Need secure, quick auth integration.
+
+Where: Redirect users to AWS Cognito domain.
+
+Example: Hosted page for login using Google/SAML.
+
+Use Case: MVPs, admin dashboards, B2B apps.
+
+Production Use: Reduce frontend dev time with secure backend handling.
+
+7. Token Management (JWT)
+What: Access token, ID token, Refresh token.
+
+Why: Used to authenticate and authorize users.
+
+When: After successful login.
+
+Where: Sent in headers to APIs.
+
+Example:
+
+id_token: user info
+
+access_token: access control
+
+refresh_token: renew session
+
+Use Case: Securing APIs using JWT.
+
+Production Use: Token-based stateless auth for web/mobile apps.
+
+
