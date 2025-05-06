@@ -1,4 +1,4 @@
-Q - What id difference between EBS Volume and EFS?
+Q - What is the difference between EBS Volume and EFS?
 A - EBS (Elastic Block Store):
   - Block Storage: Provides block-level storage for use with EC2 instances.
   - Single Instance: Attached to only one EC2 instance at a time.
@@ -9,7 +9,7 @@ A - EBS (Elastic Block Store):
  - Multiple Instances: Can be accessed concurrently by multiple EC2 instances.
  - Use Case: Ideal for applications that require shared file storage, such as content management systems and home directories.
 
-Q - What type of volume you used for storage in EKS?
+Q - What type of volume you used for storage in EBS?
 A - EBS (Elastic Block Store):
   - Commonly used for persistent storage in EKS.
   - Provides block-level storage that can be attached to EC2 instances.
