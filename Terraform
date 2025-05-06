@@ -352,3 +352,26 @@ Q - Lets say you some how loose the state file in terraform so how to resolve th
   - As 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - How will you control and handle rollbacks when something goes wrong?
+  - I need to recommit the previous code version to be the new and current version in my VCS. 
+  - This would trigger as terraform run, which would be responsible for running the old code. 
+  - As Terraform is more declarative, I will make sure all things in the code roll back to the old code. 
+  - I would use the State Rollback Feature of Terraform Enterprise to roll back to the latest state if the state file got corrupted.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - How will you make an object of one module available for the other module at a high level?
+  - Ab output variable is defined in resource configuration.
+  - Declare the output variable of module_A.
+  - Create a file variable.tf for module B.
+  - Establish the input variable inside this file having the same name as the key defined in module_B.
+  - Replicate the process for making variable available to other modules
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - How will you upgrade plugins on Terraform?
+  - Run ‘terraform init’ with ‘-upgrade’ option. 
+  - This command rechecks the releases.hashicorp.com to find new acceptable provider versions. 
+  - It also downloads available provider versions. “.terraform/plugins/<OS>_<ARCH>” is the automatic downloads directory.
+  - 
