@@ -1,12 +1,12 @@
- AWS Account Factory for Terraform (AFT) is a solution from AWS that automates the creation and management of AWS accounts using Terraform in an AWS Control Tower environment.
+- AWS Account Factory for Terraform (AFT) is a solution from AWS that automates the creation and management of AWS accounts using Terraform in an AWS Control Tower environment.
 - It automates the creation of new AWS accounts using Terraform in AWS Control Tower.
 - You just update a Git repo, and AFT uses Lambda, Step Functions, and Terraform to provision and configure the account automatically.
  ✅ Standardized
  ✅ Automated
  ✅ Git-driven
 
--What is it?
-AFT is a framework built by AWS to let you provision new AWS accounts using Terraform automation with GitOps principles.
+- What is it?
+- AFT is a framework built by AWS to let you provision new AWS accounts using Terraform automation with GitOps principles.
 
 - Why use it?
 - Standardize account creation.
@@ -24,12 +24,12 @@ AFT is a framework built by AWS to let you provision new AWS accounts using Terr
 - Uses AWS services like Lambda, Step Functions, CodePipeline, and Terraform.
 
 - Key Features
-Feature Description
-Account Provisioning - Create AWS accounts via Terraform modules
-Customizations - Add infrastructure (VPC, IAM, Guardrails) post-creation
-GitOps Workflow - Uses Git repo to trigger provisioning pipelines
-Automated Pipelines - Uses CodePipeline to orchestrate deployments
-Terraform Modules Support - Plug-and-play modules for flexibility
+- Feature Description
+- Account Provisioning - Create AWS accounts via Terraform modules
+- Customizations - Add infrastructure (VPC, IAM, Guardrails) post-creation
+- GitOps Workflow - Uses Git repo to trigger provisioning pipelines
+- Automated Pipelines - Uses CodePipeline to orchestrate deployments
+- Terraform Modules Support - Plug-and-play modules for flexibility
 
 - Example Use Case
 - A financial org wants:
@@ -37,4 +37,4 @@ Terraform Modules Support - Plug-and-play modules for flexibility
 - Standard IAM roles
 - Logging setup
 - SCPs and guardrails
-They use AFT + Terraform to automate this, version it, and apply it across 50+ accounts.
+- They use AFT + Terraform to automate this, version it, and apply it across 50+ accounts.
