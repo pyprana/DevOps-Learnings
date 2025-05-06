@@ -324,3 +324,21 @@ terraform workspace new prod
 
 # Apply using prod variables
 terraform apply -var-file="env/prod.tfvars"
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - When you create an environment using terraform? What are all the components which have creating using terraform ?
+- Some of the components using terraform are
+- Resource Group - Storage Account.
+- Network Security - Application Gateway.
+- Vms using Azure Providers.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - How to do changes in the configuration of already created resources using terraform?
+- Terraform import
+
+Q - When the terraform runs state file gets created..? What do you do with state file? Where you can store it or find it..?
+A Terraform maintains a state file that maps the current status of the infrastructure with the configuration file so if the state file is commonly stored either on a local 
+machine
+
