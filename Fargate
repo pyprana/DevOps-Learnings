@@ -72,3 +72,31 @@ json
     "essential": true
   }]
 }
+--------------------------------------------------------------------------------------------------------------------
+AWS Fargate ECS Architecture within a VPC
+Key Components:
+
+Amazon ECS Cluster: Manages container orchestration.
+
+AWS Fargate: Runs containers without managing servers.
+
+Task Definitions: Blueprints for your containers.
+
+Elastic Network Interfaces (ENIs): Each Fargate task gets its own ENI for networking.
+
+VPC Subnets:
+
+Public Subnets: Contain resources like Application Load Balancers (ALBs) and NAT Gateways.
+
+Private Subnets: Host Fargate tasks without direct internet access.
+
+Internet Gateway: Allows internet access for resources in public subnets.
+
+NAT Gateway: Enables outbound internet access for resources in private subnets.
+Data Flow:
+
+Users send requests to the ALB in the public subnet.
+
+The ALB forwards traffic to Fargate tasks in private subnets.
+
+Fargate tasks communicate with other AWS services (e.g., S3, DynamoDB) via the NAT Gateway.
