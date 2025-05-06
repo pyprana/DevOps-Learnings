@@ -1,48 +1,62 @@
 SSL Certificate Management – Overview
 🔹 What
-Managing SSL/TLS certificates ensures secure HTTPS communication between clients and servers by encrypting data in transit.
+- Managing SSL/TLS certificates ensures secure HTTPS communication between clients and servers by encrypting data in transit.
 
 🔹 Why
-Ensures data confidentiality and integrity
+- Ensures data confidentiality and integrity.
 
-Enables authentication of the server
+- Enables authentication of the server.
 
-Prevents MITM attacks
+- Prevents MITM attacks.
 
 🔹 When
-For public websites, internal services, APIs, load balancers, etc.
+- For public websites, internal services, APIs, load balancers, etc.
 
-During certificate expiry/rotation, renewals, and infrastructure changes
+- During certificate expiry/rotation, renewals, and infrastructure changes.
 
 🔹 Where
-On web servers (Nginx, Apache), load balancers (ALB, NLB), CDNs, containers, Kubernetes Ingress, etc.
+- On web servers (Nginx, Apache), load balancers (ALB, NLB), CDNs, containers, Kubernetes Ingress, etc.
 
 🔸 Key Activities in Certificate Management
 Procurement
 
-Buy from CA (DigiCert, GoDaddy) or use free ones (Let's Encrypt)
+- Buy from CA (DigiCert, GoDaddy) or use free ones (Let's Encrypt).
 
-Installation
+- Installation
 
-Configure cert/key pair in Nginx, Apache, ELB, etc.
+- Configure cert/key pair in Nginx, Apache, ELB, etc.
 
-Renewal
+- Renewal
 
-Manual or automated (cron, Certbot, AWS ACM auto-renew)
+- Manual or automated (cron, Certbot, AWS ACM auto-renew).
 
-Monitoring
+- Monitoring
 
-Track expiry with tools like Nagios, Prometheus + Alertmanager, or custom scripts
+- Track expiry with tools like Nagios, Prometheus + Alertmanager, or custom scripts.
 
-Rotation
+- Rotation
 
-Replace before expiry or on compromise
+- Replace before expiry or on compromise
 
-Revocation
+- Revocation
 
-Invalidate via CRL/OCSP if compromised
+- Invalidate via CRL/OCSP if compromised
 
-Automation
+- Automation
 
-Use Ansible, Terraform + AWS ACM, Cert-Manager (K8s)
+- Use Ansible, Terraform + AWS ACM, Cert-Manager (K8s)
 
+Example (Nginx + Let's Encrypt)
+- sudo apt install certbot python3-certbot-nginx
+- sudo certbot --nginx -d yourdomain.com
+
+Diagram (Simplified)
+[Browser] ⇄ HTTPS ⇄ [Web Server w/ SSL Cert] ⇄ Backend
+        ⇡ Certbot / ACM / Vault handles rotation
+
+- Production Use Case
+- Auto-renewing certs via Cert-Manager in Kubernetes Ingress.
+
+- Managing ACM certs in AWS ELB with Terraform.
+
+- Using Vault to issue ephemeral SSL certs for microservices.
