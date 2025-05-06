@@ -1,0 +1,43 @@
+1. User Pools
+What: User directories for sign-up/sign-in (authentication).
+
+Why: Manage users, store credentials securely, support social & SAML logins.
+
+When: Needed when you want to handle authentication in your app.
+
+Where: Used in mobile, web, and SaaS apps.
+
+Example: A user logs in via email & password, or via Google.
+
+Use Case: Login page, forgot password, multi-factor authentication.
+
+Production Use: Secure access for users in mobile/web apps.
+
+2. Identity Pools (Federated Identities)
+What: Provides temporary AWS credentials after authentication.
+
+Why: Authorize access to AWS services using Cognito, Google, Facebook, SAML, etc.
+
+When: After user is authenticated (via User Pool or other IdP).
+
+Where: Used in client apps needing to access AWS resources (S3, DynamoDB).
+
+Example: A signed-in user gets credentials to upload a file to S3.
+
+Use Case: Temporary access to AWS services.
+
+Production Use: Access control for mobile/web clients using STS tokens.
+
+3. Authentication Flows
+What: Ways to authenticate (e.g., USER_PASSWORD_AUTH, CUSTOM_AUTH).
+
+Why: Choose default or custom login mechanisms.
+
+When: Depending on app security & UX needs.
+
+Example: Use USER_SRP_AUTH for secure password-based login.
+
+Use Case: MFA, OTP-based login, or custom challenge.
+
+Production Use: Secure login flow using SRP or custom challenges.
+
