@@ -1,45 +1,45 @@
-What:
-Incident Manager is the primary point of coordination during a major incident (e.g., outages, system failures), ensuring rapid recovery and minimal impact.
+- What:
+- Incident Manager is the primary point of coordination during a major incident (e.g., outages, system failures), ensuring rapid recovery and minimal impact.
 
-🔹 When:
-Activated during P1/P0 incidents, service outages, data breaches, or performance degradations.
+- When:
+- Activated during P1/P0 incidents, service outages, data breaches, or performance degradations.
 
-🔹 Where:
-Used in production environments, cloud platforms, enterprise infrastructure, or customer-facing systems.
+- Where:
+- Used in production environments, cloud platforms, enterprise infrastructure, or customer-facing systems.
 
-🔹 Why:
-To ensure:
+- Why:
+- To ensure:
 
-Timely response
+- Timely response
 
-Clear communication
+- Clear communication
 
-Root cause analysis (RCA)
+- Root cause analysis (RCA)
 
-Postmortems & continuous improvement
+- Postmortems & continuous improvement
 
-🔹 How (Responsibilities):
-Acknowledge incident, classify severity (P1–P4)
+- How (Responsibilities):
+- Acknowledge incident, classify severity (P1–P4)
 
-Assemble response team (eng, QA, comms)
+- Assemble response team (eng, QA, comms)
 
-Communicate updates (Slack, StatusPage, Email)
+- Communicate updates (Slack, StatusPage, Email)
 
-Track timeline, mitigation, resolution
+- Track timeline, mitigation, resolution
 
-Initiate RCA, create post-incident report
+- Initiate RCA, create post-incident report
 
-🔹 Example:
-During an AWS outage, the Incident Manager:
+- Example:
+- During an AWS outage, the Incident Manager:
 
-Initiates war room
+- Initiates war room
 
-Coordinates with AWS support and internal teams
+- Coordinates with AWS support and internal teams
 
-Sends hourly updates
+- Sends hourly updates
 
-Oversees service restoration
+- Oversees service restoration
 
-🔹 Use Case:
-Used in SaaS companies, banks, e-commerce, and telecom during downtime to restore SLAs quickly.
+- Use Case:
+- Used in SaaS companies, banks, e-commerce, and telecom during downtime to restore SLAs quickly.
 
