@@ -1,4 +1,5 @@
 SSL Certificate Management – Overview
+
 🔹 What
 - Managing SSL/TLS certificates ensures secure HTTPS communication between clients and servers by encrypting data in transit.
 
@@ -45,6 +46,18 @@ Procurement
 - Automation
 
 - Use Ansible, Terraform + AWS ACM, Cert-Manager (K8s)
+
+- Certbot
+- Used to automate the generation and renewal of SSL certificates from Let's Encrypt. Commonly used with Nginx or Apache servers.
+
+- ACM (AWS Certificate Manager)
+- Manages SSL/TLS certificates for AWS services like ALB, CloudFront, and API Gateway. Supports automatic renewal and deployment.
+
+- HashiCorp Vault
+- Issues and stores short-lived TLS/SSL certificates dynamically, ideal for secure microservice communication.
+
+- Cert-Manager
+- A Kubernetes-native solution that automates certificate issuance and renewal, integrates with ACME (Let's Encrypt), Vault, and other issuers.
 
 Example (Nginx + Let's Encrypt)
 - sudo apt install certbot python3-certbot-nginx
