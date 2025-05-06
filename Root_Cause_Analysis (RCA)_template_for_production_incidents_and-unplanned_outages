@@ -1,0 +1,67 @@
+🧾 Root Cause Analysis (RCA) Report
+🆔 Incident ID:
+INC-2025-XXXX
+
+🗓 Date & Time of Incident:
+Start: YYYY-MM-DD HH:MM
+End: YYYY-MM-DD HH:MM
+
+📍 Affected Services:
+List services/systems impacted
+
+E.g., Web app, API, database, CI/CD pipeline
+
+📢 Reported By:
+Monitoring Tool / End Users / On-call
+
+🔍 Incident Summary:
+Short summary of the issue, when and how it was detected, initial impact and resolution steps.
+
+🔥 Impact Analysis:
+Area	Impacted (Yes/No)	Description
+Customers	Yes/No	Delay/Error in app response
+Revenue	Yes/No	Estimated $X loss
+SLA Violation	Yes/No	Breach in availability/performance
+Internal Teams	Yes/No	Affected deployments/dev workflows
+
+🔁 Timeline of Events:
+Time (IST)	Event Description
+10:00 AM	Alert triggered from Prometheus
+10:05 AM	On-call engineer notified via PagerDuty
+10:10 AM	Initial investigation started
+10:30 AM	Identified issue in DB connection pool
+11:00 AM	Fix deployed
+11:15 AM	Services restored
+
+🧠 Root Cause:
+Clearly describe the primary technical or human cause.
+Example:
+Database connection leak due to unclosed sessions in microservice X after a code deployment.
+
+🧪 Contributing Factors:
+Missing health check in CI pipeline
+
+Inadequate alert granularity
+
+No connection limit enforcement
+
+🛠 Fix/Resolution:
+Restarted service X to clear connections
+
+Patched code to ensure proper session close
+
+Scaled DB temporarily to manage traffic
+
+✅ Preventive Actions:
+Action	Owner	ETA
+Add DB connection pool metrics to Grafana	DevOps	2 days
+Enforce connection caps via config	Backend	3 days
+Add unit test for DB sessions	QA	4 days
+Conduct postmortem review session	SRE Lead	1 day
+
+📤 Distribution Plan:
+Share via email to: devops@company.com, sre@company.com, infra@company.com
+
+Upload to Confluence > RCA Wiki
+
+Notify on Slack #incidents with RCA link
