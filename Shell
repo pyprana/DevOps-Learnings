@@ -57,13 +57,13 @@ greet "User"
 
 5. Command Substitution
 
-today=$(date)
-echo "Today is $today"
+ today=$(date)
+ echo "Today is $today"
 
 6. Reading User Input
 
-read -p "Enter name: " name
-echo "Welcome $name"
+ read -p "Enter name: " name
+ echo "Welcome $name"
 
 7. Arrays
 - arr=(one two three)
