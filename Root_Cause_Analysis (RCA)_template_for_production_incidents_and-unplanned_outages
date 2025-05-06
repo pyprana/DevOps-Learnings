@@ -17,12 +17,14 @@ Monitoring Tool / End Users / On-call
 🔍 Incident Summary:
 Short summary of the issue, when and how it was detected, initial impact and resolution steps.
 
-🔥 Impact Analysis:
-Area	Impacted (Yes/No)	Description
-Customers	Yes/No	Delay/Error in app response
-Revenue	Yes/No	Estimated $X loss
-SLA Violation	Yes/No	Breach in availability/performance
-Internal Teams	Yes/No	Affected deployments/dev workflows
+Impact Analysis (Bullet Format):
+Customer Impact: Users experienced intermittent downtime and failed API calls (~15% requests failed).
+
+Revenue Impact: Estimated transactional delay; no confirmed revenue loss.
+
+SLA Violation: Breached 99.9% uptime SLA for 1 hour window.
+
+Internal Impact: Deployment pipeline halted; developers blocked during the outage window.
 
 🔁 Timeline of Events:
 Time (IST)	Event Description
@@ -52,12 +54,18 @@ Patched code to ensure proper session close
 
 Scaled DB temporarily to manage traffic
 
-✅ Preventive Actions:
-Action	Owner	ETA
-Add DB connection pool metrics to Grafana	DevOps	2 days
-Enforce connection caps via config	Backend	3 days
-Add unit test for DB sessions	QA	4 days
-Conduct postmortem review session	SRE Lead	1 day
+✅ Preventive Actions (Bullet Format):
+Implement automated health checks for DB session leaks.
+
+Add connection pool metrics to Grafana for early detection.
+
+Set alerts for threshold breach on active DB connections.
+
+Introduce a regression test for DB session handling in CI.
+
+Conduct internal knowledge sharing session on DB best practices.
+
+Review and enforce coding standards for session/connection cleanup.
 
 📤 Distribution Plan:
 Share via email to: devops@company.com, sre@company.com, infra@company.com
