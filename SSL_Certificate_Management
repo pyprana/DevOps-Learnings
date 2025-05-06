@@ -1,0 +1,48 @@
+SSL Certificate Management – Overview
+🔹 What
+Managing SSL/TLS certificates ensures secure HTTPS communication between clients and servers by encrypting data in transit.
+
+🔹 Why
+Ensures data confidentiality and integrity
+
+Enables authentication of the server
+
+Prevents MITM attacks
+
+🔹 When
+For public websites, internal services, APIs, load balancers, etc.
+
+During certificate expiry/rotation, renewals, and infrastructure changes
+
+🔹 Where
+On web servers (Nginx, Apache), load balancers (ALB, NLB), CDNs, containers, Kubernetes Ingress, etc.
+
+🔸 Key Activities in Certificate Management
+Procurement
+
+Buy from CA (DigiCert, GoDaddy) or use free ones (Let's Encrypt)
+
+Installation
+
+Configure cert/key pair in Nginx, Apache, ELB, etc.
+
+Renewal
+
+Manual or automated (cron, Certbot, AWS ACM auto-renew)
+
+Monitoring
+
+Track expiry with tools like Nagios, Prometheus + Alertmanager, or custom scripts
+
+Rotation
+
+Replace before expiry or on compromise
+
+Revocation
+
+Invalidate via CRL/OCSP if compromised
+
+Automation
+
+Use Ansible, Terraform + AWS ACM, Cert-Manager (K8s)
+
