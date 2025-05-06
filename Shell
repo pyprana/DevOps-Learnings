@@ -34,7 +34,8 @@ case $x in
   2) echo "Two";;
   *) echo "Other";;
 esac
-Loops:
+
+- Loops:
 
 - For:
 
@@ -43,77 +44,59 @@ Loops:
 - While:
 
 while [ $x -lt 5 ]; do echo $x; x=$((x+1)); done
+
 - Until:
 
-bash
-Copy
-Edit
 until [ $x -gt 5 ]; do echo $x; x=$((x+1)); done
+
 4. Functions
-bash
-Copy
-Edit
-function greet() {
+- function greet() {
   echo "Hello $1"
-}
+ }
 greet "User"
+
 5. Command Substitution
-bash
-Copy
-Edit
+
 today=$(date)
 echo "Today is $today"
+
 6. Reading User Input
-bash
-Copy
-Edit
+
 read -p "Enter name: " name
 echo "Welcome $name"
-7. Arrays
-bash
-Copy
-Edit
-arr=(one two three)
-echo "${arr[1]}"   # two
-8. File Operations
-Redirection: >, >>, <
 
-Input from file: while read line; do echo $line; done < file.txt
+7. Arrays
+- arr=(one two three)
+  echo "${arr[1]}"   # two
+
+8. File Operations
+-  Redirection: >, >>, <
+
+  Input from file: while read line; do echo $line; done < file.txt
 
 9. String Operations
-bash
-Copy
-Edit
-str="Hello"
-len=${#str}         # 5
-sub=${str:1:3}      # ell
+- str="Hello"
+  len=${#str}         # 5
+  sub=${str:1:3}      # ell
+
 10. Arithmetic
-bash
-Copy
-Edit
-x=$((5 + 3))
+- x=$((5 + 3))
+
 11. Error Handling
-bash
-Copy
-Edit
-command || echo "Failed"
-command && echo "Success"
+- command || echo "Failed"
+- command && echo "Success"
+
 12. Debugging
-Run with: bash -x script.sh
+- Run with: bash -x script.sh
 
 13. Cron Jobs
-Automate with crontab -e:
-0 5 * * * /path/to/script.sh
+- Automate with crontab -e:
+  0 5 * * * /path/to/script.sh
 
 14. Logging
-bash
-Copy
-Edit
-echo "Start" >> /var/log/script.log
-15. Permissions
-Make executable:
+- echo "Start" >> /var/log/script.log
 
-bash
-Copy
-Edit
+15. Permissions
+- Make executable:
+
 chmod +x script.sh
