@@ -1,41 +1,34 @@
 1. What is Shell Scripting?
-A shell script is a file with a sequence of shell commands that the shell executes in order.
+- A shell script is a file with a sequence of shell commands that the shell executes in order.
 
 2. Basic Concepts
-Shebang (#!): Indicates the interpreter, e.g., #!/bin/bash
+- Shebang (#!): Indicates the interpreter, e.g., #!/bin/bash
 
-Variables: name="Pranay"; Access with $name
+  Variables: name="Pranay"; Access with $name
 
-Echo: Outputs text, e.g., echo "Hello"
+  Echo: Outputs text, e.g., echo "Hello"
 
-Comments: # This is a comment
+  Comments: # This is a comment
 
-Exit Status: $? stores last command's result
+  Exit Status: $? stores last command's result
 
 3. Control Structures
-If Statement:
+-  If Statement:
 
-bash
-Copy
-Edit
 if [ $x -eq 5 ]; then
   echo "x is 5"
 fi
-If-Else:
 
-bash
-Copy
-Edit
+- If-Else:
+
 if [ $x -gt 10 ]; then
   echo "Big"
 else
   echo "Small"
 fi
-Case Statement:
 
-bash
-Copy
-Edit
+- Case Statement:
+
 case $x in
   1) echo "One";;
   2) echo "Two";;
@@ -43,19 +36,14 @@ case $x in
 esac
 Loops:
 
-For:
+- For:
 
-bash
-Copy
-Edit
-for i in 1 2 3; do echo $i; done
-While:
+  for i in 1 2 3; do echo $i; done
 
-bash
-Copy
-Edit
+- While:
+
 while [ $x -lt 5 ]; do echo $x; x=$((x+1)); done
-Until:
+- Until:
 
 bash
 Copy
