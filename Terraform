@@ -35,48 +35,35 @@ Example: data "aws_ami" "ubuntu" { ... }
 
 8. Backend
 What: Where state file is stored (local, S3, etc.).
-
 Why: Collaboration and locking.
-
 Example: backend "s3" { ... }
 
 9. Workspaces
 What: Isolated state files within a project.
-
 Why: Support multiple environments.
-
 Example: terraform workspace new dev
 
 10. Terraform CLI Commands
 What: Commands like init, plan, apply.
-
 Why: Control Terraform lifecycle.
-
 Example: terraform apply
 
 11. Expressions & Functions
 What: Logic in HCL (interpolation, conditions).
-
 Why: Dynamic and intelligent config.
-
 Example: count = var.create ? 1 : 0
 
 12. Lifecycle Rules
 What: Customize resource creation/deletion behavior.
-
 Why: Prevents unintended changes.
-
 Example:lifecycle {
   prevent_destroy = true
 }
 
 13. Provisioners
 What: Run scripts on a resource (e.g., remote exec).
-
 Why: Perform bootstrapping actions.
-
 Note: Use as last resort.
-
 Example:
 provisioner "remote-exec" {
   inline = ["sudo apt update"]
@@ -84,17 +71,13 @@ provisioner "remote-exec" {
 
 14. Meta-Arguments
 What: Arguments like count, for_each, depends_on.
-
 Why: Control behavior of resources.
-
 Example:
 count = 3
 
 15. Dynamic Blocks
 What: Generate repeated nested blocks programmatically.
-
 Why: Cleaner code for repeated structures.
-
 Example:
 dynamic "ingress" {
   for_each = var.ingress_rules
@@ -106,11 +89,11 @@ dynamic "ingress" {
 
 16. Remote State Data Source
 What: Access outputs from another state file.
-
 Why: Share data across modules/projects.
-
 Example:
---------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Terraform Commands
 
 - Initialization
@@ -136,33 +119,22 @@ cost/governance separation.
 
 2. How:
 - Use Terraform or Pulumi to define infrastructure as code.
-
 - Use provider aliases to handle different regions or subscriptions within the same configuration.
-
 - Maintain separate state files per region/subscription for isolation and parallel deployment.
-
 - Use local execution, Jenkins, or AWS CodePipeline to run Terraform.
-
 - Authenticate using assume role, AWS CLI profiles, or Azure service principals.
-
 - Use terraform workspace or naming conventions to distinguish between environments.
-
 - Store secrets securely using AWS Secrets Manager, Azure Key Vault, or .tfvars files encrypted with Vault.
 
 3. When to Use:
 - You need disaster recovery setups.
-
 - You have teams operating in different regions or accounts.
-
 - You want to isolate environments or departments (e.g., dev, staging, prod).
 
 4. Where:
 - Across AWS regions like us-east-1, ap-south-1.
-
 - Across Azure subscriptions for different business units or billing scopes.
-
 - Example (AWS - Terraform Multi-Region & Multi-Account):
-
 provider "aws" {
   alias  = "us_east"
   region = "us-east-1"
@@ -361,3 +333,13 @@ Q - How will you upgrade plugins on Terraform?
   - This command rechecks the releases.hashicorp.com to find new acceptable provider versions. 
   - It also downloads available provider versions. “.terraform/plugins/<OS>_<ARCH>” is the automatic downloads directory.
   - 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - You need to provide/provision and configure infrastructure across multiple environments using terraform. How would you ensure code is reusable and prevent duplication..?
+A - Use terraform modules for reusable code.
+  - Organize modules for network compute and storage components.
+  - Use input variables to customize configurations for each environment.
+  - Store state files securely(E.g. s3 with versioning)
+  - Implement workspaces for managing multiple environments like dev, staging and prod.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
