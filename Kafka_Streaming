@@ -1,0 +1,24 @@
+Kafka Streaming
+
+What:
+Experience with Apache Kafka Streams – a client library for building real-time applications that process and analyze data stored in Kafka.
+Why:
+Used for event-driven architectures, stream processing, microservices communication, and real-time analytics.
+When:
+Ideal when working with continuous data flows, log aggregation, fraud detection, or monitoring systems.
+Where:
+Used in data pipelines, backend microservices, and edge systems to process data without storing it in external systems first.
+
+Key Experience Areas:
+Setup: Created Kafka producers/consumers with custom serialization (Avro/JSON).
+Kafka Streams: Built stream processing apps using KStream, KTable, windowing, joins, and stateful processing.
+Fault Tolerance: Managed exactly-once semantics, state stores with RocksDB.
+Monitoring: Integrated with Prometheus and Grafana for stream app metrics.
+Deployment: Containerized stream apps using Docker and deployed on Kubernetes with Helm.
+
+Example Use Case:
+Real-time fraud detection system:
+Ingest transaction logs via Kafka.
+Apply rules in Kafka Streams (e.g., high frequency or high-value transactions).
+Emit alerts to a downstream Kafka topic or Elasticsearch.
+
