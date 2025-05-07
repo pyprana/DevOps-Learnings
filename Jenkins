@@ -44,6 +44,211 @@ are tested and ready.
 - They would set up notifications (for example, via email or Slack) based on build outcomes or metrics thresholds and might also use Jenkins Pipeline steps to embed monitoring 
   and logging checks directly within CI/CD processes.
 
+
+1. How do you install Jenkins on a Linux server?
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt update && sudo apt install jenkins openjdk-11-jdk -y
+sudo systemctl start jenkins && sudo systemctl enable jenkins
+
+2. How do you create a basic Jenkins job?
+- Go to Jenkins dashboard → “New Item”
+- Name the job → Choose “Freestyle project”
+- Add SCM (e.g., Git), build trigger, and build steps (e.g., shell script)
+Save
+
+- 3. What are Jenkins plugins?
+- Extensions that add features (e.g., Git integration, Docker support)
+- Common plugins:
+- Git
+- Pipeline
+- Blue Ocean
+- Slack Notification
+- SonarQube Scanner
+- Credentials Binding
+
+- 4. What is a Jenkinsfile and what’s its role?
+- A text file (in project repo) that defines the CI/CD pipeline as code using Groovy syntax.
+
+- 5. Freestyle vs Pipeline project:
+- Feature	Freestyle	Pipeline
+- UI Driven	Yes	No
+- Code as Pipeline	No	Yes (via Jenkinsfile)
+- Flexibility	Limited	High (scripted & declarative)
+
+- 6. Configure email notifications:
+- Manage Jenkins → Configure System → SMTP settings
+- In job → Post-build Actions → “Editable Email Notification”
+
+- 7. Steps to configure a build job:
+- Create new item
+- Configure SCM
+-  Set build triggers
+- Add build steps (shell/script)
+- Add post-build actions
+- Save and build
+
+- 8. How to secure Jenkins:
+- Enable authentication & authorization
+- Disable CLI over remoting
+- Use HTTPS
+- Regular plugin updates
+- Limit access with roles (using Role Strategy Plugin)
+
+- 9. What is the Blue Ocean plugin?
+- A modern, user-friendly UI for Jenkins pipelines with visual stages and logs.
+
+- 10. How to back up Jenkins data:
+- Backup /var/lib/jenkins/ directory (jobs, config, secrets)
+
+- Use plugins like ThinBackup or Ops automation scripts
+
+- 11. Parameterize a Jenkins job:
+- Job → “This project is parameterized”
+- Add parameters (string, choice, boolean)
+- Use $PARAM_NAME in scripts
+
+- 12. Manage credentials in Jenkins:
+- Manage Jenkins → Credentials
+- Global or folder-level scope
+
+- Use Credentials Binding Plugin to inject into jobs
+
+- 13. Webhook concept & usage:
+- A webhook is an HTTP callback triggered by an event.
+- GitHub/GitLab → webhook → Jenkins URL (e.g., http://jenkins/job/myjob/build)
+- Triggers automatic builds on code changes
+
+- 14. JIRA/SonarQube integration:
+- Install relevant plugins
+- JIRA: Add site config under “Configure System”
+- SonarQube: Add server in Jenkins + use withSonarQubeEnv
+
+15. Purpose of Jenkins REST API:
+Interact programmatically (trigger builds, get job status)
+
+Example:
+
+bash
+Copy
+Edit
+curl -X POST http://jenkins/job/test/build --user user:token
+16. Troubleshoot a failing Jenkins build:
+Check console output logs
+
+Validate Jenkinsfile syntax
+
+Inspect environment variables
+
+Re-run with debug flags
+
+Check slave/agent status
+
+17. Optimize Jenkins performance:
+Use distributed builds (agents)
+
+Limit build history/logs
+
+Tune JVM memory
+
+Use Pipeline over Freestyle for heavy jobs
+
+18. Manage state across Pipeline runs:
+Use stash/unstash to share artifacts
+
+Save metadata/state in shared storage (S3, DB)
+
+Use build parameters and artifacts
+
+19. IaC strategies to manage Jenkins:
+Use Jenkins Configuration as Code (JCasC)
+
+Manage jobs with Job DSL plugin
+
+Version control Jenkinsfiles and configs
+
+20. Jenkins with microservices:
+One pipeline per microservice repo
+
+Shared libraries for reuse
+
+Trigger downstream builds via build() or webhook
+
+21. End-to-end automation (CI/CD):
+SCM webhook → Jenkins → Build → Test → Security scan → Deploy (Dev → Staging → Prod)
+
+Use Jenkinsfile with stages for each step
+
+22. High availability & disaster recovery:
+Active/passive HA (backup Jenkins master)
+
+Externalize state (e.g., NFS, S3, DB)
+
+Periodic backups + use containerized Jenkins
+
+23. Jenkins in DevSecOps:
+Integrate tools like SonarQube, Snyk, OWASP ZAP
+
+Add security gates in pipeline
+
+Automate secret scanning, dependency checks
+
+24. Handle build failures:
+Use catchError or try-catch
+
+Notify via email/Slack
+
+Retry with retry() block
+
+Archive logs/artifacts for debugging
+
+25. Manage Jenkins dependencies:
+Use shared libraries
+
+Use folder structure & inheritance
+
+Externalize configs to Git or Config-as-Code
+
+26. Creating custom Jenkins plugins:
+Use Java + Maven
+
+Extend Jenkins core APIs (Builder, Publisher)
+
+Package .hpi and deploy
+
+27. Reusable & maintainable pipelines:
+Use Jenkins Shared Libraries
+
+Modular Jenkinsfiles (functions/stages)
+
+Version control pipeline scripts
+
+28. Best practices for credential management:
+Never hardcode secrets
+
+Use Credentials Plugin + bind securely
+
+Rotate secrets regularly
+
+Use Vault/Secrets Manager integrations
+
+29. Database migrations in Jenkins CI/CD:
+Add DB migration scripts (Liquibase/Flyway) in repo
+
+Jenkins stage → execute migration before/after deploy
+
+Add rollback mechanism
+
+30. Addressing Jenkins/plugin vulnerabilities:
+Update Jenkins/plugins regularly
+
+Subscribe to Jenkins security advisories
+
+Audit logs
+
+Use minimal plugin sets
+
+
 ------------------------------------------------------------------------------------------------------------------------------------
 
 Parallel jobs in Jenkins mean multiple jobs or job stages run simultaneously, instead of waiting for each other to complete.
