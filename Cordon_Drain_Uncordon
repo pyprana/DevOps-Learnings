@@ -1,35 +1,35 @@
- Cordon means marking a node as unschedulable, so no new pods are scheduled on it.
+- Cordon means marking a node as unschedulable, so no new pods are scheduled on it.
 - It prevents new pods from being scheduled, but existing pods keep running.
 - Command - kubectl cordon <node-name>
 
-Why:
+- Why:
 - For maintenance, troubleshooting, or decommissioning a node without affecting running workloads.
 
-When:
+- When:
 - Before draining or rebooting a node.
 
-Where:
+- Where:
 - Used in Kubernetes cluster node management.
-Example: kubectl cordon worker-node-1
+- Example: kubectl cordon worker-node-1
 
-Cordon
+- Cordon
 - Marks a node as unschedulable.
 - No new pods will be scheduled.
 - Existing pods keep running.
 - Used before maintenance or debugging.
 - Command - kubectl cordon <node-name>
 
-Use Cases for cordon
+- Use Cases for cordon
 - Preparing a node for maintenance (e.g., OS patch, disk cleanup).
 - Preventing new workloads during performance issues.
 - Staging node replacement without disrupting current pods.
 - Debugging a node without affecting existing running pods.
 
-AWS EKS – Use Case - cordon
+- AWS EKS – Use Case - cordon
 - Before running SSM Patch Manager on EC2 nodes.
 - Pausing pod scheduling during ENI/network issue debugging.
 
-drain
+- drain
 - Evicts all pods from the node.
 - Also cordons the node.
 - Skips DaemonSet pods by default.
