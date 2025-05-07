@@ -15,6 +15,22 @@
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
+- What are shared libraries in Jenkins?
+- Shared libraries in Jenkins enable the reuse of scripts, steps, and variables across multiple Pipeline jobs.
+- Candidates should explain how they can define these libraries once and then reference them in Jenkinsfiles, which reduces code duplication.
+- Look for explanations of how to set up a shared library by adding it to the Jenkins configuration and referencing it in a Pipeline script using the @Library annotation or
+  the libraries section in a Declarative Pipeline.
+------------------------------------------------------------------------------------------------------------------------------------
+
+- How would you implement blue/green deployments using Jenkins?
+- Blue/green deployments help reduce downtime and risk by running two identical environments ("blue" and "green") and switching traffic from one to the other after new changes 
+are tested and ready.
+
+- Developers need to deploy new versions to the inactive environment, perform health checks and tests, and then switch the traffic (often via load balancers). 
+- Skilled candidates would also mention rollback strategies they’d set up to prevent issues.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
 Parallel jobs in Jenkins mean multiple jobs or job stages run simultaneously, instead of waiting for each other to complete.
 
 - Where it's used:
