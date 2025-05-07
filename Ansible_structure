@@ -28,6 +28,10 @@ anisble.cfg(configuration file)
 - remote - user - defines the user ansible should connect as (e.g./ ubuntu, ec2-user etc.
 - become-true - Enables priviliges escalation (like sudo) for administrative tasks.
 - host-key-checking : False -disables strict hosts key checking to prevent connection issues on first time ssh connectiones (use carefully in production)
+  (Ansible will not check the identity of the remote server when connecting via SSH for the first time.
+  This avoids connection errors if the host is new or not listed in the known hosts.
+  You might connect to a fake or malicious server without knowing it — not safe for production.)
+*It tells Ansible "don’t ask questions when connecting to a new machine for the first time — just connect."*
 
 2.inventory.yml
 all:
