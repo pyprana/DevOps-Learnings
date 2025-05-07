@@ -1,0 +1,14 @@
+- We need to build an executable file out of this git.
+- This is called CI.
+- The famous tool we use is Jenkins.
+- We use jenkins with Maven to build to the code.
+- We take the raw code from the developer we check whether unit test cases are running or not or is getting compiled or not.
+- All these things we check we integrate the code.
+- Once the code is ready we need to host it.
+- We need to deploy the code we need to setup and infrastructure.
+- Take a machine install Java, install Tomcat and then dependencies copy the code and then deploy the code.
+- We need to setup and infrastructure.
+- We need CM tools to make changesto our infrastructure that is called CM.
+- Once the environment is setup we use containers to host the applications like .war files or tomcat or app we use containers.
+- We are packaging together and runnng it as a container.
+- We are using Docker and container to manage the apps.
