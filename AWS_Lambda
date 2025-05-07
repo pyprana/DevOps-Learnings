@@ -1,0 +1,78 @@
+1. What is AWS Lambda?
+- What: Serverless compute service to run code in response to events.
+- Why: No server management, auto-scaling, pay-per-use.
+- When: For event-driven workloads (e.g., S3 uploads, API calls).
+- Where: Integrated with AWS services like S3, DynamoDB, API Gateway.
+- How: Upload code → define trigger → Lambda runs when event occurs.
+- Example: Resize image on S3 upload.
+- Use Case: Microservices, automation scripts, real-time file processing
+
+2. Lambda Execution Model
+- Short-lived functions (up to 15 mins)
+- Stateless by design
+- Cold start vs. warm start behavior
+
+3. Function Configuration
+- Memory (128 MB to 10 GB)
+- Timeout (max 900 seconds)
+- Environment variables
+- IAM Role (execution role)
+
+4. Triggers & Event Sources
+- S3 (e.g., file upload triggers)
+- API Gateway (REST/HTTP endpoints)
+- DynamoDB Streams
+- SNS / SQS / EventBridge
+- CloudWatch Events / Logs
+- Step Functions
+
+5. Deployment Packages
+- ZIP file or container image.
+- Supports Python, Node.js, Java, Go, .NET, Ruby.
+- Use Layers for shared libraries.
+
+6. Lambda Layers
+- Reusable code/libraries (e.g., boto3, numpy).
+- Up to 5 layers per function.
+
+7. Versions & Aliases.
+- Versions: Immutable snapshots of function code/config.
+- Aliases: Pointers to versions (e.g., "prod", "dev").
+
+8. IAM Roles and Permissions
+- Execution Role: What Lambda can do (e.g., write to S3).
+- Resource Policy: Who can invoke the Lambda.
+
+9. Lambda Destinations
+- Define success/failure targets (e.g., SNS, SQS, Lambda)
+- Alternative to manual try/catch
+
+10. Concurrency
+- Unreserved concurrency: Shared pool
+- Reserved concurrency: Guarantees function concurrency
+- Provisioned concurrency: Pre-warms instances to avoid cold starts
+
+11. Monitoring & Logging
+- Integrated with CloudWatch Logs
+- Metrics: Invocations, Duration, Errors, Throttles
+- X-Ray: Tracing for debugging
+
+12. Lambda with VPC
+- Access RDS, ElastiCache via VPC config
+- Needs ENI (adds latency/cold start)
+
+13. Async vs Sync Invocations
+- Sync: Wait for response (e.g., API Gateway)
+- Async: Fire-and-forget (e.g., S3 trigger)
+
+14. Deployment & CI/CD
+- SAM, Serverless Framework, Terraform, CDK
+- Blue/Green with aliases
+- Canary deployments
+
+15. Best Practices
+- Keep function small and single-purpose.
+- Use environment variables for config.
+- Minimize cold starts (Provisioned concurrency, lightweight deps)
+- Avoid long-running processes (use Step Functions if needed)
+
