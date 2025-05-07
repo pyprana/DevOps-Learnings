@@ -99,3 +99,28 @@
 - This type of invocation is called a "warm start".
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- What's the difference between synchronous and asynchronous invocation in AWS Lambda?
+- Even though this seems to be straightforward question, this has many implications for your design and error handling.
+
+- In synchronous invocation, the caller will wait for the execution to complete. 
+- But in asynchronous invocation, the caller will put the event in an internal queue which will later be processed in the lambda function.
+
+- An important point to note here is that you can't dictate the type of invocation and it depends on the service that you use with AWS Lambda.
+
+- For example, if you're building serverless APIs using API Gateway, it'll be a synchronous invocation. 
+- But if you're using S3, it'll be an asynchronous invocation.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- How do you implement error handling and retry logic in Lambda?
+- Any component in event driven system that may fail will fail. So interviewer wants to know how you've handled the error and how you retried in your previous projects. Below are some examples. Always explain with concrete examples.
+
+This depends on the service that you're using with AWS Lambda. Let's discuss this with some examples.
+
+If you're building a serverless API, it is better to return that error to the calling client (could be a front end app in this case). Then you let your front end logic decide what to display to the user based on the type of the error.
+
+If you're using Lambda with SQS, it is better to use a Dead Letter Queue so that you know what messages have failed to process. For this same reason, many of the systems that use SNS may use SQS, too.
+
+In the below code, we're using a dead letter queue. If any message fails to process after a certain number of times (as specified by maxReceiveCount), it's sent to the dead letter queue. This behaviour is specific to lambda when used along with queues.
+
