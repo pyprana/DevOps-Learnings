@@ -1,0 +1,8 @@
+Q - You need to migrate a relational database from on-premise to the cloud.
+    How would you minimize downtime..?
+A - Business Logic - Ensure business continuity during migration.
+  - Use tools like AWS DMZ or Azure Data Migration service.
+  - Enable continous replication to sync changes during migration.
+  - Perform migration during non-peak hours.
+  - Validate the database in the cloud before switching production traffic.
+ 
