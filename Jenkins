@@ -84,4 +84,179 @@ pipeline {
 ------------------------------------------------------------------------------------------------------------------------------------
 
 Option 1: Docker Compose Setup
+docker-compose.yml
+
+version: '3'
+
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    user: root
+    ports:
+      - "8080:8080"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
+
+volumes:
+  jenkins_home:
+
+2. Inside Jenkins:
+Install: Docker and Docker Pipeline plugins.
+
+Pipeline example
+
+pipeline {
+  agent {
+    docker {
+      image 'node:18'
+    }
+  }
+  stages {
+    stage('Build') {
+      steps {
+        sh 'node -v'
+      }
+    }
+  }
+}
+
+Option 2: Kubernetes Jenkins Agent
+1. Prerequisites:
+Jenkins on Kubernetes (via Helm)
+
+Kubernetes plugin installed
+
+Jenkins service account with permissions to spawn pods
+
+2. Pod template snippet (in Jenkins > Manage Jenkins > Cloud > Kubernetes):
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: jenkins-agent
+spec:
+  containers:
+  - name: jnlp
+    image: jenkins/inbound-agent
+    args: ['$(JENKINS_SECRET)', '$(JENKINS_NAME)']
+  - name: maven
+    image: maven:3.8.4-openjdk-17
+    command:
+    - cat
+    tty: true
+
+3. Jenkinsfile:
+pipeline {
+  agent {
+    kubernetes {
+      yamlFile 'pod-template.yaml'
+    }
+  }
+  stages {
+    stage('Build') {
+      steps {
+        container('maven') {
+          sh 'mvn -v'
+        }
+      }
+    }
+  }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Here’s a Helm + YAML setup to deploy Jenkins with Docker-based agents on Kubernetes:
+
+helm repo add jenkins https://charts.jenkins.io
+helm repo update
+
+helm install jenkins jenkins/jenkins \
+  --namespace jenkins --create-namespace \
+  --set controller.adminUser=admin \
+  --set controller.adminPassword=admin \
+  --set controller.serviceType=LoadBalancer \
+  --set controller.installPlugins[0]=kubernetes:latest \
+  --set controller.installPlugins[1]=workflow-aggregator:latest \
+  --set controller.installPlugins[2]=docker-workflow:latest \
+  --set controller.installPlugins[3]=blueocean:latest \
+  --set controller.installPlugins[4]=git:latest
+
+Step 2: Give Jenkins RBAC to Launch Pods
+Create jenkins-rbac.yaml:
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: jenkins
+  namespace: jenkins
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: jenkins-role-binding
+  namespace: jenkins
+subjects:
+  - kind: ServiceAccount
+    name: jenkins
+    namespace: jenkins
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
+
+Apply it
+kubectl apply -f jenkins-rbac.yaml
+
+Step 3: Configure Pod Template in Jenkins UI
+Jenkins → Manage Jenkins → Configure Clouds → Kubernetes
+
+Paste this YAML in the Pod Template:
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    jenkins: agent
+spec:
+  containers:
+    - name: jnlp
+      image: jenkins/inbound-agent
+      args: ['$(JENKINS_SECRET)', '$(JENKINS_NAME)']
+    - name: docker
+      image: docker:24.0.2
+      command:
+        - cat
+      tty: true
+
+Step 4: Pipeline using Kubernetes Agent
+pipeline {
+  agent {
+    kubernetes {
+      yaml '''
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+    - name: docker
+      image: docker:24.0.2
+      command:
+        - cat
+      tty: true
+    - name: jnlp
+      image: jenkins/inbound-agent
+      args: ['$(JENKINS_SECRET)', '$(JENKINS_NAME)']
+'''
+    }
+  }
+  stages {
+    stage('Run Docker') {
+      steps {
+        container('docker') {
+          sh 'docker --version'
+        }
+      }
+    }
+  }
+}
 
