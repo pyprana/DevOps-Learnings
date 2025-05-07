@@ -29,6 +29,21 @@ are tested and ready.
 - Developers need to deploy new versions to the inactive environment, perform health checks and tests, and then switch the traffic (often via load balancers). 
 - Skilled candidates would also mention rollback strategies they’d set up to prevent issues.
 
+
+- How do you integrate static code analysis tools into a Jenkins pipeline?
+- Static code analysis tools, such as SonarQube, Checkstyle, or FindBugs, help automatically analyze source code for potential errors, code smells, or security vulnerabilities.
+- To integrate static code analysis tools into a Jenkins pipeline, developers use plugins for each tool. For this, they would need to:
+- Install the plugin through the Jenkins management interface.
+- In the pipeline configuration (either for a Declarative or Scripted Pipeline), add steps to execute the static code analysis during the build process.
+- Configure the pipeline to analyze the results, potentially fail the build on violations, and display the results directly within the Jenkins UI for review.
+- This automates code quality checks and ensures that code standards are consistent.
+
+- How can Jenkins be used for monitoring applications?
+- Jenkins is ideal for monitoring build statuses and performance metrics, plus, it integrates well with external monitoring tools.
+- Candidates might mention using Jenkins plugins to push build logs and metrics to centralized logging and monitoring tools like ELK (Elasticsearch, Logstash, Kibana) or Splunk.
+- They would set up notifications (for example, via email or Slack) based on build outcomes or metrics thresholds and might also use Jenkins Pipeline steps to embed monitoring 
+  and logging checks directly within CI/CD processes.
+
 ------------------------------------------------------------------------------------------------------------------------------------
 
 Parallel jobs in Jenkins mean multiple jobs or job stages run simultaneously, instead of waiting for each other to complete.
