@@ -76,3 +76,26 @@
 - Minimize cold starts (Provisioned concurrency, lightweight deps)
 - Avoid long-running processes (use Step Functions if needed)
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-You might have built a serverless API, systems involving microservices, image/video conversion, log analysis, and many more. 
+
+- What services have you integrated with AWS Lambda?
+- This is an extension of the previous question. This is not a laundry list of all event sources that can connect to AWS Lambda. 
+- You may have used S3, SNS, SQS, Kinesis, DynamoDB, SES, or others. Not all projects will be completely serverless.
+- If you've used any non-serverless component along with AWS Lambda, mention those too. For example, you might've used AWS Lambda with RDS. 
+
+- Explain the concept of cold and warm starts in AWS Lambda
+- There are 2 reasons for asking this question. 
+- They want to know the runtimes that you've used, and they want to know if you know the other runtimes that could cause a cold start.
+- Lambda services receive a request to run a lambda function. 
+- The service prepares the execution environment by downloading the handler function code and by allocating memory along with other configuration.
+- Even though you're not billed for this execution environment preparation time, you'll have to face the delay in invoking your lambda function. 
+- This delay is called a "cold start".
+- The cold start timing is less significant for TypeScript and Python runtime environments, whereas it's a bit higher for Java or C# runtime environments.
+
+- To improve performance, the lambda service will keep the execution environment for some time. 
+- When you receive the request for the same lambda function again during this period, your handler can start executing immediately. 
+- This type of invocation is called a "warm start".
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
