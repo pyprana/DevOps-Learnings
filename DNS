@@ -1,1 +1,26 @@
 Understanding of networking concepts including DNS, TCP/IP, VPNs.
+
+DNS (Domain Name System)
+What: Converts human-readable domain names (like google.com) into IP addresses (142.250.64.78).
+
+Why: Makes it easier for users to access websites without remembering IPs.
+
+Example: Typing www.amazon.com → DNS resolves it to its IP → browser connects.
+
+🔹 TCP/IP (Transmission Control Protocol / Internet Protocol)
+What: Core protocol suite for communication on the internet.
+
+Why: Enables reliable data transmission between computers.
+
+TCP: Manages connection and ensures data is delivered (reliable).
+
+IP: Handles addressing and routing packets between source and destination.
+
+🔹 VPN (Virtual Private Network)
+What: Secure tunnel between your device and a private network over the internet.
+
+Why: Encrypts your data, hides IP, and allows remote secure access.
+
+Use Case: Remote employees securely accessing internal company servers.
+
+
