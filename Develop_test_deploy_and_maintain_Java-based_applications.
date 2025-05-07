@@ -1,0 +1,22 @@
+Develop, test, deploy, and maintain Java-based applications.
+
+1. Develop
+What: Write clean, modular Java code (core Java, Spring, Hibernate).
+Tools: IDEs (IntelliJ, Eclipse), Maven/Gradle, Git.
+Example: Building a REST API using Spring Boot.
+
+2. Test
+What: Unit testing, integration testing, functional testing.
+Tools: JUnit, Mockito, TestNG, Postman.
+Example: Writing JUnit tests for service layer.
+
+3. Deploy
+What: Push application to dev/staging/production environments.
+Tools: Jenkins, Docker, Kubernetes, AWS Elastic Beanstalk.
+Example: CI/CD pipeline deploys a Dockerized Spring Boot app.
+
+4. Maintain
+What: Monitor, debug, patch bugs, optimize performance.
+Tools: ELK, Grafana, New Relic, Logback.
+Example: Fixing memory leak by analyzing logs and heap dumps.
+
