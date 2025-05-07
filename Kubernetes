@@ -10,3 +10,13 @@ A - Check Pod Status: Use the command kubectl get pods to check the status of th
 - View Logs: Use kubectl logs <pod-name> to view the logs of the pod's containers for error messages.
 - Check Events: Use kubectl get events to check for cluster-wide events that might affect the pod.
 - Inspect YAML: Review the pod's YAML configuration for any misconfigurations.
+
+Q - How Kubernetes handle network communication between containers..?
+A - Kubernetes uses a flat, cluster-wide networ ko let all the pods communicate directly.
+  - To ensure seamless communication between contaoners, services and external systems.
+  - Used when pods need to talk to each other across namespaces or nodes.
+  - Handled via CNI(Container Network Interface) plugins. E.,(Calico, Flannel, Cilum).
+  - Examples - Pod-to-Pod:curl<pod-ip>
+  - Pod-to-Service: curl
+  - http://service-name>
+  - Across Nodes : CNI ensures routing between pods on different nodes.
