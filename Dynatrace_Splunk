@@ -19,3 +19,12 @@ Key Features:
 - Dashboards & visualizations
 - Security & compliance (Splunk Enterprise Security)
 - Seamless integration with DevOps tools
+
+- Handling Log Analysis with Splunk
+- A critical application issue is reported in peak hours.
+- How would you identify the root cause using splunk.?
+- Ensure minimal downtime by identifying issues efficiently.
+- Search logs using specific queries and filters.(E.g., errors, codes, timestamps)
+- Cooreleate logs across services to pinpoint the issue.
+- Resolve the issue and document learnings for future incidents.
+
