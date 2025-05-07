@@ -12,3 +12,76 @@
 - Once the environment is setup we use containers to host the applications like .war files or tomcat or app we use containers.
 - We are packaging together and runnng it as a container.
 - We are using Docker and container to manage the apps.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Parallel jobs in Jenkins mean multiple jobs or job stages run simultaneously, instead of waiting for each other to complete.
+
+- Where it's used:
+- In Pipelines, using parallel block to run stages together.
+
+- In Matrix jobs, testing across multiple environments.
+
+- In multi-configuration projects or distributed builds (e.g., on multiple agents).
+
+- Why it's useful:
+- Speeds up builds by doing tasks like testing, linting, or deploying in parallel.
+
+- Efficient resource use across multiple agents.
+- Example (Declarative Pipeline):
+pipeline {
+  agent any
+  stages {
+    stage('Parallel Tasks') {
+      parallel {
+        stage('Unit Tests') {
+          steps {
+            echo 'Running unit tests...'
+          }
+        }
+        stage('Lint Check') {
+          steps {
+            echo 'Running lint checks...'
+          }
+        }
+      }
+    }
+  }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+- Yes, Jenkins build agents can be deployed as Docker containers. 
+- This is a common and scalable method used in modern CI/CD setups.
+
+✅ Why use Docker for Jenkins agents?
+- Isolation: Each agent runs in its own container.
+- Consistency: Same environment across builds.
+- Scalability: Easily spin up/down agents.
+- Easy cleanup: Containers can be removed after builds.
+
+- How to deploy?
+- Install Docker on the Jenkins host
+- Install Docker plugin in Jenkins
+- Define Docker agent template in Jenkins (e.g., via Docker plugin or JCasC)
+- Use a Docker image for the agent (e.g., jenkins/inbound-agent)
+- Configure pipeline to use Docker agent:
+pipeline {
+  agent {
+    docker {
+      image 'maven:3.8.4-openjdk-17'
+    }
+  }
+  stages {
+    stage('Build') {
+      steps {
+        sh 'mvn clean install'
+      }
+    }
+  }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Option 1: Docker Compose Setup
+
