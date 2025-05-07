@@ -1,0 +1,38 @@
+- Rollback Strategies are techniques used to revert a system to a previous stable state when a new deployment fails or introduces issues. 
+- Here are key rollback strategies in DevOps:
+
+1. Manual Rollback
+- What: Manually redeploy the previous version.
+- When: Emergency or small-scale systems.
+- Example: Reverting a previous build in Jenkins.
+- Risk: Slow and error-prone.
+
+2. Automated Rollback
+- What: CI/CD pipelines detect failure and auto-rollback.
+- When: Common in production environments.
+- Tools: Jenkins, ArgoCD, Spinnaker.
+
+🟢 3. Blue-Green Deployment
+- What: Two identical environments – one live, one idle.
+- Rollback: Route traffic back to the old version.
+- Use Case: Web applications needing zero downtime.
+
+🟡 4. Canary Release
+- What: Gradual rollout to a subset of users.
+- Rollback: Stop rollout if issues found.
+- Use Case: A/B testing, staged production deployment.
+
+5. Feature Flags (Toggles)
+- What: Enable/disable features without code changes.
+- Rollback: Turn off the problematic feature.
+- Tools: LaunchDarkly, Unleash.
+
+6. Immutable Infrastructure
+- What: Don’t modify servers—replace them with previous AMI or container image.
+- Rollback: Launch older image.
+- Use Case: Containerized and cloud-based apps.
+
+7. Helm/Kubernetes Rollback
+- What: Revert to a previous release using helm rollback or kubectl rollout undo.
+- Use Case: Kubernetes-based microservices.
+
