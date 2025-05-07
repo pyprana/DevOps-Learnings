@@ -1,0 +1,16 @@
+- Nexus is a Artifactory manager.
+- It stores artifacts.
+- Once the source code is built it deploy into target systems.
+- It holds the artifact in nexus.
+
+- Integrate Nexus with 
+- Nexus is a repo manager
+- It is used to store binaries, artifacts.
+- It can be variably integrated with Jenkins.
+- Whenever a developer pushes the changes in the code repo, Jenkins will run builds.
+- It will run necessary scans it will upload artifactories in Nexus.
+- Nexus uses local file storage(Its a JAVA based tool)
+- Once its stored in Nexus, it can do the deployment.
+- Nexus us a repository manager,
+- It allows you to proxy collect and manage, you are not constantly juggling a collector of JARS.
+- It makes it easy to distribute s/w.
