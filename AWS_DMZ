@@ -1,0 +1,106 @@
+1. What is AWS DMS?
+- AWS Database Migration Service helps migrate databases quickly and securely to AWS, with minimal downtime.
+
+2. Key Concepts
+a. Source & Target Endpoints
+- What: Define where data comes from and goes to.
+- Example: Source = On-prem Oracle; Target = Amazon RDS for PostgreSQL.
+
+b. Replication Instance
+- What: EC2-like instance that runs the replication tasks.
+- Where: In a VPC with network access to source and target.
+- Why: It handles the actual data migration process.
+
+c. Migration Task Types
+- Types:
+- Full Load
+- CDC (Change Data Capture)
+- Full Load + CDC
+- When:
+- Full Load: One-time bulk.
+- CDC: Ongoing sync (real-time changes).
+- Example: Migrate a live database with minimal downtime → Use Full Load + CDC.
+
+d. Schema Conversion Tool (SCT)
+- What: Converts schema from one DB engine to another.
+- Use: Required for heterogeneous migrations (e.g., Oracle → PostgreSQL).
+- Why: Schema differences need conversion before data is moved.
+
+e. Table Mapping Rules
+- What: Controls which tables or columns are included/excluded.
+- Use Case: Only migrate selected schemas or columns.
+
+f. Data Transformation Rules
+- What: Modify data during migration (e.g., rename columns, mask data).
+- Example: Rename a column from ssn to encrypted_ssn.
+
+g. Validation & Monitoring
+- Tools: CloudWatch logs, DMS console, validation reports.
+
+Why: Track progress, errors, throughput, latency.
+
+h. Homogeneous vs Heterogeneous Migration
+Type	Tools Needed	Example
+Homogeneous	DMS only	MySQL → RDS MySQL
+Heterogeneous	SCT + DMS	Oracle → Amazon Aurora
+
+🧑‍💼 Who Uses AWS DMS?
+DBAs
+
+Cloud Migration Engineers
+
+DevOps teams during cloud adoption
+
+⏱️ When to Use AWS DMS?
+On-prem to cloud DB migration
+
+Cross-region replication
+
+DB engine upgrade
+
+Live migration with minimal downtime
+
+🗺️ Where It Fits in Architecture
+Used during cloud migration
+
+Part of hybrid or multi-cloud strategies
+
+Combined with Data Lakes for ingestion
+
+✅ Why Use AWS DMS?
+No downtime
+
+Supports major DB engines
+
+Scales with replication instances
+
+CDC ensures real-time sync
+
+📦 Supported DB Engines
+Source & Target Examples:
+
+MySQL, PostgreSQL, Oracle, MS SQL, MongoDB, MariaDB, Amazon Aurora, Amazon Redshift
+
+💡 Example Use Case
+Scenario: Migrate on-prem Oracle to Amazon Aurora PostgreSQL with zero downtime.
+
+Steps:
+
+Use SCT to convert schema
+
+Create replication instance
+
+Configure source and target endpoints
+
+Create task with Full Load + CDC
+
+Monitor and validate migration
+
+🔄 Production Best Practices
+Use Multi-AZ replication instance
+
+Enable logging and alerts
+
+Run data validation
+
+Monitor CDC lag for real-time migration
