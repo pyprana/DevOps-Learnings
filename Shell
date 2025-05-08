@@ -96,21 +96,16 @@ greet "User"
 14. Logging
 - echo "Start" >> /var/log/script.log
 
----------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 1. Pull Latest Code & Restart Service
 #!/bin/bash
 echo "Starting deployment..."
-
 cd /var/www/myapp || exit 1
-
 git pull origin main || { echo "Git pull failed"; exit 1; }
-
 echo "Restarting application service..."
 systemctl restart myapp.service || { echo "Failed to restart service"; exit 1; }
-
 echo "Deployment successful!"
-
 Use Case: Simple app redeployment via Git and systemd.
 
 15. Permissions
