@@ -37,3 +37,59 @@ Explain about the current application, How did you developed cicd pipeline for..
 - we are using ISO images, whwnver we are pushing the images to the production team and the management team is notified.Its a rocky linux machine
 - The setups is the same.
 Because of the customer 
+
+- How many total namespaces
+4 namespaces
+1 - Namespace of front end and the back end 
+1 - Default
+1 - Istio (Routing Traffic of ISTIO)
+1 - Data Related stuff , Reddis Rabbit MQ stack
+
+- Source Code Repository on prem 
+- Source code is maintaining on prem - git github, jenkins is on prem
+
+- Build agents
+- how are they mainatined
+- Build agents are specific for tech stack such as nodejs, dot net 
+- We remove spaces on regular basis.
+- Manually go and clean those images
+- Sometimes the docker images are more than required.
+- CICD pipeline which is cleaning of spaces happening on regular basis
+
+- Where your nodes are running
+- Nodes are on single machine or multipe machines
+- Our Jenkins Main node single 
+- Build agents they are setup in such an way 
+- Jenkins 
+
+- As your maintaing as nodes 
+- Docker agents on Kubernetes 
+- Whenver a job triggers docker agent the job needs to run on the docker container
+- Jenkins file also configuring the docker agent, from there we can trigger the all the images can be used.
+- 
+AWS ECR is dev stagong
+Docker Hub is for production 
+
+- lets say we are deploying application in 1.1
+- Due to some reasons
+- Due to application issues
+- How your helm staragies work 
+- Will your existing verison will be there or not.
+- I will helm uninstall any specific namespaces.
+- Clear any images
+- Manually clearly images
+- I will deploy the application.
+- copyy the images 
+- define spcieicf namespace spaces
+- helm upgrade name of the resource and namepsace
+
+How:
+Helm Roll back stragies
+
+helm rollback <release-name> [REVISION]
+
+Example:
+helm rollback my-app 2
+
+Check History:
+helm history my-app
