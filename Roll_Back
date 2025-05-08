@@ -36,3 +36,91 @@
 - What: Revert to a previous release using helm rollback or kubectl rollout undo.
 - Use Case: Kubernetes-based microservices.
 
+1. Deployment Rollback (kubectl)
+What: Rollback to previous ReplicaSet version.
+How:
+kubectl rollout undo deployment <deployment-name>
+Use when: New deployment causes issues.
+
+Check history:
+kubectl rollout history deployment <deployment-name>
+
+2. Helm Rollback
+What: Rollback to a previous Helm release revision.
+
+How: helm rollback <release-name> <revision-number>
+Use when: Helm chart upgrade fails.
+
+🧪 3. Canary Deployment
+What: Gradually shift traffic to new version.
+
+Rollback: Halt traffic shift, revert service to stable pod.
+
+- Check if the pod state is red or gree
+- Semantic versinong 
+- Liveness Probe and readiness prob is having issue or if there is any cas of endpoint issue
+- Restart pod or node does fix the issue
+
+- When you restart the node it has so many pods, it will affect the other apps
+When you restart a node with many pods, it can cause downtime or performance issues for apps running on that node. To handle this safely:
+✅ Safe Node Restart Strategy (Minimize App Impact)
+1. Cordon the Node
+Prevent new pods from scheduling on it:
+kubectl cordon <node-name>
+
+2. Drain the Node
+Evict all pods gracefully:
+- kubectl drain <node-name> --ignore-daemonsets --delete-emptydir-data
+- ⚠️ Make sure pod disruption budgets (PDBs) allow safe eviction.
+
+3. Verify Pod Rescheduling
+Ensure all workloads are rescheduled and healthy on other nodes:
+
+bash
+Copy
+Edit
+kubectl get pods -A -o wide
+4. Restart the Node
+Now it’s safe to reboot:
+
+bash
+Copy
+Edit
+sudo reboot
+5. Uncordon the Node
+Make it schedulable again:
+
+bash
+Copy
+Edit
+kubectl uncordon <node-name>
+⚠️ If Pod Disruption Budget (PDB) Blocks Drain
+Temporarily adjust or remove PDB.
+
+Or increase the number of replicas to allow draining.
+
+
+Tool: Service mesh (e.g., Istio) or Argo Rollouts.
+
+🔄 4. Blue-Green Deployment
+What: Keep old (blue) and new (green) versions live.
+
+Rollback: Switch traffic back to blue version.
+
+Tool: Load balancer or ingress routing.
+
+📜 5. Manual Rollback (YAML Redeploy)
+What: Apply previous working YAML manually.
+
+How:
+
+bash
+Copy
+Edit
+kubectl apply -f old-deployment.yaml
+🛡️ 6. GitOps Rollback
+What: Revert Git commit to restore old config.
+
+Tool: ArgoCD, Flux.
+
+Rollback: Git revert triggers old version deployment.
