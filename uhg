@@ -15,3 +15,11 @@ Explain about the current application, How did you developed cicd pipeline for..
 - Jenkins is tagged to git and git hub versioning its been done through web hooks and here we follow the multi branch pipeline dev prod pre prod hot fix and releas branch 
 
 - When a deveoper pushes the code from feature branch, yu guys are mainiating if the code quality is less than 80 percent will  it merge into the develop branch code.
+- Individual branches itself has sonar code quality check and if its going less than 80 percent there are alerts which is triggered and an notification email is sent to the
+  team and so the code quality check is going less than 80 percent it wont be merged, if its satisfying the pre condition of 80 percent then only it goes to the PR apporval
+  and to the main dev leads.
+- If its having 80 percent quality check then only its getting meed to the dev branch.
+- Until the review is approved only it wont merge.
+
+- Your deploying to kubernetes cluster, from your jenkins how your kubernetes cluster is happening..?
+-  
