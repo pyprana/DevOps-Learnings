@@ -83,13 +83,78 @@ Docker Hub is for production
 - define spcieicf namespace spaces
 - helm upgrade name of the resource and namepsace
 
-How:
-Helm Roll back stragies
+- How:
+- Helm Roll back stragies
 
-helm rollback <release-name> [REVISION]
+- helm rollback <release-name> [REVISION]
 
-Example:
-helm rollback my-app 2
+- Example:
+- helm rollback my-app 2
 
-Check History:
-helm history my-app
+- Check History:
+- helm history my-app
+
+- We can also blue green deployment
+- we can go and update config maps for deployment.
+- Your pod is been deploying but  pod is not coming up , how do you troubelshoot,
+
+✅ Step-by-Step Pod Troubleshooting
+1. Check Pod Status
+- kubectl get pod <pod-name> -n <namespace>
+- Look for status: CrashLoopBackOff, Pending, ImagePullBackOff, etc.
+
+2. Describe the Pod
+- kubectl describe pod <pod-name> -n <namespace>
+- Check:
+- Events (at bottom)
+- Scheduling issues (node selectors, taints, resources)
+- Liveness/readiness probe failures
+
+3. Check Pod Logs
+- kubectl logs <pod-name> -n <namespace>       # For single container
+- kubectl logs <pod-name> -c <container-name>   # For multi-container
+- Look for:
+- Application errors
+- Configuration issues (ports, DB, env vars)
+
+4. Check Node Health
+- kubectl get nodes
+- kubectl describe node <node-name>
+- Ensure:
+- Node is Ready
+- Sufficient CPU/memory
+
+5. Check Events in Namespace
+- kubectl get events -n <namespace> --sort-by=.metadata.creationTimestamp
+- Find:
+- Scheduling errors
+- Image pull issues
+- Network problems
+
+6. Check for Image Pull Issues
+- kubectl describe pod <pod-name>
+Look for:
+- ImagePullBackOff
+- Wrong image name/tag
+- Missing imagePullSecrets
+
+7. Check Resource Limits
+- Pod may be evicted or pending due to CPU/Memory limits.
+- Use describe to inspect.
+
+8. Check Network/DNS Issues
+- kubectl exec -it <pod> -- nslookup <service-name>
+- Ensure:
+- DNS is resolving
+- Network policies aren’t blocking traffic
+
+9. Check PVC or Volume Mount Issues
+kubectl describe pvc <pvc-name> -n <namespace>
+Look for:
+Pending or Failed status
+StorageClass or access mode mismatches
+
+10. Check Init Containers
+kubectl describe pod <pod-name>
+Ensure init containers completed successfully.
+
