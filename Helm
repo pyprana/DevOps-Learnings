@@ -37,3 +37,25 @@ Q - What is helm release.?
 A - A deployed instance of helm chart.
 - Manage state/version/history of an app.
 - Each install/upgrade = new release version.
+
+Q - Helm Rollback Strategies
+Helm provides built-in mechanisms to roll back deployments when something goes wrong. Below are key strategies:
+
+🔁 1. Helm Built-in Rollback
+✅ What:
+Rollback to a previous revision of a Helm release.
+
+🧠 Why:
+To quickly revert to a known good state when a Helm upgrade causes failure.
+
+📍 When:
+Application crashes after upgrade
+
+Wrong configuration deployed
+
+Health checks failing
+helm rollback <release-name> [REVISION]
+
+ Check History:
+helm history my-app
+
