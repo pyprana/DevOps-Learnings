@@ -1,3 +1,25 @@
+Key Features:
+- Serverless: Fargate manages the underlying infrastructure, freeing you from managing EC2 instances. 
+- Pay-as-you-go: You pay only for the compute time your containers use. 
+- Container Focus: Designed to run containers, eliminating the need to manage servers or clusters of VMs. 
+- Integration: Works seamlessly with ECS and EKS. 
+- Resource Specification: You specify the CPU, memory, and other resources your container requires. 
+- Application Isolation: Each Fargate task runs in its own isolated environment, improving security. 
+- Fargate Profiles (for EKS): Allows you to define which pods start on Fargate and how they run. 
+
+- How it works:
+- Package your application: You package your application into a Docker container. 
+- Specify resources: You define the CPU, memory, and other resources your container needs. 
+- Launch with ECS or EKS: You launch your container with ECS or EKS, using Fargate as the compute engine. 
+- Fargate manages: Fargate handles the underlying infrastructure, scaling, and management of your containers. 
+
+- Benefits:
+- Reduced Operational Burden: Fargate eliminates the need to manage servers, freeing up your time and resources. 
+- Improved Security: Application isolation by design enhances security. 
+- Cost Optimization: You only pay for the resources your containers consume. 
+- Simplified Deployment: Fargate simplifies the deployment process, allowing you to focus on your application. 
+- Flexibility: Fargate can be used with a variety of programming languages and frameworks, as long as they are containerized
+
 1. Fargate Overview
 - What: Serverless compute engine for containers on ECS and EKS.
 - Why: Avoids managing EC2 instances; pay only for used resources.
