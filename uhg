@@ -1,4 +1,5 @@
 UHG
+
 Explain about the current application, How did you developed cicd pipeline for..?
 - Ours is the backend is a dot net application front end is a node js application 
 - Our jenkins pipleine has build agent
@@ -18,8 +19,21 @@ Explain about the current application, How did you developed cicd pipeline for..
 - Individual branches itself has sonar code quality check and if its going less than 80 percent there are alerts which is triggered and an notification email is sent to the
   team and so the code quality check is going less than 80 percent it wont be merged, if its satisfying the pre condition of 80 percent then only it goes to the PR apporval
   and to the main dev leads.
-- If its having 80 percent quality check then only its getting meed to the dev branch.
+- If its having 80 percent quality check then only its getting need to the dev branch.
 - Until the review is approved only it wont merge.
 
-- Your deploying to kubernetes cluster, from your jenkins how your kubernetes cluster is happening..?
--  
+- Your deploying to kubernetes cluster, from your jenkins how your kubernetes cluster authentication is happening..?
+-  So here the EKS cluster namespace , we ar Enot using the default namespace, here we are mentinoing the namespace and also thee cluster details and in our case lon cluster details
+   the cluter ip the AWS EKS  cluster along with helm command along with the namespace.
+- All of these are mentioned application gets deployed.
+
+- Dev, Pre prOd, application is deploying on pre prod is it happening simultaenously or how is it happenineng, is it happening paralley;..?
+- Parallely how are you authenticating different namespaces..?
+- The namespace here is the same
+- How differnet its
+- You mentinong the IP address environment, namespace is same.
+
+- For production ours is on prem server, we are using manually..?
+- we are using ISO images, whwnver we are pushing the images to the production team and the management team is notified.Its a rocky linux machine
+- The setups is the same.
+Because of the customer 
