@@ -158,3 +158,56 @@ StorageClass or access mode mismatches
 kubectl describe pod <pod-name>
 Ensure init containers completed successfully.
 
+- When you restart the node it has so many pods, it will affect the other apps , how ill you resolve
+Delete from kubernetes ui dashboard
+or will delete from cli
+
+- In liveness and readiness probes 
+- How to troubelshoot
+- You will be checking the health of the appication
+- if your nog going thru 200 ok status codes
+
+AWS - Apps Services.
+In AWS which services u used.
+I used s3, cloud watch, sns, ses, Cloud Trail.
+Subscription topics email alerts snet to integration on slack and emails
+Used VPC
+- EKS cluster creation 
+- Configration of cluster - How much amont of space
+- os used
+
+Services your creating manually or automatically 
+we have EKS cluster is fixed
+our iac we have terraform 
+write scripts to that terraform 
+aiutomatically creates services
+inside the reddis rabbit ma clyster
+in terraform how your maintaing state files
+lets assuem multiple environment - pre prod prod
+we are using work space
+each work space for dev pre prod qa 
+each workspace acts like a configuration file and we were cretaing workspaece for environmens
+configyration for each workspace.
+
+to recover the lost workspace
+i ill be using the locking mechaism also make sure whichever cloud i am using s3 i il be using 
+whatver data is there its stored
+make sure it doesnt load
+
+bit bucket 
+any idea on github actions - using individually git github acrtions helps
+
+jenkins
+git git hub actions
+ci cd area
+setup any pipelines
+java python any kind of microservices enterprise popleine
+multi branch for deployment and auto deployment
+but on approval basis
+cloud knowlegde
+AWS 
+On - Premises server 
+AWS lambda functiones
+Terraform
+Helm 
+EKS
