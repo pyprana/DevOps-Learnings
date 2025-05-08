@@ -44,6 +44,23 @@ are tested and ready.
 - They would set up notifications (for example, via email or Slack) based on build outcomes or metrics thresholds and might also use Jenkins Pipeline steps to embed monitoring 
   and logging checks directly within CI/CD processes.
 
+Jenkins build agents are maintained to ensure scalability, reliability, and efficiency in CI/CD pipelines. Here's a breakdown:
+
+- How Jenkins Build Agents Are Maintained
+1. Provisioning	Agents can be static (manually installed) or dynamic (via Docker, Kubernetes, EC2).
+2. Communication	Maintained using JNLP, SSH, or WebSocket.
+3. Updates	Periodic updates to the Jenkins agent binaries, plugins, and Java runtime.
+4. Scaling	Auto-scaled using cloud plugins (e.g., EC2, Kubernetes, Docker).
+5. Monitoring	Use Jenkins UI, Prometheus metrics, or logs for health monitoring.
+6. Cleanup	Clean workspaces post-build using scripts or built-in options.
+7. Security	Control access via credentials, firewall rules, and role-based access.
+8. Recovery	Use scripts or infrastructure tools (Ansible, Terraform) to auto-recreate failed agents.
+
+- Examples of Maintenance Activities:
+- Restart unresponsive agents via script or Jenkins UI.
+- Auto-remove idle agents after timeout.
+- Rotate credentials/tokens used by agents.
+- Patch/update agent OS or Docker images.
 
 1. How do you install Jenkins on a Linux server?
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
