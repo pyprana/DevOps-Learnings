@@ -62,6 +62,72 @@ Jenkins build agents are maintained to ensure scalability, reliability, and effi
 - Rotate credentials/tokens used by agents.
 - Patch/update agent OS or Docker images.
 
+1. Jenkins Agent in Docker (Dynamic Provisioning)
+
+# Run Jenkins agent using Docker
+docker run -d \
+  --name jenkins-agent-01 \
+  -e JENKINS_URL=http://<jenkins-master>:8080 \
+  -e JENKINS_AGENT_SECRET=<agent-secret> \
+  -e JENKINS_AGENT_NAME=agent-01 \
+  jenkins/inbound-agent
+Use --restart=always for auto-restart on failure.
+
+2. Jenkins Agent on Kubernetes (yaml template)
+# kubernetes-agent.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    jenkins: agent
+  name: jenkins-agent
+spec:
+  containers:
+  - name: jenkins-agent
+    image: jenkins/inbound-agent
+    env:
+    - name: JENKINS_URL
+      value: "http://jenkins-master:8080"
+    - name: JENKINS_AGENT_NAME
+      value: "k8s-agent"
+    - name: JENKINS_SECRET
+      valueFrom:
+        secretKeyRef:
+          name: jenkins-agent-secret
+          key: secret
+
+3. Agent Auto-Restart Script (Linux Cron Job)
+#!/bin/bash
+# Check and restart agent if not running
+if ! pgrep -f "jenkins-agent.jar"; then
+  echo "Jenkins agent down, restarting..."
+  nohup java -jar /opt/jenkins-agent/agent.jar -jnlpUrl <JNLP_URL> -secret <SECRET> &
+fi
+Add to cron: */5 * * * * /opt/scripts/check_agent.sh
+
+4. Auto Clean Jenkins Workspace (Post-build)
+#!/bin/bash
+# Clean all workspaces older than 7 days
+find /var/lib/jenkins/workspace/* -mtime +7 -exec rm -rf {} \;
+
+Add as a periodic Jenkins job or post-build step.
+
+5. Secure Agent SSH Setup (Ansible snippet)
+- name: Setup Jenkins Agent
+  hosts: jenkins_agents
+  become: yes
+  tasks:
+    - name: Create jenkins user
+      user:
+        name: jenkins
+        shell: /bin/bash
+
+    - name: Copy public SSH key
+      authorized_key:
+        user: jenkins
+        key: "{{ lookup('file', '/path/to/jenkins_master_id_rsa.pub') }}"
+
+
 1. How do you install Jenkins on a Linux server?
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
 sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
