@@ -53,3 +53,26 @@ Q - How do ¥ou do the node maintenance in kubernetes
 - Use --force only if needed (it can cause disruptions).
 - Monitor the node status:
 - kubectl get nodes
+
+Q - Liveness Probe in Kubernetes is a health check mechanism used to determine if a container is still running properly.
+  - What: A periodic check to verify if the application inside a container is alive.
+  - Why: To automatically restart the container if it's stuck or unresponsive.
+  - When: Used when your app might hang but still appear "running" (e.g., infinite loop, deadlock).
+  - Where: Defined in the pod spec under containers → livenessProbe.
+
+- Example (HTTP Check):
+- yaml
+livenessProbe:
+  httpGet:
+    path: /healthz
+    port: 8080
+  initialDelaySeconds: 5
+  periodSeconds: 10
+
+- Types:
+- httpGet: Hits an HTTP endpoint.
+
+- tcpSocket: Checks if a TCP port is open.
+
+- exec: Runs a command inside the container.
+
