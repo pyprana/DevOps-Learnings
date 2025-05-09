@@ -1,0 +1,55 @@
+1. What is Hypervisor?
+- A hypervisor is a software that makes virtualization possible. It is also called Virtual Machine Monitor. 
+- It divides the host system and allocates the resources to each divided virtual environment. You can basically have multiple OS on a single host system. 
+- There are two types of Hypervisors:
+
+- Type 1: It’s also called Native Hypervisor or Bare metal Hypervisor. It runs directly on the underlying host system. 
+- It has direct access to your host’s system hardware and hence does not require a base server operating system.
+- Type 2: This kind of hypervisor makes use of the underlying host operating system. It’s also called Hosted Hypervisor.
+
+2. What is virtualization?
+- Virtualization is the process of creating a software-based, virtual version of something(compute storage, servers, application, etc.). 
+- These virtual versions or environments are created from a single physical hardware system. 
+- Virtualization lets you split one system into many different sections which act like separate, distinct individual systems. 
+- A software called Hypervisor makes this kind of splitting possible. The virtual environment created by the hypervisor is called Virtual Machine.
+
+3. What is containerization?
+- Usually, in the software development process, code developed on one machine might not work perfectly fine on any other machine because of the dependencies. 
+- This problem was solved by the containerization concept. 
+- So basically, an application that is being developed and deployed is bundled and wrapped together with all its configuration files and dependencies. 
+- This bundle is called a container. 
+- Now when you wish to run the application on another system, the container is deployed which will give a bug-free environment as all the dependencies and libraries are wrapped 
+  together. Most famous containerization environments are Docker and Kubernetes.
+
+4. Difference between virtualization and containerization
+- The question could either be differences between virtualization and containerization or differences between virtual machines and containers. 
+- Containers provide an isolated environment for running the application. 
+- The entire user space is explicitly dedicated to the application. 
+- Any changes made inside the container is never reflected on the host or even other containers running on the same host. 
+- Containers are an abstraction of the application layer. Each container is a different application.
+- Whereas in Virtualization, hypervisors provide an entire virtual machine to the guest(including Kernal). 
+- Virtual machines are an abstraction of the hardware layer. Each VM is a physical machine.
+
+5. What is Docker?
+- Since its a Docker interview, there will be an obvious question about what is Docker. Start with a small definition.
+- Docker is a containerization platform which packages your application and all its dependencies together in the form of containers so as to ensure that your application works
+  seamlessly in any environment, be it development, test or production. 
+- Docker containers, wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries, etc. 
+- It wraps basically anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.
+
+6. What is a Docker Container?
+- Docker containers include the application and all of its dependencies. 
+- It shares the kernel with other containers, running as isolated processes in user space on the host operating system. 
+- Docker containers are not tied to any specific infrastructure: they run on any computer, on any infrastructure, and in any cloud. 
+- Docker containers are basically runtime instances of Docker images.
+
+7. What are Docker Images?
+- When you mention Docker images, your very next question will be “what are Docker images”.
+- Docker image is the source of Docker container. In other words, Docker images are used to create containers. 
+- When a user runs a Docker image, an instance of a container is created. These docker images can be deployed to any Docker environment.
+
+8. What is Docker Hub?
+- Docker images create docker containers. There has to be a registry where these docker images live. 
+- This registry is Docker Hub. Users can pick up images from Docker Hub and use them to create customized images and containers. Currently, the Docker Hub is the world’s largest public repository of image containers.
+
+
