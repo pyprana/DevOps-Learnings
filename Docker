@@ -50,6 +50,93 @@
 
 8. What is Docker Hub?
 - Docker images create docker containers. There has to be a registry where these docker images live. 
-- This registry is Docker Hub. Users can pick up images from Docker Hub and use them to create customized images and containers. Currently, the Docker Hub is the world’s largest public repository of image containers.
+- This registry is Docker Hub. Users can pick up images from Docker Hub and use them to create customized images and containers. Currently,
+  the Docker Hub is the world’s largest public repository of image containers.
 
+9. Explain Docker Architecture?
+- Docker Architecture consists of a Docker Engine which is a client-server application with three major components:
+- A server which is a type of long-running program called a daemon process (the docker command).
+- A REST API which specifies interfaces that programs can use to talk to the daemon and instruct it what to do.
+- A command line interface (CLI) client (the docker command).
+- The CLI uses the Docker REST API to control or interact with the Docker daemon through scripting or direct CLI commands. 
+- Many other Docker applications use the underlying API and CLI.
 
+- Tell us something about Docker Compose.
+- Docker Compose is a YAML file which contains details about the services, networks, and volumes for setting up the Docker application. 
+- So, you can use Docker Compose to create separate containers, host them and get them to communicate with each other. 
+- Each container will expose a port for communicating with other containers
+
+- What is Docker Swarm?
+- Docker Swarm is native clustering for Docker. 
+- It turns a pool of Docker hosts into a single, virtual Docker host. 
+- Docker Swarm serves the standard Docker API, any tool that already communicates with a Docker daemon can use Swarm to transparently scale to multiple hosts.
+
+- What is a Docker Namespace?
+- A namespace is one of the Linux features and an important concept of containers.
+- Namespace adds a layer of isolation in containers. 
+- Docker provides various namespaces in order to stay portable and not affect the underlying host system. 
+- Few namespace types supported by Docker – PID, Mount, IPC, User, Network
+
+What is the lifecycle of a Docker Container?
+- Docker containers have the following lifecycle:
+- Create a container
+- Run the container
+- Pause the container(optional)
+- Un-pause the container(optional)
+- Start the container
+- Stop the container
+- Restart the container
+- Kill the container
+- Destroy the container
+
+- What is Docker Machine?
+- Docker machine is a tool that lets you install Docker Engine on virtual hosts.
+- These hosts can now be managed using the docker-machine commands. 
+- Docker machine also lets you provision Docker Swarm Clusters.
+
+- How to check for Docker Client and Docker Server version?
+- The following command gives you information about Docker Client and Server versions:
+$ docker version
+
+- How do you get the number of containers running, paused and stopped?
+- You can use the following command to get detailed information about the docker installed on your system.
+
+- $ docker info
+
+- You can get the number of containers running, paused, stopped, the number of images and a lot more
+- If you vaguely remember the command and you’d like to confirm it, how will you get help on that particular command?
+- The following command is very useful as it gives you help on how to use a command, the syntax, etc.
+
+- $ docker --help
+
+- The above command lists all Docker commands. If you need help with one specific command, you can use the following syntax:
+
+- $ docker <command> --help
+
+- How to login into docker repository?
+- You can use the following command to login into hub.docker.com:
+
+- $ docker login
+
+- You’ll be prompted for your username and password, insert those and congratulations, you’re logged in.
+
+- If you wish to use a base image and make modifications or personalize it, how do you do that?
+- You pull an image from docker hub onto your local system
+- It’s one simple command to pull an image from docker hub:
+- $ docker pull <image_name>
+
+21. How do you create a docker container from an image?
+- Pull an image from docker repository with the above command and run it to create a container. Use the following command:
+- $ docker run -it -d <image_name>
+- Most probably the next question would be, what does the ‘-d’ flag mean in the command?
+- d means the container needs to start in the detached mode. 
+- 
+
+- The following command lists down all the running containers:
+
+- $ docker ps
+
+- Suppose you have 3 containers running and out of these, you wish to access one of them. How do you access a running container?
+- The following command lets us access a running container:
+- $ docker exec -it <container id> bash
+- The exec command lets you get inside a container and work with it.
