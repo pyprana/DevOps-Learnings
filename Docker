@@ -140,3 +140,29 @@ $ docker version
 - The following command lets us access a running container:
 - $ docker exec -it <container id> bash
 - The exec command lets you get inside a container and work with it.
+
+- How to start, stop and kill a container?
+- The following command is used to start a docker container:
+- $ docker start <container_id>
+- and the following for stopping a running container:
+- $ docker stop <container_id>
+- kill a container with the following command:
+- $ docker kill <container_id>
+
+- Once you’ve worked with an image, how do you push it to docker hub?
+- $ docker push <username/image name>
+
+- How to delete a stopped container?
+- Use the following command to delete a stopped container:
+- $ docker rm <container id>
+
+- How to delete an image from the local storage system?
+- The following command lets you delete an image from the local system:
+- $ docker rmi <image-id>
+
+- How to build a Dockerfile? 
+- Once you’ve written a Dockerfile, you need to build it to create an image with those specifications. Use the following command to build a Dockerfile:
+- $ docker build <path to docker file>
+- The next question would be when do you use “.dockerfile_name” and when to use the entire path?
+- Use “.dockerfile_name” when the dockerfile exits in the same file directory and you use the entire path if it lives somewhere else.
+
