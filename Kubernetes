@@ -12,7 +12,7 @@ A - Check Pod Status: Use the command kubectl get pods to check the status of th
   - Inspect YAML: Review the pod's YAML configuration for any misconfigurations.
 
 Q - How Kubernetes handle network communication between containers..?
-A - Kubernetes uses a flat, cluster-wide networ ko let all the pods communicate directly.
+A - Kubernetes uses a flat, cluster-wide network let all the pods communicate directly.
   - To ensure seamless communication between contaoners, services and external systems.
   - Used when pods need to talk to each other across namespaces or nodes.
   - Handled via CNI(Container Network Interface) plugins. E.,(Calico, Flannel, Cilum).
@@ -30,3 +30,26 @@ A - By default, secrets mounted as environment variables or through volume mount
   - Read the secret from the file each time it's needed.
   - Watch the file for changes and reload the configuration.
 
+Q - How do ¥ou do the node maintenance in kubernetes
+  - Node maintenance in Kubernetes is done to update, patch, or reboot a node without disrupting workloads. Here's how you do it step-by-step:
+  - Steps to Perform Node Maintenance:
+  - Cordon the Node (mark unschedulable):
+
+- kubectl cordon <node-name>
+- Prevents new pods from being scheduled on the node.
+- Drain the Node (evict pods):
+- kubectl drain <node-name> --ignore-daemonsets --delete-emptydir-data
+- Safely evicts all pods (except DaemonSets and mirror pods).
+- Perform Maintenance:
+- OS patching
+- Kernel upgrade
+- Hardware updates
+- Reboot, etc.
+- Uncordon the Node (make schedulable):
+- kubectl uncordon <node-name>
+
+⚠️ Considerations:
+- Ensure PodDisruptionBudgets (PDBs) are respected.
+- Use --force only if needed (it can cause disruptions).
+- Monitor the node status:
+- kubectl get nodes
