@@ -13,7 +13,7 @@ A - Check Pod Status: Use the command kubectl get pods to check the status of th
 
 Q - How Kubernetes handle network communication between containers..?
 A - Kubernetes uses a flat, cluster-wide network let all the pods communicate directly.
-  - To ensure seamless communication between contaoners, services and external systems.
+  - To ensure seamless communication between containers, services and external systems.
   - Used when pods need to talk to each other across namespaces or nodes.
   - Handled via CNI(Container Network Interface) plugins. E.,(Calico, Flannel, Cilum).
   - Examples - Pod-to-Pod:curl<pod-ip>
