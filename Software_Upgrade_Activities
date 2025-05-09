@@ -1,0 +1,50 @@
+
+- Software Upgrade Activities
+- Version Compatibility Check:
+- Confirm that the new software version is compatible with OS, database, middleware, and application components.
+
+- Pre-Upgrade Backup:
+- Take complete backups or snapshots of the application, databases, and configurations to ensure rollback capability.
+
+- Change Management and Approval:
+- Raise a change request and get approvals from the Change Advisory Board (CAB) before proceeding.
+
+- Maintenance Window Planning:
+- Schedule the upgrade during a low-traffic period to minimize user impact, often late nights or weekends.
+
+- Upgrade Execution:
+- Deploy the new software version using automated or manual steps depending on the system setup.
+
+- Sanity and Smoke Testing:
+- Post-upgrade, quickly verify key functionality (UI, APIs, logins, database connectivity) to ensure the system is operational.
+
+- Monitoring and Logs Validation:
+- Check logs and monitor system metrics like CPU, memory, and application errors to detect issues early.
+
+- Rollback Plan Execution (if needed):
+- If any major issues are found, revert to the previous working state using the backup or snapshot.
+
+- Hardware Upgrade Activities
+- Assessment and Capacity Planning:
+- Identify performance bottlenecks or capacity issues (CPU, RAM, disk, network) that justify a hardware upgrade.
+
+- Procurement and Setup:
+- Order new hardware and physically install it in the data center or integrate new cloud resources.
+
+- Firmware and BIOS Update:
+- Upgrade the firmware or BIOS on the new hardware to ensure stability and compatibility.
+
+- Configuration and Integration:
+- Set up operating systems, network configurations, and monitoring agents on the new hardware.
+
+- Data Migration:
+- Transfer data from old systems using cloning, rsync, or database replication techniques.
+
+- Validation and Testing:
+- Perform system validation to confirm that hardware is working as expected (network, disk I/O, application behavior).
+
+- Cutover to New Hardware:
+- Redirect traffic or workloads to the upgraded hardware using DNS changes, load balancers, or switchover scripts.
+
+- Decommission Old Systems (if required):
+- Once new systems are stable, safely retire the older hardware after wiping sensitive data.
