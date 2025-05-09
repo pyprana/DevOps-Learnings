@@ -1,15 +1,15 @@
 Kubernetes
 Q - How you manage secrets and variables in Kubernetes?
 A - Secrets: Store and manage sensitive data securely.
-- ConfigMaps: Store and manage non-sensitive configuration data.
-- Both can be used in pods as volumes or environment variables for secure and efficient configuration management.
+  - ConfigMaps: Store and manage non-sensitive configuration data.
+  - Both can be used in pods as volumes or environment variables for secure and efficient configuration management.
 
-Q - How to troubleshot issues when  pod failed?
+Q - How to troubleshoot issues when  pod failed?
 A - Check Pod Status: Use the command kubectl get pods to check the status of the pod.
-- Describe Pod: Use kubectl describe pod <pod-name> to get detailed information about the pod, including events and error messages.
-- View Logs: Use kubectl logs <pod-name> to view the logs of the pod's containers for error messages.
-- Check Events: Use kubectl get events to check for cluster-wide events that might affect the pod.
-- Inspect YAML: Review the pod's YAML configuration for any misconfigurations.
+  - Describe Pod: Use kubectl describe pod <pod-name> to get detailed information about the pod, including events and error messages.
+  - View Logs: Use kubectl logs <pod-name> to view the logs of the pod's containers for error messages.
+  - Check Events: Use kubectl get events to check for cluster-wide events that might affect the pod.
+  - Inspect YAML: Review the pod's YAML configuration for any misconfigurations.
 
 Q - How Kubernetes handle network communication between containers..?
 A - Kubernetes uses a flat, cluster-wide networ ko let all the pods communicate directly.
@@ -20,3 +20,13 @@ A - Kubernetes uses a flat, cluster-wide networ ko let all the pods communicate 
   - Pod-to-Service: curl
   - http://service-name>
   - Across Nodes : CNI ensures routing between pods on different nodes.
+
+Q - I want to update the secrets Without restarting app?
+A - By default, secrets mounted as environment variables or through volume mounts won't reflect changes unless the pod is restarted. 
+  - To avoid restarts:
+  - Use CSI Secret Store Drivers like AWS Secrets Manager CSI Driver or HashiCorp Vault Agent Injector. 
+  - These allow secrets to be dynamically fetched and updated in the mounted file system.
+  - Your application must be designed to either:
+  - Read the secret from the file each time it's needed.
+  - Watch the file for changes and reload the configuration.
+
