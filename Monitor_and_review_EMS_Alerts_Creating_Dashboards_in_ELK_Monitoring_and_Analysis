@@ -1,1 +1,76 @@
-Monitor and review EMS Alerts, Creating Dashboards in ELK, Monitoring and Analysis
+- Monitor and review EMS Alerts, Creating Dashboards in ELK, Monitoring and Analysis
+
+1. Monitor and Review EMS Alerts
+- What:
+- EMS (Event Management System) alerts are generated based on logs, metrics, or threshold breaches.
+-  You’re expected to review alerts for accuracy, severity, and business impact.
+- Expectations:
+- Acknowledge, prioritize, and triage alerts.
+- Perform root cause analysis (RCA).
+- Escalate to respective teams with proper details.
+- Fine-tune alert rules to reduce false positives.
+- Tools:
+- PagerDuty, Opsgenie, ServiceNow, Prometheus, Zabbix, or custom tools integrated with ELK.
+
+2. Creating Dashboards in ELK
+- What:
+- Build visualizations in Kibana using Elasticsearch indices.
+- Expectations:
+- Create dynamic dashboards for logs, application performance, and infrastructure metrics.
+- Use filters, aggregations, and visualizations (e.g., bar, pie, time-series).
+- Share dashboards with teams for proactive monitoring and alerting.
+- Skills Needed:
+- Kibana query language, Lucene/Elasticsearch queries, JSON mappings.
+- Understand log structure from Logstash/Beats or Filebeat pipelines.
+
+3. Monitoring and Analysis
+- What:Ongoing observation and deep dive into system and application behavior.
+- Expectations:
+- Monitor logs and metrics for anomalies, trends, and performance issues.
+- Identify recurring issues and create proactive detection logic.
+- Correlate logs from multiple systems/services for incident insights.
+- Skills:
+- Log parsing, time-series analysis, usage of Kibana, Grafana, or Prometheus.
+- Ability to write scripts (Python/Shell) for automated analysis or remediation.
+
+- Here’s an example of a complex Kibana dashboard designed for monitoring a production web application, including filters, multiple visualizations, and useful panels:
+- Dashboard Name: Production App Monitoring Dashboard
+- Global Filters (Top Panel)
+- Environment: production | staging
+- Service: frontend | backend | auth-service
+- HTTP Status: 200 | 400 | 500
+- Time Range: Last 15 min, 1 hour, 24 hours
+- Visualizations
+- Time Series – Request Rate (Line Chart)
+- Index: logs-*
+- X-axis: @timestamp (date histogram)
+- Y-axis: Count
+- Split: service.name.keyword
+- Shows: Number of HTTP requests per service over time.
+- Error Rate by Service (Stacked Bar Chart)
+- Y-axis: Count
+- Split by: http.status_code.keyword
+- Grouped by: service.name.keyword
+- Filters: status >= 400
+
+- Top 10 Slow Endpoints (Data Table)
+- Aggregation: terms on url.path.keyword
+- Metric: avg(response_time)
+- Sorted by highest average response time.
+- Geo Map – Client IPs
+- Field: client.geo.location
+- Shows origin of requests on a map (requires geo data in logs).
+- System Health – CPU/Memory (Metric + Gauge)
+- Source: Metricbeat or custom Beats
+- Metrics: system.cpu.percent, system.memory.used.pct
+
+- Group by: host.name
+- Failed Logins (Line or Pie Chart)
+- Field: event.outcome = "failure"
+- Grouped by: user.name.keyword
+- Log Volume by Level (Pie Chart)
+- Field: log.level.keyword
+- Values: info, warn, error, debug
+- Example Filter Query
+kql
+service.name: "auth-service" and http.status_code >= 500 and environment: "production"
