@@ -1,16 +1,16 @@
-Def: A Dockerfile(script file) consists of instructions to build a Docker image.
+- Def: A Dockerfile(script file) consists of instructions to build a Docker image.
 
-When : When you want to package an app + dependencies into a portable container.
+- When : When you want to package an app + dependencies into a portable container.
 
-Where : Written in project directory (Dockerfile file), built using docker build.
+- Where : Written in project directory (Dockerfile file), built using docker build.
 
-Why : To automate creating consistent, repeatable, portable containers across environments.
+- Why : To automate creating consistent, repeatable, portable containers across environments.
 
-Dockerfile vs Docker Image: Dockerfile is instructions; Docker Image is the result.
+- Dockerfile vs Docker Image: Dockerfile is instructions; Docker Image is the result.
 
-Usage : Build stateless microservices (e.g., API servers, backend apps) using Dockerfiles for scalable deployment across AWS ECS, Kubernetes, Azure AKS.
+- Usage : Build stateless microservices (e.g., API servers, backend apps) using Dockerfiles for scalable deployment across AWS ECS, Kubernetes, Azure AKS.
 
-Key components include:
+- Key components include:
 
 Instruction Purpose
 FROM - Base image (e.g., ubuntu, node, etc.)
