@@ -1,0 +1,21 @@
+- Tomcat
+- Tomcat is an open-source web server and servlet container developed by the Apache Software Foundation.
+
+- What:
+- A Java-based server that runs Java Servlets and JavaServer Pages (JSP).
+
+- Implements Java EE specifications like Servlet, JSP, and WebSocket.
+
+- Why:
+- To deploy and run Java web applications.
+
+- Lightweight and easy to configure compared to full Java EE servers like JBoss or WebLogic.
+
+- When:
+- Used when hosting web apps built in Java, especially REST APIs, JSP apps, etc.
+
+- Where:
+- Commonly deployed in Linux servers, cloud environments (AWS, Azure), or local development machines.
+
+- Example Use Case:
+- Deploying a .war (Web Application Archive) file to Tomcat to serve a Java web app.
