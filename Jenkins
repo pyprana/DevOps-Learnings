@@ -27,6 +27,65 @@ vi.) Build Trigger Jobs
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+- Maven vs Gradle – Key Differences:
+- Build Language:
+- Maven: Uses XML (pom.xml) – verbose and rigid.
+- Gradle: Uses Groovy or Kotlin DSL – concise and flexible.
+
+- Performance:
+- Maven: Slower due to lack of build caching and parallelism.
+- Gradle: Faster with incremental builds and build cache.
+
+- Dependency Management:
+- Both use repositories like Maven Central. Gradle provides more fine-grained control.
+
+- Customizability:
+- Maven: Convention over configuration; customization is harder.
+- Gradle: Highly customizable.
+
+- IDE Support:
+- Both well-supported by IntelliJ IDEA, Eclipse, etc.
+- Gradle is preferred for large, performance-critical, and modular projects. Maven suits simpler, stable setups.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- To trigger a Jenkins job immediately after a GitHub commit, use Webhook-based GitHub Integration. Here's the approach:
+
+- Steps to Follow:
+- Install GitHub Plugin in Jenkins
+
+- Go to Jenkins → Manage Jenkins → Plugins → Install GitHub Integration Plugin.
+
+- Configure Jenkins Job
+
+- Create a Pipeline/Freestyle job.
+
+- In "Build Triggers", check GitHub hook trigger for GITScm polling.
+
+- Generate GitHub Webhook
+
+- Go to your GitHub repo → Settings → Webhooks → Add webhook.
+
+- URL: http://<jenkins-server>/github-webhook/
+
+- Content type: application/json
+
+- Select trigger event: Just the push event.
+
+- Ensure GitHub & Jenkins Authentication
+
+- Use GitHub token if repo is private.
+
+- Ensure Jenkins has internet access or GitHub can reach Jenkins (if self-hosted, use ngrok or expose Jenkins).
+
+- Test
+
+- Commit to GitHub.
+
+- Jenkins job should auto-trigger.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Q - Differnce between multi branch and pipeline script?
 - A Multi-branch Pipeline in Jenkins is used when your project has multiple branches (like in Git), and you want Jenkins to automatically detect and create separate jobs for each
   branch. 
