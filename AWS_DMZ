@@ -37,70 +37,63 @@ f. Data Transformation Rules
 g. Validation & Monitoring
 - Tools: CloudWatch logs, DMS console, validation reports.
 
-Why: Track progress, errors, throughput, latency.
+- Why: Track progress, errors, throughput, latency.
 
 h. Homogeneous vs Heterogeneous Migration
-Type	Tools Needed	Example
-Homogeneous	DMS only	MySQL → RDS MySQL
-Heterogeneous	SCT + DMS	Oracle → Amazon Aurora
+Type	          Tools Needed	    Example
+Homogeneous	    DMS only	        MySQL → RDS MySQL
+Heterogeneous	  SCT + DMS	        Oracle → Amazon Aurora
 
-🧑‍💼 Who Uses AWS DMS?
-DBAs
+i. Who Uses AWS DMS?
+- DBAs
+- Cloud Migration Engineers
+- DevOps teams during cloud adoption
 
-Cloud Migration Engineers
+j. When to Use AWS DMS?
+- On-prem to cloud DB migration
+- Cross-region replication
+- DB engine upgrade
+- Live migration with minimal downtime
 
-DevOps teams during cloud adoption
+k. Where It Fits in Architecture
+- Used during cloud migration
+- Part of hybrid or multi-cloud strategies
+- Combined with Data Lakes for ingestion
 
-⏱️ When to Use AWS DMS?
-On-prem to cloud DB migration
+- Why Use AWS DMS?
+- No downtime
 
-Cross-region replication
+- Supports major DB engines
 
-DB engine upgrade
+- Scales with replication instances
 
-Live migration with minimal downtime
+- CDC ensures real-time sync
 
-🗺️ Where It Fits in Architecture
-Used during cloud migration
+- Supported DB Engines
+- Source & Target Examples:
 
-Part of hybrid or multi-cloud strategies
+- MySQL, PostgreSQL, Oracle, MS SQL, MongoDB, MariaDB, Amazon Aurora, Amazon Redshift
 
-Combined with Data Lakes for ingestion
+- Example Use Case
+- Scenario: Migrate on-prem Oracle to Amazon Aurora PostgreSQL with zero downtime.
 
-✅ Why Use AWS DMS?
-No downtime
+- Steps:
 
-Supports major DB engines
+- Use SCT to convert schema
 
-Scales with replication instances
+- Create replication instance
 
-CDC ensures real-time sync
+- Configure source and target endpoints
 
-📦 Supported DB Engines
-Source & Target Examples:
+- Create task with Full Load + CDC
 
-MySQL, PostgreSQL, Oracle, MS SQL, MongoDB, MariaDB, Amazon Aurora, Amazon Redshift
+- Monitor and validate migration
 
-💡 Example Use Case
-Scenario: Migrate on-prem Oracle to Amazon Aurora PostgreSQL with zero downtime.
+- Production Best Practices
+- Use Multi-AZ replication instance
 
-Steps:
+- Enable logging and alerts
 
-Use SCT to convert schema
+- Run data validation
 
-Create replication instance
-
-Configure source and target endpoints
-
-Create task with Full Load + CDC
-
-Monitor and validate migration
-
-🔄 Production Best Practices
-Use Multi-AZ replication instance
-
-Enable logging and alerts
-
-Run data validation
-
-Monitor CDC lag for real-time migration
+- Monitor CDC lag for real-time migration
