@@ -33,6 +33,25 @@
 - bash
 - sudo systemctl start apache2
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- The primary purpose of Apache httpd is to serve web content (HTML, images, scripts) to clients (usually browsers) over the HTTP/HTTPS protocols.
+
+- Core Functions:
+- Deliver static content (e.g., HTML, CSS, JS, images).
+
+- Interface with dynamic content via CGI, PHP, or reverse proxy.
+
+- Handle virtual hosting (multiple websites on one server).
+
+- Provide SSL/TLS encryption.
+
+- Support URL rewriting, redirects, and access control.
+
+- Used widely in traditional LAMP stack deployments.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 - Set up a load-balanced cluster using Apache with the mod_proxy and mod_proxy_balancer modules.
 
 - Objective:
