@@ -1,0 +1,14 @@
+- JBoss is a Java-based application server developed by Red Hat, used to deploy and manage Java EE (Jakarta EE) applications.
+- Key Points:
+- What: Open-source Java application server (now called WildFly).
+- Why: To run enterprise Java apps (EJBs, Servlets, JSPs) on a reliable, scalable platform.
+- When: Used in environments needing full Java EE support (e.g., banking, ERP).
+- Where: Deployed on Linux/Windows servers; integrates with CI/CD, monitoring tools.
+- How: Deployed using WAR/EAR files; managed via CLI, admin console, or scripts.
+
+- Features:
+- Support for clustering, load balancing
+- JMS (Java Messaging), JTA (Transactions)
+- Integrated security and management
+- RESTful Web Services support
+
