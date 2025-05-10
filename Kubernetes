@@ -111,3 +111,31 @@ spec:
       allowPrivilegeEscalation: false
       readOnlyRootFilesystem: true
 
+Q - Kubeconfig
+- Kubeconfig is a configuration file used by kubectl and other Kubernetes tools to authenticate and connect to a Kubernetes cluster.
+- Key Points:
+- What: YAML file that holds cluster info, user credentials, and context.
+- Why: To allow access and management of Kubernetes clusters securely.
+- Where: Usually located at ~/.kube/config on your local machine.
+- When: Required whenever you interact with a cluster using kubectl.
+
+- Example:
+yaml
+apiVersion: v1
+clusters:
+- cluster:
+    server: https://<cluster-endpoint>
+    certificate-authority: /path/to/ca.crt
+  name: my-cluster
+contexts:
+- context:
+    cluster: my-cluster
+    user: my-user
+  name: my-context
+current-context: my-context
+users:
+- name: my-user
+  user:
+    token: <authentication-token>
+
+
