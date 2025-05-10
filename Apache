@@ -52,6 +52,33 @@
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+- Common Use Cases of Apache HTTPD:
+- Static Website Hosting
+- Serve HTML, CSS, JavaScript, and image files for personal or company websites.
+
+- Reverse Proxy Server
+- Forward client requests to backend servers (e.g., Apache Tomcat, Nginx, Node.js).
+
+- Load Balancer
+- Distribute incoming traffic across multiple backend servers using mod_proxy_balancer.
+
+- Dynamic Web Hosting
+- Run PHP, Python, or Perl scripts using modules like mod_php, mod_wsgi, or CGI.
+
+- Virtual Hosting
+- Host multiple websites/domains on a single server using name-based or IP-based virtual hosts.
+
+- Secure File Delivery
+- Serve files over HTTPS using mod_ssl with authentication and access control.
+
+- Application Gateway
+- Serve as a gateway between users and web applications (e.g., WordPress, Django apps).
+
+- Custom URL Rewriting & Redirects
+- Use .htaccess and mod_rewrite to manage SEO-friendly URLs or redirect traffic.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 - Set up a load-balanced cluster using Apache with the mod_proxy and mod_proxy_balancer modules.
 
 - Objective:
