@@ -76,3 +76,38 @@ livenessProbe:
 
 - exec: Runs a command inside the container.
 
+Q - security context
+- Security Context in Kubernetes defines privilege and access control settings for Pods or containers.
+- What:
+- A securityContext is a YAML section in a Pod or container spec that sets rules like user ID (UID), group ID (GID), file permissions, and capabilities.
+- Why:
+- It helps improve security posture by limiting the container's access level and reducing risks like privilege escalation or running as root.
+- When:
+- Used when:
+- Enforcing non-root containers.
+- Needing read-only file systems.
+- Restricting Linux capabilities.
+- Enabling SELinux or AppArmor profiles.
+- Where:
+- Defined at two levels:
+- Pod level – applies to all containers.
+- Container level – overrides pod-level settings for that container.
+
+- Example:
+yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secure-pod
+spec:
+  securityContext:
+    runAsUser: 1000
+    runAsGroup: 3000
+    fsGroup: 2000
+  containers:
+  - name: app
+    image: nginx
+    securityContext:
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
+
