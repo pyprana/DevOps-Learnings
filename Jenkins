@@ -1,3 +1,32 @@
+-  In Jenkins what kind of jobs you prepared..?
+- In Jenkins, I prepared the following types of jobs:
+
+i.) Freestyle Jobs
+- Used for simple tasks like running shell scripts, copying files, or triggering other jobs.
+- Example: Backup jobs, cleanup scripts.
+
+ii.) Pipeline Jobs (Declarative & Scripted)
+- For complex CI/CD workflows using Jenkinsfile in Git.
+- Example: Full CI/CD pipeline (build → test → security scan → deploy → notify).
+
+iii.) Multibranch Pipeline Jobs
+- Automatically triggers jobs for each Git branch with a Jenkinsfile.
+- Example: Run separate pipelines for dev, staging, prod.
+
+iv) Parameterized Jobs
+- Takes inputs at runtime like environment, version, or branch.
+- Example: Manual deployment job with dropdown for environment.
+
+v.) Matrix Jobs
+- Runs the same job across multiple combinations (e.g., OS, Java versions).
+- Example: Cross-platform test automation.
+
+vi.) Build Trigger Jobs
+- Poll SCM, use webhooks, or trigger on schedule.
+- Example: Nightly builds or webhook-based auto deploy.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
 - We need to build an executable file out of this git.
 - This is called CI.
 - The famous tool we use is Jenkins.
