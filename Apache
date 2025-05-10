@@ -1,0 +1,34 @@
+- Apache webserver
+- Apache Web Server (also known as httpd) is an open-source web server software that delivers web content over the internet using the HTTP protocol.
+
+- What:
+- It serves static (HTML, images) and dynamic (via PHP, Python) content to clients.
+
+- Why:
+- Reliable, widely supported, modular, and configurable.
+
+- When:
+- Used when you need a flexible, stable web server for websites or backend services.
+
+- Where:
+- Runs on Linux, Windows, macOS. Commonly used in LAMP stacks (Linux, Apache, MySQL, PHP).
+
+- Key Features:
+- Virtual hosting (host multiple sites)
+
+- Loadable modules (e.g., mod_ssl, mod_rewrite)
+
+- .htaccess support for per-directory configs
+
+- SSL/TLS support
+
+- Example:
+- To install on Ubuntu:
+
+- bash
+- sudo apt update
+- sudo apt install apache2
+- To start the server:
+
+- bash
+- sudo systemctl start apache2
