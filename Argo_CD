@@ -1,0 +1,52 @@
+- Argo CD is an open-source, declarative GitOps continuous delivery tool for Kubernetes. 
+- It automates application deployment by syncing the desired state from a Git repository to a Kubernetes cluster. Argo CD continuously monitors Git repositories and compares the actual cluster state to the declared configuration. When differences are detected, it can alert users or automatically apply changes to bring the system into the desired state. 
+
+Argo Project
++11
+Spacelift
++11
+Home
++11
+
+Key Features:
+
+GitOps-based Deployment: Uses Git as the single source of truth, enabling declarative configuration and automated syncing with Kubernetes clusters.
+CircleCI
++3
+Spacelift
++3
+getambassador.io
++3
+
+Declarative Application Definitions: Supports Helm, Kustomize, Jsonnet, and plain YAML to define and manage application manifests.
+devtron.ai
++4
+Spacelift
++4
+Argo CD
++4
+
+Automated Synchronization: Automatically syncs Kubernetes resources with Git repositories, ensuring cluster state matches the desired state.
+Spacelift
++1
+Medium
++1
+
+Real-time Application Status Monitoring: Continuously monitors app health and sync status, with visual dashboards and diff views.
+Home
++5
+Spacelift
++5
+Argo CD
++5
+
+Role-based Access Control (RBAC): Provides fine-grained access controls for managing user permissions across projects and environments.
+Spacelift
+
+Multi-cluster Support: Manages deployments across multiple Kubernetes clusters from a single Argo CD instance.
+Spacelift
+
+Web UI and CLI: Offers a user-friendly web interface and CLI for managing applications, viewing diffs, and troubleshooting.
+Spacelift
+
+Argo CD is part of the Cloud Native Computing Foundation (CNCF) ecosystem and is widely adopted in modern Kubernetes deployment workflows. 
