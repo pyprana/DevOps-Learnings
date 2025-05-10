@@ -1,0 +1,45 @@
+- What is the process to switch on from on prem to dr and vice versa?
+- Switching from on-prem to Disaster Recovery (DR) site and back involves a structured failover and failback process:
+
+✅ 1. Failover: On-Prem ➜ DR Site
+- What it means: Redirecting workloads from the primary (on-prem) to the DR site due to failure or planned maintenance.
+
+- Steps:
+- Trigger DR Plan – Due to outage, maintenance, or disaster.
+
+- Notify Stakeholders – Inform teams and users.
+
+- Check DR Readiness – Ensure DR site VMs, DBs, services are up-to-date.
+
+- DNS/Route Switch – Update DNS, Load Balancer, or BGP routes to point to DR.
+
+- Start Critical Services – Apps, DBs, monitoring tools.
+
+- Verify Functionality – Run health checks and smoke tests.
+
+- Log Everything – Audit trail for future reference.
+
+2. Failback: DR Site ➜ On-Prem
+- What it means: Restoring services back to the original on-prem site once it's stable.
+
+- Steps:
+- Confirm On-Prem Recovery – Ensure infrastructure is restored.
+- Sync Data – Replicate updated data from DR to on-prem.
+- Prepare Systems – Restart apps, databases, configs on on-prem.
+- Switch DNS/Routes Back – Point traffic back to on-prem.
+- Run Smoke Tests – Validate functionality post-failback.
+
+- Deactivate DR – Shut down DR resources if no longer needed.
+
+- Post-Mortem/Reporting – Document learnings, update runbooks.
+
+- Tools Involved
+- DNS: Route53, Cloudflare, etc.
+
+- Replication: rsync, DRBD, cloud sync tools.
+
+- Backup: Veeam, Commvault.
+
+- Monitoring: ELK, Prometheus, Grafana.
+
+- Automation: Ansible, scripts, Runbooks.
