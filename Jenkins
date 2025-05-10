@@ -25,6 +25,20 @@ vi.) Build Trigger Jobs
 - Poll SCM, use webhooks, or trigger on schedule.
 - Example: Nightly builds or webhook-based auto deploy.
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - Differnce between multi branch and pipeline script?
+- A Multi-branch Pipeline in Jenkins is used when your project has multiple branches (like in Git), and you want Jenkins to automatically detect and create separate jobs for each
+  branch. 
+- It scans the repository and sets up individual pipelines per branch, each using its own Jenkinsfile stored in that branch.
+- This is ideal for teams using feature branches, pull requests, or GitFlow.
+
+- A Pipeline Script (also called a single pipeline job) is a standalone Jenkins job where you define the pipeline using a script. 
+- This script can be stored directly in Jenkins or fetched from SCM. It’s best suited for projects that don’t need separate pipelines per branch or have a simpler CI/CD structure.
+
+Key difference: Multi-branch pipelines handle branching automatically and are better for dynamic, branch-heavy workflows, while pipeline scripts are static and best for simpler, 
+single-stream development.
+
 ------------------------------------------------------------------------------------------------------------------------------------
 
 - We need to build an executable file out of this git.
