@@ -95,10 +95,10 @@ Q - Differnce between multi branch and pipeline script?
 - A Pipeline Script (also called a single pipeline job) is a standalone Jenkins job where you define the pipeline using a script. 
 - This script can be stored directly in Jenkins or fetched from SCM. It’s best suited for projects that don’t need separate pipelines per branch or have a simpler CI/CD structure.
 
-Key difference: Multi-branch pipelines handle branching automatically and are better for dynamic, branch-heavy workflows, while pipeline scripts are static and best for simpler, 
-single-stream development.
+- Key difference: Multi-branch pipelines handle branching automatically and are better for dynamic, branch-heavy workflows, while pipeline scripts are static and best for simpler, 
+  single-stream development.
 
-------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - We need to build an executable file out of this git.
 - This is called CI.
@@ -115,7 +115,7 @@ single-stream development.
 - We are packaging together and runnng it as a container.
 - We are using Docker and container to manage the apps.
 
-------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - What are shared libraries in Jenkins?
 - Shared libraries in Jenkins enable the reuse of scripts, steps, and variables across multiple Pipeline jobs.
@@ -126,11 +126,10 @@ single-stream development.
 
 - How would you implement blue/green deployments using Jenkins?
 - Blue/green deployments help reduce downtime and risk by running two identical environments ("blue" and "green") and switching traffic from one to the other after new changes 
-are tested and ready.
+  are tested and ready.
 
 - Developers need to deploy new versions to the inactive environment, perform health checks and tests, and then switch the traffic (often via load balancers). 
 - Skilled candidates would also mention rollback strategies they’d set up to prevent issues.
-
 
 - How do you integrate static code analysis tools into a Jenkins pipeline?
 - Static code analysis tools, such as SonarQube, Checkstyle, or FindBugs, help automatically analyze source code for potential errors, code smells, or security vulnerabilities.
@@ -146,7 +145,9 @@ are tested and ready.
 - They would set up notifications (for example, via email or Slack) based on build outcomes or metrics thresholds and might also use Jenkins Pipeline steps to embed monitoring 
   and logging checks directly within CI/CD processes.
 
-Jenkins build agents are maintained to ensure scalability, reliability, and efficiency in CI/CD pipelines. Here's a breakdown:
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- Jenkins build agents are maintained to ensure scalability, reliability, and efficiency in CI/CD pipelines. Here's a breakdown:
 
 - How Jenkins Build Agents Are Maintained
 1. Provisioning	Agents can be static (manually installed) or dynamic (via Docker, Kubernetes, EC2).
@@ -163,6 +164,8 @@ Jenkins build agents are maintained to ensure scalability, reliability, and effi
 - Auto-remove idle agents after timeout.
 - Rotate credentials/tokens used by agents.
 - Patch/update agent OS or Docker images.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 1. Jenkins Agent in Docker (Dynamic Provisioning)
 
@@ -229,6 +232,7 @@ Add as a periodic Jenkins job or post-build step.
         user: jenkins
         key: "{{ lookup('file', '/path/to/jenkins_master_id_rsa.pub') }}"
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 1. How do you install Jenkins on a Linux server?
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
@@ -310,133 +314,95 @@ Save
 - SonarQube: Add server in Jenkins + use withSonarQubeEnv
 
 15. Purpose of Jenkins REST API:
-Interact programmatically (trigger builds, get job status)
+- Interact programmatically (trigger builds, get job status)
 
-Example:
-
+- Example:
 bash
-Copy
-Edit
 curl -X POST http://jenkins/job/test/build --user user:token
+
 16. Troubleshoot a failing Jenkins build:
-Check console output logs
-
-Validate Jenkinsfile syntax
-
-Inspect environment variables
-
-Re-run with debug flags
-
-Check slave/agent status
+- Check console output logs
+- Validate Jenkinsfile syntax
+- Inspect environment variables
+- Re-run with debug flags
+- Check slave/agent status
 
 17. Optimize Jenkins performance:
-Use distributed builds (agents)
-
-Limit build history/logs
-
-Tune JVM memory
-
-Use Pipeline over Freestyle for heavy jobs
+- Use distributed builds (agents)
+- Limit build history/logs
+- Tune JVM memory
+- Use Pipeline over Freestyle for heavy jobs
 
 18. Manage state across Pipeline runs:
-Use stash/unstash to share artifacts
-
-Save metadata/state in shared storage (S3, DB)
-
-Use build parameters and artifacts
+- Use stash/unstash to share artifacts
+- Save metadata/state in shared storage (S3, DB)
+- Use build parameters and artifacts
 
 19. IaC strategies to manage Jenkins:
-Use Jenkins Configuration as Code (JCasC)
-
-Manage jobs with Job DSL plugin
-
-Version control Jenkinsfiles and configs
+- Use Jenkins Configuration as Code (JCasC)
+- Manage jobs with Job DSL plugin
+- Version control Jenkinsfiles and configs
 
 20. Jenkins with microservices:
-One pipeline per microservice repo
-
-Shared libraries for reuse
-
-Trigger downstream builds via build() or webhook
+- One pipeline per microservice repo
+- Shared libraries for reuse
+- Trigger downstream builds via build() or webhook
 
 21. End-to-end automation (CI/CD):
-SCM webhook → Jenkins → Build → Test → Security scan → Deploy (Dev → Staging → Prod)
-
-Use Jenkinsfile with stages for each step
+- SCM webhook → Jenkins → Build → Test → Security scan → Deploy (Dev → Staging → Prod)
+- Use Jenkinsfile with stages for each step
 
 22. High availability & disaster recovery:
-Active/passive HA (backup Jenkins master)
-
-Externalize state (e.g., NFS, S3, DB)
-
-Periodic backups + use containerized Jenkins
+- Active/passive HA (backup Jenkins master)
+- Externalize state (e.g., NFS, S3, DB)
+- Periodic backups + use containerized Jenkins
 
 23. Jenkins in DevSecOps:
-Integrate tools like SonarQube, Snyk, OWASP ZAP
-
-Add security gates in pipeline
-
-Automate secret scanning, dependency checks
+- Integrate tools like SonarQube, Snyk, OWASP ZAP
+- Add security gates in pipeline
+- Automate secret scanning, dependency checks
 
 24. Handle build failures:
-Use catchError or try-catch
-
-Notify via email/Slack
-
-Retry with retry() block
-
-Archive logs/artifacts for debugging
+- Use catchError or try-catch
+- Notify via email/Slack
+- Retry with retry() block
+- Archive logs/artifacts for debugging
 
 25. Manage Jenkins dependencies:
-Use shared libraries
-
-Use folder structure & inheritance
-
-Externalize configs to Git or Config-as-Code
+- Use shared libraries
+- Use folder structure & inheritance
+- Externalize configs to Git or Config-as-Code
 
 26. Creating custom Jenkins plugins:
-Use Java + Maven
-
-Extend Jenkins core APIs (Builder, Publisher)
-
-Package .hpi and deploy
+- Use Java + Maven
+- Extend Jenkins core APIs (Builder, Publisher)
+- Package .hpi and deploy
 
 27. Reusable & maintainable pipelines:
-Use Jenkins Shared Libraries
-
-Modular Jenkinsfiles (functions/stages)
-
-Version control pipeline scripts
+- Use Jenkins Shared Libraries
+- Modular Jenkinsfiles (functions/stages)
+- Version control pipeline scripts
 
 28. Best practices for credential management:
-Never hardcode secrets
-
-Use Credentials Plugin + bind securely
-
-Rotate secrets regularly
-
-Use Vault/Secrets Manager integrations
+- Never hardcode secrets
+- Use Credentials Plugin + bind securely
+- Rotate secrets regularly
+- Use Vault/Secrets Manager integrations
 
 29. Database migrations in Jenkins CI/CD:
-Add DB migration scripts (Liquibase/Flyway) in repo
-
-Jenkins stage → execute migration before/after deploy
-
-Add rollback mechanism
+- Add DB migration scripts (Liquibase/Flyway) in repo
+- Jenkins stage → execute migration before/after deploy
+- Add rollback mechanism
 
 30. Addressing Jenkins/plugin vulnerabilities:
-Update Jenkins/plugins regularly
+- Update Jenkins/plugins regularly
+- Subscribe to Jenkins security advisories
+- Audit logs
+- Use minimal plugin sets
 
-Subscribe to Jenkins security advisories
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Audit logs
-
-Use minimal plugin sets
-
-
-------------------------------------------------------------------------------------------------------------------------------------
-
-Parallel jobs in Jenkins mean multiple jobs or job stages run simultaneously, instead of waiting for each other to complete.
+- Parallel jobs in Jenkins mean multiple jobs or job stages run simultaneously, instead of waiting for each other to complete.
 
 - Where it's used:
 - In Pipelines, using parallel block to run stages together.
@@ -587,7 +553,7 @@ pipeline {
   }
 }
 
-------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Here’s a Helm + YAML setup to deploy Jenkins with Docker-based agents on Kubernetes:
 
