@@ -1,0 +1,60 @@
+- In SonarQube, rules are defined to enforce coding standards and detect bugs, code smells, or security vulnerabilities.
+
+- How to define rules in SonarQube:
+1. Use built-in rules
+- SonarQube comes with thousands of default rules for each language.
+
+- Go to: Quality Profiles → Select language → Activate/Deactivate rules.
+
+2. Customize existing rules
+- Click on a rule → Click “Activate” or “Deactivate” → Use “Activate in…” to apply it to a profile.
+
+- You can change severity or parameters of some rules (e.g., line length, cyclomatic complexity).
+
+3. Create custom rules
+- For Java: Use SonarQube Java Plugin API or XPath Rules for XML-based rules.
+
+- For JavaScript/TypeScript: Write custom ESLint rules and integrate them.
+
+- Generic way: Use external analyzers (like PMD, Checkstyle) and feed results via plugins.
+
+4. Using Quality Profiles
+- Create a custom profile → Add/modify rules → Assign to project.
+
+- Profile is applied when the project is analyzed.
+
+5. Rule templates (Advanced)
+- Some languages allow rule templates (e.g., XPath for XML or Java rules).
+
+- These can be cloned and customized.
+
+- Here’s a step-by-step example of how to activate a rule in a Quality Profile in SonarQube (UI method):
+
+✅ Example: Activate a rule in a Java Quality Profile
+- Scenario:
+- You want to enforce "Methods should not be too complex" rule in Java projects.
+
+🧭 Steps in SonarQube UI:
+- Login as an admin or a user with profile permissions.
+
+- Go to “Quality Profiles” from the top menu.
+
+- Click on the Java profile you want to modify (e.g., Sonar way or your custom one).
+
+- Use the search box to find the rule:
+
+- Example: search for cognitive complexity
+
+- Rule: "Methods should not be too complex"
+
+- Click the rule → Click “Activate” (if not already).
+
+- (Optional) Click “Change severity” to set it (e.g., Minor, Major, Critical).
+
+- (Optional) Set maximum complexity (e.g., 15) if the rule allows parameter changes.
+
+🔁 To apply the profile to your project:
+- Go to “Project Settings → Quality Profiles”.
+
+- Assign your updated profile to the project for the Java language.
+
