@@ -1,0 +1,20 @@
+MySQL in DevOps is primarily used as a database to store and manage application data during the development, testing, and production lifecycle. Here's how it helps:
+- Use of MySQL in DevOps:
+Application Data Storage:
+MySQL stores structured data like user info, transactions, logs, etc.
+
+CI/CD Integration:
+MySQL is used in pipelines to create, migrate, or seed databases during automated testing/deployments.
+
+Infrastructure as Code (IaC):
+DevOps uses tools like Ansible, Terraform, or Docker to provision and configure MySQL automatically.
+
+Monitoring & Backups:
+DevOps teams automate health checks, backups, and replication for MySQL in production.
+
+Rollback & Recovery:
+MySQL snapshots help in quick rollbacks during faulty deployments.
+
+Containerization:
+MySQL runs as a Docker container for isolated testing and consistent environments.
+
