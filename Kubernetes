@@ -138,4 +138,35 @@ users:
   user:
     token: <authentication-token>
 
+- Kubernetes supports multiple authentication mechanisms to verify who is making a request to the cluster API server. Here's a short breakdown:
+- Authentication Mechanisms in Kubernetes
+
+1.Static Token File
+- Simple bearer token file stored on API server.
+- Used in development or testing.
+- Example: Authorization: Bearer <token>
+
+2.Static Password File
+- Username-password pairs in a file.
+- Used with basic auth (discouraged in production).
+
+3.X.509 Client Certificates
+- TLS client certificates issued by a CA.
+- Common for service-to-service or admin authentication.
+
+4.Service Account Tokens
+- Automatically mounted into pods.
+- Used for in-cluster communication.
+
+5.OIDC (OpenID Connect)
+- Integrates with identity providers (e.g., Google, Azure AD).
+- Recommended for enterprise SSO use.
+
+6.Webhook Token Authentication
+- API server forwards credentials to external service.
+- Flexible, for custom auth logic.
+
+7.Authentication Proxy
+- Fronts the API server and handles user auth.
+
 
