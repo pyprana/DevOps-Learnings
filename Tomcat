@@ -19,3 +19,42 @@
 
 - Example Use Case:
 - Deploying a .war (Web Application Archive) file to Tomcat to serve a Java web app.
+
+- How to define paramaters
+- In Tomcat, parameters can be defined in several ways depending on what you need:
+
+1. Web Application Parameters (web.xml)
+- Defined inside your app’s WEB-INF/web.xml.
+
+xml
+<context-param>
+  <param-name>env</param-name>
+  <param-value>production</param-value>
+</context-param>
+
+2. Servlet Init Parameters
+Specific to a servlet.
+
+xml
+<servlet>
+  <servlet-name>MyServlet</servlet-name>
+  <servlet-class>com.example.MyServlet</servlet-class>
+  <init-param>
+    <param-name>configPath</param-name>
+    <param-value>/etc/config</param-value>
+  </init-param>
+</servlet>
+
+3. Context Parameters (context.xml)
+In conf/context.xml or META-INF/context.xml.
+
+xml
+<Context>
+  <Parameter name="dbUrl" value="jdbc:mysql://localhost/db" override="false"/>
+</Context>
+
+4. Environment Variables (setenv.sh or setenv.bat)
+- Used for system-wide settings.
+
+bash
+export JAVA_OPTS="-Denv=prod"
