@@ -35,6 +35,82 @@
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Key Configurations in Apache httpd:
+Main Configuration File
+
+Location: /etc/httpd/conf/httpd.conf or /etc/apache2/apache2.conf
+
+Controls global server settings like ports, modules, user/group, and includes.
+
+Virtual Hosts
+
+Define multiple domains/sites.
+
+Files in /etc/httpd/conf.d/ or /etc/apache2/sites-available/
+
+Example:
+
+apache
+Copy
+Edit
+<VirtualHost *:80>
+  ServerName example.com
+  DocumentRoot /var/www/example
+</VirtualHost>
+Modules
+
+Enabled via LoadModule in config.
+
+Common: mod_ssl, mod_rewrite, mod_proxy, mod_php.
+
+DocumentRoot
+
+Defines the folder serving content.
+
+Example: DocumentRoot "/var/www/html"
+
+Directory-Level Settings
+
+Control access, rewrites, indexes.
+
+Example:
+
+apache
+Copy
+Edit
+<Directory "/var/www/html">
+  Options Indexes FollowSymLinks
+  AllowOverride All
+  Require all granted
+</Directory>
+Ports Configuration
+
+File: /etc/httpd/conf/ports.conf or httpd.conf
+
+Example: Listen 80, Listen 443
+
+SSL/TLS
+
+Configured in /etc/httpd/conf.d/ssl.conf
+
+Uses SSLCertificateFile, SSLCertificateKeyFile
+
+Logging
+
+Access log: /var/log/httpd/access_log
+
+Error log: /var/log/httpd/error_log
+
+Config: LogLevel, CustomLog, ErrorLog
+
+.htaccess (Optional)
+
+Per-directory overrides (if AllowOverride All is set).
+
+Useful for rewrites, redirects, access control.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 - The primary purpose of Apache httpd is to serve web content (HTML, images, scripts) to clients (usually browsers) over the HTTP/HTTPS protocols.
 
 - Core Functions:
