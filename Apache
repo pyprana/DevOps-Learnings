@@ -32,3 +32,49 @@
 
 - bash
 - sudo systemctl start apache2
+
+- Set up a load-balanced cluster using Apache with the mod_proxy and mod_proxy_balancer modules.
+
+- Objective:
+- Distribute traffic to multiple backend servers (Apache or app servers) for scalability and high availability.
+
+- Steps to Create an Apache Load Balancer Cluster:
+- Install Apache on Load Balancer Node
+
+- bash
+- sudo apt update
+- sudo apt install apache2
+- Enable Required Modules
+
+bash
+- sudo a2enmod proxy
+- sudo a2enmod proxy_balancer
+- sudo a2enmod proxy_http
+- sudo a2enmod lbmethod_byrequests
+- sudo systemctl restart apache2
+- Create a Balancer Virtual Host Config
+- Example config file: /etc/apache2/sites-available/balancer.conf
+
+- apache
+<VirtualHost *:80>
+  ServerName loadbalancer.example.com
+
+  <Proxy "balancer://mycluster">
+    BalancerMember http://192.168.1.101:80
+    BalancerMember http://192.168.1.102:80
+    ProxySet lbmethod=byrequests
+  </Proxy>
+
+  ProxyPass "/" "balancer://mycluster/"
+  ProxyPassReverse "/" "balancer://mycluster/"
+</VirtualHost>
+Enable the Site and Restart Apache
+
+- bash
+sudo a2ensite balancer.conf
+sudo systemctl reload apache2
+Ensure Backend Nodes (192.168.1.101, 102) Run Apache/App
+
+- Result:
+- Apache now routes traffic to multiple backend nodes using round-robin or other balancing methods.
+
