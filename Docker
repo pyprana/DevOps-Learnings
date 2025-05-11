@@ -167,40 +167,35 @@ $ docker version
 - Use “.dockerfile_name” when the dockerfile exits in the same file directory and you use the entire path if it lives somewhere else.
 
 - What is an image, how does docker container helps an image 
-What is an image, how does docker container helps an image 
 
+- What is a Docker Image?
+- A Docker image is a read-only template that contains the application code, runtime, libraries, and dependencies required to run a container.
 
-ChatGPT said:
-What is a Docker Image?
-A Docker image is a read-only template that contains the application code, runtime, libraries, and dependencies required to run a container.
+- Think of it as a blueprint or snapshot.
 
-Think of it as a blueprint or snapshot.
+- Created using a Dockerfile.
 
-Created using a Dockerfile.
+- How Docker Container Helps an Image
+- A container is a running instance of an image.
 
-How Docker Container Helps an Image
-A container is a running instance of an image.
+- Docker takes the image and adds a writable layer on top to create a container.
 
-Docker takes the image and adds a writable layer on top to create a container.
+- The image stays unchanged, while the container can run and modify data during execution.
 
-The image stays unchanged, while the container can run and modify data during execution.
+- Flow:
+- Create Dockerfile →
 
-Flow:
-Create Dockerfile →
+- Build image using docker build →
 
-Build image using docker build →
+- Run container using docker run (image is the base)
 
-Run container using docker run (image is the base)
+- Example:
 
-Example:
+- bash
+- docker build -t myapp .
+- docker run myapp
 
-bash
-Copy
-Edit
-docker build -t myapp .
-docker run myapp
-
-what is a container
+- what is a container
 - A container is a lightweight, standalone, executable package that includes everything needed to run a piece of software—code, runtime, system tools, libraries, and settings.
 - What: Isolated environment for running applications.
 - Why: To ensure consistent execution across environments (dev → prod).
