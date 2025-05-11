@@ -43,6 +43,33 @@
 - CloudWatch Events / Logs
 - Step Functions
 (Step Functions is a visual workflow service that helps developers use AWS services to build distributed applications, automate processes)
+- What It Does?
+- It helps you connect and control different AWS services step by step, like a flowchart, without writing long code.
+
+- Use Cases
+- Order Processing
+- Example: Customer places order → process payment → check stock → ship product.
+
+- Data Cleanup
+- Example: Get data from S3 → clean with Lambda → store in database.
+
+- Approval Workflow
+- Example: Someone applies for leave → wait for manager approval → send email.
+
+- ML Model Automation
+- Example: Train model → check accuracy → deploy to production if good.
+
+- Retry on Failures
+- Example: Try task → if it fails, try again after some time.
+
+- Daily Jobs
+- Example: Run report every day → send to email.
+
+- Security Response
+- Example: Suspicious login → lock account → alert admin.
+
+- IoT Devices
+- Example: Read sensor → if temperature is high, turn on AC.
 
 5. Deployment Packages
 - ZIP file or container image.
