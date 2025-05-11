@@ -24,6 +24,29 @@ CloudWatch Scenario-Based Use Cases
  • Action: CloudWatch + CloudTrail integration.
  • Fix: Blocked IP via WAF, alerted security team.
 
+- S3 GET requests
+- A GET request downloads an object using its bucket name and object key.
+
+- Example:
+bash
+- aws s3api get-object --bucket my-bucket --key myfile.txt myfile.txt
+Or using SDK (Python Boto3):
+
+python
+- s3.download_file('my-bucket', 'myfile.txt', 'myfile.txt')
+
+- Use Cases:
+- Download backups or logs.
+
+- Serve images/videos to users.
+
+- Fetch static files for apps or websites.
+
+- Notes:
+- Charges apply per GET request and data transfer.
+
+- Can use presigned URLs for secure access without credentials.
+
 5. Cost Optimization with Custom Metrics
  • What: Need to monitor EBS burst balance and optimize cost.
  • Why: Burst credits exhausted, I/O throttling.
