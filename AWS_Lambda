@@ -8,6 +8,8 @@
 - Use Case: Microservices, automation scripts, real-time file processing.
 (event-driven workloads- Event-driven workload automation adds the capability to perform on-demand workload automation in addition to plan-based job scheduling. 
 It provides the capability to define rules that can trigger on-demand workload automation)
+(An API call, also known as an API request, is a message sent from one application (the client) to another application (the server) to request data or services. 
+It's how applications communicate and exchange information. Essentially, it's a request for the server to perform a specific action or retrieve data. 
 
 2. Lambda Execution Model
 - Short-lived functions (up to 15 mins)
