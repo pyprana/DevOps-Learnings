@@ -159,13 +159,42 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - How do you implement error handling and retry logic in Lambda?
-- Any component in event driven system that may fail will fail. So interviewer wants to know how you've handled the error and how you retried in your previous projects. Below are some examples. Always explain with concrete examples.
+- Any component in event driven system that may fail will fail. 
+- This depends on the service that you're using with AWS Lambda. Let's discuss this with some examples.
+- If you're building a serverless API, it is better to return that error to the calling client (could be a front end app in this case). 
+- Then you let your front end logic decide what to display to the user based on the type of the error.
+- If you're using Lambda with SQS, it is better to use a Dead Letter Queue so that you know what messages have failed to process. 
+- For this same reason, many of the systems that use SNS may use SQS, too.
+- In the below code, we're using a dead letter queue. 
+- If any message fails to process after a certain number of times (as specified by maxReceiveCount), it's sent to the dead letter queue. 
+- This behaviour is specific to lambda when used along with queues.
 
-This depends on the service that you're using with AWS Lambda. Let's discuss this with some examples.
+- Dead Letter Queue (DLQ) in AWS is used to store messages that can't be processed successfully by a service like SQS, SNS, Lambda, or EventBridge after multiple retry attempts.
 
-If you're building a serverless API, it is better to return that error to the calling client (could be a front end app in this case). Then you let your front end logic decide what to display to the user based on the type of the error.
+- What:
+A secondary queue where failed messages go after processing errors.
 
-If you're using Lambda with SQS, it is better to use a Dead Letter Queue so that you know what messages have failed to process. For this same reason, many of the systems that use SNS may use SQS, too.
+- Why:
+To debug, isolate, and prevent faulty messages from blocking normal message processing.
 
-In the below code, we're using a dead letter queue. If any message fails to process after a certain number of times (as specified by maxReceiveCount), it's sent to the dead letter queue. This behaviour is specific to lambda when used along with queues.
+- When:
+- When a Lambda function fails consistently.
+
+- When SQS message processing fails after retries.
+
+- When SNS message delivery fails to a subscriber.
+
+- Where:
+- Used with:
+
+- Amazon SQS (Standard & FIFO)
+
+- AWS Lambda
+
+- Amazon SNS
+
+- Amazon EventBridge
+
+- Example:
+- You have an SQS queue that triggers a Lambda. If the Lambda fails to process a message after 3 tries, it’s moved to the DLQ for analysis.
 
