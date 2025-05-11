@@ -137,6 +137,31 @@ S3 Lifecycle:
 - Automatically transition unused files to Glacier/Deep Archive.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- AWS Edge Locations are data centers in major cities worldwide used by services like Amazon CloudFront and AWS Global Accelerator to cache and deliver content closer to users.
+
+- Key Points:
+- What: Edge locations are endpoints that cache copies of content (e.g., images, videos) to reduce latency.
+
+- Why: Improves speed, reduces load on origin servers, and enhances user experience.
+
+- When: Used when delivering static or dynamic web content globally with low latency.
+
+- Where: Located in hundreds of cities around the world, closer to end-users than AWS regions or availability zones.
+
+- Used By:
+
+- Amazon CloudFront (Content Delivery Network)
+
+- AWS Global Accelerator (Improves global app availability/performance)
+
+- Route 53 (DNS routing for low latency)
+
+- Lambda@Edge (Run code at edge for fast response)
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Amazon S3 in a production environment, follow these key steps:
 
 ✅ 1. Create S3 Bucket
