@@ -1,4 +1,32 @@
-CloudWatch Scenario-Based Use Cases
+CloudWatch is a monitoring and observability service that helps you track the health, performance, and usage of your AWS resources and applications.
+
+- Metrics: CloudWatch automatically collects metrics from AWS services like EC2, RDS, Lambda. You can also send custom metrics using the AWS SDK or CloudWatch Agent.
+
+- Logs: CloudWatch Logs let you collect and store logs from applications, Lambda functions, ECS tasks, EC2 instances, etc. You can filter and search logs to troubleshoot issues.
+
+- Alarms: You create alarms based on metric thresholds. For example, you can trigger an alarm if CPU usage goes over 80% for 5 minutes. 
+- Alarms can notify via SNS, trigger Auto Scaling, or run Lambda functions.
+
+- Dashboards: Customizable visualizations of your metrics using graphs and widgets. Good for real-time monitoring and NOC views.
+
+- Events (via EventBridge): CloudWatch Events (now part of EventBridge) track changes in AWS resources and route them to targets (e.g., Lambda, SNS). 
+- Use it to automate responses to events like EC2 instance state changes.
+
+- Insights: CloudWatch Logs Insights lets you run queries on logs using a SQL-like syntax. Helps analyze large log data quickly (e.g., count errors or find slow APIs).
+
+- CloudWatch Agent: Installed on EC2 or on-prem servers to collect OS-level metrics (like memory and disk usage) and send them to CloudWatch.
+
+- Contributor Insights: Identifies the top contributors to performance issues (e.g., top IPs making requests to your service).
+
+- Anomaly Detection: Uses machine learning to learn normal behavior of metrics and automatically detects deviations (without setting fixed thresholds).
+
+- Synthetics: Allows you to create canaries (automated scripts) that simulate user interactions with your app or API, helping detect issues before real users face them.
+
+- Embedded Metrics Format: Lets you embed metric data inside application logs using JSON format. CloudWatch automatically extracts and treats them as metrics.
+
+- ServiceLens: Integrates CloudWatch, X-Ray, and logs to give end-to-end visibility into application health and dependencies.
+
+- CloudWatch Scenario-Based Use Cases
 
 1. EC2 CPU Spike Alert
  • What: CPU usage went above 85% for 5 mins.
