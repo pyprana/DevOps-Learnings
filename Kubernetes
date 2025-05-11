@@ -169,4 +169,63 @@ users:
 7.Authentication Proxy
 - Fronts the API server and handles user auth.
 
+Step-by-Step Pod Troubleshooting
+1. Check Pod Status
+- kubectl get pod <pod-name> -n <namespace>
+- Look for status: CrashLoopBackOff, Pending, ImagePullBackOff, etc.
+
+2. Describe the Pod
+- kubectl describe pod <pod-name> -n <namespace>
+- Check:
+- Events (at bottom)
+- Scheduling issues (node selectors, taints, resources)
+- Liveness/readiness probe failures
+
+3. Check Pod Logs
+- kubectl logs <pod-name> -n <namespace>       # For single container
+- kubectl logs <pod-name> -c <container-name>   # For multi-container
+- Look for:
+- Application errors
+- Configuration issues (ports, DB, env vars)
+
+4. Check Node Health
+- kubectl get nodes
+- kubectl describe node <node-name>
+- Ensure:
+- Node is Ready
+- Sufficient CPU/memory
+
+5. Check Events in Namespace
+- kubectl get events -n <namespace> --sort-by=.metadata.creationTimestamp
+- Find:
+- Scheduling errors
+- Image pull issues
+- Network problems
+
+6. Check for Image Pull Issues
+- kubectl describe pod <pod-name>
+Look for:
+- ImagePullBackOff
+- Wrong image name/tag
+- Missing imagePullSecrets
+
+7. Check Resource Limits
+- Pod may be evicted or pending due to CPU/Memory limits.
+- Use describe to inspect.
+
+8. Check Network/DNS Issues
+- kubectl exec -it <pod> -- nslookup <service-name>
+- Ensure:
+- DNS is resolving
+- Network policies aren’t blocking traffic
+
+9. Check PVC or Volume Mount Issues
+kubectl describe pvc <pvc-name> -n <namespace>
+Look for:
+Pending or Failed status
+StorageClass or access mode mismatches
+
+10. Check Init Containers
+kubectl describe pod <pod-name>
+Ensure init containers completed successfully.
 
