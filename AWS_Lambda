@@ -5,7 +5,9 @@
 - Where: Integrated with AWS services like S3, DynamoDB, API Gateway.
 - How: Upload code → define trigger → Lambda runs when event occurs.
 - Example: Resize image on S3 upload.
-- Use Case: Microservices, automation scripts, real-time file processing
+- Use Case: Microservices, automation scripts, real-time file processing.
+(event-driven workloads- Event-driven workload automation adds the capability to perform on-demand workload automation in addition to plan-based job scheduling. 
+It provides the capability to define rules that can trigger on-demand workload automation)
 
 2. Lambda Execution Model
 - Short-lived functions (up to 15 mins)
@@ -25,6 +27,7 @@
 - SNS / SQS / EventBridge
 - CloudWatch Events / Logs
 - Step Functions
+(Step Functions is a visual workflow service that helps developers use AWS services to build distributed applications, automate processes)
 
 5. Deployment Packages
 - ZIP file or container image.
@@ -48,9 +51,9 @@
 - Alternative to manual try/catch
 
 10. Concurrency
-- Unreserved concurrency: Shared pool
-- Reserved concurrency: Guarantees function concurrency
-- Provisioned concurrency: Pre-warms instances to avoid cold starts
+- Unreserved concurrency: Shared pool.
+- Reserved concurrency: Guarantees function concurrency.
+- Provisioned concurrency: Pre-warms instances to avoid cold starts.
 
 11. Monitoring & Logging
 - Integrated with CloudWatch Logs
@@ -76,9 +79,9 @@
 - Minimize cold starts (Provisioned concurrency, lightweight deps)
 - Avoid long-running processes (use Step Functions if needed)
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
--You might have built a serverless API, systems involving microservices, image/video conversion, log analysis, and many more. 
+- You might have built a serverless API, systems involving microservices, image/video conversion, log analysis, and many more. 
 
 - What services have you integrated with AWS Lambda?
 - This is an extension of the previous question. This is not a laundry list of all event sources that can connect to AWS Lambda. 
