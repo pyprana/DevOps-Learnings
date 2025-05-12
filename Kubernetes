@@ -292,7 +292,7 @@ Step-by-Step Pod Troubleshooting
 
 6. Check for Image Pull Issues
 - kubectl describe pod <pod-name>
-Look for:
+- Look for:
 - ImagePullBackOff
 - Wrong image name/tag
 - Missing imagePullSecrets
@@ -308,12 +308,12 @@ Look for:
 - Network policies aren’t blocking traffic
 
 9. Check PVC or Volume Mount Issues
-kubectl describe pvc <pvc-name> -n <namespace>
-Look for:
-Pending or Failed status
-StorageClass or access mode mismatches
+- kubectl describe pvc <pvc-name> -n <namespace>
+- Look for:
+- Pending or Failed status
+- StorageClass or access mode mismatches
 
 10. Check Init Containers
-kubectl describe pod <pod-name>
-Ensure init containers completed successfully.
+- kubectl describe pod <pod-name>
+- Ensure init containers completed successfully.
 
