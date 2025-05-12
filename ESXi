@@ -1,0 +1,18 @@
+- ESXi (Elastic Sky X Integrated) is a Type-1 hypervisor developed by VMware used to create and manage virtual machines directly on physical hardware without needing an underlying OS.
+
+- Key Points:
+- What: Lightweight hypervisor installed on bare metal.
+
+- Why: Enables server virtualization with high performance and efficiency.
+
+- When: Used in data centers for running multiple VMs on a single server.
+
+- Where: Deployed on physical servers in enterprise environments.
+
+- Features:
+- No underlying OS (bare-metal).
+
+- Managed via vSphere Client or vCenter Server.
+
+- Supports features like vMotion, HA, DRS (via vCenter).
+
