@@ -1,4 +1,5 @@
 Kubernetes
+
 Q - How you manage secrets and variables in Kubernetes?
 A - Secrets: Store and manage sensitive data securely.
   - ConfigMaps: Store and manage non-sensitive configuration data.
@@ -77,21 +78,21 @@ livenessProbe:
 - exec: Runs a command inside the container.
 
 Q - security context
-- Security Context in Kubernetes defines privilege and access control settings for Pods or containers.
-- What:
-- A securityContext is a YAML section in a Pod or container spec that sets rules like user ID (UID), group ID (GID), file permissions, and capabilities.
-- Why:
-- It helps improve security posture by limiting the container's access level and reducing risks like privilege escalation or running as root.
-- When:
-- Used when:
-- Enforcing non-root containers.
-- Needing read-only file systems.
-- Restricting Linux capabilities.
-- Enabling SELinux or AppArmor profiles.
-- Where:
-- Defined at two levels:
-- Pod level – applies to all containers.
-- Container level – overrides pod-level settings for that container.
+  - Security Context in Kubernetes defines privilege and access control settings for Pods or containers.
+  - What:
+  - A securityContext is a YAML section in a Pod or container spec that sets rules like user ID (UID), group ID (GID), file permissions, and capabilities.
+  - Why:
+  - It helps improve security posture by limiting the container's access level and reducing risks like privilege escalation or running as root.
+  - When:
+  - Used when:
+  - Enforcing non-root containers.
+  - Needing read-only file systems.
+  - Restricting Linux capabilities.
+  - Enabling SELinux or AppArmor profiles.
+  - Where:
+  - Defined at two levels:
+  - Pod level – applies to all containers.
+  - Container level – overrides pod-level settings for that container.
 
 - Example:
 yaml
@@ -110,6 +111,74 @@ spec:
     securityContext:
       allowPrivilegeEscalation: false
       readOnlyRootFilesystem: true
+
+- Here’s a line-by-line explanation of the YAML example using securityContext:
+
+- yaml
+- apiVersion: v1
+- What: API version of the Kubernetes resource.
+
+- Why: Ensures compatibility with the Kubernetes API server.
+
+- yaml
+- kind: Pod
+- What: Specifies the type of object — a Pod in this case.
+
+- yaml
+- metadata:
+- name: secure-pod
+- What: Sets the name of the pod as secure-pod.
+
+- Why: Useful for identification and management.
+
+-yaml
+-spec:
+  securityContext:
+- What: Defines pod-level security settings.
+
+- Why: Enforces user, group, and filesystem-level access control.
+
+- yaml
+    runAsUser: 1000
+- What: All containers in the pod will run as user ID 1000.
+
+- Why: Helps avoid running as root for better security.
+
+- yaml
+    runAsGroup: 3000
+- What: Processes run with group ID 3000.
+
+- Why: Controls group-level permissions.
+
+- yaml
+    fsGroup: 2000
+- What: Files created in mounted volumes will belong to group ID 2000.
+
+- Why: Enables shared access to volumes within a specific group.
+
+- yaml
+  containers:
+  - name: app
+    image: nginx
+What: Defines a container named app using the nginx image.
+
+- yaml
+    securityContext:
+- What: Container-level security context overrides or adds to pod-level.
+
+- yaml
+      allowPrivilegeEscalation: false
+- What: Prevents processes in the container from gaining more privileges than their parent.
+
+- Why: Stops use of commands like sudo or setuid programs to escalate privileges.
+
+- yaml
+      readOnlyRootFilesystem: true
+- What: Mounts the container's root filesystem as read-only.
+
+- Why: Prevents tampering with system binaries or logs inside the container.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Q - Kubeconfig
 - Kubeconfig is a configuration file used by kubectl and other Kubernetes tools to authenticate and connect to a Kubernetes cluster.
@@ -137,6 +206,25 @@ users:
 - name: my-user
   user:
     token: <authentication-token>
+
+
+
+---------
+
+- ~/.kube/config
+
+- ~/.kube/config is the default Kubeconfig file used by kubectl to interact with a Kubernetes cluster.
+
+- Breakdown:
+- Key	Description
+- ~	Home directory of the current user.
+- .kube	Hidden directory storing Kubernetes config files.
+- config	Main file that contains cluster, user, and context details.
+
+- Used For:
+- Connecting to multiple clusters.
+- Switching contexts (dev, prod, staging).
+- Authenticating via tokens, certificates, or plugins.
 
 - Kubernetes supports multiple authentication mechanisms to verify who is making a request to the cluster API server. Here's a short breakdown:
 - Authentication Mechanisms in Kubernetes
