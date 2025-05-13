@@ -1,20 +1,28 @@
-MySQL in DevOps is primarily used as a database to store and manage application data during the development, testing, and production lifecycle. Here's how it helps:
+- MySQL in DevOps is primarily used as a database to store and manage application data during the development, testing, and production lifecycle. Here's how it helps:
 - Use of MySQL in DevOps:
-Application Data Storage:
-MySQL stores structured data like user info, transactions, logs, etc.
+- Application Data Storage:
+- MySQL stores structured data like user info, transactions, logs, etc.
 
-CI/CD Integration:
-MySQL is used in pipelines to create, migrate, or seed databases during automated testing/deployments.
+- CI/CD Integration:
+- MySQL is used in pipelines to create, migrate, or seed databases during automated testing/deployments.
 
-Infrastructure as Code (IaC):
-DevOps uses tools like Ansible, Terraform, or Docker to provision and configure MySQL automatically.
+- Infrastructure as Code (IaC):
+- DevOps uses tools like Ansible, Terraform, or Docker to provision and configure MySQL automatically.
 
-Monitoring & Backups:
-DevOps teams automate health checks, backups, and replication for MySQL in production.
+- Monitoring & Backups:
+- DevOps teams automate health checks, backups, and replication for MySQL in production.
 
-Rollback & Recovery:
-MySQL snapshots help in quick rollbacks during faulty deployments.
+- Rollback & Recovery:
+- MySQL snapshots help in quick rollbacks during faulty deployments.
 
-Containerization:
-MySQL runs as a Docker container for isolated testing and consistent environments.
+- Containerization:
+- MySQL runs as a Docker container for isolated testing and consistent environments.
+
+- How would you migrate an on-prem Java + MySQL application to AWS?
+- Set up EC2 instances.
+- Configure Maven and Java environment.
+- Create MySQL in RDS or EC2.
+- Deploy using Jenkins and automate with CloudFormation or Terraform.
+- Implement Auto Scaling, Load Balancer, CloudWatch for monitoring.
+
 
