@@ -100,7 +100,7 @@ S3 Lifecycle:
 - Move cold data to Glacier using Lifecycle Rules or Intelligent-Tiering.
 
 - Cross-Account Access:
- - Grant access using bucket policies or IAM roles across AWS accounts.
+- Grant access using bucket policies or IAM roles across AWS accounts.
 
 - Data Compliance:
 - Use Object Lock (compliance mode) to retain data for 7 years.
@@ -135,6 +135,12 @@ S3 Lifecycle:
 
 - Archive to Glacier:
 - Automatically transition unused files to Glacier/Deep Archive.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- Any experience in application migration projects?
+- Ans:
+- Yes. Uploaded app to S3, used CloudFormation to recreate infra. Also explored AWS Snowball and S3 Glacier for storage.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
