@@ -37,4 +37,8 @@
 
 - Domain registration: Buy/manage domain names.
 
+- Do we need a load balancer for Lambda or can Route 53 handle that?
+- Lambda does not need a load balancer, as it auto-scales based on events.
+- Route 53 is not a load balancer—it’s a DNS service.
+- Use Route 53 to route traffic to Lambda via API Gateway, ALB, or regional endpoints.
 - Private DNS for VPCs.
