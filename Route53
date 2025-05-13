@@ -1,33 +1,36 @@
 
-Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service by AWS.
+- Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service by AWS.
 
-What is it?
-DNS service that translates domain names (e.g., example.com) into IP addresses.
+- What is it?
+- DNS service that translates domain names (e.g., example.com) into IP addresses.
 
-Also performs domain registration, health checks, and routing.
+- Also performs domain registration, health checks, and routing.
 
-Why use Route 53?
-Low-latency, reliable DNS resolution.
+- Why use Route 53?
+- Low-latency, reliable DNS resolution.
 
-Integrates with other AWS services.
+- Integrates with other AWS services.
 
-Supports complex routing like geolocation, failover, and latency-based.
+- Supports complex routing like geolocation, failover, and latency-based.
 
-When to use?
-Hosting websites/applications on AWS.
+- When to use?
+- Hosting websites/applications on AWS.
 
-Need for global DNS load balancing or disaster recovery routing.
+- Need for global DNS load balancing or disaster recovery routing.
 
-Where is it used?
-Public domain resolution (e.g., web apps, SaaS platforms).
+- Where is it used?
+- Public domain resolution (e.g., web apps, SaaS platforms).
 
-Private hosted zones inside VPCs (for internal DNS).
+- Private hosted zones inside VPCs (for internal DNS).
 
-Key Features:
-Domain registration
+- Key Features:
+- Domain registration
 
-DNS management
+- DNS management
 
-Health checks and failover
+- Health checks and failover
 
-Routing policies: Simple, Weighted, Latency, Failover, Geolocation, Geoproximity, Multi-value answer
+- Routing policies: Simple, Weighted, Latency, Failover, Geolocation, Geoproximity, Multi-value.
+
+Q - How would Route 53 handle routing for specific user APIs?
+A - Use routing policies (weighted, latency, path-based) to route traffic to specific target groups or services based on API type.
