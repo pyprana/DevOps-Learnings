@@ -27,6 +27,12 @@ vi.) Build Trigger Jobs
 - Poll SCM, use webhooks, or trigger on schedule.
 - Example: Nightly builds or webhook-based auto deploy.
 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - How to send Jenkins pipeline result to Slack?
+A - Use Slack plugin in Jenkins. Configure webhook URL and send message on success/failure steps in the pipeline.
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - Maven vs Gradle – Key Differences:
