@@ -121,6 +121,9 @@
 - Minimize cold starts (Provisioned concurrency, lightweight deps)
 - Avoid long-running processes (use Step Functions if needed)
 
+16. Do we need a load balancer for Lambda?
+- No, Lambda handles concurrency automatically. For routing, Route 53 can be used.
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - You might have built a serverless API, systems involving microservices, image/video conversion, log analysis, and many more. 
