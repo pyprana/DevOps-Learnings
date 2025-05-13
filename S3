@@ -144,7 +144,25 @@ S3 Lifecycle:
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Amazon S3 in a production environment, follow these key steps:
+Q - How to automate Excel file processing from S3 and send reports?
+A - Use S3 Event → triggers Lambda
+  - Lambda runs your report script
+  - Use SES or SNS to email the report
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - How to give time-limited access to a file in S3 to external users?
+A - Use pre-signed URLs valid for a specific time (e.g., 3 hours).
+  - Amazon S3 in a production environment, follow these key steps:
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - How can EC2 access S3 without internet gateway?
+A - By using a VPC endpoint for S3. It allows private access to S3 without public internet.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 ✅ 1. Create S3 Bucket
 - aws s3api create-bucket --bucket my-prod-bucket --region us-east-1
