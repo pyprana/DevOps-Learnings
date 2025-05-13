@@ -19,10 +19,9 @@
 - MySQL runs as a Docker container for isolated testing and consistent environments.
 
 - How would you migrate an on-prem Java + MySQL application to AWS?
-- Set up EC2 instances.
-- Configure Maven and Java environment.
-- Create MySQL in RDS or EC2.
-- Deploy using Jenkins and automate with CloudFormation or Terraform.
-- Implement Auto Scaling, Load Balancer, CloudWatch for monitoring.
-
-
+- Provision infrastructure using EC2 or ECS to run the Java application.
+- Set up RDS (MySQL) or EC2-hosted MySQL as the backend.
+- Use Terraform or CloudFormation for infra automation.
+- Configure Maven and Java environments on build agents for deployment.
+- Use Jenkins pipelines to automate build, test, and deployment.
+- Enable CloudWatch for monitoring, ELB for load balancing.
