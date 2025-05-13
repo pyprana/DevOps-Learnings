@@ -127,7 +127,9 @@
 17. Can Lambda be used instead of EC2 for Java apps?
 - Yes, if the app is small and event-driven. Lambda is serverless, no infra management needed.
 
-
+18. Can we deploy a Java application using AWS Lambda?
+- AWS Lambda supports Java, but it's suited for short-lived, event-driven tasks (e.g., image processing, log parsing).
+- For stateful, long-running Java applications, use EC2, ECS, or EKS.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
