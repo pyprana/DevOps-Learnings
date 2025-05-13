@@ -4,7 +4,7 @@ S3
  └── Folder (Logical, like directories)
  └── Object (Files: data + metadata + key)
 
-Key Components
+- Key Components
 - Component Description
 - Bucket - Global namespace, stores all objects. Unique across AWS.
 - Object - Actual data stored (file + metadata).
@@ -18,8 +18,7 @@ Key Components
 - Object Key: logs/2025/may/report.csv
 - Full path: s3://my-project-bucket/logs/2025/may/report.csv
 
-
-S3 Lifecycle:
+- S3 Lifecycle:
 - S3 Lifecycle is a set of rules to automatically move objects between storage classes or delete them after a certain period.
 - To save costs by transitioning old or infrequently accessed data to cheaper storage or deleting unnecessary data.
 - Use when you have data that becomes less valuable over time, like logs, backups, or archives.
