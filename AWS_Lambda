@@ -124,6 +124,11 @@
 16. Do we need a load balancer for Lambda?
 - No, Lambda handles concurrency automatically. For routing, Route 53 can be used.
 
+17. Can Lambda be used instead of EC2 for Java apps?
+- Yes, if the app is small and event-driven. Lambda is serverless, no infra management needed.
+
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - You might have built a serverless API, systems involving microservices, image/video conversion, log analysis, and many more. 
