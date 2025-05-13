@@ -1,0 +1,55 @@
+BUILD & RELEASE: dEVELOPER WILLL INFORM You build the package
+
+In Jenkins we can set up code
+
+We will get triggered
+Team Lead will tell when to get trigerred
+build logs fails to analyze 
+
+functions
+look into the log and see
+
+This build by Either y email
+or ping them in chat
+they have to fix the code and 
+
+Code issues : Plugin issues
+Which requires new plugin 
+
+Where Jenkins is build
+Plugins are not there 
+Basically i look into the build log files 
+I inform the developer saying that there is a code issues
+If Jenkins issues
+Artififacts are of 2 types
+In Jenkins you build jobs we will put in  storage
+Storage we build is called the Artifactory.
+June 2 is build it gets stored in 
+once  package is build deployed
+
+So if the depolyment fails
+So i will be rolling back to previous builds
+In 45 code 
+A new package to build and sent
+In order to schedule 
+Which version is better 
+Developer,
+QA will confirm which build is Good
+
+Builds are archieved : Artifactory is a tool
+Artifiactory ,
+After we build we store is called a satisfactory 
+
+Jenkins is a process
+Jenkins is a engine , if you install in server 
+Packages are build
+if we put in server process runs
+Jenkins is a UI form 
+Back Ground
+Compiling tools : Maven : Its a plugin
+In jenkins tools : Maven plugin we put 
+Configuration file : Build and give artificats
+: Build : Git hub code
+Developer 
+
+Maven can be build : CLI command build  
