@@ -1,4 +1,4 @@
-Here’s a step-by-step guide to configure Istio in a Kubernetes environment:
+- Here’s a step-by-step guide to configure Istio in a Kubernetes environment:
 
 1. Prerequisites
 - Kubernetes cluster (v1.24+ recommended)
