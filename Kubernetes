@@ -150,9 +150,7 @@ A -  A taint blocks pods from scheduling on a node unless they tolerate that tai
   - kubectl taint nodes gpu-node key=gpu:NoSchedule
   - Only ML or AI pods with this toleration can be scheduled:
 
-yaml
-Copy
-Edit
+- yaml
 tolerations:
 - key: "gpu"
   operator: "Equal"
@@ -166,6 +164,46 @@ csharp
        ⬇
 [Pod without toleration] ❌ Rejected
 [Pod with toleration] ✅ Scheduled
+
+- Use CSI Secret Store Drivers like AWS Secrets Manager CSI Driver or HashiCorp Vault Agent Injector
+- What is it?
+- In Kubernetes, secrets are used for storing sensitive data (like passwords, API keys).
+- CSI (Container Storage Interface) Secret Store Drivers let you securely fetch these secrets from external secret managers like:
+
+- AWS Secrets Manager
+
+- HashiCorp Vault
+
+- How does it work?
+- Pod requests a secret (e.g., DB password).
+
+- CSI Driver connects to the external secret manager (e.g., AWS Secrets Manager or Vault).
+
+- Secret is mounted into the Pod as a file.
+
+- The app reads the secret from a mounted volume, not hardcoded.
+
+- Examples:
+- AWS Secrets Manager CSI Driver:
+- Fetches secrets from AWS Secrets Manager or Parameter Store.
+
+- You define a SecretProviderClass in Kubernetes with secret name and path.
+
+- CSI driver fetches it and mounts it into your pod.
+
+- HashiCorp Vault Agent Injector:
+- Automatically injects secrets from Vault into a pod.
+
+- Uses annotations on the pod.
+
+- Vault agent runs as a sidecar, fetches secret, and writes it into a shared volume.
+
+- Why use them?
+- Centralized secret management (secure and auditable).
+
+- Avoid storing secrets in plain Kubernetes secrets.
+
+- Automatic rotation and least privilege access.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
