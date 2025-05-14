@@ -137,9 +137,36 @@ S3
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+- How did you handle an application or infrastructure migration project?
+- Back up and package the application.
+- Upload to S3 or use Snowball for large datasets.
+- Re-deploy in AWS using EC2, S3, RDS, etc.
+- Verify and cut over DNS via Route 53.
+
+
+- Snowball is an AWS service used to transfer large amounts of data (usually terabytes or petabytes) to or from AWS.
+
+- Instead of uploading huge files over the internet (which is slow), AWS sends you a physical device (called Snowball).
+- You copy the data into it, and send it back to AWS. AWS then uploads the data directly into your S3 bucket.
+
+- When to Use:
+- Data is too large to upload over the internet.
+
+- Limited bandwidth or slow upload speed.
+
+- Faster and secure bulk migration to the cloud.
+
+- Example:
+- You have 100 TB of logs stored in your on-prem server. Uploading it over internet may take weeks. 
+- Instead, AWS ships you a Snowball device → you load data → ship back to AWS → data appears in your S3 bucket.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Q - How can an EC2 instance in a private subnet access an S3 bucket?
 A - Use a VPC Gateway Endpoint for S3.
   - It allows the private EC2 to securely connect to S3 without using the internet. It’s cost-effective and recommended over NAT or Transit Gateway.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Q - Any experience in application migration projects?
 A - Yes. Uploaded app to S3, used CloudFormation to recreate infra. Also explored AWS Snowball and S3 Glacier for storage.
