@@ -47,6 +47,32 @@ A - Use a Transit Gateway to connect multiple VPCs or on-premises networks in a 
 Q - How have you used PVCs in Kubernetes?
 A - I attached Persistent Volume Claims (PVCs) to stateful apps like databases. I created alerts to monitor storage usage and prevent outages.
 
+Q - Difference between PVC and PV in Kubernetes:
+  - Persistent Volume (PV)	
+  - What	Actual storage resource in the cluster	
+  - Created By	Cluster Admin (via PersistentVolume YAML)	
+  - Purpose	Provides the physical storage	
+  - Lifecycle	Independent, exists until deleted manually	
+  - Binding	Waits to be bound by a matching PVC	
+  - Example - Use	Define NFS/EBS/GCE disk storage	
+
+  - Persistent Volume Claim (PVC)
+  - Request for storage by a user
+  - Developer/User (via PersistentVolumeClaim YAML)
+  - Claims or binds to a suitable PV
+  - Exists until the pod or claim is deleted
+  - Binds to an available matching PV
+  - Example - App needs 5Gi storage with ReadWriteOnce
+
+- Diagram:
+- User --> PVC --> matches criteria --> PV --> underlying storage (EBS/NFS etc.)
+
+- Summary:
+
+- PV = What is available
+
+- PVC = What is needed
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Q - What is a Kubernetes 'taint'?
