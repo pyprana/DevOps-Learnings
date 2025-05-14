@@ -24,44 +24,35 @@ bash
 - CRDs for gateways, virtual services, etc.
 
 3. Enable Sidecar Injection
-bash
-Copy
-Edit
-kubectl label namespace <your-namespace> istio-injection=enabled
-This auto-injects Envoy sidecar proxy into pods in that namespace.
+- bash
+- kubectl label namespace <your-namespace> istio-injection=enabled
+- This auto-injects Envoy sidecar proxy into pods in that namespace.
 
 4. Deploy a Sample App
-Example using bookinfo:
+- Example using bookinfo:
 
-bash
-Copy
-Edit
-kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
+- bash
+- kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
+
 Verify pods:
 
-bash
-Copy
-Edit
-kubectl get pods -n <your-namespace>
+- bash
+- kubectl get pods -n <your-namespace>
+
 5. Expose the App via Istio Gateway
-Apply Gateway + VirtualService:
+- Apply Gateway + VirtualService:
 
-bash
-Copy
-Edit
-kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
-Check the ingress IP:
+- bash
+- kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
+- Check the ingress IP:
 
-bash
-Copy
-Edit
-kubectl get svc istio-ingressgateway -n istio-system
-Then access:
+- bash
+- kubectl get svc istio-ingressgateway -n istio-system
+- Then access:
 
-arduino
-Copy
-Edit
-http://<EXTERNAL-IP>/productpage
+- arduino
+- http://<EXTERNAL-IP>/productpage
+
 6. Configure Routing Policies (Optional)
 Example: Split traffic between v1 and v2:
 
