@@ -86,7 +86,6 @@ S3
 9. Use Cases
 - S3 is used for backups, static website hosting, log storage, big data analytics, media storage, and application hosting (like storing frontend assets or binaries).
 
-
 - Unlocking S3 Scenarios – 
 
 - Static Website Hosting:
@@ -137,12 +136,20 @@ S3
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+- Generate a report when an Excel file is uploaded to S3 and email it?
+- Use S3 Event Notification to trigger a Lambda function.
+
+- Lambda runs the report generator.
+
+- Use SES (Simple Email Service) to email the report.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 - How did you handle an application or infrastructure migration project?
 - Back up and package the application.
 - Upload to S3 or use Snowball for large datasets.
 - Re-deploy in AWS using EC2, S3, RDS, etc.
 - Verify and cut over DNS via Route 53.
-
 
 - Snowball is an AWS service used to transfer large amounts of data (usually terabytes or petabytes) to or from AWS.
 
@@ -165,6 +172,33 @@ S3
 Q - How can an EC2 instance in a private subnet access an S3 bucket?
 A - Use a VPC Gateway Endpoint for S3.
   - It allows the private EC2 to securely connect to S3 without using the internet. It’s cost-effective and recommended over NAT or Transit Gateway.
+
+- NAT Gateway:
+- Used to allow instances in a private subnet to access the internet, like downloading software or connecting to S3.
+
+- It only supports outbound traffic. External systems cannot initiate connections to instances behind a NAT.
+
+- It is used within a single VPC.
+
+- Common in scenarios where your EC2s are private, but still need internet access.
+
+- Billing is based on how much data goes out to the internet.
+
+- Transit Gateway:
+- Used to connect multiple VPCs together and also link with on-premises networks using VPN or Direct Connect.
+
+- It supports two-way communication (VPC to VPC, VPC to on-prem).
+
+- Works at a regional level and supports scaling across 100s of VPCs.
+
+- Ideal for large enterprise networks that want centralized control and simplified routing.
+
+- Billing depends on the number of attachments and data processed.
+
+- In short:
+- Use NAT Gateway when private servers need internet access.
+
+- Use Transit Gateway when you want to connect VPCs or data centers together.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -190,7 +224,6 @@ Q - How can EC2 access S3 without internet gateway?
 A - By using a VPC endpoint for S3. It allows private access to S3 without public internet.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 
 ✅ 1. Create S3 Bucket
