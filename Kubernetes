@@ -1,8 +1,5 @@
 Kubernetes
 
-Q - Which new technology have you learned recently?
-A - Kubernetes – setup cluster, created pods using YAML. Used Helm for deployment.
-
 Q - How is networking handled in Kubernetes?
 A - Kubernetes has no built-in network layer like Docker. Network policies and CNI plugins are used to manage traffic between pods.
 
