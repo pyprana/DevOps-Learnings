@@ -14,7 +14,7 @@ A - Secrets: Store and manage sensitive data securely.
   - ConfigMaps: Store and manage non-sensitive configuration data.
   - Both can be used in pods as volumes or environment variables for secure and efficient configuration management.
 
-Q - How to troubleshoot issues when  pod failed?
+Q - How to troubleshoot issues when pod failed?
 A - Check Pod Status: Use the command kubectl get pods to check the status of the pod.
   - Describe Pod: Use kubectl describe pod <pod-name> to get detailed information about the pod, including events and error messages.
   - View Logs: Use kubectl logs <pod-name> to view the logs of the pod's containers for error messages.
@@ -30,6 +30,54 @@ A - Kubernetes uses a flat, cluster-wide network let all the pods communicate di
   - Pod-to-Service: curl
   - http://service-name>
   - Across Nodes : CNI ensures routing between pods on different nodes.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - What is a Kubernetes 'taint'?
+A -  A taint blocks pods from scheduling on a node unless they tolerate that taint. Useful for dedicated workloads (e.g., GPU nodes).
+  -  A taint is a rule you apply to a node to say:
+
+  - “Only special pods that can handle this condition are allowed to run here.”
+
+  - It repels all pods by default unless the pod has a matching toleration.
+
+  -  What is a toleration?
+  - A toleration is a permission in the pod spec that says:
+  
+  - “I’m okay to run on nodes with this taint.”
+ 
+  - Why use it?
+  - To reserve certain nodes for specific workloads (e.g., GPU, high-memory, licensed apps).
+
+  - Example Use Case:
+  - You have GPU nodes in your cluster.
+
+  - You don't want regular apps to run there.
+
+  - You taint the GPU nodes:
+
+  - yaml
+  - kubectl taint nodes gpu-node key=gpu:NoSchedule
+  - Only ML or AI pods with this toleration can be scheduled:
+
+yaml
+Copy
+Edit
+tolerations:
+- key: "gpu"
+  operator: "Equal"
+  value: "true"
+  effect: "NoSchedule"
+
+- Diagram:
+csharp
+
+[Node A - tainted: gpu=true:NoSchedule]
+       ⬇
+[Pod without toleration] ❌ Rejected
+[Pod with toleration] ✅ Scheduled
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Q - I want to update the secrets Without restarting app?
 A - By default, secrets mounted as environment variables or through volume mounts won't reflect changes unless the pod is restarted. 
