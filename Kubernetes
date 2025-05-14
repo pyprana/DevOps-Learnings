@@ -362,8 +362,7 @@ users:
     token: <authentication-token>
 
 
-
----------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - ~/.kube/config
 
@@ -379,6 +378,59 @@ users:
 - Connecting to multiple clusters.
 - Switching contexts (dev, prod, staging).
 - Authenticating via tokens, certificates, or plugins.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- Here’s the difference between JSON and YAML in simple terms:
+
+- JSON (JavaScript Object Notation)
+- Data format used widely in APIs and web apps.
+
+- Uses brackets {} and quotes.
+
+- Strict syntax, good for machines.
+
+- Example:
+
+json
+{
+  "name": "Pranay",
+  "age": 32,
+  "skills": ["DevOps", "AWS"]
+}
+
+- YAML (YAML Ain’t Markup Language)
+- Used for configuration files (e.g., Kubernetes, Ansible, Docker Compose).
+
+- More human-readable, uses indentation and dashes.
+
+- No need for brackets or quotes unless necessary.
+
+- Example:
+
+- yaml
+name: Pranay
+age: 32
+skills:
+  - DevOps
+  - AWS
+
+- Key Differences:
+- YAML is cleaner and easier to read for humans.
+
+- JSON is stricter and better for machines.
+
+- YAML supports comments (#), JSON does not.
+
+- JSON is used in data exchange, YAML in configuration.
+
+- When to use:
+
+- Use JSON for APIs and data.
+
+- Use YAML for writing config files in DevOps, Kubernetes, etc.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - Kubernetes supports multiple authentication mechanisms to verify who is making a request to the cluster API server. Here's a short breakdown:
 - Authentication Mechanisms in Kubernetes
