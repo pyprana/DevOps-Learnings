@@ -219,21 +219,25 @@ A - Helm provides built-in mechanisms to roll back deployments when something go
   - Answer: The `helm lint` command validates a chart's structure and contents, ensuring it meets Helm's best practices and standards.
   - This helps prevent common errors and improves chart quality.
 
+  - Have you worked on monolith-to-microservice migration?
+  - Yes. We converted monoliths to microservices by containerizing them, breaking dependencies, and then deploying them on EKS using Helm. The approach was a mix of lift-and-shift and re-architecture.
+
   - Explain the concept of Helm secrets management.
+  - Helm doesn't directly manage secrets, but it integrates with various secret management tools (like HashiCorp Vault, AWS Secrets Manager) to securely handle sensitive data within charts. 
+  - This prevents hardcoding secrets in your chart's configuration files.
 
-Answer: Helm doesn't directly manage secrets, but it integrates with various secret management tools (like HashiCorp Vault, AWS Secrets Manager) to securely handle sensitive data within charts. This prevents hardcoding secrets in your chart's configuration files.
-How can you debug a Helm chart?
+  - How can you debug a Helm chart?
+  - Debugging can involve using `helm lint` for early detection, inspecting generated manifests using `helm template`, checking Kubernetes logs, and using debugging tools within the application itself. 
+  - The `--debug` flag can also be helpful in some cases.
 
-Answer: Debugging can involve using `helm lint` for early detection, inspecting generated manifests using `helm template`, checking Kubernetes logs, and using debugging tools within the application itself. The `--debug` flag can also be helpful in some cases.
-Describe your experience with Helm's testing capabilities.
+  - Describe your experience with Helm's testing capabilities.
+  -  It should mention specific testing approaches used, such as unit testing of templates, integration testing with a Kubernetes cluster, and potentially using tools like `helm test`.
 
-Answer: (This requires a personalized answer based on experience. It should mention specific testing approaches used, such as unit testing of templates, integration testing with a Kubernetes cluster, and potentially using tools like `helm test`.)
-How do you handle chart versioning?
+- How do you handle chart versioning?
+- Chart versioning is typically done using semantic versioning (semver) in the `Chart.yaml` file. This allows for consistent and predictable management of chart releases and updates.
 
-Answer: Chart versioning is typically done using semantic versioning (semver) in the `Chart.yaml` file. This allows for consistent and predictable management of chart releases and updates.
-What are some best practices for creating and maintaining Helm charts?
-
-Answer: Best practices include using semantic versioning, thorough documentation, modular design (breaking down complex charts into smaller, reusable components), proper testing, and using a consistent naming convention.
+- What are some best practices for creating and maintaining Helm charts?
+-Best practices include using semantic versioning, thorough documentation, modular design (breaking down complex charts into smaller, reusable components), proper testing, and using a consistent naming convention.
 How do you manage configurations for different environments (dev, staging, prod) using Helm?
 
 Answer: This is usually achieved using different `values.yaml` files for each environment, or by using environment variables to override values during installation. Helm's ability to take values from multiple files makes this quite manageable.
@@ -276,15 +280,15 @@ Answer: Utilize Kubernetes monitoring tools (Prometheus, Grafana) and integrate 
 How would you troubleshoot a failed Helm installation or upgrade?
 
 Answer: Check Helm logs, Kubernetes events, and application logs. Inspect generated manifests using `helm template`. Analyze Kubernetes resource statuses and look for errors in the deployment process.
-Describe your approach to managing Helm chart dependencies across different projects.
 
-Answer: (This should detail how dependency management is approached, potentially mentioning techniques like private chart repositories or utilizing a common dependency management strategy across projects.)
-How do you stay updated with the latest changes and best practices in Helm?
+- Describe your approach to managing Helm chart dependencies across different projects.
+- This should detail how dependency management is approached, potentially mentioning techniques like private chart repositories or utilizing a common dependency management strategy across projects.
 
-Answer: Follow the official Helm blog, engage with the community (e.g., via forums or Slack channels), attend conferences, and review the official Helm documentation regularly.
-What are some security considerations when using Helm?
+- How do you stay updated with the latest changes and best practices in Helm?
+- Follow the official Helm blog, engage with the community (e.g., via forums or Slack channels), attend conferences, and review the official Helm documentation regularly.
 
-Answer: Secure secret management is paramount. Avoid hardcoding secrets. Use proper RBAC to control access to Helm and Kubernetes resources. Regularly update Helm and its dependencies to patch security vulnerabilities.
-How would you explain Helm to someone with no prior Kubernetes experience?
+- What are some security considerations when using Helm?
+- Secure secret management is paramount. Avoid hardcoding secrets. Use proper RBAC to control access to Helm and Kubernetes resources. Regularly update Helm and its dependencies to patch security vulnerabilities.
 
-Answer: Imagine installing software on your computer. Helm is like a package manager for Kubernetes, making it easy to install, update, and manage complex applications running inside Kubernetes – a powerful platform for managing containers.
+- How would you explain Helm to someone with no prior Kubernetes experience?
+- Imagine installing software on your computer. Helm is like a package manager for Kubernetes, making it easy to install, update, and manage complex applications running inside Kubernetes – a powerful platform for managing containers.
