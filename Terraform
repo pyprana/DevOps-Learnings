@@ -343,3 +343,18 @@ A - Use terraform modules for reusable code.
   - Implement workspaces for managing multiple environments like dev, staging and prod.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - How do you create 5 IAM users in Terraform?
+
+resource "aws_iam_user" "example" {
+  count = 5
+  name  = "user-${count.index + 1}"
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - How do you switch between Terraform workspaces?
+A - Use the command:
+
+- bash
+- terraform workspace select uat
