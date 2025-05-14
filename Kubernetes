@@ -28,7 +28,6 @@ A - Kubernetes uses a flat, cluster-wide network let all the pods communicate di
   - http://service-name>
   - Across Nodes : CNI ensures routing between pods on different nodes.
 
-
 Q - What’s the difference between ClusterIP, NodePort, and LoadBalancer in Kubernetes?
 A - ClusterIP: Default type, only accessible within the cluster.
   - NodePort: Opens a port on each node to access from outside (not secure for production).
@@ -37,9 +36,31 @@ A - ClusterIP: Default type, only accessible within the cluster.
 Q - What does 'cordon' mean in Kubernetes?
 A - It marks a node as unschedulable — no new pods will run there, but existing pods stay. Used for maintenance.
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Q - When do you use a Transit Gateway?
 A - Use a Transit Gateway to connect multiple VPCs or on-premises networks in a hub-and-spoke model.
   - It’s best when you have 3 or more VPCs or hybrid cloud setup.
+
+- The hub-and-spoke model is a network architecture where:
+- The hub is the central point (like a Transit Gateway).
+- The spokes are VPCs or on-prem networks that connect to the hub.
+- All communication flows through the hub, not directly between spokes.
+
+- Example:
+- Imagine Transit Gateway as an airport hub.
+- VPCs are like cities connected to that hub.
+- If VPC-A wants to talk to VPC-B, the traffic goes:
+- → VPC-A → Transit Gateway → VPC-B
+
+- Benefits:
+- Simplifies routing.
+
+- Scales better than full mesh (no need for every VPC to peer with every other).
+
+- Centralizes control, monitoring, and security.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Q - How have you used PVCs in Kubernetes?
 A - I attached Persistent Volume Claims (PVCs) to stateful apps like databases. I created alerts to monitor storage usage and prevent outages.
