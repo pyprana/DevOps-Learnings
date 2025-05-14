@@ -155,6 +155,12 @@
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+Q - Can Lambda be used for Java app deployment?
+A - Not ideal. Lambda is serverless and good for short tasks. Java web apps should use EC2 or ECS. Lambda doesn't require load balancer, but ALB is needed for EC2-based deployments.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 - What's the difference between synchronous and asynchronous invocation in AWS Lambda?
 - Even though this seems to be straightforward question, this has many implications for your design and error handling.
 
