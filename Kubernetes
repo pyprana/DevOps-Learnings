@@ -165,45 +165,38 @@ csharp
 [Pod without toleration] ❌ Rejected
 [Pod with toleration] ✅ Scheduled
 
-- Use CSI Secret Store Drivers like AWS Secrets Manager CSI Driver or HashiCorp Vault Agent Injector
-- What is it?
-- In Kubernetes, secrets are used for storing sensitive data (like passwords, API keys).
-- CSI (Container Storage Interface) Secret Store Drivers let you securely fetch these secrets from external secret managers like:
+- What is a CSI Secret Store Driver?
+- It’s a way to safely give passwords, tokens, or keys to your app running in Kubernetes, without writing them directly in your YAML files.
 
-- AWS Secrets Manager
+- What does it do?
+- Instead of storing secrets inside Kubernetes, you can:
 
-- HashiCorp Vault
+- Store secrets in AWS Secrets Manager or Vault (safe and encrypted).
 
-- How does it work?
-- Pod requests a secret (e.g., DB password).
+- Use a CSI driver to pull those secrets and give them to your app when it runs.
 
-- CSI Driver connects to the external secret manager (e.g., AWS Secrets Manager or Vault).
+- How it works:
+- You create a pod that needs a secret (like a DB password).
 
-- Secret is mounted into the Pod as a file.
+- The CSI driver fetches the secret from AWS Secrets Manager or Vault.
 
-- The app reads the secret from a mounted volume, not hardcoded.
+- The secret is given to your pod as a file (not hardcoded).
 
-- Examples:
+- Your app reads the file to use the password.
+
+- Two Common Tools:
 - AWS Secrets Manager CSI Driver:
-- Fetches secrets from AWS Secrets Manager or Parameter Store.
+- Gets secrets from AWS Secrets Manager and mounts them in the pod.
 
-- You define a SecretProviderClass in Kubernetes with secret name and path.
+- Vault Agent Injector (from HashiCorp):
+- Runs a helper inside your pod to fetch secrets from Vault and share them with your app.
 
-- CSI driver fetches it and mounts it into your pod.
+- Why use it?
+- Keeps secrets safe and outside Kubernetes.
 
-- HashiCorp Vault Agent Injector:
-- Automatically injects secrets from Vault into a pod.
+- Automatically rotates secrets when changed.
 
-- Uses annotations on the pod.
-
-- Vault agent runs as a sidecar, fetches secret, and writes it into a shared volume.
-
-- Why use them?
-- Centralized secret management (secure and auditable).
-
-- Avoid storing secrets in plain Kubernetes secrets.
-
-- Automatic rotation and least privilege access.
+- Avoids hardcoding passwords in configs.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
