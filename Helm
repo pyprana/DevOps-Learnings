@@ -64,7 +64,13 @@ A - Helm provides built-in mechanisms to roll back deployments when something go
   - Helm is a package manager for Kubernetes that simplifies the deployment and management of Kubernetes applications. 
   - It uses charts, which are packages of pre-configured Kubernetes resources, to define and install applications. 
   - Helm makes it easier to version, share, and manage complex application deployments on Kubernetes.
-  
+
+  - How have you used Helm in your project?
+  - I used Helm to deploy apps on Kubernetes. Based on the environment (dev/stage/prod), I passed separate values.yaml files. I used helm install for new releases and helm upgrade for updates.
+
+  - How do you secure sensitive values in Helm?
+  - I store secrets in AWS Secrets Manager or HashiCorp Vault and fetch them during deployment. Alternatively, secrets can be encrypted and passed securely in Helm values.
+
   - How do you install Helm and initialize a Helm chart repository?
   - To install Helm, you can typically use a package manager like apt or brew, or download the binary from the Helm GitHub releases page. 
   - Once Helm is installed, initialize a chart repository using the following command:
@@ -234,36 +240,47 @@ A - Helm provides built-in mechanisms to roll back deployments when something go
   -  It should mention specific testing approaches used, such as unit testing of templates, integration testing with a Kubernetes cluster, and potentially using tools like `helm test`.
 
 - How do you handle chart versioning?
-- Chart versioning is typically done using semantic versioning (semver) in the `Chart.yaml` file. This allows for consistent and predictable management of chart releases and updates.
+- Chart versioning is typically done using semantic versioning (semver) in the `Chart.yaml` file. 
+- This allows for consistent and predictable management of chart releases and updates.
 
 - What are some best practices for creating and maintaining Helm charts?
--Best practices include using semantic versioning, thorough documentation, modular design (breaking down complex charts into smaller, reusable components), proper testing, and using a consistent naming convention.
-How do you manage configurations for different environments (dev, staging, prod) using Helm?
+- Best practices include using semantic versioning, thorough documentation, modular design (breaking down complex charts into smaller, reusable components), proper testing, and
+  using a consistent naming convention.
 
-Answer: This is usually achieved using different `values.yaml` files for each environment, or by using environment variables to override values during installation. Helm's ability to take values from multiple files makes this quite manageable.
-Explain the difference between a global and a local Helm repository.
+- How do you manage configurations for different environments (dev, staging, prod) using Helm?
+- This is usually achieved using different `values.yaml` files for each environment, or by using environment variables to override values during installation. 
+- Helm's ability to take values from multiple files makes this quite manageable.
 
-Answer: A global Helm repository is accessible to all users on a system, while a local repository is only accessible to the user who created it. Global repositories are usually used for shared charts, while local repositories are suitable for private or testing charts.
-How do you handle complex application deployments with multiple interconnected services using Helm?
+- Explain the difference between a global and a local Helm repository.
+- A global Helm repository is accessible to all users on a system, while a local repository is only accessible to the user who created it. 
+- Global repositories are usually used for shared charts, while local repositories are suitable for private or testing charts.
 
-Answer: This is tackled by creating multiple charts (one per service), managing dependencies between them using `requirements.yaml`, and potentially utilizing Helm's capabilities for managing deployments across namespaces.
-What are some common challenges you've encountered while using Helm, and how did you overcome them?
+- How do you handle complex application deployments with multiple interconnected services using Helm?
+- This is tackled by creating multiple charts (one per service), managing dependencies between them using `requirements.yaml`, and potentially utilizing Helm's capabilities for managing deployments across namespaces.
 
-Answer: (This requires a personalized answer, describing real-world challenges and their solutions. Examples might include dependency conflicts, complex templating logic, troubleshooting deployments, managing secrets, or optimizing chart performance.)
-Describe your experience working with Helm and CI/CD pipelines.
+- What are some common challenges you've encountered while using Helm, and how did you overcome them?
+- Examples might include dependency conflicts, complex templating logic, troubleshooting deployments, managing secrets, or optimizing chart performance.)
 
-Answer: (This requires a personalized answer, outlining experience integrating Helm with CI/CD tools like Jenkins, GitLab CI, or similar. It should mention how Helm was used within the pipeline, including automated testing, deployment, and rollback strategies.)
-How do you ensure idempotency in your Helm deployments?
+- Describe your experience working with Helm and CI/CD pipelines.
+- integrating Helm with CI/CD tools like Jenkins, GitLab CI, or similar. 
+- It should mention how Helm was used within the pipeline, including automated testing, deployment, and rollback strategies.)
 
-Answer: Idempotency means that multiple applications of the same operation have the same effect as a single application. In Helm, this is achieved by ensuring that the chart's templates generate the same Kubernetes manifests regardless of whether it's an install or upgrade. Careful use of state management within templates and consideration of resource lifecycle is crucial.
-What are some alternatives to Helm, and what are their strengths and weaknesses compared to Helm?
+- How do you ensure idempotency in your Helm deployments?
+- Idempotency means that multiple applications of the same operation have the same effect as a single application. 
+- In Helm, this is achieved by ensuring that the chart's templates generate the same Kubernetes manifests regardless of whether it's an install or upgrade. Careful use of state management within templates and consideration of resource lifecycle is crucial.
 
-Answer: Alternatives include Kustomize and Jsonnet. Kustomize is simpler for basic deployments but lacks the advanced features of Helm. Jsonnet offers powerful templating capabilities but has a steeper learning curve. Helm provides a broader feature set but can be more complex to manage for smaller projects.
-How do you handle resource cleanup after uninstalling a Helm release?
+- What are some alternatives to Helm, and what are their strengths and weaknesses compared to Helm?
+- Alternatives include Kustomize and Jsonnet. 
+- Kustomize is simpler for basic deployments but lacks the advanced features of Helm. 
+- Jsonnet offers powerful templating capabilities but has a steeper learning curve. Helm provides a broader feature set but can be more complex to manage for smaller projects.
 
-Answer: By default, `helm uninstall` removes the Helm release objects. However, any persistent volumes or other resources outside the scope of the chart's management might require manual cleanup. Properly defined Kubernetes resources with appropriate lifecycle policies can mitigate this issue.
-Explain your experience with different Helm chart rendering strategies (e.g., using `helm template`).
+- How do you handle resource cleanup after uninstalling a Helm release?
+- By default, `helm uninstall` removes the Helm release objects. 
+- However, any persistent volumes or other resources outside the scope of the chart's management might require manual cleanup.
+- Properly defined Kubernetes resources with appropriate lifecycle policies can mitigate this issue.
 
+- Explain your experience with different Helm chart rendering strategies (e.g., using `helm template`).
+-
 Answer: (This requires a personalized answer illustrating the practical use of `helm template` for previewing manifests, debugging, and understanding generated configurations.)
 What are some common pitfalls to avoid when designing Helm charts?
 
