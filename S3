@@ -137,9 +137,12 @@ S3
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-- Any experience in application migration projects?
-- Ans:
-- Yes. Uploaded app to S3, used CloudFormation to recreate infra. Also explored AWS Snowball and S3 Glacier for storage.
+Q - How can an EC2 instance in a private subnet access an S3 bucket?
+A - Use a VPC Gateway Endpoint for S3.
+  - It allows the private EC2 to securely connect to S3 without using the internet. It’s cost-effective and recommended over NAT or Transit Gateway.
+
+Q - Any experience in application migration projects?
+A - Yes. Uploaded app to S3, used CloudFormation to recreate infra. Also explored AWS Snowball and S3 Glacier for storage.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
