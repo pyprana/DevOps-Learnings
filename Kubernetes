@@ -1,5 +1,10 @@
 Kubernetes
 
+Q - Where are Kubernetes volumes stored?
+A - They are stored based on the StorageClass (e.g., EBS, NFS, hostPath).
+  - A PersistentVolumeClaim (PVC) binds to a PersistentVolume (PV), which points to actual storage.
+  - It exists outside the pod lifecycle, ensuring data isn’t lost when the pod restarts.
+
 Q - How is networking handled in Kubernetes?
 A - Kubernetes has no built-in network layer like Docker. Network policies and CNI plugins are used to manage traffic between pods.
 
