@@ -1,4 +1,4 @@
-Jenkins Version - 2.504 ( LTS )
+- Jenkins Version - 2.504 ( LTS )
 
 - In Jenkins what kind of jobs you prepared..?
 - In Jenkins, I prepared the following types of jobs:
@@ -27,6 +27,23 @@ vi.) Build Trigger Jobs
 - Poll SCM, use webhooks, or trigger on schedule.
 - Example: Nightly builds or webhook-based auto deploy.
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - When do you use a multi-branch pipeline in Jenkins?
+A - Use it when you have multiple branches (Dev, QA, Prod) — each with its own pipeline.
+  - It automates building/testing for all branches without separate job configs.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - What’s the difference between stage and step in Jenkins pipeline?
+A - Stage: Logical block like Build, Test, or Deploy.
+  - Step: Actual command or action inside a stage.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q - What is the difference between Jenkins freestyle job and pipeline?
+A - Freestyle job: GUI-based, simple tasks.
+  - Pipeline: Code-defined using Groovy DSL, supports complex workflows like build, test, deploy.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
