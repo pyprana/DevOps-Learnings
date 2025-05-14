@@ -111,6 +111,14 @@ A - Use Slack plugin in Jenkins. Configure webhook URL and send message on succe
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Q - How do you securely store Jenkins credentials?
+  - We use Jenkins Credentials Plugin to store passwords and tokens securely.
+  - Credentials are stored encrypted inside Jenkins.
+  - They are configured in “Manage Jenkins” > “Credentials.”
+  - We access them in pipelines using Groovy or withCredentials block.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Q - Differnce between multi branch and pipeline script?
 - A Multi-branch Pipeline in Jenkins is used when your project has multiple branches (like in Git), and you want Jenkins to automatically detect and create separate jobs for each
   branch. 
