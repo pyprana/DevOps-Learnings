@@ -5,6 +5,7 @@
 
 - Type 1: It’s also called Native Hypervisor or Bare metal Hypervisor. It runs directly on the underlying host system. 
 - It has direct access to your host’s system hardware and hence does not require a base server operating system.
+
 - Type 2: This kind of hypervisor makes use of the underlying host operating system. It’s also called Hosted Hypervisor.
 
 2. What is virtualization?
@@ -61,10 +62,17 @@
 - The CLI uses the Docker REST API to control or interact with the Docker daemon through scripting or direct CLI commands. 
 - Many other Docker applications use the underlying API and CLI.
 
+
+Q - In Docker, what’s the difference between CMD and ENTRYPOINT? Which creates a layer?
+A - CMD: Provides default arguments to ENTRYPOINT.
+  - ENTRYPOINT: Defines the main command.
+
+- Both create image layers, but ENTRYPOINT is the one that defines the container’s main behavior.
+
 - Tell us something about Docker Compose.
 - Docker Compose is a YAML file which contains details about the services, networks, and volumes for setting up the Docker application. 
 - So, you can use Docker Compose to create separate containers, host them and get them to communicate with each other. 
-- Each container will expose a port for communicating with other containers
+- Each container will expose a port for communicating with other containers.
 
 - What is Docker Swarm?
 - Docker Swarm is native clustering for Docker. 
