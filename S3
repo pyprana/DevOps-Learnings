@@ -229,6 +229,15 @@ A - Route 53 is a DNS service. It routes users to the closest AWS region using g
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Q - What is Multi-Factor Authentication (MFA)?
+A - MFA adds extra security to login.
+  - You need your password + another method (OTP, phone, hardware key).
+  - AWS supports MFA for root and IAM users.
+  - It prevents unauthorized access even if the password is leaked.
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ✅ 1. Create S3 Bucket
 - aws s3api create-bucket --bucket my-prod-bucket --region us-east-1
