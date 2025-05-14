@@ -31,6 +31,19 @@ A - Kubernetes uses a flat, cluster-wide network let all the pods communicate di
   - http://service-name>
   - Across Nodes : CNI ensures routing between pods on different nodes.
 
+
+Q - What’s the difference between ClusterIP, NodePort, and LoadBalancer in Kubernetes?
+A - ClusterIP: Default type, only accessible within the cluster.
+  - NodePort: Opens a port on each node to access from outside (not secure for production).
+  - LoadBalancer: Exposes the service externally using a cloud provider’s load balancer.
+
+Q - What does 'cordon' mean in Kubernetes?
+A - It marks a node as unschedulable — no new pods will run there, but existing pods stay. Used for maintenance.
+
+Q - When do you use a Transit Gateway?
+A - Use a Transit Gateway to connect multiple VPCs or on-premises networks in a hub-and-spoke model.
+  - It’s best when you have 3 or more VPCs or hybrid cloud setup.
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Q - What is a Kubernetes 'taint'?
