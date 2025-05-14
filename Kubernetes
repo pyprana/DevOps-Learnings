@@ -44,6 +44,9 @@ Q - When do you use a Transit Gateway?
 A - Use a Transit Gateway to connect multiple VPCs or on-premises networks in a hub-and-spoke model.
   - It’s best when you have 3 or more VPCs or hybrid cloud setup.
 
+Q - How have you used PVCs in Kubernetes?
+A - I attached Persistent Volume Claims (PVCs) to stateful apps like databases. I created alerts to monitor storage usage and prevent outages.
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Q - What is a Kubernetes 'taint'?
