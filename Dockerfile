@@ -113,7 +113,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /app
 - Working Directory: Sets /app as the working directory inside the container.
 
-All subsequent commands will run from here.
+- All subsequent commands will run from here.
 
 - dockerfile
 COPY . ./
@@ -140,20 +140,17 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 - Sets the working directory in the runtime container.
 
-dockerfile
-Copy
-Edit
+- dockerfile
 COPY --from=build /app/out .
 Copy Artifacts from Build Stage: Transfers the published output from the build stage into the runtime container.
 
-dockerfile
-Copy
-Edit
+- dockerfile
 ENTRYPOINT ["dotnet", "YourAppName.dll"]
-Start Command:
 
-Tells Docker to run the app when the container starts.
+- Start Command:
 
-Replace YourAppName.dll with your actual DLL name (from dotnet publish output).
+- Tells Docker to run the app when the container starts.
+
+- Replace YourAppName.dll with your actual DLL name (from dotnet publish output).
 
 
