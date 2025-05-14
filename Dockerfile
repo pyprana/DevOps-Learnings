@@ -46,6 +46,7 @@ Production Environment (ECS / Kubernetes / On-prem)
 - Run the Container: Use the docker run command to create and run a container based on the built image.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 - Here is a basic Dockerfile for a .NET application (e.g., ASP.NET Core Web API):
 
 - For ASP.NET Core Web API (multi-stage build):
