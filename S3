@@ -223,6 +223,10 @@ A - Use pre-signed URLs valid for a specific time (e.g., 3 hours).
 Q - How can EC2 access S3 without internet gateway?
 A - By using a VPC endpoint for S3. It allows private access to S3 without public internet.
 
+Q - How does Route 53 help with traffic routing?
+A - Route 53 is a DNS service. It routes users to the closest AWS region using geolocation or latency-based routing. 
+  - It can’t replace a load balancer for EC2 but works well with serverless or global apps.
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
