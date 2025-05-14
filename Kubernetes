@@ -75,6 +75,36 @@ Q - Difference between PVC and PV in Kubernetes:
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+ - Port Forwarding allows external devices to access services on a private network by mapping an external port to an internal IP and port.
+
+- What:
+- Redirects traffic from one IP:port to another IP:port.
+
+- Why:
+- To allow access to services (like web servers, SSH, games) running on private IPs behind a router/firewall.
+
+- When:
+- Used when you want to expose a local service to the outside world.
+
+- Where:
+- Home/Office routers
+
+- Firewalls
+
+- Kubernetes (kubectl port-forward)
+
+- Example: Linux
+bash
+- # Forward external port 8080 to internal 192.168.1.10:80
+- iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT \
+  --to-destination 192.168.1.10:80
+- Example: Kubernetes
+- bash
+- kubectl port-forward pod/my-app 8080:80
+- Access your pod's port 80 via localhost:8080.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Q - What is a Kubernetes 'taint'?
 A -  A taint blocks pods from scheduling on a node unless they tolerate that taint. Useful for dedicated workloads (e.g., GPU nodes).
   -  A taint is a rule you apply to a node to say:
