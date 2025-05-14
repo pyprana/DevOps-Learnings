@@ -200,6 +200,40 @@ csharp
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+- GPU Nodes in Simple Terms:
+- GPU nodes in Kubernetes (or any cloud environment) are special worker nodes that have Graphics Processing Units (GPUs).
+
+- Why Use GPU Nodes?
+- They’re used for apps that need high-performance computing, like:
+
+- Machine Learning (ML) / AI model training
+
+- Video rendering
+
+- Scientific simulations
+
+- What Makes GPU Nodes Special?
+- Have GPU hardware (like NVIDIA Tesla, A100)
+
+- Run workloads that require parallel processing
+
+- Require specific drivers and runtime (like NVIDIA Docker runtime)
+
+- In Kubernetes:
+- You label GPU nodes (e.g., nvidia.com/gpu: 1)
+
+- Use resource requests in pod YAML:
+
+yaml
+resources:
+  limits:
+    nvidia.com/gpu: 1
+- Kubernetes will schedule this pod only on GPU nodes
+
+🔐 Optional: Use taints and tolerations to ensure only GPU workloads run on GPU nodes.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Q - I want to update the secrets Without restarting app?
 A - By default, secrets mounted as environment variables or through volume mounts won't reflect changes unless the pod is restarted. 
   - To avoid restarts:
