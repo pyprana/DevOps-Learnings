@@ -1,7 +1,7 @@
 1. What is AWS DMS?
 - AWS Database Migration Service helps migrate databases quickly and securely to AWS, with minimal downtime.
 
-2. Key Concepts
+2. Key Concepts?
 a. Source & Target Endpoints
 - What: Define where data comes from and goes to.
 - Example: Source = On-prem Oracle; Target = Amazon RDS for PostgreSQL.
@@ -70,6 +70,7 @@ k. Where It Fits in Architecture
 - CDC ensures real-time sync
 
 - Supported DB Engines
+
 - Source & Target Examples:
 
 - MySQL, PostgreSQL, Oracle, MS SQL, MongoDB, MariaDB, Amazon Aurora, Amazon Redshift
@@ -79,21 +80,22 @@ k. Where It Fits in Architecture
 
 - Steps:
 
-- Use SCT to convert schema
+- Use SCT-(Schema Conversion Tool) to convert schema.
 
-- Create replication instance
+- Create replication instance.
 
-- Configure source and target endpoints
+- Configure source and target endpoints.
 
-- Create task with Full Load + CDC
+- Create task with Full Load + CDC.
 
-- Monitor and validate migration
+- Monitor and validate migration.
 
-- Production Best Practices
-- Use Multi-AZ replication instance
+- Production Best Practices.
 
-- Enable logging and alerts
+- Use Multi-AZ replication instance.
 
-- Run data validation
+- Enable logging and alerts.
 
-- Monitor CDC lag for real-time migration
+- Run data validation.
+
+- Monitor CDC lag for real-time migration.
