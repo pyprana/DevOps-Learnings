@@ -280,23 +280,26 @@ A - Helm provides built-in mechanisms to roll back deployments when something go
 - Properly defined Kubernetes resources with appropriate lifecycle policies can mitigate this issue.
 
 - Explain your experience with different Helm chart rendering strategies (e.g., using `helm template`).
--
-Answer: (This requires a personalized answer illustrating the practical use of `helm template` for previewing manifests, debugging, and understanding generated configurations.)
-What are some common pitfalls to avoid when designing Helm charts?
+- Answer: (This requires a personalized answer illustrating the practical use of `helm template` for previewing manifests, debugging, and understanding generated configurations.)
 
-Answer: Common pitfalls include hardcoding values, overly complex templates, neglecting testing, ignoring dependency management, and insufficient error handling. Following best practices and modular design helps mitigate these.
-How do you approach the design of a large and complex Helm chart?
+- What are some common pitfalls to avoid when designing Helm charts?
+- Common pitfalls include hardcoding values, overly complex templates, neglecting testing, ignoring dependency management, and insufficient error handling. 
+- Following best practices and modular design helps mitigate these.
 
-Answer: Break it down into smaller, independent charts that can be independently managed and versioned. Use Helm dependencies to manage the relationships between these charts and ensure modularity.
-Explain how you'd implement a blue/green deployment strategy with Helm.
+- How do you approach the design of a large and complex Helm chart?
+- Break it down into smaller, independent charts that can be independently managed and versioned. 
+- Use Helm dependencies to manage the relationships between these charts and ensure modularity.
 
-Answer: This could involve creating two separate releases (blue and green), updating one while the other remains active, and then switching traffic using a service or ingress controller. Proper resource naming and Helm's upgrade capabilities are crucial.
-How do you monitor the health and performance of applications deployed with Helm?
+- Explain how you'd implement a blue/green deployment strategy with Helm.
+- This could involve creating two separate releases (blue and green), updating one while the other remains active, and then switching traffic using a service or ingress controller. 
+- Proper resource naming and Helm's upgrade capabilities are crucial.
 
-Answer: Utilize Kubernetes monitoring tools (Prometheus, Grafana) and integrate them with your deployed applications. Leverage Kubernetes metrics and logs to track resource usage and application health.
-How would you troubleshoot a failed Helm installation or upgrade?
+- How do you monitor the health and performance of applications deployed with Helm?
+- Utilize Kubernetes monitoring tools (Prometheus, Grafana) and integrate them with your deployed applications.
+- Leverage Kubernetes metrics and logs to track resource usage and application health.
 
-Answer: Check Helm logs, Kubernetes events, and application logs. Inspect generated manifests using `helm template`. Analyze Kubernetes resource statuses and look for errors in the deployment process.
+- How would you troubleshoot a failed Helm installation or upgrade?
+- Check Helm logs, Kubernetes events, and application logs. Inspect generated manifests using `helm template`. Analyze Kubernetes resource statuses and look for errors in the deployment process.
 
 - Describe your approach to managing Helm chart dependencies across different projects.
 - This should detail how dependency management is approached, potentially mentioning techniques like private chart repositories or utilizing a common dependency management strategy across projects.
