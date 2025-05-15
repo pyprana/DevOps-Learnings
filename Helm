@@ -6,6 +6,14 @@
 - README.md(optional).
 - templates/tests(optional).
 
+  - Why Helm why is it used?  
+  - It uses "charts" – pre-packaged collections of Kubernetes resource definitions – to define, install, and upgrade complex applications. 
+  - This reduces the complexity of managing Kubernetes manifests and improves consistency and reproducibility.
+
+  - Explain the concept of Helm charts.
+  - Answer: A Helm chart is a collection of files that describe a related set of Kubernetes resources. It's essentially a template for deploying applications to Kubernetes. 
+    A chart includes templates for deployments, services, configmaps, etc., along with metadata that describes the chart and its dependencies.
+
 Q - What is helm?
 A - Helm is a kubernetes package manager.
   - Simplifies deployment of complex applications.
@@ -110,6 +118,14 @@ A - Helm provides built-in mechanisms to roll back deployments when something go
   - A Helm template is a Kubernetes manifest generated from a Helm chart's templates and values. 
   - Helm uses the Go templating engine to interpolate values into the templates, producing valid Kubernetes YAML files that are ready for deployment.
 
+  - Helm uses something called the Go templating engine, which is like a smart fill-in-the-blanks tool.
+  - Here’s what it does in simple terms:
+  - You write templates in Helm (these are like incomplete Kubernetes YAML files with placeholders).
+  - The placeholders (like {{ .Values.image }}) will be filled in using values from values.yaml.
+  - Helm takes these templates and fills in the blanks using the actual values.
+  - The result is complete Kubernetes YAML files that are ready to be deployed.
+  - So basically, Helm turns reusable templates into real Kubernetes configs using your custom values.
+
   - How do you upgrade a Helm release to a new version of a chart?
   - To upgrade a Helm release, use the helm upgrade command. For example:
 
@@ -119,6 +135,12 @@ A - Helm provides built-in mechanisms to roll back deployments when something go
   - What is a Helm hook, and when might you use one?  
   - A Helm hook is a way to perform actions at specific points in the Helm lifecycle, such as before or after a release is installed, upgraded, or deleted. 
   - Hooks are useful for tasks like database migrations or certificate issuance.
+
+  - Key Parts:
+  - helm.sh/hook: pre-install: This tells Helm to run this Job before the chart is installed.
+  - Other hook types: post-install, pre-upgrade, post-upgrade, pre-delete, etc.
+
+  - Use case: Set up a database, clear cache, or do some prep before main app gets deployed.
 
   - Explain the difference between Helm 2 and Helm 3.
   - Helm 2 used a server-side component called Tiller, which was removed in Helm 3 to improve security and simplicity. 
@@ -145,6 +167,12 @@ A - Helm provides built-in mechanisms to roll back deployments when something go
   - Ensure that Helm and Kubernetes API are secured with appropriate authentication and authorization mechanisms.
   - Sign and verify Helm charts to ensure their integrity.
 
+  - Use RBAC to Limit Access
+  - What: Restrict who can install/upgrade/delete charts.
+  - Example: Create a limited ServiceAccount for Helm:
+
+  - yaml
+
   - How do you manage dependencies in Helm charts?
   - Use the requirements.yaml file to specify chart dependencies. Helm will fetch and install these dependencies when deploying the parent chart.
   - requirements.yaml was used in Helm v2 to define chart dependencies.
@@ -158,15 +186,6 @@ A - Helm provides built-in mechanisms to roll back deployments when something go
   - How do you perform linting and testing of Helm charts?
   - Use helm lint to check chart validity. To test Helm charts, you can create test pods or use tools like helm test to run tests defined in the chart.
 
-  - What is Helm and why is it used?
-  
-  - Answer: Helm is a package manager for Kubernetes. It simplifies the deployment and management of Kubernetes applications. 
-    It uses "charts" – pre-packaged collections of Kubernetes resource definitions – to define, install, and upgrade complex applications. 
-    This reduces the complexity of managing Kubernetes manifests and improves consistency and reproducibility.
-
-  - Explain the concept of Helm charts.
-  - Answer: A Helm chart is a collection of files that describe a related set of Kubernetes resources. It's essentially a template for deploying applications to Kubernetes. 
-    A chart includes templates for deployments, services, configmaps, etc., along with metadata that describes the chart and its dependencies.
     
   - What is a Helm release?
   - Answer: A Helm release is a specific instance of a chart deployed to a Kubernetes cluster. Each time you install a chart, you create a new release. 
