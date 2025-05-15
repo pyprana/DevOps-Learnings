@@ -72,6 +72,51 @@ Example: count = var.create ? 1 : 0
 
 - Control resource count, naming, tags, paths, etc.
 
+✅ Key Examples and Use Cases
+- Interpolation:
+- "ami-${var.env}"
+- → Embeds a variable inside a string.
+
+- Conditionals:
+- count = var.create ? 1 : 0
+- → Creates a resource only if var.create is true (ternary expression).
+
+- Logical Expressions:
+- var.env == "prod"
+- → Used to evaluate conditions in expressions.
+
+-mFor Loop:
+- for s in var.subnets : "${s}-tag"
+- → Dynamically generates a list by appending -tag to each subnet.
+
+- Splat Operator:
+- aws_instance.example[*].id
+- → Extracts all IDs from a list of EC2 instances.
+
+✅ Functions Overview
+length():
+Returns the number of elements in a list or map.
+Example: length(var.subnets)
+
+join():
+Joins elements of a list into a single string, separated by a delimiter.
+Example: join(",", var.subnets)
+
+split():
+Splits a string into a list based on a delimiter.
+Example: split(",", var.tags)
+
+lookup():
+Retrieves a value from a map based on a key, with an optional default.
+Example: lookup(var.ami_map, var.region, "default-ami")
+
+element():
+Fetches an element from a list by index.
+Example: element(var.subnets, 1)
+
+file():
+Reads the contents of a local file into the Terraform configuration.
+Example: file("user_data.sh")
 
 12. Lifecycle Rules
 What: Customize resource creation/deletion behavior.
