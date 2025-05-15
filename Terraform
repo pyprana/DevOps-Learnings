@@ -1,59 +1,59 @@
 - Terraform is preferred for modular and reusable infrastructure as code.
 
 1. Providers
-What: Plugin to interact with cloud or services (e.g., AWS, Azure).
-Why: Tells Terraform how to manage resources.
-Example: provider "aws" { region = "us-east-1" }
+- What: Plugin to interact with cloud or services (e.g., AWS, Azure).
+- Why: Tells Terraform how to manage resources.
+- Example: provider "aws" { region = "us-east-1" }
 
 2. Resources
-What: Block that defines infrastructure (e.g., EC2, S3).
-Why: Actual infrastructure components you manage.
-Example: resource "aws_instance" "web" { ... }
+- What: Block that defines infrastructure (e.g., EC2, S3).
+- Why: Actual infrastructure components you manage.
+- Example: resource "aws_instance" "web" { ... }
 
 3. Modules
-What: Reusable blocks of Terraform config.
-Why: Promotes DRY and organized code.
-Example: A module to create a VPC reused in many projects.
+- What: Reusable blocks of Terraform config.
+- Why: Promotes DRY and organized code.
+- Example: A module to create a VPC reused in many projects.
 
 4. Variables
-What: Inputs to parameterize configs.
-Why: Reuse and flexibility.
-Example: variable "instance_type" { default = "t2.micro" }
+- What: Inputs to parameterize configs.
+- Why: Reuse and flexibility.
+- Example: variable "instance_type" { default = "t2.micro" }
 
 5. Outputs
-What: Return values from Terraform.
-Why: Share info between modules or after apply.
-Example: output "instance_ip" { value = aws_instance.web.public_ip }
+- What: Return values from Terraform.
+- Why: Share info between modules or after apply.
+- Example: output "instance_ip" { value = aws_instance.web.public_ip }
 
 6. State
-What: Tracks real infrastructure.
-Why: Syncs Terraform config and actual infra.
-Example: Stored in terraform.tfstate
+- What: Tracks real infrastructure.
+- Why: Syncs Terraform config and actual infra.
+- Example: Stored in terraform.tfstate
 
 7. Data Sources
-What: Read-only data from existing resources.
-Why: Reference infra not managed by Terraform.
-Example: data "aws_ami" "ubuntu" { ... }
+- What: Read-only data from existing resources.
+- Why: Reference infra not managed by Terraform.
+- Example: data "aws_ami" "ubuntu" { ... }
 
 8. Backend
-What: Where state file is stored (local, S3, etc.).
-Why: Collaboration and locking.
-Example: backend "s3" { ... }
+- What: Where state file is stored (local, S3, etc.).
+- Why: Collaboration and locking.
+- Example: backend "s3" { ... }
 
 9. Workspaces
-What: Isolated state files within a project.
-Why: Support multiple environments.
-Example: terraform workspace new dev
+- What: Isolated state files within a project.
+- Why: Support multiple environments.
+- Example: terraform workspace new dev
 
 10. Terraform CLI Commands
-What: Commands like init, plan, apply.
-Why: Control Terraform lifecycle.
-Example: terraform apply
+- What: Commands like init, plan, apply.
+- Why: Control Terraform lifecycle.
+- Example: terraform apply
 
 11. Expressions & Functions
-What: Logic in HCL (interpolation, conditions).
-Why: Dynamic and intelligent config.
-Example: count = var.create ? 1 : 0
+- What: Logic in HCL (interpolation, conditions).
+- Why: Dynamic and intelligent config.
+- Example: count = var.create ? 1 : 0
 
 - Expressions & Functions in Terraform (HCL)
 ✅ What
@@ -85,7 +85,7 @@ Example: count = var.create ? 1 : 0
 - var.env == "prod"
 - → Used to evaluate conditions in expressions.
 
--mFor Loop:
+- For Loop:
 - for s in var.subnets : "${s}-tag"
 - → Dynamically generates a list by appending -tag to each subnet.
 
@@ -94,49 +94,49 @@ Example: count = var.create ? 1 : 0
 - → Extracts all IDs from a list of EC2 instances.
 
 ✅ Functions Overview
-length():
-Returns the number of elements in a list or map.
-Example: length(var.subnets)
+- length():
+- Returns the number of elements in a list or map.
+- Example: length(var.subnets)
 
-join():
-Joins elements of a list into a single string, separated by a delimiter.
-Example: join(",", var.subnets)
+- join():
+- Joins elements of a list into a single string, separated by a delimiter.
+- Example: join(",", var.subnets)
 
-split():
-Splits a string into a list based on a delimiter.
-Example: split(",", var.tags)
+- split():
+- Splits a string into a list based on a delimiter.
+- Example: split(",", var.tags)
 
-lookup():
-Retrieves a value from a map based on a key, with an optional default.
-Example: lookup(var.ami_map, var.region, "default-ami")
+- lookup():
+- Retrieves a value from a map based on a key, with an optional default.
+- Example: lookup(var.ami_map, var.region, "default-ami")
 
-element():
-Fetches an element from a list by index.
-Example: element(var.subnets, 1)
+- element():
+- Fetches an element from a list by index.
+- Example: element(var.subnets, 1)
 
-file():
-Reads the contents of a local file into the Terraform configuration.
-Example: file("user_data.sh")
+- file():
+- Reads the contents of a local file into the Terraform configuration.
+- Example: file("user_data.sh")
 
 12. Lifecycle Rules
-What: Customize resource creation/deletion behavior.
-Why: Prevents unintended changes.
-Example:lifecycle {
-  prevent_destroy = true
-}
+- What: Customize resource creation/deletion behavior.
+- Why: Prevents unintended changes.
+- Example:lifecycle {
+   prevent_destroy = true
+ }
 
 13. Provisioners
-What: Run scripts on a resource (e.g., remote exec).
-Why: Perform bootstrapping actions.
-Note: Use as last resort.
-Example:
-provisioner "remote-exec" {
-  inline = ["sudo apt update"]
-}
+- What: Run scripts on a resource (e.g., remote exec).
+- Why: Perform bootstrapping actions.
+- Note: Use as last resort.
+- Example:
+- provisioner "remote-exec" {
+   inline = ["sudo apt update"]
+ }
 
 14. Meta-Arguments
-What: Arguments like count, for_each, depends_on.
-Why: Control behavior of resources.
+- What: Arguments like count, for_each, depends_on.
+- Why: Control behavior of resources.
 Example:
 count = 3
 
