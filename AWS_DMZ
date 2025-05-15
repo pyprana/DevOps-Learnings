@@ -96,6 +96,52 @@ k. Where It Fits in Architecture
 
 - Enable logging and alerts.
 
+- CDC stands for Change Data Capture.
+
+- What:
+- CDC is a technique to track and capture changes (INSERTs, UPDATEs, DELETEs) in a database in real time.
+
+- Why:
+- It helps replicate only the delta (changed data) instead of full data loads, useful in real-time data pipelines and migrations.
+
+- When:
+- Used during:
+
+- Real-time data replication
+
+- Data migration
+
+- ETL/ELT pipelines
+
+- Auditing
+
+- Where:
+- Common in:
+
+- Databases (PostgreSQL, MySQL, Oracle, SQL Server)
+
+- Tools (Debezium, AWS DMS, Kafka Connect)
+
+- Monitor CDC Lag:
+- In real-time migrations, CDC lag is the delay between when a change happens in source DB and when it's applied to the target system.
+- Monitoring this helps ensure sync is near real-time.
+
+- Example Tools to Monitor CDC Lag:
+
+- AWS DMS: CDCLatencySource, CDCLatencyTarget
+
+Debezium: Kafka lag metrics (max.lag.ms)
+
+Custom Prometheus/Grafana dashboards
+
+
+
+
+
+
+
+
+
 - Run data validation.
 
 - Monitor CDC lag for real-time migration.
