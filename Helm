@@ -1,15 +1,15 @@
-Sructure of Helm Chart
-- chart.yaml - metadata
-- values.yaml - default config
-- templates/ - actual k8s manifests
-- charts/ - dependencies
-- README.md(optional)
-- templates/tests(optional)
+- Sructure of Helm Chart.
+- chart.yaml - metadata.
+- values.yaml - default config.
+- templates/ - actual k8s manifests.
+- charts/ - dependencies.
+- README.md(optional).
+- templates/tests(optional).
 
 Q - What is helm?
-A - Helm is a kubernetes package manager
+A - Helm is a kubernetes package manager.
   - Simplifies deployment of complex applications.
-  - Use when you need repeatble versioned kubernetes deployments
+  - Use when you need repeatble versioned kubernetes deployments.
   - Used in CICD pipelines local, dev, production.
   - Ex: Installing NGINX with a single helm install.
 
