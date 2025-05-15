@@ -38,6 +38,8 @@ A - A deployed instance of helm chart.
   - Manage state/version/history of an app.
   - Each install/upgrade = new release version.
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Q - Helm Rollback Strategies
 A - Helm provides built-in mechanisms to roll back deployments when something goes wrong. Below are key strategies:
 
@@ -77,7 +79,6 @@ A - Helm provides built-in mechanisms to roll back deployments when something go
   - helm repo add <repository-name> <repository-url>
 
   - What is a Helm chart?
-
   - A Helm chart is a package of pre-configured Kubernetes resources. 
   - It contains templates, values, and optional files to define how an application should be deployed on a Kubernetes cluster. 
   - Charts make it easy to share and deploy applications consistently.
