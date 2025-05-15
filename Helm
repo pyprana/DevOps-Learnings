@@ -60,7 +60,6 @@ A - Helm provides built-in mechanisms to roll back deployments when something go
   - helm history my-app
 
   - What is Helm, and why is it used in Kubernetes?
-
   - Helm is a package manager for Kubernetes that simplifies the deployment and management of Kubernetes applications. 
   - It uses charts, which are packages of pre-configured Kubernetes resources, to define and install applications. 
   - Helm makes it easier to version, share, and manage complex application deployments on Kubernetes.
