@@ -137,25 +137,25 @@
 14. Meta-Arguments
 - What: Arguments like count, for_each, depends_on.
 - Why: Control behavior of resources.
-Example:
-count = 3
+- Example:
+- count = 3
 
 15. Dynamic Blocks
-What: Generate repeated nested blocks programmatically.
-Why: Cleaner code for repeated structures.
-Example:
-dynamic "ingress" {
-  for_each = var.ingress_rules
-  content {
-    from_port = ingress.value.from
-    to_port   = ingress.value.to
-  }
-}
+- What: Generate repeated nested blocks programmatically.
+- Why: Cleaner code for repeated structures.
+- Example:
+- dynamic "ingress" {
+   for_each = var.ingress_rules
+   content {
+     from_port = ingress.value.from
+     to_port   = ingress.value.to
+   }
+ }
 
 16. Remote State Data Source
-What: Access outputs from another state file.
-Why: Share data across modules/projects.
-Example:
+- What: Access outputs from another state file.
+- Why: Share data across modules/projects.
+- Example:
 
 
 Q - How have you used Terraform?
