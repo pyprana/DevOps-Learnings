@@ -94,3 +94,51 @@ A - Playbook: A file with a list of tasks for Ansible to execute.
   - Used For Deployment:
   - Hosts: Specifies the target servers.
   - Tasks: Define the steps to apply the new changes.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- Ansible Tower (now Red Hat Ansible Automation Controller) is a web-based UI and REST API for managing Ansible.
+
+- What:
+- A centralized tool to manage, schedule, and monitor Ansible playbook executions.
+
+- Why:
+- Role-based access control
+
+- Logging/auditing
+
+- Inventory management
+
+- API integration
+
+- Workflow orchestration
+
+- Job scheduling
+
+- When:
+- Use when:
+
+- Teams collaborate on automation
+
+- Need a visual dashboard or RBAC
+
+- Automating at scale
+
+- Where:
+- Used in enterprise setups to automate IT ops across VMs, cloud, and on-prem.
+
+- Key Components:
+- Templates: Define what playbooks to run
+
+- Inventories: Target systems
+
+- Credentials: Store SSH/API keys securely
+
+- Workflows: Chain multiple jobs
+
+- Schedules: Automate run timing
+
+- RBAC: Control who can do what
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
