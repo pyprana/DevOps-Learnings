@@ -1,4 +1,4 @@
-Terraform is preferred for modular and reusable infrastructure as code.
+- Terraform is preferred for modular and reusable infrastructure as code.
 
 1. Providers
 What: Plugin to interact with cloud or services (e.g., AWS, Azure).
