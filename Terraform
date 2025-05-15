@@ -55,6 +55,24 @@ What: Logic in HCL (interpolation, conditions).
 Why: Dynamic and intelligent config.
 Example: count = var.create ? 1 : 0
 
+- Expressions & Functions in Terraform (HCL)
+✅ What
+- Expressions and functions in HCL (HashiCorp Configuration Language) allow you to write dynamic, conditional, and reusable configurations.
+
+- Expressions = Logic statements used to compute values (e.g., var.env == "prod" ? 3 : 1)
+
+- Functions = Built-in helpers that perform operations (e.g., length(), lookup(), join())
+
+✅ Why
+- They help:
+
+- Reduce hardcoding
+
+- Make config dynamic based on variables or conditions
+
+- Control resource count, naming, tags, paths, etc.
+
+
 12. Lifecycle Rules
 What: Customize resource creation/deletion behavior.
 Why: Prevents unintended changes.
