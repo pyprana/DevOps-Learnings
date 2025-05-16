@@ -92,6 +92,36 @@ Q - What do you understand by Cloud controller manager?
   - This process lets you link the cluster to the cloud provider's API and separates the elements that interact with the cloud platform from components that only interact with your
     cluster. 
 
+Q - What are federated clusters?
+  - Aggregating multiple clusters that treat them as a single logical cluster refers to cluster federation. 
+  - In this, multiple clusters may be managed as a single cluster. They stay with the assistance of federated groups. 
+  - Also, users can create various clusters within the data center or cloud and use the federation to control or manage them in one place. 
+  - You can perform cluster federation by doing the following: 
+
+  - Cross cluster that provides the ability to have DNS and Load Balancer with backend from the participating clusters. 
+
+  - Users can sync resources across different clusters to deploy the same set across the various clusters.
+
+  - Federated clusters mean managing multiple Kubernetes clusters together as if they were one big cluster.
+
+  - What It Does:
+  - You can sync deployments across all clusters at once.
+
+  - You can use a global DNS and load balancer that spreads traffic across clusters.
+
+  - Useful when clusters are in different regions, data centers, or clouds.
+
+  - Where Are They Used (Production Use Cases):
+  - High availability across regions (if one cluster fails, others still work).
+
+  - Disaster recovery setup.
+  - Low latency access by keeping clusters close to users in different geographies.
+
+  - Cloud-agnostic strategy – using AWS + GCP + on-prem together.
+
+  - Summary:
+  - Used in large-scale production systems where uptime, speed, and global reach are important.
+
 Q - What is Kubelet?
   - The kubelet is a service agent that controls and maintains a set of pods by watching for pod specs through the Kubernetes API server.
   - It preserves the pod lifecycle by ensuring that a given set of containers runs as they should. 
