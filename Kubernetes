@@ -92,6 +92,40 @@ Q - What do you understand by Cloud controller manager?
   - This process lets you link the cluster to the cloud provider's API and separates the elements that interact with the cloud platform from components that only interact with your
     cluster. 
 
+Q - What is Container resource monitoring?
+  - This refers to the activity that collects metrics and tracks the health of containerized applications and microservices environments.
+  - It helps to improve their health and performance and ensures that they operate smoothly.
+
+  - Container resource monitoring means keeping track of how much CPU, memory, disk, and network a container is using.
+  
+  - Why:
+  - To make sure your containers are healthy, not overloaded, and working correctly.
+
+  - In Production:
+  - Tools like Prometheus + Grafana, Datadog, or New Relic are used in live (production) environments to:
+
+  - Alert if a container is using too much memory or crashing.
+
+  - Show dashboards for real-time usage.
+
+  - Help DevOps teams fix issues before users are impacted.
+
+  - Example:
+  - If a container runs out of memory, monitoring tools can send an alert so you can restart or scale up the service.
+
+Q - What is the difference between a replica set and a replication controller?
+  - A replication controller is referred to as RC in short. It is a wrapper on a pod. This provides additional functionality to the pods, which offers replicas. 
+  - It monitors the pods and automatically restarts them if they fail. If the node fails, this controller will respawn all the pods of that node on another node. 
+  - If the pods die, they won't be spawned again unless wrapped around a replica set. 
+
+  - Replica Set, on the other hand, is referred to as RS in short. It is the next-generation replication controller. 
+  - This kind of support has some selector types and supports equality-based and set-based selectors. 
+  - It allows filtering by label values and keys. To match the object, they must satisfy all the specified label constraints.
+
+Q - What is a headless service?
+  - A headless service interfaces with service discovery mechanisms without being tied to a ClusterIP.
+  - It allows you to reach pods directly without having to access them through a proxy. This is useful when neither load balancing nor a single Service IP is required. 
+
 Q - What are federated clusters?
   - Aggregating multiple clusters that treat them as a single logical cluster refers to cluster federation. 
   - In this, multiple clusters may be managed as a single cluster. They stay with the assistance of federated groups. 
