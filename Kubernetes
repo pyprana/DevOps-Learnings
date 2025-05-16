@@ -469,17 +469,56 @@ users:
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-- Here’s the difference between JSON and YAML in simple terms:
+- What is the difference between deploying applications on hosts and containers?
+- Deploying Applications consist of an architecture that has an operating system. 
+- The operating system will have a kernel that holds various libraries installed on the operating system needed for an application.
+- Whereas container host refers to the system that runs the containerized processes. 
+- This kind is isolated from the other applications; therefore, the applications must have the necessary libraries. 
+- The binaries are separated from the rest of the system and cannot infringe any other application.
 
+- Explain the working of the master node in Kubernetes.
+- The master node is the node that controls and manages the set of worker nodes. This kind of cluster resembles a cluster in Kubernetes.
+- The nodes are responsible for cluster management and the API used to configure and manage the resources within the collection. 
+- The master nodes of Kubernetes can run with Kubernetes itself, the asset of dedicated pods.
+
+- What is the role of Kube-apiserver?
+- This kind validates and provides configuration data for the API objects.
+- It includes pods, services, replication controllers. Also, it provides REST operations and also the frontend of the cluster.
+- This frontend cluster state is shared through which all other component interacts.
+
+- What is a node in Kubernetes?
+- A node is the smallest fundamental unit of computing hardware. 
+- It represents a single machine in a cluster, which could be a physical machine in a data center or a virtual machine from a cloud provider. Each machine can substitute any other machine in a Kubernetes cluster. The master in Kubernetes controls the nodes that have containers
+
+- What does the node status contain?
+- The main components of a node status are Address, Condition, Capacity, and Info.
+
+- What process runs on Kubernetes Master Node? 
+- The Kube-api server process runs on the master node and serves to scale the deployment of more instances.
+
+- What is the job of the kube-scheduler?
+- The kube-scheduler assigns nodes to newly created pods.
+
+- What is a cluster of containers in Kubernetes? 
+- A cluster of containers is a set of machine elements that are nodes. Clusters initiate specific routes so that the containers running on the nodes can communicate. 
+- In Kubernetes, the container engine (not the server of the Kubernetes API) provides hosting for the API server.
+
+- What are Daemon sets?
+- A Daemon set is a set of pods that runs only once on a host. 
+- They are used for host layer attributes like a network or for monitoring a network, which you may not need to run on a host more than once.
+
+- What is ‘Heapster’ in Kubernetes?
+- A Heapster is a performance monitoring and metrics collection system for data collected by the Kublet. 
+- This aggregator is natively supported and runs like any other pod within a Kubernetes cluster, which allows it to discover and query usage data from all nodes within the cluster.
+
+- Here’s the difference between JSON and YAML in simple terms:
 - JSON (JavaScript Object Notation)
 - Data format used widely in APIs and web apps.
 
 - Uses brackets {} and quotes.
-
 - Strict syntax, good for machines.
 
 - Example:
-
 json
 {
   "name": "Pranay",
@@ -489,11 +528,8 @@ json
 
 - YAML (YAML Ain’t Markup Language)
 - Used for configuration files (e.g., Kubernetes, Ansible, Docker Compose).
-
 - More human-readable, uses indentation and dashes.
-
 - No need for brackets or quotes unless necessary.
-
 - Example:
 
 - yaml
