@@ -1,25 +1,24 @@
 SSL Certificate Management – Overview
 
-🔹 What
+- What
 - Managing SSL/TLS certificates ensures secure HTTPS communication between clients and servers by encrypting data in transit.
 
-🔹 Why
+- Why
 - Ensures data confidentiality and integrity.
 
 - Enables authentication of the server.
-
 - Prevents MITM attacks.
 
-🔹 When
+- When
 - For public websites, internal services, APIs, load balancers, etc.
 
 - During certificate expiry/rotation, renewals, and infrastructure changes.
 
-🔹 Where
+- Where
 - On web servers (Nginx, Apache), load balancers (ALB, NLB), CDNs, containers, Kubernetes Ingress, etc.
 
-🔸 Key Activities in Certificate Management
-Procurement
+- Key Activities in Certificate Management
+- Procurement
 
 - Buy from CA (DigiCert, GoDaddy) or use free ones (Let's Encrypt).
 
@@ -59,13 +58,13 @@ Procurement
 - Cert-Manager
 - A Kubernetes-native solution that automates certificate issuance and renewal, integrates with ACME (Let's Encrypt), Vault, and other issuers.
 
-Example (Nginx + Let's Encrypt)
+- Example (Nginx + Let's Encrypt)
 - sudo apt install certbot python3-certbot-nginx
 - sudo certbot --nginx -d yourdomain.com
 
-Diagram (Simplified)
-[Browser] ⇄ HTTPS ⇄ [Web Server w/ SSL Cert] ⇄ Backend
-        ⇡ Certbot / ACM / Vault handles rotation
+- Diagram (Simplified)
+- [Browser] ⇄ HTTPS ⇄ [Web Server w/ SSL Cert] ⇄ Backend
+         ⇡ Certbot / ACM / Vault handles rotation
 
 - Production Use Case
 - Auto-renewing certs via Cert-Manager in Kubernetes Ingress.
