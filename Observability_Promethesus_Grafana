@@ -110,6 +110,26 @@ Q - What is PromQL, and why is it important?
   - PromQL allows you to filter, aggregate, and manipulate data to create complex queries for monitoring. 
   - It’s essential for generating detailed insights, visualizations, and alerts, making it one of the core features of Prometheus.”
 
+
+- What are some best practices for designing effective Kubernetes monitoring dashboards in Grafana?
+- Best practices include using clear and descriptive metric names, organizing panels logically, setting appropriate time ranges, using template variables for dynamic dashboards, 
+  and creating alerts for critical conditions.
+
+- How can you ensure the scalability and high availability of Prometheus and Grafana components in a production Kubernetes environment?
+- To ensure scalability and high availability, you can deploy multiple Prometheus instances, use remote write and storage solutions for Prometheus data, and set up Grafana in a 
+  highly available configuration with load balancing.
+
+- What are the potential challenges and considerations when configuring Grafana alerts for Kubernetes monitoring, and how can you mitigate them?
+- Challenges include defining alert thresholds, reducing false positives, and handling alerting for multi-tenant clusters. 
+- Mitigations include setting appropriate alerting rules.
+
+Q - Prometheus:
+  - Explain the role of “Prometheus exporters” in Kubernetes monitoring. Can you provide examples of commonly used exporters for Kubernetes?
+  - Prometheus exporters are specialized components that expose metrics in a format Prometheus can scrape. 
+  - Commonly used Kubernetes exporters include `node_exporter` for node-level metrics, `kube-state-metrics` for cluster state information, and `kubelet` for per-Pod metrics.
+
+Q - What are “Histograms” and “Summaries” in Prometheus, and how can they be used to monitor latency and response time in Kubernetes applications?
+  - Histograms and Summaries are metric types in Prometheus used for observing distributions of values, such as request latencies. They can help monitor and visualize latency and response time distributions in Kubernetes applications.
   - Grafana:
   - Explain how you can create templated dashboards in Grafana to monitor multiple Kubernetes namespaces or clusters with a single dashboard configuration. Provide an example.
   - Templated dashboards in Grafana allow you to dynamically switch between namespaces or clusters. Here’s an example using a variable for selecting namespaces:
