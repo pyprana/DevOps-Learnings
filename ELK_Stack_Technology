@@ -12,9 +12,9 @@
 
 - What is the ELK Stack?
 - ELK Stack is a collection of three open-source tools: 
-  Elasticsearch, 
-  Logstash, and
-  Kibana, 
+- Elasticsearch, 
+- Logstash, and
+- Kibana, 
 - used for centralized logging, data analysis, and visualization.
 
 - Elasticsearch: Search and analytics engine.
