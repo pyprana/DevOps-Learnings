@@ -119,6 +119,20 @@ chmod +x script.sh
 - Like a pipeline, each process output is directly input to the next one. 
 - A pipe is represented by the symbol "|". The flow of data through a pipeline is unidirectional, i.e., from left to right.
 
-Syntax :
+- Syntax :
 
-command_1 | command_2 | command_3 | .... | command_N
+- command_1 | command_2 | command_3 | .... | command_N
+
+- Write the difference between $$ and $!?
+- You can use $$ to get the process id of the current process. However, $! displays the process id for a background process that recently went away.
+
+- Name the command that one should use to know how long the system has been running.
+- Using the Uptime command, you can see how long your system has been active. 
+- You can also determine the number of users with running sessions, and the average system load for 1, 5, and 15 minutes. 
+- The information displayed at once can also be filtered based on your specified options. 
+
+- Example: $ uptime   
+
+- Entering the above command at the shell prompt, namely $ uptime, will produce the following output:
+
+- 9:21am  up 86 day(s), 11:46,  3 users,  load average: 2.24, 2.18, 2.16
