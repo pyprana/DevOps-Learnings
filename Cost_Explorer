@@ -1,0 +1,71 @@
+
+Usage Reports
+
+Shows resource usage (e.g., EC2 hours, GB stored)
+
+Granularity: Hourly, Daily, Monthly
+
+Cost Reports
+
+Shows dollar amount spent
+
+Supports filters (service, region, tags, account)
+
+Filtering & Grouping
+
+Filter: service, linked account, tag, AZ, instance type, etc.
+
+Group: View cost by grouped dimensions (e.g., group by service)
+
+Forecasting
+
+Predicts next 12 months of spend based on past usage
+
+Uses linear regression on previous 13 months
+
+RI & Savings Plans Recommendations
+
+Shows cost-saving opportunities based on your usage
+
+Recommends RI/SP purchases
+
+Cost Categories
+
+Create custom billing groups (e.g., by department)
+
+Helps track internal chargebacks
+
+Linked Accounts Support
+
+Consolidated billing view
+
+Drill down to individual account costs
+
+Budgets Integration
+
+Set budgets based on Cost Explorer data
+
+Alerts when nearing limits
+
+Tag-Based Analysis
+
+Use cost allocation tags to group/filter costs
+
+E.g., Environment=Prod or Team=DevOps
+
+Amortized vs Blended Costs
+
+Amortized: Spread one-time costs (e.g., RI) across usage
+
+Blended: Average rate across linked accounts
+
+📊 Common Use Cases:
+Visualize top spending services
+
+Analyze cost anomalies
+
+Breakdown cost by environment/team/project
+
+Evaluate cost trends month-over-month
+
+Find idle or underused resources
