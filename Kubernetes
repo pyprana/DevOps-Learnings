@@ -40,6 +40,12 @@ A - Kubernetes uses a flat, cluster-wide network let all the pods communicate di
   - http://service-name>
   - Across Nodes : CNI ensures routing between pods on different nodes.
 
+| CNI Plugin | Technology         | Features                                | Best For                          |
+|------------|--------------------|-----------------------------------------|-----------------------------------|
+| Calico     | L3 routing + BGP   | Network policies, security, scalability | Secure, scalable production setups|
+| Flannel    | Overlay (VXLAN)    | Simple, basic pod networking            | Lightweight, small clusters       |
+| Cilium     | eBPF-based         | Deep observability, security, policies  | Advanced, high-performance setups |
+
 Q - What’s the difference between ClusterIP, NodePort, and LoadBalancer in Kubernetes?
 A - ClusterIP: Default type, only accessible within the cluster.
   - NodePort: Opens a port on each node to access from outside (not secure for production).
