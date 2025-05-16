@@ -36,13 +36,15 @@ f. Data Transformation Rules
 
 g. Validation & Monitoring
 - Tools: CloudWatch logs, DMS console, validation reports.
-
 - Why: Track progress, errors, throughput, latency.
 
 h. Homogeneous vs Heterogeneous Migration
-Type	          Tools Needed	    Example
-Homogeneous	    DMS only	        MySQL → RDS MySQL
-Heterogeneous	  SCT + DMS	        Oracle → Amazon Aurora
+
+| Type          | Tools Needed  | Example                   |
+|---------------|---------------|---------------------------|
+| Homogeneous   | DMS only      | MySQL → RDS MySQL         |
+| Heterogeneous | SCT + DMS     | Oracle → Amazon Aurora    |
+
 
 i. Who Uses AWS DMS?
 - DBAs
@@ -62,38 +64,23 @@ k. Where It Fits in Architecture
 
 - Why Use AWS DMS?
 - No downtime
-
 - Supports major DB engines
-
 - Scales with replication instances
-
 - CDC ensures real-time sync
-
 - Supported DB Engines
-
 - Source & Target Examples:
-
 - MySQL, PostgreSQL, Oracle, MS SQL, MongoDB, MariaDB, Amazon Aurora, Amazon Redshift
-
 - Example Use Case
 - Scenario: Migrate on-prem Oracle to Amazon Aurora PostgreSQL with zero downtime.
 
 - Steps:
-
 - Use SCT-(Schema Conversion Tool) to convert schema.
-
 - Create replication instance.
-
 - Configure source and target endpoints.
-
 - Create task with Full Load + CDC.
-
 - Monitor and validate migration.
-
 - Production Best Practices.
-
 - Use Multi-AZ replication instance.
-
 - Enable logging and alerts.
 
 - CDC stands for Change Data Capture.
@@ -130,17 +117,9 @@ k. Where It Fits in Architecture
 
 - AWS DMS: CDCLatencySource, CDCLatencyTarget
 
-Debezium: Kafka lag metrics (max.lag.ms)
+- Debezium: Kafka lag metrics (max.lag.ms)
 
-Custom Prometheus/Grafana dashboards
-
-
-
-
-
-
-
-
+- Custom Prometheus/Grafana dashboards
 
 - Run data validation.
 
