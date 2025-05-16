@@ -110,3 +110,4 @@ Q - What is PromQL, and why is it important?
   - “PromQL, or Prometheus Query Language, is a powerful and flexible language used to query and retrieve metrics from Prometheus’ time-series database. 
   - PromQL allows you to filter, aggregate, and manipulate data to create complex queries for monitoring. 
   - It’s essential for generating detailed insights, visualizations, and alerts, making it one of the core features of Prometheus.”
+
