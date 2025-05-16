@@ -172,9 +172,19 @@ Use the snapshot and restore feature to store data in repositories like S3.
 What are common performance bottlenecks in ELK?
 
 High CPU usage in Logstash, insufficient heap size in Elasticsearch, and slow Kibana visualizations.
-How do you secure the entire ELK Stack?
 
-Use authentication, encryption, role-based access, and network isolation.
-What are some alternatives to the ELK Stack?
+- How do you secure the entire ELK Stack?
+- Use authentication, encryption, role-based access, and network isolation.
 
-EFK Stack, Splunk, Graylog, Datadog, and Sumo Logic.
+- What are some alternatives to the ELK Stack?
+- EFK Stack, Splunk, Graylog, Datadog, and Sumo Logic.
+
+- Differences - EFK Stack, Splunk, Graylog, Datadog, and Sumo Logic
+- | Tool         | Type                           | Open Source | Deployment      | Use Case Focus             | Cost Model          |
+  |--------------|--------------------------------|-------------|-----------------|----------------------------|---------------------|
+  | EFK Stack    | Elasticsearch, Fluentd, Kibana | Yes         | Self-hosted     | Log aggregation, analysis  | Infra cost only     |
+  | Splunk       | SIEM, Log Analysis             | No          | Cloud & On-prem | Security, compliance       | License-based       |
+  | Graylog      | Log Management                 | Partially   | Self-hosted     | Centralized logging        | Free & Enterprise   |
+  | Datadog      | Monitoring + Logs              | No          | Cloud           | Infra, APM, logs           | Subscription-based  |
+  | Sumo Logic   | Log Analysis + SIEM            | No          | Cloud           | Logs, security analytics   | Subscription-based  |
+
