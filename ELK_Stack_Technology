@@ -110,21 +110,21 @@
 - It combines multiple log lines into a single event, often used for stack traces.
 
 - What is the use of conditionals in Logstash pipelines?
+- Conditionals apply filters or outputs based on specific criteria.
 
-Conditionals apply filters or outputs based on specific criteria.
-Can Logstash output to multiple destinations?
+- Can Logstash output to multiple destinations?
+- Yes, it supports multiple outputs like Elasticsearch, S3, and Kafka.
 
-Yes, it supports multiple outputs like Elasticsearch, S3, and Kafka.
-How do you secure Logstash?
+- How do you secure Logstash?
+- Use SSL/TLS encryption, authentication, and pipeline-specific access controls.
 
-Use SSL/TLS encryption, authentication, and pipeline-specific access controls.
-What is Kibana used for?
+- What is Kibana used for?
+- It visualizes Elasticsearch data with charts, maps, and dashboards.
 
-It visualizes Elasticsearch data with charts, maps, and dashboards.
-How do you create a dashboard in Kibana?
+- How do you create a dashboard in Kibana?
+- Use visualizations (e.g., bar charts, tables) and combine them into a dashboard.
 
-Use visualizations (e.g., bar charts, tables) and combine them into a dashboard.
-What are index patterns in Kibana?
+- What are index patterns in Kibana?
 
 Index patterns connect Kibana to specific Elasticsearch indices.
 What is the Discover tab in Kibana?
