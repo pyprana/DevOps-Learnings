@@ -114,6 +114,18 @@ Use Case: Simple app redeployment via Git and systemd.
 chmod +x script.sh
 
 
+
+- What do you mean by metacharacters?
+- In a data field or program, metacharacters are special characters that provide information about other characters. 
+- In shells, they're called regular expressions.  A character that is neither a letter nor a number is generally considered a metacharacter. 
+- Using shell metacharacters, you can group together commands, redirect and pipe input/output, put commands in the background, reduce the size of file names and path names, etc. 
+- You can use them as wildcards to specify a file name without typing in the file's full name. The most common metacharacters are as follows:
+
+- Asterisk (*): Use the * to match any character.
+- Question Mark (?): It matches a single character in the filename.
+- Brackets ([…]):  The metacharacters used here match some specified characters.
+- Hyphen (-): When placed within [] (brackets), the - metacharacter matches a specified range
+
 - How to use pipe commands?
 - Pipe command allows you to use several commands in the same way, in which the output of one is used as input for another.
 - Like a pipeline, each process output is directly input to the next one. 
