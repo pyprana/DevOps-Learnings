@@ -123,6 +123,30 @@ chmod +x script.sh
 
 - command_1 | command_2 | command_3 | .... | command_N
 
+
+- How will you find total shells available in your system?
+- Within your system, there are several shells available. If you want to find all the shells on the system, you can use $ cat /etc/shells. 
+
+- Example: 
+
+- $ cat /etc/shells 
+
+- Execution over Shell Interpreter/Editor: 
+
+- $ cat /etc/shells 
+
+- Output: 
+
+- /bin/sh 
+
+- /bin/bash 
+
+- /sbin/nologin 
+
+- /bin/ksh 
+
+- /bin/csh
+
 - Write the difference between $$ and $!?
 - You can use $$ to get the process id of the current process. However, $! displays the process id for a background process that recently went away.
 
