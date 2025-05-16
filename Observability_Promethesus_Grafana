@@ -111,3 +111,39 @@ Q - What is PromQL, and why is it important?
   - PromQL allows you to filter, aggregate, and manipulate data to create complex queries for monitoring. 
   - It’s essential for generating detailed insights, visualizations, and alerts, making it one of the core features of Prometheus.”
 
+  - Scalability and Optimization:
+Q - What strategies can you implement to optimize the storage and query performance of Prometheus in a Kubernetes environment with a large number of metrics?
+  - Strategies include setting appropriate retention periods, using downsampling, implementing efficient storage backends, and leveraging remote write and read solutions like 
+    Thanos or Cortex.
+
+  - Set Retention Period
+  - What: Decide how long to keep the data.
+  - Why: Older data takes up more space and slows down queries.
+  - How: Set --storage.tsdb.retention.time=15d (for example) in Prometheus config.
+
+Q - Use Downsampling
+  - What: Store summary data (like 1-hour averages) instead of every raw metric.
+  - Why: Reduces data size and improves query speed.
+  - Tool: Use Thanos/Cortex for automatic downsampling.
+
+Q - Use Efficient Storage Backends
+  - What: Use block storage or object storage instead of just local disk.
+  - Why: Scales better and improves reliability.
+
+  - Examples: Amazon S3, GCS, Azure Blob (via Thanos/Cortex).
+Q - Enable Remote Write/Read
+  - What: Push metrics to long-term storage systems like Thanos or Cortex.
+  - Why: Keeps Prometheus light, while offloading old or heavy data to more powerful systems.
+
+Q - Explain the concept of “Federation” in Prometheus and how it can be used for monitoring multi-cluster or multi-datacenter Kubernetes environments.
+  - Federation in Prometheus allows you to collect metrics from multiple Prometheus servers and aggregate them into a central Prometheus instance. 
+  - It’s useful for monitoring multi-cluster or multi-datacenter Kubernetes environments.
+
+  - Integration with Other Tools:
+Q - How can you integrate Prometheus and Grafana with logging solutions like Elasticsearch and Fluentd to gain a holistic view of Kubernetes applications?
+  - Integrating Prometheus and Grafana with logging solutions involves configuring data sources and creating dashboards that combine metrics and logs. 
+  - Fluentd can be used for log collection and forwarding to Elasticsearch for indexing and searching.
+
+Q - Explain how you can use Grafana’s “Alert Templating” feature to create dynamic alert notifications based on Prometheus alerts. Provide an example use case.
+  - Grafana’s “Alert Templating” allows you to customize alert notifications dynamically based on alert labels or annotations. 
+  - For example, you can include specific event details or contact information in alert notifications based on the Kubernetes namespace where the alert originated.
