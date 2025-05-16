@@ -1,75 +1,74 @@
 
-Usage Reports
+- Usage Reports
 
-Shows resource usage (e.g., EC2 hours, GB stored)
+- Shows resource usage (e.g., EC2 hours, GB stored)
 
-Granularity: Hourly, Daily, Monthly
+- Granularity: Hourly, Daily, Monthly
 
-Cost Reports
+- Cost Reports
 
-Shows dollar amount spent
+- Shows dollar amount spent
 
-Supports filters (service, region, tags, account)
+- Supports filters (service, region, tags, account)
 
-Filtering & Grouping
+- Filtering & Grouping
 
-Filter: service, linked account, tag, AZ, instance type, etc.
+- Filter: service, linked account, tag, AZ, instance type, etc.
 
-Group: View cost by grouped dimensions (e.g., group by service)
+- Group: View cost by grouped dimensions (e.g., group by service)
 
-Forecasting
+- Forecasting
 
-Predicts next 12 months of spend based on past usage
+- Predicts next 12 months of spend based on past usage
 
-Uses linear regression on previous 13 months
+- Uses linear regression on previous 13 months
 
-RI & Savings Plans Recommendations
+- RI & Savings Plans Recommendations
 
-Shows cost-saving opportunities based on your usage
+- Shows cost-saving opportunities based on your usage
 
-Recommends RI/SP purchases
+- Recommends RI/SP purchases
 
-Cost Categories
+- Cost Categories
 
-Create custom billing groups (e.g., by department)
+- Create custom billing groups (e.g., by department)
 
-Helps track internal chargebacks
+- Helps track internal chargebacks
 
-Linked Accounts Support
+- Linked Accounts Support
 
-Consolidated billing view
+- Consolidated billing view
 
-Drill down to individual account costs
+- Drill down to individual account costs
 
-Budgets Integration
+- Budgets Integration
 
-Set budgets based on Cost Explorer data
+- Set budgets based on Cost Explorer data
 
-Alerts when nearing limits
+- Alerts when nearing limits
 
-Tag-Based Analysis
+- Tag-Based Analysis
 
-Use cost allocation tags to group/filter costs
+- Use cost allocation tags to group/filter costs
 
-E.g., Environment=Prod or Team=DevOps
+- E.g., Environment=Prod or Team=DevOps
 
-Amortized vs Blended Costs
+- Amortized vs Blended Costs
 
-Amortized: Spread one-time costs (e.g., RI) across usage
+- Amortized: Spread one-time costs (e.g., RI) across usage
 
-Blended: Average rate across linked accounts
+- Blended: Average rate across linked accounts
 
-📊 Common Use Cases:
-Visualize top spending services
+- Common Use Cases:
+- Visualize top spending services
 
-Analyze cost anomalies
+- Analyze cost anomalies
 
-Breakdown cost by environment/team/project
+- Breakdown cost by environment/team/project
 
-Evaluate cost trends month-over-month
+- Evaluate cost trends month-over-month
 
-Find idle or underused resources
-
+- Find idle or underused resources
 
 Q: What is AWS Cost Explorer?
 A: AWS Cost Explorer is a tool that enables you to view and analyze your AWS costs and usage over time. 
