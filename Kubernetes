@@ -54,6 +54,45 @@ A - ClusterIP: Default type, only accessible within the cluster.
 Q - What does 'cordon' mean in Kubernetes?
 A - It marks a node as unschedulable — no new pods will run there, but existing pods stay. Used for maintenance.
 
+Q - What is Minikube?
+A - With the help of Minikube, users can Kubernetes locally. 
+  - This process lets the user run a single-node Kubernetes cluster on your personal computer, including Windows, macOS, and Linus PCs. 
+  - With this, users can try out Kubernetes also for daily development work.
+
+Q - What is a Namespace in Kubernetes?
+  - Namespaces divide cluster resources between multiple users. They are meant for environments with many users spread across projects or teams and provide a scope of resources.
+
+Q - Name the initial namespaces from which Kubernetes starts.
+  - Default
+  - Kube – system
+  - Kube – public
+
+Q - What is the Kubernetes controller manager?
+  - The controller manager is a daemon that is used to embed core control loops, collect garbage, and create a Namespace. 
+  - It enables the running of multiple processes on the master node even though they are compiled to run as a single process.
+
+Q - What are the types of controller managers?
+  - The primary controller managers that can run on the master node are the endpoints, service accounts, namespace, node, token, and replication.
+
+Q - What is etcd?
+  - Kubernetes uses etcd as a distributed key-value store for all of its data, including metadata and configuration data, and allows nodes in Kubernetes clusters to read and write
+    data. Although etcd was purposely built for CoreOS, it also works on a variety of operating systems (e.g., Linux, BSB, and OS X) because it is open-source. 
+  - Etcd represents the state of a cluster at a specific moment in time and is a canonical hub for state management and cluster coordination of a Kubernetes cluster.
+
+Q - What is the Ingress network, and how does it work?
+  - An ingress is an object that allows users to access your Kubernetes services from outside the Kubernetes cluster. 
+  - Users can configure the access by creating rules that define which inbound connections reach which services.
+
+Q - How does it work- This is an API object that provides the routing rules to manage the external users' access to the services in the Kubernetes cluster through HTTPS/ HTTP. 
+  - With this, users can easily set up the rules for routing traffic without creating a bunch of load balancers or exposing each service to the nodes.
+
+Q - What do you understand by Cloud controller manager?
+  - You must have heard about Public, Private and hybrid clouds. Cloud infrastructure technologies help you run Kubernetes on them. 
+  - In the context of Cloud Controller Manager, the control panel component embeds the cloud-specific control logic. 
+  - This process lets you link the cluster to the cloud provider's API and separates the elements that interact with the cloud platform from components that only interact with your
+    cluster. 
+
+This also enables cloud providers to release the features at a different pace than the main Kubernetes project. It is structured using a plugin mechanism and allows various cloud providers to integrate their platforms with Kubernetes.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Q - When do you use a Transit Gateway?
