@@ -92,7 +92,33 @@ Q - What do you understand by Cloud controller manager?
   - This process lets you link the cluster to the cloud provider's API and separates the elements that interact with the cloud platform from components that only interact with your
     cluster. 
 
-This also enables cloud providers to release the features at a different pace than the main Kubernetes project. It is structured using a plugin mechanism and allows various cloud providers to integrate their platforms with Kubernetes.
+Q - What is Kubelet?
+  - The kubelet is a service agent that controls and maintains a set of pods by watching for pod specs through the Kubernetes API server.
+  - It preserves the pod lifecycle by ensuring that a given set of containers runs as they should. 
+  - The kubelet runs on each node and enables communication between the master and slave nodes.
+
+Q - What is Kubectl?
+  - Kubectl is a CLI (command-line interface) that is used to run commands against Kubernetes clusters. 
+  - As such, it controls the Kubernetes cluster manager through different create and manage commands on the Kubernetes component.
+
+Q - Give examples of recommended security measures for Kubernetes.
+  - Examples of standard Kubernetes security measures include defining resource quotas, supporting auditing, restricting etcd access, regularly updating the environment's security,
+    network segmentation, defining strict resource policies, continuously scanning for security vulnerabilities, and using images from authorized repositories.
+
+Q - This also enables cloud providers to release the features at a different pace than the main Kubernetes project. 
+  - It is structured using a plugin mechanism and allows various cloud providers to integrate their platforms with Kubernetes.
+
+ Q - What is Kube-proxy? 
+   - Kube-proxy implements a load balancer and network proxy used to support service abstraction with other networking operations. 
+   - It directs traffic to the right container based on the IP and port number of incoming requests.
+
+Q - How can you get a static IP for a Kubernetes load balancer? 
+  - Changing DNS records can achieve a static IP for the Kubernetes load balancer since the Kubernetes Master can assign a new static IP address
+
+Q - To get a static IP for a Kubernetes LoadBalancer service (so it doesn't change when restarted):
+  - You reserve a static IP in your cloud provider (like AWS, GCP, or Azure).
+  - Then, you assign that static IP to your LoadBalancer service using annotations or service definition.
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Q - When do you use a Transit Gateway?
