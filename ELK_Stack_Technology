@@ -125,38 +125,37 @@
 - Use visualizations (e.g., bar charts, tables) and combine them into a dashboard.
 
 - What are index patterns in Kibana?
+- Index patterns connect Kibana to specific Elasticsearch indices.
 
-Index patterns connect Kibana to specific Elasticsearch indices.
-What is the Discover tab in Kibana?
+- What is the Discover tab in Kibana?
+- It provides a raw view of Elasticsearch data with search and filter capabilities.
 
-It provides a raw view of Elasticsearch data with search and filter capabilities.
-What is Kibana Lens?
+- What is Kibana Lens?
+- A user-friendly interface for creating visualizations with drag-and-drop functionality.
 
-A user-friendly interface for creating visualizations with drag-and-drop functionality.
-How can you secure Kibana?
+- How can you secure Kibana?
+- Use role-based access control, TLS encryption, and secure Elasticsearch integration.
 
-Use role-based access control, TLS encryption, and secure Elasticsearch integration.
-What is Canvas in Kibana?
+- What is Canvas in Kibana?
+- A tool for creating custom, infographic-style visualizations and reports.
 
-A tool for creating custom, infographic-style visualizations and reports.
-What are Kibana alerts?
+- What are Kibana alerts?
+- Alerts notify users about data changes based on defined conditions.
 
-Alerts notify users about data changes based on defined conditions.
-What is Kibana Timelion?
+- What is Kibana Timelion?
+- A tool for time-series visualizations and analysis.
 
-A tool for time-series visualizations and analysis.
-Can you embed Kibana visualizations into external applications?
+- Can you embed Kibana visualizations into external applications?
+- Yes, using iframe links or APIs.
 
-Yes, using iframe links or APIs.
-How do you scale the ELK Stack?
+- How do you scale the ELK Stack?
+- Scale Elasticsearch with more nodes and shards, use Kafka with Logstash for high-volume data, and implement Kibana load balancing.
 
-Scale Elasticsearch with more nodes and shards, use Kafka with Logstash for high-volume data, and implement Kibana load balancing.
-What is X-Pack in Elasticsearch?
+- What is X-Pack in Elasticsearch?
+- A plugin offering features like security, monitoring, and machine learning.
 
-A plugin offering features like security, monitoring, and machine learning.
-What is the Elastic Common Schema (ECS)?
-
-A standard schema for structured logging across the ELK ecosystem.
+- What is the Elastic Common Schema (ECS)?
+- A standard schema for structured logging across the ELK ecosystem.
 
 - How does Elasticsearch ensure data consistency?
 - By using write-ahead logging (WAL) and primary-replica synchronization.
