@@ -157,21 +157,21 @@ A plugin offering features like security, monitoring, and machine learning.
 What is the Elastic Common Schema (ECS)?
 
 A standard schema for structured logging across the ELK ecosystem.
-How does Elasticsearch ensure data consistency?
 
-By using write-ahead logging (WAL) and primary-replica synchronization.
-How can you optimize Elasticsearch queries?
+- How does Elasticsearch ensure data consistency?
+- By using write-ahead logging (WAL) and primary-replica synchronization.
 
-Use filters instead of queries, minimize wildcard usage, and ensure proper indexing.
-What is hot-warm architecture in Elasticsearch?
+- How can you optimize Elasticsearch queries?
+- Use filters instead of queries, minimize wildcard usage, and ensure proper indexing.
 
-A tiered storage approach where hot nodes handle frequent queries, and warm nodes store older data.
-How do you back up Elasticsearch data?
+- What is hot-warm architecture in Elasticsearch?
+- A tiered storage approach where hot nodes handle frequent queries, and warm nodes store older data.
 
-Use the snapshot and restore feature to store data in repositories like S3.
-What are common performance bottlenecks in ELK?
+- How do you back up Elasticsearch data?
+- Use the snapshot and restore feature to store data in repositories like S3.
 
-High CPU usage in Logstash, insufficient heap size in Elasticsearch, and slow Kibana visualizations.
+- What are common performance bottlenecks in ELK?
+- High CPU usage in Logstash, insufficient heap size in Elasticsearch, and slow Kibana visualizations.
 
 - How do you secure the entire ELK Stack?
 - Use authentication, encryption, role-based access, and network isolation.
