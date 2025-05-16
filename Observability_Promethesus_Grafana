@@ -62,19 +62,18 @@ Q - How did you implement Prometheus, Grafana in EKS?
 - Helm is used to deploy both in the EKS cluster
 
 Q - How does Prometheus get the server logs? (mechanism of Prometheus)
-- Prometheus is a monitoring tool that collects and stores metrics data.
-- Exporters expose metrics.
-- Prometheus scrapes metrics from exporters.
-- Metrics are stored in a time-series database for querying and visualization
+  - Prometheus is a monitoring tool that collects and stores metrics data.
+  - Exporters expose metrics.
+  - Prometheus scrapes metrics from exporters.
+  - Metrics are stored in a time-series database for querying and visualization
 
 Q - How did you create alerts in Grafana?
-- Define alert rules.
-- Configure notification channels.
-- Save the alert configuration in the Grafana dashboard.
-- This setup ensures you receive timely notifications based on the metrics you are monitoring.
+  - Define alert rules. 
+  - Configure notification channels.
+  - Save the alert configuration in the Grafana dashboard.
+  - This setup ensures you receive timely notifications based on the metrics you are monitoring.
 
 Q - What is Prometheus, and what makes it useful in DevOps?
-  - This question checks your foundational knowledge of Prometheus and its value in a DevOps context.
   - Prometheus is an open-source systems monitoring and alerting toolkit designed for reliability and scalability. 
   - It works by scraping metrics from targets, storing them in a time-series database, and enabling complex querying and alerting. 
   - Prometheus is particularly useful in DevOps for tracking performance, identifying issues in real-time, and automating alerts, making it easy to maintain application health and
