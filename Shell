@@ -136,3 +136,8 @@ chmod +x script.sh
 - Entering the above command at the shell prompt, namely $ uptime, will produce the following output:
 
 - 9:21am  up 86 day(s), 11:46,  3 users,  load average: 2.24, 2.18, 2.16
+
+
+- Explain how you will open a read-only file in Unix/Shell.
+- You can open a read-only file by: vi –R <Filename>
+
