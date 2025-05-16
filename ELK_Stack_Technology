@@ -15,7 +15,7 @@
 - Elasticsearch, 
 - Logstash, and
 - Kibana, 
-- used for centralized logging, data analysis, and visualization.
+- Used for centralized logging, data analysis, and visualization.
 
 - Elasticsearch: Search and analytics engine.
 - Logstash: Data collection and transformation pipeline.
