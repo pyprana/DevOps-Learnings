@@ -1,0 +1,8 @@
+ELK Stack (Technology):
+- The ELK Stack is a suite of open-source software tools used for log management and analysis. 
+- It comprises Elasticsearch, Logstash, and Kibana. 
+- Elasticsearch: A distributed, schema-free search and analytics engine that stores and indexes data. 
+- Logstash: A tool for collecting, processing, and forwarding data from various sources. 
+- Kibana: A web interface for visualizing and analyzing data within Elasticsearch. 
+- The ELK Stack is used for tasks like application monitoring, security analysis, and infrastructure troubleshooting. 
+- It's commonly used in cloud and hybrid environments to manage and analyze data effectively. 
