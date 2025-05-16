@@ -179,3 +179,20 @@ A: Use Cost Explorer to track Lambda function invocations and duration, optimize
 
 - Containerization & Serverless:
 - Use Kubernetes or AWS Lambda to pay only for actual usage.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 🧾 Difference Between AWS Cost Explorer and Cost Optimization
+
+| Feature               | AWS Cost Explorer                                         | AWS Cost Optimization                                         |
+|-----------------------|-----------------------------------------------------------|----------------------------------------------------------------|
+| **What**              | A tool to visualize and analyze AWS costs and usage       | A strategy to reduce and control cloud expenses                |
+| **Purpose**           | Understand where and how money is spent                   | Actively reduce unnecessary spending                           |
+| **Focus**             | Cost monitoring and reporting                             | Cost control and savings implementation                        |
+| **How it's used**     | Generate reports, filter by service/account/region        | Apply rightsizing, reserved instances, spot instances, etc.    |
+| **Outcome**           | Insight into cost drivers and trends                      | Direct cost savings through actions                            |
+| **Examples**          | View cost by service, linked accounts, tags, etc.         | Shut down unused resources, move data to cheaper storage tiers |
+
+> ✅ Summary:  
+> - **Cost Explorer** = See and analyze AWS costs  
+> - **Cost Optimization** = Act on insights to save money
