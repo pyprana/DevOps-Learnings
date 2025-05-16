@@ -4,13 +4,13 @@
 2. Basic Concepts
 - Shebang (#!): Indicates the interpreter, e.g., #!/bin/bash
 
-  Variables: name="Pranay"; Access with $name
+- Variables: name="Pranay"; Access with $name
 
-  Echo: Outputs text, e.g., echo "Hello"
+- Echo: Outputs text, e.g., echo "Hello"
 
-  Comments: # This is a comment
+- Comments: # This is a comment
 
-  Exit Status: $? stores last command's result
+- Exit Status: $? stores last command's result
 
 3. Control Structures
 -  If Statement:
@@ -112,3 +112,13 @@ Use Case: Simple app redeployment via Git and systemd.
 - Make executable:
 
 chmod +x script.sh
+
+
+- How to use pipe commands?
+- Pipe command allows you to use several commands in the same way, in which the output of one is used as input for another.
+- Like a pipeline, each process output is directly input to the next one. 
+- A pipe is represented by the symbol "|". The flow of data through a pipeline is unidirectional, i.e., from left to right.
+
+Syntax :
+
+command_1 | command_2 | command_3 | .... | command_N
