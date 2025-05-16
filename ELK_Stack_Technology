@@ -6,3 +6,172 @@ ELK Stack (Technology):
 - Kibana: A web interface for visualizing and analyzing data within Elasticsearch. 
 - The ELK Stack is used for tasks like application monitoring, security analysis, and infrastructure troubleshooting. 
 - It's commonly used in cloud and hybrid environments to manage and analyze data effectively. 
+
+- What is the ELK Stack?
+- ELK Stack is a collection of three open-source tools: 
+  Elasticsearch, 
+  Logstash, and
+  Kibana, 
+- used for centralized logging, data analysis, and visualization.
+
+- Elasticsearch: Search and analytics engine.
+- Logstash: Data collection and transformation pipeline.
+- Kibana: Visualization and dashboard interface.
+
+- Why is the ELK Stack popular?
+- Centralized logging for better monitoring and troubleshooting.
+- Scalable and real-time analytics.
+- Open-source and cost-effective.
+
+- Explain the architecture of the ELK Stack.
+- Logstash collects and processes data.
+- Elasticsearch stores and indexes the processed data.
+- Kibana visualizes the data using dashboards.
+
+- What is Elasticsearch?
+- It’s a distributed search engine based on Lucene that supports full-text search and analytics on large datasets.
+
+- What is Logstash?
+- A data pipeline tool used to collect, process, and forward data into Elasticsearch or other outputs.
+
+- What is Kibana?
+- A visualization tool for Elasticsearch data. It allows users to create interactive dashboards and visualizations.
+
+- What are some use cases of the ELK Stack?
+- Log analysis and monitoring.
+- Application performance monitoring (APM).
+- Security and compliance.
+- Business intelligence and analytics.
+
+- What is the difference between ELK and EFK?
+- EFK Stack replaces Logstash with Fluentd, which is lighter and more resource-efficient.
+
+- What are Beats in the ELK ecosystem?
+- Beats are lightweight data shippers that send data directly to Elasticsearch or Logstash. Examples include Filebeat, Metricbeat, and Packetbeat.
+
+- What is the purpose of Filebeat?
+- It collects log files and forwards them to Logstash or Elasticsearch.
+
+- What is an Elasticsearch index?
+- An index is a collection of documents in Elasticsearch. It’s similar to a database in relational systems.
+
+- What is a document in Elasticsearch?
+- A document is the basic unit of data, stored in JSON format.
+
+- Explain Elasticsearch shards.
+- Shards split an index into smaller parts to distribute and process data across multiple nodes.
+
+- What are replicas in Elasticsearch?
+- Replicas are copies of primary shards used for fault tolerance and load balancing.
+
+- How does Elasticsearch handle full-text search?
+- Elasticsearch uses the Inverted Index data structure and Lucene Query for full-text search.
+
+- What are Elasticsearch analyzers?
+- Analyzers process text data for indexing and searching. Examples: standard, whitespace, and custom analyzers.
+
+- What is a query DSL in Elasticsearch?
+- Query DSL (Domain Specific Language) is used to write queries, such as match, term, or range.
+
+- How does Elasticsearch differ from traditional databases?
+- It is schema-free, supports distributed architecture, and excels in full-text search.
+
+- What is a mapping in Elasticsearch?
+- Mapping defines how a document’s fields are stored and indexed.
+
+- What is the purpose of Elasticsearch aggregations?
+- Aggregations allow advanced analytics, such as data summarization and statistical calculations.
+
+- What are Logstash pipelines?
+- A pipeline is a sequence of stages: input, filter, and output, used to process data.
+
+- What is the purpose of the Logstash config file?
+- The config file defines input sources, filters, and output destinations.
+
+- What are Logstash plugins?
+- Plugins are modular components in Logstash:
+- Input Plugins: Fetch data (e.g., file, beats).
+- Filter Plugins: Process data (e.g., grok, mutate).
+- Output Plugins: Send data (e.g., elasticsearch, stdout).
+
+- What is the grok filter in Logstash?
+- Grok filters parse unstructured data into structured data using predefined patterns.
+
+- How do you monitor Logstash performance?
+- Use monitoring APIs, log files, and pipeline metrics in Kibana.
+
+- How does Logstash handle failures?
+- It retries events and uses a dead letter queue for failed events.
+
+- What is a multiline filter in Logstash?
+- It combines multiple log lines into a single event, often used for stack traces.
+
+- What is the use of conditionals in Logstash pipelines?
+
+Conditionals apply filters or outputs based on specific criteria.
+Can Logstash output to multiple destinations?
+
+Yes, it supports multiple outputs like Elasticsearch, S3, and Kafka.
+How do you secure Logstash?
+
+Use SSL/TLS encryption, authentication, and pipeline-specific access controls.
+What is Kibana used for?
+
+It visualizes Elasticsearch data with charts, maps, and dashboards.
+How do you create a dashboard in Kibana?
+
+Use visualizations (e.g., bar charts, tables) and combine them into a dashboard.
+What are index patterns in Kibana?
+
+Index patterns connect Kibana to specific Elasticsearch indices.
+What is the Discover tab in Kibana?
+
+It provides a raw view of Elasticsearch data with search and filter capabilities.
+What is Kibana Lens?
+
+A user-friendly interface for creating visualizations with drag-and-drop functionality.
+How can you secure Kibana?
+
+Use role-based access control, TLS encryption, and secure Elasticsearch integration.
+What is Canvas in Kibana?
+
+A tool for creating custom, infographic-style visualizations and reports.
+What are Kibana alerts?
+
+Alerts notify users about data changes based on defined conditions.
+What is Kibana Timelion?
+
+A tool for time-series visualizations and analysis.
+Can you embed Kibana visualizations into external applications?
+
+Yes, using iframe links or APIs.
+How do you scale the ELK Stack?
+
+Scale Elasticsearch with more nodes and shards, use Kafka with Logstash for high-volume data, and implement Kibana load balancing.
+What is X-Pack in Elasticsearch?
+
+A plugin offering features like security, monitoring, and machine learning.
+What is the Elastic Common Schema (ECS)?
+
+A standard schema for structured logging across the ELK ecosystem.
+How does Elasticsearch ensure data consistency?
+
+By using write-ahead logging (WAL) and primary-replica synchronization.
+How can you optimize Elasticsearch queries?
+
+Use filters instead of queries, minimize wildcard usage, and ensure proper indexing.
+What is hot-warm architecture in Elasticsearch?
+
+A tiered storage approach where hot nodes handle frequent queries, and warm nodes store older data.
+How do you back up Elasticsearch data?
+
+Use the snapshot and restore feature to store data in repositories like S3.
+What are common performance bottlenecks in ELK?
+
+High CPU usage in Logstash, insufficient heap size in Elasticsearch, and slow Kibana visualizations.
+How do you secure the entire ELK Stack?
+
+Use authentication, encryption, role-based access, and network isolation.
+What are some alternatives to the ELK Stack?
+
+EFK Stack, Splunk, Graylog, Datadog, and Sumo Logic.
