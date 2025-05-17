@@ -392,7 +392,11 @@ Q - When the terraform runs state file gets created..? What do you do with state
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Q - Lets say you some how loose the state file in terraform so how to resolve the issue..?
-  - As 
+  - As terraform is IAC where we desirbed the desired piece of infrastructure we need in some conflict files then trraform will create an infrastructure in our lcoal code provider 
+    of choice like if your using Azure venues as your provider we can alo delete or modify that because terraform compares the infratsructure state is kept in the state file so if 
+    we lose it terraform will think that we have never created those resources in the very first place and it will try to duplicate everything.
+  - So we hace a problem now not only infrastructure cost will double but will also get you into some nasty overlapping and cross pollination between previos and the first resources 
+    and versions and versions and we definitely dont want that so in order to resolve that we should use a command called terraform import.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
