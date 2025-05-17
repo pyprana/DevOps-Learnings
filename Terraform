@@ -276,55 +276,35 @@ A - Terraform Workspaces can be used when you want to use single configuration f
   - So when i execute the config file in the respective workspaces it will get executed in the respective environment
   - So this is where we can make use of workspaces.
 
-Example - 
-# Step 1: Initialize Terraform
-terraform init
+- Example - 
+- # Step 1: Initialize Terraform
+- terraform init
 
-# Step 2: Create a new workspace
-terraform workspace new dev
+- # Step 2: Create a new workspace
+- terraform workspace new dev
 
-# Step 3: Switch to another workspace
-terraform workspace select prod
+- # Step 3: Switch to another workspace
+- terraform workspace select prod
 
-# Step 4: List all workspaces
-terraform workspace list
+- # Step 4: List all workspaces
+- terraform workspace list
 
-# Step 5: Apply configuration in a workspace
-terraform apply
+- # Step 5: Apply configuration in a workspace
+- terraform apply
 
-Each workspace keeps its own state file, e.g., .terraform/ contains terraform.tfstate.d/<workspace_name>/terraform.tfstate.
+- Each workspace keeps its own state file, e.g., .terraform/ contains terraform.tfstate.d/<workspace_name>/terraform.tfstate.
 
-Here's a **Terraform workspace example**:
+- Here's a **Terraform workspace example**:
 
-### 🧩 What is a Workspace?
-A **workspace** in Terraform allows you to manage **multiple states** (like dev, staging, prod) using the **same code base**.
+- ### 🧩 What is a Workspace?
+- A **workspace** in Terraform allows you to manage **multiple states** (like dev, staging, prod) using the **same code base**.
 
-### ✅ Example: Creating and Using Workspaces
-
-```bash
-# Step 1: Initialize Terraform
-terraform init
-
-# Step 2: Create a new workspace
-terraform workspace new dev
-
-# Step 3: Switch to another workspace
-terraform workspace select prod
-
-# Step 4: List all workspaces
-terraform workspace list
-
-# Step 5: Apply configuration in a workspace
-terraform apply
-
-Each workspace keeps its **own state file**, e.g., `.terraform/` contains `terraform.tfstate.d/<workspace_name>/terraform.tfstate`.
-
-📁 Use Case:
-Deploying **identical infrastructure** in different environments:
+- Use Case:
+- Deploying **identical infrastructure** in different environments:
 - `dev` workspace → creates `dev` resources
 - `prod` workspace → creates `prod` resources
 
-Example of using workspaces with environment-specific variables in Terraform
+- Example of using workspaces with environment-specific variables in Terraform
 
 main.tf
 variables.tf
