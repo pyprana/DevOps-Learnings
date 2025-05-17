@@ -171,8 +171,12 @@ Q - How do you write a terraform script to deploy an AWS Ec2 instance?
    }
   }
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Q - How have you used Terraform?
 A - I used Terraform to automate EKS provisioning, create EC2 instances, set up IAM roles, and configure security groups and S3 buckets.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Q - How do you manage IAM access with Terraform?
 A - I define IAM roles, users, and policies as Terraform resources. I assign required permissions using policy JSONs and bind them to users or groups
