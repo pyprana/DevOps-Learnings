@@ -570,3 +570,13 @@ json
  - Lets say you have an infrastructure created manually, now you wamt to manage that infrastructure 
  - To import existing resource use terraform import command.
  - syntax - teraform import [options] Address ID
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- Your team is adopting GitLab CICD for automating terraform workflows. Describe how would your structure your CICD pipeline for terraform, including key stages..?
+- CICD Stage - Environment Specific Variable
+      |
+     init       Protect
+      |         Sensitive
+     plan         Data
+      |
+     apply    Manual Approach steps for critical changes
