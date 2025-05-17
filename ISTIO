@@ -1,3 +1,14 @@
+- Side car means it will run beside the pod here in istio envoy is the pod that runs as a side car and enables the mtls encryption to the services that are defined in virtual 
+  service the destination service and target service
+
+- istio Envoy is a high-performance proxy developed in C++ to mediate all inbound and outbound traffic for all services in the service mesh.
+
+- The drawback of side cars is it consumes the resources like cpu and memory
+
+- There will be like virtual service, destination rules using them we will do blue green and canary deployment
+- So its acts as a secure connectivity between the kubernetes services
+- We have dashboard tool kiali where we can see the traffic of the how the request moves
+
 - Here’s a step-by-step guide to configure Istio in a Kubernetes environment:
 
 1. Prerequisites
