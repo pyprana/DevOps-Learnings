@@ -561,3 +561,8 @@ json
 - Right Sizing : Use auto-scaling and choose instance types,
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ - You have an existing infrastructure on you and need to use terraform to manage it.?
+ - how could you import these resources into your terraform configuration.?
+ - Lets say you have an infrastructure created manually, now you wamt to manage that infrastructure 
+ - To import existing resource use terraform import command.
+ - syntax - teraform import [options] Address ID
