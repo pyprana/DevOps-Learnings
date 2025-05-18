@@ -36,6 +36,8 @@ Q - You need to automate backups of a directory to a remote server ?
 
 - To check logs in Linux:
 
+- In var/log the log files will be stored tail -50 commad to reduce the no of logs.
+
 - Common Log Location:
 - Most system logs are in:
 
