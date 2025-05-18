@@ -188,10 +188,10 @@ A - Not ideal. Lambda is serverless and good for short tasks. Java web apps shou
 - Dead Letter Queue (DLQ) in AWS is used to store messages that can't be processed successfully by a service like SQS, SNS, Lambda, or EventBridge after multiple retry attempts.
 
 - What:
-A secondary queue where failed messages go after processing errors.
+- A secondary queue where failed messages go after processing errors.
 
 - Why:
-To debug, isolate, and prevent faulty messages from blocking normal message processing.
+- To debug, isolate, and prevent faulty messages from blocking normal message processing.
 
 - When:
 - When a Lambda function fails consistently.
@@ -214,3 +214,10 @@ To debug, isolate, and prevent faulty messages from blocking normal message proc
 - Example:
 - You have an SQS queue that triggers a Lambda. If the Lambda fails to process a message after 3 tries, it’s moved to the DLQ for analysis.
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- Do we need a load balancer for Lambda or can Route 53 handle that?
+- Lambda does not need a load balancer, as it auto-scales based on events.
+- Route 53 is not a load balancer—it’s a DNS service.
+- Use Route 53 to route traffic to Lambda via API Gateway, ALB, or regional endpoints.
+- Private DNS for VPCs.
