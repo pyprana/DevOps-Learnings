@@ -1,13 +1,13 @@
 Q - You need to find out why a server is running slowly, what steps would you take
-A - You can start by checking the overall load on the system so for this we can make use of 
-- top command
-- htop command
-Which will basically look the usage of your cpu and also memoery and then check the processes which are consuming execssive resources, so when we run the htop or top
-command this will give us the CPU utilization and the memory utilization for the respective processesand we can look at that to see which process is consuming more resources.
-- We can also use of Iostat command and the itop commandto check the disk input, output we can make use of free -m to check the memory usage df -h command to check for the disk
-space utilization and we can also check for network issues by making use of the netstat commandor the ss commandthen we can finally review the system logs which are available in
-the /var/log/ path for any errors or any warnings.
-- So that is how we troubleshoot slowness of the system.
+A - You can start by checking the overall load on the system so for this we can make use of. 
+  - top command.
+  - htop command.
+  - Which will basically look the usage of your cpu and also memory and then check the processes which are consuming execssive resources, so when we run the htop or top.
+    command this will give us the CPU utilization and the memory utilization for the respective processes and we can look at that to see which process is consuming more resources.
+  - We can also use of Iostat command and the itop command to check the disk input, output we can make use of free -m to check the memory usage df -h command to check for the disk
+    space utilization and we can also check for network issues by making use of the netstat command or the ss command then we can finally review the system logs which are available 
+    in the /var/log/ path for any errors or any warnings.
+  - So that is how we troubleshoot slowness of the system.
 
 Q - A users home directory is filling up disk space on the root partition. How would you resolve this..?
   - For this we need to check disk usage of the user so for this we can make use of the command du -sh/home/user and then the path of the user directory and this command will help
@@ -19,12 +19,13 @@ A - Use rsync for efficient file transfers.
   - So basically from source to destination machine we can setup SSH authentication.
 
 Q - A critical server has crashed and wont restart? what steps do you take to troubelshoot and resolve the issues.?
-  - Check the status and logs of the service using 
-  - systemctl status servicename
-  - journal -u servicename
+  - Check the status and logs of the service using.
+  - systemctl status servicename.
+  - journal -u servicename.
   - Look for any configuration errors or missing dependecies that are missing for the service if there are any configuration errors we can verify that by making use of basically 
-    validating your configuration file 
-  - syntax (nginx -t) if its apache then we use apachetl config test
+    validating your configuration file. 
+  - syntax (nginx -t) if its apache then we use apachetl config test.
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - To check logs in Linux:
