@@ -40,6 +40,19 @@
 
 - CloudWatch Metrics (Requests, 4xx/5xx Errors, Bytes Downloaded)
 
+8. Pricing
+- Based on:
+
+- Data transfer out
+
+- Number of HTTP/HTTPS requests
+
+- Invalidation requests
+
+- Lambda@Edge invocations
+
+
+
 - Real-Time Metrics available
 
 
