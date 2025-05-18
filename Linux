@@ -18,6 +18,13 @@ A - Use rsync for efficient file transfers.
   - Setups SSH based authentication
   - So basically from source to destination machine we can setup SSH authentication.
 
+Q - A critical server has crashed and wont restart? what steps do you take to troubelshoot and resolve the issues.?
+  - Check the status and logs of the service using 
+  - systemctl status servicename
+  - journal -u servicename
+  - Look for any configuration errors or missing dependecies that are missing for the service if there are any configuration errors we can verify that by making use of basically 
+    validating your configuration file 
+  - syntax (nginx -t) if its apache then we use apachetl config test
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - To check logs in Linux:
