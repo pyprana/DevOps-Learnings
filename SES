@@ -1,130 +1,127 @@
+1. What is SES?
+- Amazon Simple Email Service (SES) is a cloud-based email sending service for:
 
-✅ 1. What is SES?
-Amazon Simple Email Service (SES) is a cloud-based email sending service for:
+- Transactional emails (e.g. password reset)
 
-Transactional emails (e.g. password reset)
+- Marketing emails (e.g. promotions)
 
-Marketing emails (e.g. promotions)
+- Notifications (e.g. alerts)
 
-Notifications (e.g. alerts)
+2. Core Concepts in SES
+- A. Email Types
+- Transactional: User-triggered emails (e.g., order confirmation)
 
-📌 2. Core Concepts in SES
-A. Email Types
-Transactional: User-triggered emails (e.g., order confirmation)
+- Promotional: Marketing, bulk emails
 
-Promotional: Marketing, bulk emails
+- Notification: Alerts, status updates
 
-Notification: Alerts, status updates
+- B. Identity Management
+- Email identity: Verify individual email addresses
 
-B. Identity Management
-Email identity: Verify individual email addresses
+- Domain identity: Verify entire domain (DKIM/SPF required)
 
-Domain identity: Verify entire domain (DKIM/SPF required)
+- Verification methods: Email, DNS (TXT, CNAME)
 
-Verification methods: Email, DNS (TXT, CNAME)
-
-C. SMTP Interface
+- C. SMTP Interface
 Use standard SMTP protocol to send email via SES
 
-Requires SMTP username/password (generated from IAM)
+- Requires SMTP username/password (generated from IAM)
 
-D. API Interface
-RESTful API via AWS SDK or CLI (e.g., sendEmail, sendRawEmail)
+- D. API Interface
+- RESTful API via AWS SDK or CLI (e.g., sendEmail, sendRawEmail)
 
-E. Email Sending Limits
-Depends on region & verification
+- E. Email Sending Limits
+- Depends on region & verification
 
-Includes sending quota and sending rate (e.g., 50,000 emails/day)
+- Includes sending quota and sending rate (e.g., 50,000 emails/day)
 
-F. Dedicated IPs (Optional)
-For consistent reputation & deliverability
+- F. Dedicated IPs (Optional)
+- For consistent reputation & deliverability
 
-Costs extra
+- Costs extra
 
-G. Feedback Mechanisms
-Bounce, Complaint, and Delivery notifications via:
+- G. Feedback Mechanisms
+- Bounce, Complaint, and Delivery notifications via:
 
-Amazon SNS (recommended)
+- Amazon SNS (recommended)
 
-CloudWatch for monitoring
+- CloudWatch for monitoring
 
-H. Suppression List
-SES maintains a list of emails that bounced permanently
+- H. Suppression List
+- SES maintains a list of emails that bounced permanently
 
-You can manage your account-level suppression list
+- You can manage your account-level suppression list
 
-I. Deliverability Dashboard (Paid)
-Monitor sender reputation, inbox placement, engagement
+- I. Deliverability Dashboard (Paid)
+- Monitor sender reputation, inbox placement, engagement
 
-J. Email Templates
-Reusable HTML/text templates with variables for personalization
+- J. Email Templates
+- Reusable HTML/text templates with variables for personalization
 
-Used in SendTemplatedEmail
+- Used in SendTemplatedEmail
 
-K. Event Publishing
-Send email delivery events to Amazon SNS, S3, or CloudWatch
+- K. Event Publishing
+- Send email delivery events to Amazon SNS, S3, or CloudWatch
 
-📍 3. Where It’s Used
-SaaS products (notifications)
+- 3. Where It’s Used
+- SaaS products (notifications)
 
-E-commerce (transactional and promotional emails)
+- E-commerce (transactional and promotional emails)
 
-Monitoring alerts (e.g., through Lambda/CloudWatch)
+- Monitoring alerts (e.g., through Lambda/CloudWatch)
 
-🛠️ 4. Common Use Cases
-Use Case	Example
-Order confirmation	Send email after purchase
-Alert notifications	Trigger SES from Lambda via CloudWatch Alarm
-Newsletter emails	Send marketing content to subscribers
-Email verification workflows	Verify emails for account creation
+- 4. Common Use Cases
+- Use Case	Example
+- Order confirmation	Send email after purchase
+- Alert notifications	Trigger SES from Lambda via CloudWatch Alarm
+- Newsletter emails	Send marketing content to subscribers
+- Email verification workflows	Verify emails for account creation
 
-🆚 5. SES vs Alternatives
-Feature	AWS SES	SendGrid	Mailgun
-Cost	Pay-per-email	Free tier + paid	Paid plans
-AWS-native	✅ Yes	❌ No	❌ No
-Deliverability tools	Optional	Yes	Yes
+- 5. SES vs Alternatives
+- Feature	AWS SES	SendGrid	Mailgun
+- Cost	Pay-per-email	Free tier + paid	Paid plans
+- AWS-native	✅ Yes	❌ No	❌ No
+- Deliverability tools	Optional	Yes	Yes
 
-🔒 6. Security & Authentication
-SPF, DKIM, DMARC (for domain reputation)
+- 6. Security & Authentication
+- SPF, DKIM, DMARC (for domain reputation)
 
-IAM policies for API usage
+- IAM policies for API usage
 
-TLS for SMTP
+- TLS for SMTP
 
-⚙️ 7. Automation
-Send Email via CLI:
+- 7. Automation
+- Send Email via CLI:
 
-bash
-Copy
-Edit
-aws ses send-email \
+- bash
+- aws ses send-email \
  --from no-reply@example.com \
  --destination "ToAddresses=recipient@example.com" \
  --message "Subject={Data=Hello},Body={Text={Data=Test}}"
 CloudWatch Alarm → SNS → Lambda → SES workflow
 
-📊 8. Monitoring & Logging
-Use CloudWatch for:
+- 8. Monitoring & Logging
+- Use CloudWatch for:
 
-Sending metrics
+- Sending metrics
 
-Bounce/complaint rate
+- Bounce/complaint rate
 
-Reputation status
+- Reputation status
 
-Enable event publishing to track:
+- Enable event publishing to track:
 
-Send, Delivery, Bounce, Complaint, Open, Click
+- Send, Delivery, Bounce, Complaint, Open, Click
 
-🏗️ 9. Infrastructure
-Integrate with:
+- 9. Infrastructure
+- Integrate with:
 
-Lambda
+- Lambda
 
-SNS
+- SNS
 
-S3
+- S3
 
-Step Functions (for workflows)
+- Step Functions (for workflows)
 
-EventBridge
+- EventBridge
