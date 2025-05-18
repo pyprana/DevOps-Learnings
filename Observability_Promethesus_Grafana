@@ -35,7 +35,7 @@ iv.) Even the number of requests that are failed or passed.
                                                           /          /          |            \
                                              Retrieval Time  Alert Manager  Push Gateway   Series Database
 
-- How to configure promethesus as a datsource in grafana..?
+- How to configure promethesus as a datasource in grafana..?
 - Install Grafana, Setup Grafana, Integrate Grafana.
 - Promethesus is for visulization.
 - Monitoring system collects the metrics or scrapes the metrics pulls the metrics in the dashboard format it can be any kind of dashboard.
