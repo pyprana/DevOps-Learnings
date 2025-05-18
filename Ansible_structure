@@ -47,8 +47,7 @@ inventory.yml(inventory file)
 - Why its required.
 - Defines your infrastructure, grouping, servers under all.
 - Specifies host ips for connectivity.
-The anisble-python-interpreter:/usr/bin/python.
-
+- The anisble-python-interpreter:/usr/bin/python.
 
 3.playbook.yml
 - name:web application deployment 
@@ -56,7 +55,7 @@ The anisble-python-interpreter:/usr/bin/python.
   roles:
     -  webserver
 
-playbook.yml(Main Playbook file)
+- playbook.yml(Main Playbook file)
 - Why its required.
 - This is the entry point of your deployment 
 - hosts : all - Targets all servers defined in the inventory file
@@ -70,6 +69,9 @@ import-tasks:deploy.yml
 - name: Configuration Services
 import-tasks:Configure.yml
 
+- Why its required
+- import
+
 5.roles/webserver/tasks/install.yml(Installation Tasks)
 - name: Update package cache
 apt: 
@@ -80,6 +82,17 @@ apt:
   - nginx
   - git
   - pythob3-pip
+
+6.roles/webserver/tasks/deploy.yml(Deployment Tasks)
+- name: Clone web application repository
+  git:
+    repo: "https://github.com/example/webapp.git"
+    dest: //var/www/webapp
+    version: main
+- name: Install application dependecies.
+   pip:
+        requirements: /var/www/webapp/requirements.txt
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Ansible: A tool for automating IT tasks.
