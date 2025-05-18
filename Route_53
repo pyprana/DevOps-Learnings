@@ -6,6 +6,7 @@
 - Translates domain names (e.g., example.com) into IP addresses.
 - Routes users to AWS resources (like EC2, ELB) or external websites.
 - Acts as a domain registrar and health checker.
+
 - Acts as a domain registrar and health checker" means:
 
 - Domain Registrar: It helps you buy and manage website names (like example.com). Just like registering your name on a form, it registers your website name on the internet.
@@ -37,6 +38,17 @@
 
 - Key Features:
 - DNS routing types: Simple, Failover, Latency, Geolocation, Weighted, Multi-Value
+
+### Route 53 Routing Policies
+
+| Policy Type     | What It Does                                                   | Use Case Example                              |
+|-----------------|----------------------------------------------------------------|-----------------------------------------------|
+| Simple          | Returns only one record. No health checks.                     | Show one static website.                      |
+| Failover        | Switches between primary and backup if health check fails.     | Redirect to backup server if main is down.    |
+| Latency         | Sends users to region with lowest latency.                     | User gets fastest server (e.g., US vs Asia).  |
+| Geolocation     | Routes based on user’s location.                               | EU users go to EU servers, US to US servers.  |
+| Weighted        | Distributes traffic based on weights (percentages).            | 70% to app v1, 30% to app v2.                 |
+| Multi-Value     | Returns multiple healthy records (like round-robin + health).  | Basic load balancing with health checks.      |
 
 - Health checks: Monitor endpoints and reroute if down.
 
