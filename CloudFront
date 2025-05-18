@@ -51,8 +51,52 @@
 
 - Lambda@Edge invocations
 
-
-
 - Real-Time Metrics available
+
+## 🔄 CloudFront - Key Differences
+
+### 1. CloudFront vs S3 Static Website Hosting
+
+| Feature               | CloudFront (CDN)                          | S3 Static Website Hosting               |
+|------------------------|-------------------------------------------|------------------------------------------|
+| Latency               | Low (due to global edge locations)        | Higher (served directly from S3 region)  |
+| HTTPS Support         | Native, supports custom SSL certs         | Only via CloudFront                     |
+| Geo Restriction       | Supported                                 | Not supported                           |
+| Access Control        | Signed URLs/Cookies, WAF integration      | Basic, public or IAM-based              |
+| Cost                  | Pay-per-use for edge caching              | Lower, no edge caching                  |
+
+---
+
+### 2. CloudFront OAI vs OAC
+
+| Feature             | OAI (Origin Access Identity)            | OAC (Origin Access Control)                  |
+|---------------------|------------------------------------------|----------------------------------------------|
+| Type               | Legacy access control method             | Modern replacement for OAI                   |
+| Supports            | Only for S3 origins                      | S3 and future AWS services                   |
+| IAM Role Usage      | No                                       | Yes, uses IAM service principal              |
+| Enhanced Security   | ❌                                       | ✅ Supports signed requests                  |
+| Recommendation      | Deprecated                               | Preferred going forward                      |
+
+---
+
+### 3. CloudFront Signed URL vs Signed Cookie
+
+| Feature             | Signed URL                          | Signed Cookie                             |
+|---------------------|--------------------------------------|--------------------------------------------|
+| Use Case           | Single file access                   | Access multiple files with one token       |
+| Delivery Type       | Works best with direct file links    | Used with media players or apps            |
+| Implementation      | Simpler for small use cases          | Better for complex access policies         |
+
+---
+
+### 4. CloudFront vs Global Accelerator
+
+| Feature             | CloudFront (CDN)                     | AWS Global Accelerator                     |
+|---------------------|---------------------------------------|---------------------------------------------|
+| Focus              | Content delivery                      | Application acceleration & failover        |
+| Caching            | Yes (at edge locations)               | No caching                                  |
+| Ideal For          | Static/dynamic content delivery       | TCP/UDP traffic, cross-region routing       |
+| Layer              | Application layer (HTTP/HTTPS)        | Network layer (IP-based)                   |
+
 
 
