@@ -17,4 +17,10 @@ Ingress Controllers Based on Service Mesh:
 - Linkerd Ingress Controller: Seamlessly integrated with Linkerd to enhance mTLS & observability features.
 - Consul Ingress Controller: Developed by HashiCorp, focuses on ensuring secure service-to-service communication within the architecture. 
 
-- Pod security allows pods to connect to the backend and database using namespace selector and pod selector using labels specifying ingress and egress rules
+- Pod security allows pods to connect to the backend and database using namespace selector and pod selector using labels specifying ingress and egress rules.
+
+- In aws nacl we use to specify the rules of inbound and outbound, Security groups are stateful means if you allow incoming then it remembers enables outgoing.
+
+- Nacl acts at subnet level whereas security group at instance level. 
+- For example applications such as running in ec2 instances like jenkins we will open port 8080 in security groups.  
+- Where as in nacl we specify ip addresses to restrict all access and only limited access by specifying either ingress or egress rules
