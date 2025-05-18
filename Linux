@@ -28,6 +28,9 @@ Q - A critical server has crashed and wont restart? what steps do you take to tr
 
 Q - You need to automate backups of a directory to a remote server ?
   - How would you do it..?
+  - Use rsync for efficient file transfers setup SSH based authentication between the local and remote machine so basically from source to destination
+    machine we can set up SSH authentication between them then we will write a script that will run the rsync command with your desired options and schedule that script to run
+    the cron jobs.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
