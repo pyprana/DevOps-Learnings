@@ -6,6 +6,18 @@
 - Translates domain names (e.g., example.com) into IP addresses.
 - Routes users to AWS resources (like EC2, ELB) or external websites.
 - Acts as a domain registrar and health checker.
+- Acts as a domain registrar and health checker" means:
+
+- Domain Registrar: It helps you buy and manage website names (like example.com). Just like registering your name on a form, it registers your website name on the internet.
+
+- Health Checker: It regularly checks if your website or service is working properly (like checking if a shop is open). If it’s down, it can alert you or take action.
+
+- Example:
+- Route 53 (AWS) acts like this:
+
+- Lets you register a domain name.
+
+- Monitors your website, and if it’s not working, it can redirect users to a backup site.
 
 - Why use Route 53?
 - High availability & low latency.
@@ -56,8 +68,8 @@ Answer: AWS Route 53 is a scalable and highly available Domain Name System (DNS)
 
 2. Explain the difference between a domain registrar and a DNS service like Route 53.
 
-Answer: A domain registrar is a service that allows you to purchase and manage domain names, while Route 53 is a DNS service responsible for translating domain names into IP 
-addresses and routing traffic. 
+- Answer: A domain registrar is a service that allows you to purchase and manage domain names, while Route 53 is a DNS service responsible for translating domain names into IP 
+  addresses and routing traffic. 
 - You can use Route 53 to manage DNS records for domain names registered with a domain registrar.
 
 3. What are the different types of DNS records supported by Route 53, and when would you use each type?
