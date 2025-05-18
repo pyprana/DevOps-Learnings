@@ -42,22 +42,23 @@ iv.) Even the number of requests that are failed or passed.
 - Setup alerts if the value goes above certain paramateres send a text or notification.
 - Pulling the info from metrics showing on dashboards also capable of firing alerts.
 - Ex - An app is deployed on kubernetes cluster in AWS env lets say the nodes of the kubernetes clusters are AWS vms there is also AWS networking like VPC to understand the 
-  state of entire system not only about the app, but the state of your AWS infratsructure even if this is not right your app will not be stable or your app cannot be up and 
+  state of entire system not only about the app, but the state of your AWS infrastructure even if this is not right your app will not be stable or your app cannot be up and 
   running 24 hours, there will be some user experience.
-- CPU of vms of AWS 
+- CPU of vms of AWS. 
 - Historical info of CPU at each time.
-- Memoery of AWS vms
-- Metrics for kubernetes cluster - like Pod status
+- Memory of AWS vms.
+- Metrics for kubernetes cluster - like Pod status.
 - How many times the pod went into the crash back loop off throughout a day and at what time the pod went into crashback loop off or the deployment http requests received by
-  your application,(Receieving traffic you can understand http request)
+  your application, (Receieving traffic you can understand http request).
 - How many users have signed up in the last request, 
-- Either these metrics are fed to the system or monitoring automaticlaly pulls these metrics.
+- Either these metrics are fed to the system or monitoring automatically pulls these metrics.
 
                    -----> Push Mechanism
   Monitoring System Scrapes
                   <------ Pull Mechanism    
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Q - How did you implement Prometheus, Grafana in EKS?
 - Prometheus collects metrics.
 - Grafana visualizes metrics.
@@ -78,8 +79,8 @@ Q - How did you create alerts in Grafana?
 Q - What is Prometheus, and what makes it useful in DevOps?
   - Prometheus is an open-source systems monitoring and alerting toolkit designed for reliability and scalability. 
   - It works by scraping metrics from targets, storing them in a time-series database, and enabling complex querying and alerting. 
-  - Prometheus is particularly useful in DevOps for tracking performance, identifying issues in real-time, and automating alerts, making it easy to maintain application health and
-    meet SLAs.
+  - Prometheus is particularly useful in DevOps for tracking performance, identifying issues in real-time, and automating alerts, making it easy to maintain application health 
+    and meet SLAs.
 
 Q - What are the key components of Prometheus?
   - Prometheus consists of several key components:
