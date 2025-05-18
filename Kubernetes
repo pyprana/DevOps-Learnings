@@ -1,4 +1,4 @@
-Kubernetes
+  - Kubernetes
 
 Q - Where are Kubernetes volumes stored?
 A - They are stored based on the StorageClass (e.g., EBS, NFS, hostPath).
@@ -10,7 +10,6 @@ A - They are stored based on the StorageClass (e.g., EBS, NFS, hostPath).
 | EBS          | AWS Elastic Block Store          | Cloud block storage for EC2 & Kubernetes    | ✅ Yes                  | ❌ No (AZ-specific)       | ✅ Yes (via PVC)       |
 | NFS          | Network File System              | Shared storage between multiple pods/nodes  | ✅ Yes                  | ✅ Yes                    | ✅ Yes (external setup)|
 | hostPath     | Host node directory mount        | Testing, single-node clusters               | ✅ Yes (on same node)   | ❌ No                     | ❌ No                  |
-
 
 Q - How is networking handled in Kubernetes?
 A - Kubernetes has no built-in network layer like Docker. Network policies and CNI plugins are used to manage traffic between pods.
