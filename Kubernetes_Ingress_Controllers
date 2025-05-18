@@ -1,3 +1,5 @@
+- In kubernetes ingress controller or nginx or network policies ingress and egress
+
 Kubernetes Ingress Controllers:
 - NGINX Ingress Controller: Widely used, offers support for annotations & ConfigMaps enabling customization.
 - Kong Ingress Controller: Functions as an API gateway with features like authentication, rate-limiting, and transformations.
@@ -14,3 +16,5 @@ Ingress Controllers Based on Service Mesh:
 - Istio Ingress Gateway: Collaborates with Istio to streamline traffic management and support security measures.
 - Linkerd Ingress Controller: Seamlessly integrated with Linkerd to enhance mTLS & observability features.
 - Consul Ingress Controller: Developed by HashiCorp, focuses on ensuring secure service-to-service communication within the architecture. 
+
+- Pod security allows pods to connect to the backend and database using namespace selector and pod selector using labels specifying ingress and egress rules
