@@ -653,6 +653,10 @@ users:
 - A Heapster is a performance monitoring and metrics collection system for data collected by the Kublet. 
 - This aggregator is natively supported and runs like any other pod within a Kubernetes cluster, which allows it to discover and query usage data from all nodes within the cluster.
 
+- Taint vs toleration differences
+- Taints are like restricting  pods to schedule on the node, eg control plane node has noschedule as taint, tolleration is givng an access to pod schedule on the node as it has 
+  tolleration for taint
+
 - Here’s the difference between JSON and YAML in simple terms:
 - JSON (JavaScript Object Notation)
 - Data format used widely in APIs and web apps.
