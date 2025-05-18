@@ -172,6 +172,10 @@ Q - How do you write a terraform script to deploy an AWS Ec2 instance?
   }
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+In s3 only use_lockfile= true was specified in the backend resource file
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 Q - How have you used Terraform?
 A - I used Terraform to automate EKS provisioning, create EC2 instances, set up IAM roles, and configure security groups and S3 buckets.
