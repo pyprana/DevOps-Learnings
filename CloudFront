@@ -1,0 +1,45 @@
+1. What is CloudFront?
+- CDN (Content Delivery Network) by AWS.
+
+- Delivers content (HTML, CSS, JS, images, videos, APIs) with low latency via edge locations.
+
+3. CloudFront Use Cases.
+- Static site hosting (S3 + CloudFront).
+
+- Dynamic web apps (EC2/ALB + CloudFront).
+
+- Secure API distribution.
+
+- Live/on-demand video streaming.
+
+4. CloudFront with S3.
+- S3 Bucket as Origin.
+
+- Option to block public access and use OAI (Origin Access Identity) or Origin Access Control (OAC) for secure access.
+
+5. Security Features
+- HTTPS only using SSL/TLS.
+
+- Signed URLs & Signed Cookies for content access control.
+
+- Geo Restriction (Whitelist or Blacklist countries).
+
+- WAF Integration to filter web traffic.
+
+- Field-level encryption.
+
+6. Performance Optimization
+- Caching at Edge with TTL
+
+- Compressing content (gzip, Brotli)
+
+- Lambda@Edge for custom logic at edge (header rewrite, redirect, auth)
+
+7. Logging and Monitoring
+- Access Logs stored in S3
+
+- CloudWatch Metrics (Requests, 4xx/5xx Errors, Bytes Downloaded)
+
+- Real-Time Metrics available
+
+
