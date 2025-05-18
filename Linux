@@ -26,6 +26,9 @@ Q - A critical server has crashed and wont restart? what steps do you take to tr
     validating your configuration file. 
   - syntax (nginx -t) if its apache then we use apachetl config test.
 
+Q - You need to automate backups of a directory to a remote server ?
+  - How would you do it..?
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - To check logs in Linux:
