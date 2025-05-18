@@ -1,6 +1,7 @@
 - In SonarQube, rules are defined to enforce coding standards and detect bugs, code smells, or security vulnerabilities.
 
 - How to define rules in SonarQube:
+
 1. Use built-in rules
 - SonarQube comes with thousands of default rules for each language.
 
@@ -53,7 +54,7 @@
 
 - (Optional) Set maximum complexity (e.g., 15) if the rule allows parameter changes.
 
-🔁 To apply the profile to your project:
+- To apply the profile to your project:
 - Go to “Project Settings → Quality Profiles”.
 
 - Assign your updated profile to the project for the Java language.
