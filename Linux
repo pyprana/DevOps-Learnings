@@ -17,3 +17,48 @@ Q - You need to automate backups of a directory to a remote server..How would yo
 A - Use rsync for efficient file transfers.
   - Setups SSH based authentication
   - So basically from source to destination machine we can setup SSH authentication.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- To check logs in Linux:
+
+- Common Log Location:
+- Most system logs are in:
+
+- bash
+- /var/log/
+
+- Basic Commands:
+- View logs:
+
+- bash
+- cat /var/log/syslog         # Debian/Ubuntu
+- cat /var/log/messages       # RHEL/CentOS
+
+- Live updates (real-time):
+
+- bash
+- tail -f /var/log/syslog
+
+- Search logs:
+
+- bash
+- grep "error" /var/log/syslog
+
+- List all log files:
+
+- bash
+- ls /var/log/
+
+- View boot logs:
+
+- bash
+- dmesg
+- Systemd journal logs (for newer systems):
+
+- bash
+- journalctl
+- journalctl -xe             # For errors
+- journalctl -u nginx        # Logs for a specific service
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
