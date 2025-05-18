@@ -9,25 +9,18 @@
 
 - Why use Route 53?
 - High availability & low latency.
-
 - Globally distributed DNS servers.
-
 - Health checks to route traffic only to healthy endpoints.
-
 - Integrated with AWS services.
 
 - When to use it?
 - Hosting a website or app.
-
 - Need DNS-based routing or failover.
-
 - Managing multi-region setups.
 
 - Where is it used?
 - With AWS services (EC2, S3, ELB, CloudFront).
-
 - Hybrid and on-prem setups needing custom DNS.
-
 - Public or private hosted zones.
 
 - Key Features:
@@ -48,3 +41,8 @@
 - Route /shopping/* to shopping service target group
 - Route /payment/* to payment service target group
 - Alternatively, use API Gateway for microservices with stage-based routing or custom domains.
+
+- Routing policies: Simple, Weighted, Latency, Failover, Geolocation, Geoproximity, Multi-value.
+
+Q - How would Route 53 handle routing for specific user APIs?
+A - Use routing policies (weighted, latency, path-based) to route traffic to specific target groups or services based on API type.
