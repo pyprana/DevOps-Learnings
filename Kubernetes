@@ -54,7 +54,7 @@ Q - What does 'cordon' mean in Kubernetes?
 A - It marks a node as unschedulable — no new pods will run there, but existing pods stay. Used for maintenance.
 
 Q - What is Minikube?
-A - With the help of Minikube, users can Kubernetes locally. 
+A - With Minikube, users can run Kubernetes on their own computer to test and learn how it works. 
   - This process lets the user run a single-node Kubernetes cluster on your personal computer, including Windows, macOS, and Linus PCs. 
   - With this, users can try out Kubernetes also for daily development work.
 
