@@ -60,3 +60,63 @@
 - Docker image scan
 
 - Fails the build if any critical issue is found.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 🚀 DevSecOps CI/CD Pipeline – GitHub Style Breakdown
+
+1. Planning
+- Define security requirements
+- Threat modeling
+- Compliance needs
+
+---
+
+2. Code (Dev Phase)
+- 🔐 Pre-commit Hooks (e.g., `pre-commit`, `husky`)
+- 🔍 Secret Scanning: `git-secrets`, `gitleaks`
+- 👨‍💻 Static Code Analysis (SAST): `SonarQube`, `CodeQL`
+
+```bash
+# Example: Run CodeQL scan locally
+- codeql database create my-db --language=javascript --source-root=.
+- codeql analyze my-db javascript-security-queries
+
+3. Build Phase
+- Dependency Scanning: Snyk, OWASP Dependency-Check
+
+- IaC Scanning: Checkov, tfsec, kics
+
+- Container Image Scan: Trivy, Anchore
+
+- Example: Trivy scan Docker image
+- trivy image myapp:latest
+
+ 4. Test Phase
+- Unit & Integration Tests
+
+- DAST (Dynamic App Testing): OWASP ZAP, Burp Suite
+
+- Security Unit Tests: Validate authZ, authN, input sanitization
+
+ 5. Release Phase
+- Artifact Signing
+
+- Block release if vulnerabilities > threshold
+
+- Manual/automated security approval gate
+
+6. Deploy Phase
+- Secrets Management: Vault, AWS Secrets Manager
+
+- Kubernetes Admission Controls: OPA/Gatekeeper
+
+- Policy-as-Code: Sentinel, Conftest
+
+7. Monitor Phase
+- Runtime Threat Detection: Falco, Aqua
+
+- Audit Logs: CloudTrail, SIEM
+
+- Alerts: Prometheus, Alertmanager, Grafana
