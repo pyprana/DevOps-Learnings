@@ -182,70 +182,70 @@
 
 35. What is the difference between argocd app sync and argocd app refresh?
 
-argocd app sync triggers a synchronization of the application, while argocd app refresh updates the application state from the Git repository without syncing.
+- argocd app sync triggers a synchronization of the application, while argocd app refresh updates the application state from the Git repository without syncing.
 
 ####
 
 36. How do you integrate ArgoCD with CI/CD pipelines?
 
-By using webhooks to trigger deployments or by including ArgoCD CLI commands in the pipeline scripts.
+- By using webhooks to trigger deployments or by including ArgoCD CLI commands in the pipeline scripts.
 
 37. What is an ArgoCD webhook?
 
-Webhooks are HTTP callbacks that notify ArgoCD of changes in the Git repository, triggering application synchronization.
+- Webhooks are HTTP callbacks that notify ArgoCD of changes in the Git repository, triggering application synchronization.
 
 38. How do you configure webhooks in ArgoCD?
 
-Webhooks are configured in the Git repository settings, pointing to the ArgoCD webhook receiver URL.
+- Webhooks are configured in the Git repository settings, pointing to the ArgoCD webhook receiver URL.
 
 39. Can ArgoCD manage Helm charts?
 
-Yes, ArgoCD can deploy and manage applications defined as Helm charts.
+- Yes, ArgoCD can deploy and manage applications defined as Helm charts.
 
 40. How do you handle secrets in ArgoCD?
 
-Secrets can be managed using tools like Sealed Secrets, HashiCorp Vault, or Kubernetes secrets.
+- Secrets can be managed using tools like Sealed Secrets, HashiCorp Vault, or Kubernetes secrets.
 
 ####
 
 41. How do you scale ArgoCD?
 
-By increasing the number of replicas for ArgoCD components and using a distributed backend database.
+- By increasing the number of replicas for ArgoCD components and using a distributed backend database.
 
 42. What is the ArgoCD Application Controller?
 
-The Application Controller is responsible for reconciling the desired and live state of applications managed by ArgoCD.
+- The Application Controller is responsible for reconciling the desired and live state of applications managed by ArgoCD.
 
 43. How do you optimize ArgoCD performance?
 
-By using caching, optimizing Git repository structure, and tuning resource limits and requests.
+- By using caching, optimizing Git repository structure, and tuning resource limits and requests.
 
 44. What are resource limits and requests in ArgoCD?
 
-Resource limits and requests are Kubernetes settings that control the CPU and memory resources allocated to ArgoCD components.
+- Resource limits and requests are Kubernetes settings that control the CPU and memory resources allocated to ArgoCD components.
 
 45. How does ArgoCD handle large Git repositories?
 
-By using shallow cloning, caching, and configuring Git depth.
+- By using shallow cloning, caching, and configuring Git depth.
 
 ####
 
 46. What are some best practices for using ArgoCD?
 
-Use Git as the single source of truth, define clear sync policies, manage secrets securely, and implement robust RBAC.
+- Use Git as the single source of truth, define clear sync policies, manage secrets securely, and implement robust RBAC.
 
 47. How do you ensure continuous delivery with ArgoCD?
 
-By using automated sync policies, health checks, and integrating ArgoCD with CI/CD pipelines.
+- By using automated sync policies, health checks, and integrating ArgoCD with CI/CD pipelines.
 
 48. What are some common pitfalls when using ArgoCD?
 
-Misconfigured sync policies, insufficient RBAC settings, neglecting to monitor ArgoCD components, and not handling secrets properly.
+- Misconfigured sync policies, insufficient RBAC settings, neglecting to monitor ArgoCD components, and not handling secrets properly.
 
 49. How do you backup and restore ArgoCD?
 
-By backing up the ArgoCD database and configurations and restoring them in case of failure.
+- By backing up the ArgoCD database and configurations and restoring them in case of failure.
 
 50. What’s the future roadmap for ArgoCD?
 
-Enhancements in multi-cluster management, improved UI/UX, better performance optimizations, and more integrations with other DevOps tools.
+- Enhancements in multi-cluster management, improved UI/UX, better performance optimizations, and more integrations with other DevOps tools.
