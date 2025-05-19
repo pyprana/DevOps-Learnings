@@ -173,6 +173,47 @@ apt:
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+- What is a Handler?
+- A handler is a special Ansible task that only runs when notified by another task.
+
+- Why use it?
+- To perform actions only when changes happen.
+- E.g., Restart service only if config changed.
+
+- Example Structure:
+- In tasks/main.yml:
+
+- yaml
+- name: Copy Nginx config
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
+  notify: Restart Nginx
+In handlers/main.yml:
+
+yaml
+- name: Restart Nginx
+  service:
+    name: nginx
+    state: restarted
+
+- When does it run?
+- At the end of the play, only if notified.
+
+- Where to define?
+- In your role or playbook under:
+
+- yaml
+- handlers:
+   - name: Restart service
+     service:
+       name: myservice
+       state: restarted
+- Real Use Case:
+Update a config file and restart service only if the config was changed.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Ansible: A tool for automating IT tasks.
 Usage in Project:
 Configuration Management: Ensuring that all systems are set up correctly and consistently.
