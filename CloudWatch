@@ -1,4 +1,4 @@
-CloudWatch is a monitoring and observability service that helps you track the health, performance, and usage of your AWS resources and applications.
+- CloudWatch is a monitoring and observability service that helps you track the health, performance, and usage of your AWS resources and applications.
 
 - Metrics: CloudWatch automatically collects metrics from AWS services like EC2, RDS, Lambda. You can also send custom metrics using the AWS SDK or CloudWatch Agent.
 
@@ -29,16 +29,16 @@ CloudWatch is a monitoring and observability service that helps you track the he
 - CloudWatch Scenario-Based Use Cases
 
 1. EC2 CPU Spike Alert
- • What: CPU usage went above 85% for 5 mins.
- • Why: App under sudden load.
- • Action: CloudWatch alarm triggered -> SNS -> DevOps team notified.
- • Fix: Auto Scaling Group increased instances.
+ - What: CPU usage went above 85% for 5 mins.
+ - Why: App under sudden load.
+ - Action: CloudWatch alarm triggered -> SNS -> DevOps team notified.
+ - Fix: Auto Scaling Group increased instances.
 
 2. Memory Utilization Missing
- • What: Team needed memory metrics on EC2.
- • Why: By default, CloudWatch doesn’t capture memory.
- • Action: Installed CloudWatch Agent with custom config.
- • Fix: Memory + disk usage now visible in dashboards.
+ - What: Team needed memory metrics on EC2.
+ - Why: By default, CloudWatch doesn’t capture memory.
+ - Action: Installed CloudWatch Agent with custom config.
+ - Fix: Memory + disk usage now visible in dashboards.
 
 3. Application Error Rate Monitoring
  • What: App logs showed high 5xx errors.
