@@ -63,7 +63,8 @@
 
 8. How do you access the ArgoCD UI?
 
-- You can port-forward the ArgoCD server service to your local machine using kubectl port-forward svc/argocd-server -n argocd 8080:443 and then access it via https://localhost:8080.
+- You can port-forward the ArgoCD server service to your local machine using kubectl port-forward svc/argocd-server -n argocd 8080:443 and then access it
+  via https://localhost:8080.
 
 9. How do you authenticate to ArgoCD?
 
