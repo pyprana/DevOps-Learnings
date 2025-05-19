@@ -253,14 +253,12 @@ A - CMD: Provides default arguments to ENTRYPOINT.
 
   --entrypoint : Overwrite default entrypoint.
 
-🐳 2. docker build
-Build an image from a Dockerfile.
+- 2. docker build
+- Build an image from a Dockerfile.
 
-bash
-Copy
-Edit
-docker build [OPTIONS] PATH | URL | -
-Arguments:
+- bash
+- docker build [OPTIONS] PATH | URL | -
+- Arguments:
 
 -t : Tag image (e.g., -t myimage:latest).
 
@@ -272,14 +270,12 @@ Arguments:
 
 --platform : Set target platform (e.g., linux/amd64).
 
-🐳 3. docker ps
-List running containers.
+- 3. docker ps
+- List running containers.
 
-bash
-Copy
-Edit
-docker ps [OPTIONS]
-Arguments:
+- bash
+- docker ps [OPTIONS]
+- Arguments:
 
 -a : Show all containers (default shows only running).
 
@@ -289,14 +285,13 @@ Arguments:
 
 --format : Pretty-print using Go templates.
 
-🐳 4. docker exec
-Run command inside running container.
+- 4. docker exec
+- Run command inside running container.
 
-bash
-Copy
-Edit
-docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
-Arguments:
+- bash
+- Copy
+- docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+- Arguments:
 
 -it : Interactive terminal.
 
@@ -304,112 +299,93 @@ Arguments:
 
 --env : Set environment variables inside the exec session.
 
-🐳 5. docker logs
-Fetch logs from container.
+- 5. docker logs
+- Fetch logs from container.
 
-bash
-Copy
-Edit
-docker logs [OPTIONS] CONTAINER
-Arguments:
+- bash
+- docker logs [OPTIONS] CONTAINER
+- Arguments:
 
--f : Follow log output.
+- -f : Follow log output.
 
---tail : Number of lines to show from the end (e.g., --tail 100).
+- --tail : Number of lines to show from the end (e.g., --tail 100).
 
--t : Show timestamps.
+- -t : Show timestamps.
 
-🐳 6. docker stop
-Stop running container.
+- 6. docker stop
+- Stop running container.
 
-bash
-Copy
-Edit
-docker stop [OPTIONS] CONTAINER [CONTAINER...]
-Arguments:
+- bash
+- docker stop [OPTIONS] CONTAINER [CONTAINER...]
+- Arguments:
 
--t : Timeout before killing container (default: 10 seconds).
+- -t : Timeout before killing container (default: 10 seconds).
 
-🐳 7. docker rm
-Remove container.
+- 7. docker rm
+- Remove container.
 
-bash
-Copy
-Edit
-docker rm [OPTIONS] CONTAINER [CONTAINER...]
-Arguments:
+- docker rm [OPTIONS] CONTAINER [CONTAINER...]
+- Arguments:
 
--f : Force removal of running container.
+- -f : Force removal of running container.
 
--v : Remove volumes associated with container.
+- -v : Remove volumes associated with container.
 
-🐳 8. docker rmi
-Remove image.
+- 8. docker rmi
+- Remove image.
 
-bash
-Copy
-Edit
-docker rmi [OPTIONS] IMAGE [IMAGE...]
-Arguments:
+- bash
+- docker rmi [OPTIONS] IMAGE [IMAGE...]
+- Arguments:
 
--f : Force removal.
+- -f : Force removal.
 
---no-prune : Do not delete untagged parents.
+- --no-prune : Do not delete untagged parents.
 
-🐳 9. docker images
-List all images.
+- 9. docker images
+- List all images.
 
-bash
-Copy
-Edit
-docker images [OPTIONS]
-Arguments:
+- bash
+- docker images [OPTIONS]
+- Arguments:
 
--a : Show all images (default hides intermediate).
+- -a : Show all images (default hides intermediate).
 
---filter : Filter output (e.g., dangling=true).
+- --filter : Filter output (e.g., dangling=true).
 
---format : Custom output format.
+- --format : Custom output format.
 
-🐳 10. docker pull
-Download image from Docker Hub or registry.
+- 10. docker pull
+- Download image from Docker Hub or registry.
 
-bash
-Copy
-Edit
-docker pull [OPTIONS] NAME[:TAG|@DIGEST]
-Arguments:
+- bash
+- docker pull [OPTIONS] NAME[:TAG|@DIGEST]
+- Arguments:
 
---platform : Target OS/architecture (e.g., linux/arm64).
+- --platform : Target OS/architecture (e.g., linux/arm64).
 
-🐳 11. docker push
-Upload image to registry.
+- 11. docker push
+- Upload image to registry.
 
-bash
-Copy
-Edit
-docker push [OPTIONS] NAME[:TAG]
-Arguments:
+- bash
+- docker push [OPTIONS] NAME[:TAG]
+- Arguments:
 
---disable-content-trust : Skip content verification (default true).
+- --disable-content-trust : Skip content verification (default true).
 
-🐳 12. docker network
-Manage Docker networks.
+- 12. docker network
+- Manage Docker networks.
 
-bash
-Copy
-Edit
-docker network COMMAND
-Subcommands:
+- bash
+- docker network COMMAND
+- Subcommands:
 
-create, rm, ls, inspect, connect, disconnect
+- create, rm, ls, inspect, connect, disconnect
 
-Example:
+- Example:
 
-bash
-Copy
-Edit
-docker network create --driver bridge mynet
---driver : Network driver (bridge, overlay, etc.).
+- bash
+- docker network create --driver bridge mynet
+- --driver : Network driver (bridge, overlay, etc.).
 
---subnet, --gateway : Set subnet/gateway.
+- --subnet, --gateway : Set subnet/gateway.
