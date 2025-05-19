@@ -271,9 +271,42 @@ A - CMD: Provides default arguments to ENTRYPOINT.
    - When you need **load balancing**, **auto-healing**, or **service discovery**
    - If you want a lightweight alternative to Kubernetes
 
+30. Docker Exec and Docker Attach Difference
+- docker exec: Runs a command in a running container.
 
-   - Docker commands all need every argument description as well
-   - Here is a list of commonly used Docker commands, each with all key arguments and their descriptions:
+- docker attach: Attaches to a running container's main process.
+
+31. Difference Between ADD and COPY in Dockerfile
+- COPY: Copies files/directories.
+
+- ADD: Copies files/directories and can handle remote URLs and unpack compressed files.
+
+32. ENTRYPOINT and CMD in Docker
+- ENTRYPOINT: Defines the main command to run.
+
+- CMD: Provides default arguments to the ENTRYPOINT.
+
+33. Command to Remove Unused Docker Volumes
+- docker volume prune
+
+34. What is Docker Volume
+- A persistent storage mechanism for Docker containers, allowing data to persist beyond container lifecycle.
+
+35. What is Docker Multistage
+- A technique to minimize image size by using multiple FROM statements in a Dockerfile, copying only necessary artifacts.
+
+36. Why Docker is Used with Kubernetes
+- Docker packages applications into containers; Kubernetes orchestrates and manages these containers.
+
+37. How Docker Image is Formed
+- Built from a Dockerfile using the docker build command, layering instructions into an image.
+
+38.What is Docker Registry
+- A storage and distribution system for Docker images, like Docker Hub or AWS ECR.
+
+
+- Docker commands all need every argument description as well
+- Here is a list of commonly used Docker commands, each with all key arguments and their descriptions:
 
   - 1. docker run
   - Run a container from an image.
