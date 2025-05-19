@@ -236,13 +236,41 @@ A - CMD: Provides default arguments to ENTRYPOINT.
    - docker build -t myapp .
    - docker run myapp
 
-  28. what is a container
+  28. What is a container
    - A container is a lightweight, standalone, executable package that includes everything needed to run a piece of software—code, runtime, system tools, libraries, and settings.
    - What: Isolated environment for running applications.
    - Why: To ensure consistent execution across environments (dev → prod).
    - When: Used in CI/CD, microservices, and scalable app deployments.
    - Where: Runs on container engines like Docker or Kubernetes.
    - Example: A Python app in a Docker container will run the same on any system, regardless of host OS differences.
+
+  29. Docker Compose vs Docker Swarm — When to Use
+
+   - ### 🔍 Key Differences
+
+| Feature / Use Case            | Docker Compose ✅ | Docker Swarm ✅ |
+|------------------------------|-------------------|-----------------|
+| Local development            | ✅                | ❌              |
+| Single-host deployment       | ✅                | ❌              |
+| Multi-container applications | ✅                | ✅              |
+| Multi-host cluster setup     | ❌                | ✅              |
+| Built-in scaling             | ❌ (manual scale) | ✅              |
+| Load balancing               | ❌                | ✅              |
+| High availability            | ❌                | ✅              |
+| Production-ready orchestration | ❌              | ✅              |
+
+  - ### 🧠 How to Choose
+
+ - Use **Docker Compose**:
+   - For development and testing environments
+   - When deploying on a **single machine**
+   - For quick prototyping with multiple services
+
+ - Use **Docker Swarm**:
+   - For **multi-node** or **production** deployments
+   - When you need **load balancing**, **auto-healing**, or **service discovery**
+   - If you want a lightweight alternative to Kubernetes
+
 
    - Docker commands all need every argument description as well
    - Here is a list of commonly used Docker commands, each with all key arguments and their descriptions:
