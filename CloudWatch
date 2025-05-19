@@ -41,26 +41,26 @@
  - Fix: Memory + disk usage now visible in dashboards.
 
 3. Application Error Rate Monitoring
- • What: App logs showed high 5xx errors.
- • Why: Bug in recent deployment.
- • Action: CloudWatch Logs + Metric Filter + Alarm on error count.
- • Fix: Auto rollback triggered using Lambda.
+ - What: App logs showed high 5xx errors.
+ - Why: Bug in recent deployment.
+ - Action: CloudWatch Logs + Metric Filter + Alarm on error count.
+ - Fix: Auto rollback triggered using Lambda.
 
 4. S3 Access Pattern Alert
- • What: Sudden spike in S3 GET requests.
- • Why: Suspicious script or DDoS.
- • Action: CloudWatch + CloudTrail integration.
- • Fix: Blocked IP via WAF, alerted security team.
+ - What: Sudden spike in S3 GET requests.
+ - Why: Suspicious script or DDoS.
+ - Action: CloudWatch + CloudTrail integration.
+ - Fix: Blocked IP via WAF, alerted security team.
 
-- S3 GET requests
-- A GET request downloads an object using its bucket name and object key.
+ - S3 GET requests
+ - A GET request downloads an object using its bucket name and object key.
 
-- Example:
-bash
-- aws s3api get-object --bucket my-bucket --key myfile.txt myfile.txt
-Or using SDK (Python Boto3):
+ - Example:
+ - bash
+ - aws s3api get-object --bucket my-bucket --key myfile.txt myfile.txt
+   Or using SDK (Python Boto3):
 
-python
+- python
 - s3.download_file('my-bucket', 'myfile.txt', 'myfile.txt')
 
 - Use Cases:
@@ -76,7 +76,7 @@ python
 - Can use presigned URLs for secure access without credentials.
 
 5. Cost Optimization with Custom Metrics
- • What: Need to monitor EBS burst balance and optimize cost.
- • Why: Burst credits exhausted, I/O throttling.
- • Action: Custom dashboard + alert on low burst balance.
- • Fix: Moved to gp3 volume to avoid credit limits.
+ - What: Need to monitor EBS burst balance and optimize cost.
+ - Why: Burst credits exhausted, I/O throttling.
+ - Action: Custom dashboard + alert on low burst balance.
+ - Fix: Moved to gp3 volume to avoid credit limits.
