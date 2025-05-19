@@ -61,195 +61,197 @@
 - The CLI uses the Docker REST API to control or interact with the Docker daemon through scripting or direct CLI commands. 
 - Many other Docker applications use the underlying API and CLI.
 
-Q - In Docker, what’s the difference between CMD and ENTRYPOINT? Which creates a layer?
+10. In Docker, what’s the difference between CMD and ENTRYPOINT? Which creates a layer?
 A - CMD: Provides default arguments to ENTRYPOINT.
   - ENTRYPOINT: Defines the main command.
 
-- Both create image layers, but ENTRYPOINT is the one that defines the container’s main behavior.
+  - Both create image layers, but ENTRYPOINT is the one that defines the container’s main behavior.
 
-- Tell us something about Docker Compose.
-- Docker Compose is a YAML file which contains details about the services, networks, and volumes for setting up the Docker application. 
-- So, you can use Docker Compose to create separate containers, host them and get them to communicate with each other. 
-- Each container will expose a port for communicating with other containers.
+ 11. Tell us something about Docker Compose.
+  - Docker Compose is a YAML file which contains details about the services, networks, and volumes for setting up the Docker application. 
+  - So, you can use Docker Compose to create separate containers, host them and get them to communicate with each other. 
+  - Each container will expose a port for communicating with other containers.
 
-- Docker Compose is a tool for defining and managing multi-container Docker applications. 
-- It uses a YAML file to configure the application's services, networks, and volumes. With a single command, you can create and start all the services defined in the Compose file.
-- Docker Compose simplifies the process of managing complex applications, making it easier to develop, test, and deploy them. 
-- A docker-compose.yml file defines the services that make up your application. 
-- For example, a web application might have a service for the web server, a service for the database, and a service for a caching server. 
-- The Compose file specifies the Docker images to use for each service, as well as any dependencies between them.
-- To start the application, you can use the command docker compose up. This command creates and starts all the services defined in the Compose file. 
-- Docker Compose also provides commands for stopping, restarting, and scaling the application.
+  12. Docker Compose is a tool for defining and managing multi-container Docker applications. 
+  - It uses a YAML file to configure the application's services, networks, and volumes. With a single command, you can create and start all the services defined in the Compose file.
+  - Docker Compose simplifies the process of managing complex applications, making it easier to develop, test, and deploy them. 
+  - A docker-compose.yml file defines the services that make up your application. 
+  - For example, a web application might have a service for the web server, a service for the database, and a service for a caching server. 
+  - The Compose file specifies the Docker images to use for each service, as well as any dependencies between them.  
+  - To start the application, you can use the command docker compose up. This command creates and starts all the services defined in the Compose file. 
+  - Docker Compose also provides commands for stopping, restarting, and scaling the application.
 
-- What is Docker Swarm?
-- Docker Swarm is native clustering for Docker. 
-- It turns a pool of Docker hosts into a single, virtual Docker host. 
-- Docker Swarm serves the standard Docker API, any tool that already communicates with a Docker daemon can use Swarm to transparently scale to multiple hosts.
+  - web application can have:
+  - one service for the web server (to handle user requests),
+  - one service for the database (to store and retrieve data),
+  - and one service for caching (to make data access faster).
+  - Each service does a specific job to keep the app working smoothly.
 
-- What is a Docker Namespace?
-- A namespace is one of the Linux features and an important concept of containers.
-- Namespace adds a layer of isolation in containers. 
-- Docker provides various namespaces in order to stay portable and not affect the underlying host system. 
-- Few namespace types supported by Docker – PID, Mount, IPC, User, Network
+  13. What is Docker Swarm?
+  - Docker Swarm is native clustering for Docker. 
+  - It turns a pool of Docker hosts into a single, virtual Docker host. 
+  - Docker Swarm serves the standard Docker API, any tool that already communicates with a Docker daemon can use Swarm to transparently scale to multiple hosts.
 
-What is the lifecycle of a Docker Container?
-- Docker containers have the following lifecycle:
-- Create a container
-- Run the container
-- Pause the container(optional)
-- Un-pause the container(optional)
-- Start the container
-- Stop the container
-- Restart the container
-- Kill the container
-- Destroy the container
+  14. What is a Docker Namespace?
+  - A namespace is one of the Linux features and an important concept of containers.
+  - Namespace adds a layer of isolation in containers. 
+  - Docker provides various namespaces in order to stay portable and not affect the underlying host system. 
+  - Few namespace types supported by Docker – PID, Mount, IPC, User, Network
 
-- What is Docker Machine?
-- Docker machine is a tool that lets you install Docker Engine on virtual hosts.
-- These hosts can now be managed using the docker-machine commands. 
-- Docker machine also lets you provision Docker Swarm Clusters.
+  15. What is the lifecycle of a Docker Container?
+  - Docker containers have the following lifecycle:
+  - Create a container
+  - Run the container
+  - Pause the container(optional)
+  - Un-pause the container(optional)
+  - Start the container
+  - Stop the container
+  - Restart the container
+  - Kill the container
+  - Destroy the container
 
-- How to check for Docker Client and Docker Server version?
-- The following command gives you information about Docker Client and Server versions:
-$ docker version
+ 16.What is Docker Machine?
+ - Docker machine is a tool that lets you install Docker Engine on virtual hosts.
+ - These hosts can now be managed using the docker-machine commands. 
+ - Docker machine also lets you provision Docker Swarm Clusters.
 
-- How do you get the number of containers running, paused and stopped?
-- You can use the following command to get detailed information about the docker installed on your system.
+17. How to check for Docker Client and Docker Server version?
+ - The following command gives you information about Docker Client and Server versions:
+ - $ docker version
 
-- $ docker info
+18. How do you get the number of containers running, paused and stopped?
+ - You can use the following command to get detailed information about the docker installed on your system.
 
-- You can get the number of containers running, paused, stopped, the number of images and a lot more
-- If you vaguely remember the command and you’d like to confirm it, how will you get help on that particular command?
-- The following command is very useful as it gives you help on how to use a command, the syntax, etc.
+ - $ docker info
 
-- $ docker --help
+ - You can get the number of containers running, paused, stopped, the number of images and a lot more.
+ - If you vaguely remember the command and you’d like to confirm it, how will you get help on that particular command?
+ - The following command is very useful as it gives you help on how to use a command, the syntax, etc.
 
-- The above command lists all Docker commands. If you need help with one specific command, you can use the following syntax:
+ - $ docker --help
 
-- $ docker <command> --help
+ - The above command lists all Docker commands. If you need help with one specific command, you can use the following syntax:
 
-- How to login into docker repository?
-- You can use the following command to login into hub.docker.com:
+ - $ docker <command> --help
 
-- $ docker login
+19. How to login into docker repository?
+ - You can use the following command to login into hub.docker.com:
 
-- You’ll be prompted for your username and password, insert those and congratulations, you’re logged in.
+ - $ docker login
 
-- If you wish to use a base image and make modifications or personalize it, how do you do that?
-- You pull an image from docker hub onto your local system
-- It’s one simple command to pull an image from docker hub:
-- $ docker pull <image_name>
+ - You’ll be prompted for your username and password, insert those and congratulations, you’re logged in.
 
-21. How do you create a docker container from an image?
-- Pull an image from docker repository with the above command and run it to create a container. Use the following command:
-- $ docker run -it -d <image_name>
-- Most probably the next question would be, what does the ‘-d’ flag mean in the command?
-- d means the container needs to start in the detached mode. 
-- 
+ - If you wish to use a base image and make modifications or personalize it, how do you do that?
+ - You pull an image from docker hub onto your local system
+ - It’s one simple command to pull an image from docker hub:
+ - $ docker pull <image_name>
 
-- The following command lists down all the running containers:
+20. How do you create a docker container from an image?
+ - Pull an image from docker repository with the above command and run it to create a container. Use the following command:
+ - $ docker run -it -d <image_name>
+ - Most probably the next question would be, what does the ‘-d’ flag mean in the command?
+ - d means the container needs to start in the detached mode.  
 
-- $ docker ps
+ - The following command lists down all the running containers:
 
-- Suppose you have 3 containers running and out of these, you wish to access one of them. How do you access a running container?
-- The following command lets us access a running container:
-- $ docker exec -it <container id> bash
-- The exec command lets you get inside a container and work with it.
+ - $ docker ps
 
-- How to start, stop and kill a container?
-- The following command is used to start a docker container:
-- $ docker start <container_id>
-- and the following for stopping a running container:
-- $ docker stop <container_id>
-- kill a container with the following command:
-- $ docker kill <container_id>
+ 21. Suppose you have 3 containers running and out of these, you wish to access one of them. How do you access a running container?
+ - The following command lets us access a running container:
+ - $ docker exec -it <container id> bash
+ - The exec command lets you get inside a container and work with it.
 
-- Once you’ve worked with an image, how do you push it to docker hub?
-- $ docker push <username/image name>
+ 22. How to start, stop and kill a container?
+ - The following command is used to start a docker container:
+ - $ docker start <container_id>
+ - and the following for stopping a running container:
+ - $ docker stop <container_id>
+ - kill a container with the following command:
+ - $ docker kill <container_id>
 
-- How to delete a stopped container?
+ - Once you’ve worked with an image, how do you push it to docker hub?
+ - $ docker push <username/image name>
+
+23. How to delete a stopped container?
 - Use the following command to delete a stopped container:
 - $ docker rm <container id>
 
-- How to delete an image from the local storage system?
+24. How to delete an image from the local storage system?
 - The following command lets you delete an image from the local system:
 - $ docker rmi <image-id>
 
-- How to build a Dockerfile? 
+25. How to build a Dockerfile? 
 - Once you’ve written a Dockerfile, you need to build it to create an image with those specifications. Use the following command to build a Dockerfile:
 - $ docker build <path to docker file>
 - The next question would be when do you use “.dockerfile_name” and when to use the entire path?
 - Use “.dockerfile_name” when the dockerfile exits in the same file directory and you use the entire path if it lives somewhere else.
 
-- What is an image, how does docker container helps an image 
+26. What is an image, how does docker container helps an image 
+    - What is a Docker Image?
+   - A Docker image is a read-only template that contains the application code, runtime, libraries, and dependencies required to run a container.
 
-- What is a Docker Image?
-- A Docker image is a read-only template that contains the application code, runtime, libraries, and dependencies required to run a container.
+   - Think of it as a blueprint or snapshot.
 
-- Think of it as a blueprint or snapshot.
+   - Created using a Dockerfile.
 
-- Created using a Dockerfile.
+27. How Docker Container Helps an Image
+   - A container is a running instance of an image.
 
-- How Docker Container Helps an Image
-- A container is a running instance of an image.
+   - Docker takes the image and adds a writable layer on top to create a container.
 
-- Docker takes the image and adds a writable layer on top to create a container.
+   - The image stays unchanged, while the container can run and modify data during execution.
 
-- The image stays unchanged, while the container can run and modify data during execution.
+   - Flow:
+   - Create Dockerfile →
 
-- Flow:
-- Create Dockerfile →
+   - Build image using docker build →
 
-- Build image using docker build →
+   - Run container using docker run (image is the base)
 
-- Run container using docker run (image is the base)
+   - Example:
 
-- Example:
+   - bash
+   - docker build -t myapp .
+   - docker run myapp
 
-- bash
-- docker build -t myapp .
-- docker run myapp
+  28. what is a container
+   - A container is a lightweight, standalone, executable package that includes everything needed to run a piece of software—code, runtime, system tools, libraries, and settings.
+   - What: Isolated environment for running applications.
+   - Why: To ensure consistent execution across environments (dev → prod).
+   - When: Used in CI/CD, microservices, and scalable app deployments.
+   - Where: Runs on container engines like Docker or Kubernetes.
+   - Example: A Python app in a Docker container will run the same on any system, regardless of host OS differences.
 
-- what is a container
-- A container is a lightweight, standalone, executable package that includes everything needed to run a piece of software—code, runtime, system tools, libraries, and settings.
-- What: Isolated environment for running applications.
-- Why: To ensure consistent execution across environments (dev → prod).
-- When: Used in CI/CD, microservices, and scalable app deployments.
-- Where: Runs on container engines like Docker or Kubernetes.
-- Example: A Python app in a Docker container will run the same on any system, regardless of host OS differences.
+   - Docker commands all need every argument description as well
+   - Here is a list of commonly used Docker commands, each with all key arguments and their descriptions:
 
+  - 1. docker run
+  - Run a container from an image.
 
+  - bash
+  - docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 
-- Docker commands all need every argument description as well
-- Here is a list of commonly used Docker commands, each with all key arguments and their descriptions:
+  - Arguments:
 
-- 1. docker run
-Run a container from an image.
+  -d : Run in detached mode (in background).
 
-bash
-- docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+  -it : Interactive terminal.
 
-Arguments:
+  --name : Assign name to container.
 
--d : Run in detached mode (in background).
+  -p : Port mapping (host:container, e.g. -p 8080:80).
 
--it : Interactive terminal.
+  -v : Mount volume (host:container, e.g. -v /data:/app/data).
 
---name : Assign name to container.
+  --rm : Remove container after exit.
 
--p : Port mapping (host:container, e.g. -p 8080:80).
+  --env or -e : Set environment variables.
 
--v : Mount volume (host:container, e.g. -v /data:/app/data).
+  --network : Connect to a specific network.
 
---rm : Remove container after exit.
+  --restart : Restart policy (e.g., no, on-failure, always).
 
---env or -e : Set environment variables.
-
---network : Connect to a specific network.
-
---restart : Restart policy (e.g., no, on-failure, always).
-
---entrypoint : Overwrite default entrypoint.
+  --entrypoint : Overwrite default entrypoint.
 
 🐳 2. docker build
 Build an image from a Dockerfile.
