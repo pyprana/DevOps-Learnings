@@ -54,12 +54,12 @@ Here's a breakdown of how to achieve this:
 - This is beneficial for various scenarios like microservices, shared services, multi-account setups, or network segmentation. 
 - It is ideal when secure and scalable communication between VPCs is required.
 
-Options for connecting VPCs include:
-1. VPC Peering: Offers a simple, one-to-one connection.
-2. Transit Gateway: Utilizes a hub-and-spoke model, suitable for connecting many VPCs efficiently.
-3. VPN/Direct Connect: Ideal for cross-region or on-premises connectivity needs.
+- Options for connecting VPCs include:
+- 1. VPC Peering: Offers a simple, one-to-one connection.
+- 2. Transit Gateway: Utilizes a hub-and-spoke model, suitable for connecting many VPCs efficiently.
+- 3. VPN/Direct Connect: Ideal for cross-region or on-premises connectivity needs.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - Network segmentation is the practice of dividing a computer network into smaller, isolated segments or subnets. 
 - This process improves network performance and security by controlling traffic flow between these segments. 
@@ -91,7 +91,7 @@ Options for connecting VPCs include:
 - Microsegmentation:
 - A more granular approach where individual workloads or applications are isolated from each other.
 
-Examples of Network Segmentation:
+- Examples of Network Segmentation:
 - A large company might segment its network into departments: (e.g., HR, Finance, IT) to restrict access to sensitive data within each department. 
 - A hospital might segment its network to protect patient records, restricting access to medical professionals and other authorized personnel. 
 - An online retailer might segment its network to protect credit card information, isolating the payment processing systems from the rest of the network. 
