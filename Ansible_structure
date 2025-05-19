@@ -25,13 +25,14 @@ host_key_checking=false
 
 anisble.cfg(configuration file)
 - inventory - Specifies the default inventory file avoid manually specifying it every time.
-- remote - user - defines the user ansible should connect as (e.g./ ubuntu, ec2-user etc.
+- remote - user - defines the user ansible should connect as (e.g./ ubuntu, ec2-user etc.)
 - become-true - Enables priviliges escalation (like sudo) for administrative tasks.
 - host-key-checking : False -disables strict hosts key checking to prevent connection issues on first time ssh connectiones (use carefully in production)
   (Ansible will not check the identity of the remote server when connecting via SSH for the first time.
   This avoids connection errors if the host is new or not listed in the known hosts.
   You might connect to a fake or malicious server without knowing it — not safe for production.)
 *It tells Ansible "don’t ask questions when connecting to a new machine for the first time — just connect."*
+
 
 2.inventory.yml
 all:
@@ -49,6 +50,43 @@ inventory.yml(inventory file)
 - Specifies host ips for connectivity.
 - The anisble-python-interpreter:/usr/bin/python.
 
+- vars: ansible_python_interpreter — Explained
+-  What is it?
+- ansible_python_interpreter is a variable that tells Ansible which Python executable to use on the target machine.
+
+- Why is it needed?
+- Some systems have:
+
+- Multiple Python versions (e.g., Python 2 & 3)
+
+- Python not at default path (/usr/bin/python)
+
+- Virtual environments
+
+- To avoid issues, you explicitly set the path.
+
+- Example:
+- yaml
+- vars:
+    ansible_python_interpreter: /usr/bin/python3
+- This tells Ansible to run Python 3 on the target.
+
+- Where can you define it?
+- In vars: block
+
+- In inventory file
+
+- In host/group vars
+
+- As a role default
+
+- Real use case:
+- You're connecting to a Ubuntu host where only Python 3 is installed:
+
+- ini
+- [ubuntu]
+  10.0.0.1 ansible_python_interpreter=/usr/bin/python3
+
 3.playbook.yml
 - name:web application deployment 
   hosts:all
@@ -60,6 +98,8 @@ inventory.yml(inventory file)
 - This is the entry point of your deployment 
 - hosts : all - Targets all servers defined in the inventory file
 - roles : Uses a modular approach to separate concerns via roles(best practice for scalability).
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 my_role/
 ├── tasks/         # main.yml (mandatory)
@@ -81,6 +121,23 @@ my_role/
 - Scalability: Share roles across projects or teams.
 
 - Standard structure: Easier collaboration and automation.
+
+- How to create a Role?
+- ansible-galaxy init my_role
+
+- Example of Using a Role in Playbook:
+- hosts: web
+  roles:
+    - my_role
+
+- When to Use?
+- Projects with multiple tasks/files
+
+- Need reusability and cleaner code
+
+- In production-grade deployments
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 4.roles/webserver/tasks/main.yaml(main role task file)
 - name: Install required packages
