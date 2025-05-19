@@ -44,7 +44,7 @@ all:
     vars:
         ansiblepythoninterpreter:
 
-inventory.yml(inventory file)
+- inventory.yml(inventory file)
 - Why its required.
 - Defines your infrastructure, grouping, servers under all.
 - Specifies host ips for connectivity.
