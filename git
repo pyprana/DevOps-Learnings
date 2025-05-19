@@ -1,3 +1,8 @@
 Q -  What is the difference between git revert and git reset?
 A - git revert: Creates a new commit to undo changes.
   - git reset: Moves the branch pointer to a previous commit, can change history.
+
+Q - How to Resolve Git Conflict
+  - Identify conflicting files.
+  - Manually edit to resolve conflicts.
+  - Add and commit the resolved files.
