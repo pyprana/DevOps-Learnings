@@ -87,6 +87,28 @@ A - CMD: Provides default arguments to ENTRYPOINT.
   - and one service for caching (to make data access faster).
   - Each service does a specific job to keep the app working smoothly.
 
+  - Docker Compose example for a web app using Nginx and Redis:
+    version: '3'
+    services:
+      web:
+        image: nginx:latest
+        ports:
+          - "80:80"
+      redis:
+        image: redis:latest
+ - Explanation:
+
+ - Defines two services: web (Nginx) and redis
+
+ - Exposes port 80 of the web container to the host
+
+ - Redis runs in the background without any extra config
+
+ - Run with:
+
+ - bash
+ - docker-compose up
+
   13. What is Docker Swarm?
   - Docker Swarm is native clustering for Docker. 
   - It turns a pool of Docker hosts into a single, virtual Docker host. 
