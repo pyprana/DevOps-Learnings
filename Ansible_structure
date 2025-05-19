@@ -1,4 +1,4 @@
-Sample Ansible Playbook for Deployment 
+- Sample Ansible Playbook for Deployment 
 - Designed to deploy a web application, manage sevices and ensure the system is in desired state.
 
 Directory Structure
@@ -10,7 +10,7 @@ Directory Structure
                                               |-------------------tasks
                                                                     |-------------------main.yaml
                                                                     |-------------------install.yml
-                                                                    |--------------------deploy.yml
+                                                                    |-------------------deploy.yml
                                                                     |-------------------configure.yml
                                               |-------------------templates
                                                                     |-------------------nginx.conf.j2
@@ -59,7 +59,28 @@ inventory.yml(inventory file)
 - Why its required.
 - This is the entry point of your deployment 
 - hosts : all - Targets all servers defined in the inventory file
-- roles : Uses a modular approach to separate concerns via roles(best practice for scalability)
+- roles : Uses a modular approach to separate concerns via roles(best practice for scalability).
+
+my_role/
+├── tasks/         # main.yml (mandatory)
+├── handlers/      # main.yml
+├── defaults/      # main.yml (default vars)
+├── vars/          # main.yml (non-overridable vars)
+├── files/         # static files to copy
+├── templates/     # Jinja2 templates
+├── meta/          # role dependencies
+└── README.md      # description
+
+- What is an Ansible Role?
+- A role is a structured way to organize Ansible playbooks, tasks, variables, handlers, templates, and files.
+- It helps break complex playbooks into reusable components.
+
+- Why use Roles?
+- Modular code: Easier to manage and reuse.
+
+- Scalability: Share roles across projects or teams.
+
+- Standard structure: Easier collaboration and automation.
 
 4.roles/webserver/tasks/main.yaml(main role task file)
 - name: Install required packages
