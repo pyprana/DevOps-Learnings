@@ -12,7 +12,7 @@
 
   - Explain the concept of Helm charts.
   - Answer: A Helm chart is a collection of files that describe a related set of Kubernetes resources. It's essentially a template for deploying applications to Kubernetes. 
-    A chart includes templates for deployments, services, configmaps, etc., along with metadata that describes the chart and its dependencies.
+  - A chart includes templates for deployments, services, configmaps, etc., along with metadata that describes the chart and its dependencies.
 
 Q - What is helm?
 A - Helm is a kubernetes package manager.
