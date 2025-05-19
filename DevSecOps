@@ -1,0 +1,62 @@
+
+- DevSecOps – Simple Explanation
+
+- What:
+- DevSecOps = Development + Security + Operations
+- It is a practice that integrates security into every phase of the DevOps pipeline — from planning to coding, building, testing, deploying, and monitoring.
+
+- Why:
+- To shift security left (earlier in the process)
+
+- To find and fix vulnerabilities early
+
+- To automate security checks within CI/CD
+
+- When:
+- Adopted when delivering software rapidly without compromising security
+
+- Useful in regulated industries or cloud-native environments
+
+- Where:
+- Used in CI/CD pipelines
+
+- Applied across cloud platforms, microservices, containers, infrastructure as code
+
+- How:
+- SAST (Static code analysis)
+
+- DAST (Dynamic app testing)
+
+- Secrets scanning
+
+- Container scanning
+
+- Policy enforcement
+
+- IAM checks
+
+- Automated compliance (e.g., using tools like Open Policy Agent, HashiCorp Sentinel)
+
+- Example Tools:
+- SAST: SonarQube, Checkmarx
+
+- DAST: OWASP ZAP, Burp Suite
+
+- Container Security: Trivy, Anchore, Aqua
+
+- Secrets Management: HashiCorp Vault
+
+- CI/CD Security: GitHub Actions + CodeQL, Jenkins + SonarQube
+
+- Real-world Scenario:
+- During a Jenkins build, a pipeline runs:
+
+- Lint checks
+
+- Code scan (SAST)
+
+- Dependency scan (e.g., using Snyk)
+
+- Docker image scan
+
+- Fails the build if any critical issue is found.
