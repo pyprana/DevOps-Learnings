@@ -1,0 +1,31 @@
+
+- RDS (Relational Database Service) is an AWS-managed service for running relational databases in the cloud.
+
+- What:
+- A service to set up, operate, and scale databases like MySQL, PostgreSQL, Oracle, SQL Server, and Amazon Aurora.
+
+- Why:
+- No need for manual database setup or maintenance.
+
+- Automated backups, patching, and replication.
+
+- High availability with Multi-AZ support.
+
+- Easily scalable (compute & storage).
+
+- When:
+- Use RDS when:
+
+- You want a managed SQL database.
+
+- You need backup, recovery, and failover automation.
+
+- You need replicas for read-heavy workloads.
+
+- Where:
+- RDS is used inside a VPC for security.
+
+- Connect using endpoint URL (host, port, db name).
+
+# Connect to RDS instance via psql
+psql -h mydb.xxxx.rds.amazonaws.com -U admin -d mydatabase
