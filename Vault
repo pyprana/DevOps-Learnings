@@ -1,0 +1,45 @@
+- Vault (by HashiCorp) is a tool for secrets management, encryption, and identity-based access to systems and data.
+
+- What is Vault?
+- A security tool to store, access, and tightly control secrets like API keys, passwords, certificates, and tokens.
+
+- Key Features:
+- Secret Storage (KV store)
+
+- Dynamic Secrets (e.g., generate AWS creds on demand)
+
+- Encryption as a Service (encrypt/decrypt data without storing it)
+
+- Identity-based Access (policy-controlled access via tokens, IAM, etc.)
+
+- Audit Logs (for tracking access)
+
+- Use Cases:
+- Store and rotate database passwords securely.
+
+- Provide temporary AWS credentials to CI/CD pipelines.
+
+- Encrypt sensitive app data using Vault's transit engine.
+
+- Manage PKI and TLS certificates.
+
+- Components:
+- Secrets Engines (e.g., KV, AWS, Database)
+
+- Authentication Methods (e.g., AppRole, GitHub, AWS IAM)
+
+- Policies (written in HCL to manage access)
+
+- Audit Devices (for security logs)
+
+- CLI Example:
+- vault kv put secret/db username=admin password=pass123
+- vault kv get secret/db
+
+- Deployment:
+- Runs as a server (standalone or HA with storage backends like Consul, S3, etc.)
+
+- Requires unsealing at startup with unseal keys.
+
+
+
