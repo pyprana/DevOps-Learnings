@@ -22,7 +22,7 @@
 - Now when you wish to run the application on another system, the container is deployed which will give a bug-free environment as all the dependencies and libraries are wrapped 
   together. Most famous containerization environments are Docker and Kubernetes.
 
-4. Difference between virtualization and containerization
+4. Difference between virtualization and containerization?
 - The question could either be differences between virtualization and containerization or differences between virtual machines and containers. 
 - Containers provide an isolated environment for running the application. 
 - The entire user space is explicitly dedicated to the application. 
@@ -32,7 +32,6 @@
 - Virtual machines are an abstraction of the hardware layer. Each VM is a physical machine.
 
 5. What is Docker?
-- Since its a Docker interview, there will be an obvious question about what is Docker. Start with a small definition.
 - Docker is a containerization platform which packages your application and all its dependencies together in the form of containers so as to ensure that your application works
   seamlessly in any environment, be it development, test or production. 
 - Docker containers, wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries, etc. 
@@ -62,7 +61,6 @@
 - The CLI uses the Docker REST API to control or interact with the Docker daemon through scripting or direct CLI commands. 
 - Many other Docker applications use the underlying API and CLI.
 
-
 Q - In Docker, what’s the difference between CMD and ENTRYPOINT? Which creates a layer?
 A - CMD: Provides default arguments to ENTRYPOINT.
   - ENTRYPOINT: Defines the main command.
@@ -73,6 +71,15 @@ A - CMD: Provides default arguments to ENTRYPOINT.
 - Docker Compose is a YAML file which contains details about the services, networks, and volumes for setting up the Docker application. 
 - So, you can use Docker Compose to create separate containers, host them and get them to communicate with each other. 
 - Each container will expose a port for communicating with other containers.
+
+- Docker Compose is a tool for defining and managing multi-container Docker applications. 
+- It uses a YAML file to configure the application's services, networks, and volumes. With a single command, you can create and start all the services defined in the Compose file.
+- Docker Compose simplifies the process of managing complex applications, making it easier to develop, test, and deploy them. 
+- A docker-compose.yml file defines the services that make up your application. 
+- For example, a web application might have a service for the web server, a service for the database, and a service for a caching server. 
+- The Compose file specifies the Docker images to use for each service, as well as any dependencies between them.
+- To start the application, you can use the command docker compose up. This command creates and starts all the services defined in the Compose file. 
+- Docker Compose also provides commands for stopping, restarting, and scaling the application.
 
 - What is Docker Swarm?
 - Docker Swarm is native clustering for Docker. 
