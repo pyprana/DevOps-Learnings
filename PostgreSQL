@@ -1,0 +1,43 @@
+- PostgreSQL (Postgres) is an open-source, powerful, and advanced relational database system.
+
+- What:
+- A SQL-compliant, object-relational database known for reliability, extensibility, and standards compliance.
+
+- Why:
+- ACID compliant (safe transactions)
+
+- Supports JSON, indexing, full-text search
+
+- Extensible with custom functions, data types
+
+- Community-driven and open source
+
+- When:
+- Use PostgreSQL when:
+
+- You need complex queries and data integrity.
+
+- You want open-source flexibility.
+
+- You require advanced features (CTEs, triggers, partitioning).
+
+- Where:
+- Local, on-prem, or cloud (e.g., AWS RDS, GCP Cloud SQL).
+
+- Used in microservices, analytics, and web applications.
+
+- Example:
+- sql
+-- Create a table
+CREATE TABLE employees (
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  role TEXT,
+  salary NUMERIC
+);
+
+-- Insert data
+- INSERT INTO employees (name, role, salary) VALUES ('Alice', 'Engineer', 90000);
+
+-- Query data
+- SELECT * FROM employees WHERE role = 'Engineer';
