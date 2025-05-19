@@ -3,6 +3,11 @@ A - git revert: Creates a new commit to undo changes.
   - git reset: Moves the branch pointer to a previous commit, can change history.
 
 Q - How to Resolve Git Conflict
-  - Identify conflicting files.
+A - Identify conflicting files.
   - Manually edit to resolve conflicts.
   - Add and commit the resolved files.
+
+Q - When to Use Grep and Awk
+  - Grep: Searches for patterns in text.
+
+  - Awk: Processes and analyzes text, especially in columns
