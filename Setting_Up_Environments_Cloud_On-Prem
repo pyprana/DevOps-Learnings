@@ -1,0 +1,60 @@
+# Difference: Setting Up Environments in Client's Cloud vs On-Prem Infrastructure
+
+## 1. Infrastructure Provisioning
+
+| Feature         | Cloud                                        | On-Prem                                                  |
+|-----------------|-----------------------------------------------|-----------------------------------------------------------|
+| Provisioning    | Automated (Terraform, CloudFormation, etc.)  | Manual hardware setup                                     |
+| Scalability     | On-demand, auto-scaling                      | Limited by hardware capacity                              |
+| Cost Model      | OPEX (pay-as-you-go)                         | CAPEX (upfront investment)                                |
+| Speed           | Fast (minutes)                               | Slow (days/weeks)                                         |
+
+---
+
+## 2. Networking
+
+| Feature         | Cloud                                        | On-Prem                                                  |
+|-----------------|-----------------------------------------------|-----------------------------------------------------------|
+| Network Design  | VPC, Subnets, Routing via console/IaC        | Physical VLANs, switches, manual routing                  |
+| Firewall        | Cloud security groups/NACLs                  | Hardware-based firewall configuration                     |
+| Public Access   | Easy via public IPs, ELBs, DNS               | Needs static IPs, port forwarding                         |
+
+---
+
+## 3. Security & Access
+
+| Feature         | Cloud                                        | On-Prem                                                  |
+|-----------------|-----------------------------------------------|-----------------------------------------------------------|
+| Access Control  | IAM roles, policies                          | LDAP, Active Directory, local auth                        |
+| Patching        | Partial (provider + user)                    | Fully user-managed                                        |
+| Encryption      | Built-in (KMS, SSE, TLS)                     | Must configure manually                                   |
+| Compliance      | Tools for HIPAA, GDPR, etc.                  | Requires manual processes and audits                      |
+
+---
+
+## 4. CI/CD & Deployment
+
+| Feature         | Cloud                                        | On-Prem                                                  |
+|-----------------|-----------------------------------------------|-----------------------------------------------------------|
+| CI/CD Tools     | Cloud-native (CodePipeline, CodeBuild)       | Jenkins, GitLab CI, etc. (manual setup)                  |
+| Container Orchestration | Managed (EKS, ECS, Fargate)          | Install & manage Kubernetes/Docker manually              |
+| Load Balancing  | Managed (ALB, NLB)                           | Manual configuration (HAProxy, NGINX)                    |
+
+---
+
+## 5. Monitoring & Logging
+
+| Feature         | Cloud                                        | On-Prem                                                  |
+|-----------------|-----------------------------------------------|-----------------------------------------------------------|
+| Monitoring      | CloudWatch, X-Ray                            | Prometheus, Nagios, etc.                                 |
+| Logging         | S3, CloudTrail, ELK Stack                    | ELK, custom log aggregators                              |
+| Storage         | Scalable object storage                      | Physical disks, limited storage                          |
+
+---
+
+## Summary
+
+- **Cloud**: Ideal for fast, scalable, and flexible deployment with minimal manual effort.
+- **On-Prem**: Suitable when you need full control, data residency, or have strict compliance needs, but it requires more setup and maintenance.
+
+> ⚙️ Choose based on **cost**, **scalability**, **compliance**, and **data sensitivity**.
