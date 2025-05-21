@@ -131,3 +131,82 @@
 - If everything goes well, TeamCity stores the build artifacts.
 - A deployment tool takes over, putting the software into action in a real-world environment.
 - This whole cycle can be automated with TeamCity, making it so that the software gets built, tested, and deployed automatically whenever there’s a change in the source code.
+
+- What is TeamCity?
+- TeamCity is a Continuous Integration and Deployment server that provides out-of-the-box continuous unit testing, code quality analysis, and early reporting on build problems. 
+- A simple installation process lets you deploy TeamCity and start improving your release management practices in a matter of minutes. 
+- TeamCity supports Java, .NET, and Ruby development and integrates perfectly with major IDEs, version control systems, and issue tracking systems.
+
+- Features of TeamCity are:
+- Technology Awareness. One reason TeamCity is dubbed an “Intelligent CI server” is its approach to integration.
+- Key Integrations
+- Cloud Integrations.
+- Continuous Integration.
+- Configuration.
+- Build History.
+- Build Infrastructure.
+- Code Quality Tracking.
+
+- Why use TeamCity?
+- TeamCity is used to build and test software products in an automated manner. 
+- It provides rapid feedback on every code change, reduces code integration problems, and leads to more effective teamwork. Many popular games, websites, banking systems, and all
+  JetBrains products are built with TeamCity.
+
+- Advantages of TeamCity
+- Easy integration with Various IDEs
+- No need for plugins
+- Comprehensive documentation
+- Easy to set up and configure
+- Cross-platform
+- Has a free option
+- Notifies of build failures and provides details on the reasons
+
+- Disadvantages of a TeamCity
+- It is not open-source.
+- Need for the license after 3 agents and 100 builds.
+- Lesser community support.
+- Complex user interface for new users.
+- Upgrading to another version is quite tedious.
+- Best TeamCity Alternative
+- CircleCI.
+- Jenkins.
+- Bamboo.
+- Octopus Deploy.
+- Azure DevOps Server.
+- Red Hat Ansible Automation Platform.
+- Travis CI.
+- GoCD.
+- Best resources to learn TeamCity
+- https://www.devopsschool.com/blog/?s=teamcity
+
+- https://www.devopsschool.com/courses/teamcity/
+
+- TeamCity Interview Questions and Answers
+- What is the TeamCity tool used for?
+- TeamCity is a CI server written in Java. It allows developers to integrate, code, and is easier to configure with simple steps. 
+- On TeamCity parallel builds run simultaneously on different platforms and environments.
+
+- Is TeamCity a build tool?
+- TeamCity is a building management and continuous integration server from JetBrains. 
+- It was first released on October 2, 2006, and is commercial software and licensed under a proprietary license: a freemium license for up to 100 build configurations and three free Build Agent licenses are available.
+
+Is TeamCity a CD tool?
+TeamCity is a general-purpose CI/CD solution that allows the most flexibility for all sorts of workflows and development practices. The Projects Overview lets you quickly check the status of your builds, see what triggered them, download the latest build artifacts, and more.
+
+What is TeamCity deployment?
+TeamCity provides the Deployment type of build configuration. Build configurations that perform deploying to some environment can be marked with this type: these usually build configurations that have snapshot or artifact dependencies on the builds whose results they deploy.
+
+What is TeamCity in DevOps?
+What is TeamCity? TeamCity is a user-friendly continuous integration (CI) server for professional developers, build engineers, and DevOps. It is trivial to set up and absolutely free for small teams and open source projects.
+
+What is a TeamCity build configuration?
+TeamCity will suggest the build configuration name and will configure the rest of the settings for you: It will determine the type of the VCS repository and create a VCS root. For a Git repository, it will autodetect the default branch. You have an option to change it now or later, in the VCS root settings.
+
+Is TeamCity a continuous integration tool?
+Jet Brains TeamCity is a user-friendly continuous integration (CI) server for developers and builds engineers free of charge with the Professional Server License and is easy to set up!
+
+How do I set up a TeamCity project?
+To add your first project, click Administration in the upper right corner of the TeamCity UI and then click Create project. There are several ways to create a project in TeamCity: automatically from a repository URL, from a connection to a specific VCS, or manually.
+
+How do you run builds in TeamCity?
+To run a custom build with specific changes, open the build results page, go to the Changes tab, expand the required change, click the Run build with this change, and proceed with the options in the Run Custom Build dialog. Use HTTP request or REST API request to TeamCity to trigger a build
