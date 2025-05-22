@@ -188,25 +188,36 @@
 
 - Is TeamCity a build tool?
 - TeamCity is a building management and continuous integration server from JetBrains. 
-- It was first released on October 2, 2006, and is commercial software and licensed under a proprietary license: a freemium license for up to 100 build configurations and three free Build Agent licenses are available.
+- It was first released on October 2, 2006, and is commercial software and licensed under a proprietary license: a freemium license for up to 100 build configurations and three
+  free Build Agent licenses are available.
 
-Is TeamCity a CD tool?
-TeamCity is a general-purpose CI/CD solution that allows the most flexibility for all sorts of workflows and development practices. The Projects Overview lets you quickly check the status of your builds, see what triggered them, download the latest build artifacts, and more.
+- Is TeamCity a CD tool?
+- TeamCity is a general-purpose CI/CD solution that allows the most flexibility for all sorts of workflows and development practices. 
+- The Projects Overview lets you quickly check the status of your builds, see what triggered them, download the latest build artifacts, and more.
 
-What is TeamCity deployment?
-TeamCity provides the Deployment type of build configuration. Build configurations that perform deploying to some environment can be marked with this type: these usually build configurations that have snapshot or artifact dependencies on the builds whose results they deploy.
+- What is TeamCity deployment?
+- TeamCity provides the Deployment type of build configuration. 
+- Build configurations that perform deploying to some environment can be marked with this type: these usually build configurations that have snapshot or artifact dependencies on
+  the builds whose results they deploy.
 
-What is TeamCity in DevOps?
-What is TeamCity? TeamCity is a user-friendly continuous integration (CI) server for professional developers, build engineers, and DevOps. It is trivial to set up and absolutely free for small teams and open source projects.
+- What is TeamCity in DevOps?
+- What is TeamCity? TeamCity is a user-friendly continuous integration (CI) server for professional developers, build engineers, and DevOps. 
+- It is trivial to set up and absolutely free for small teams and open source projects.
 
-What is a TeamCity build configuration?
-TeamCity will suggest the build configuration name and will configure the rest of the settings for you: It will determine the type of the VCS repository and create a VCS root. For a Git repository, it will autodetect the default branch. You have an option to change it now or later, in the VCS root settings.
+- What is a TeamCity build configuration?
+- TeamCity will suggest the build configuration name and will configure the rest of the settings for you: It will determine the type of the VCS repository and create a VCS root.
+- For a Git repository, it will autodetect the default branch. 
+- You have an option to change it now or later, in the VCS root settings.
 
-Is TeamCity a continuous integration tool?
-Jet Brains TeamCity is a user-friendly continuous integration (CI) server for developers and builds engineers free of charge with the Professional Server License and is easy to set up!
+- Is TeamCity a continuous integration tool?
+- Jet Brains TeamCity is a user-friendly continuous integration (CI) server for developers and builds engineers free of charge with the Professional Server License and is easy to 
+  set up!
 
-How do I set up a TeamCity project?
-To add your first project, click Administration in the upper right corner of the TeamCity UI and then click Create project. There are several ways to create a project in TeamCity: automatically from a repository URL, from a connection to a specific VCS, or manually.
+- How do I set up a TeamCity project?
+- To add your first project, click Administration in the upper right corner of the TeamCity UI and then click Create project. 
+- There are several ways to create a project in TeamCity: automatically from a repository URL, from a connection to a specific VCS, or manually.
 
-How do you run builds in TeamCity?
-To run a custom build with specific changes, open the build results page, go to the Changes tab, expand the required change, click the Run build with this change, and proceed with the options in the Run Custom Build dialog. Use HTTP request or REST API request to TeamCity to trigger a build
+- How do you run builds in TeamCity?
+- To run a custom build with specific changes, open the build results page, go to the Changes tab, expand the required change, click the Run build with this change, and proceed 
+  with the options in the Run Custom Build dialog. 
+- Use HTTP request or REST API request to TeamCity to trigger a build
