@@ -288,7 +288,7 @@ CI/CD Pipelines and Automation: CI/CD workflows can spin up multiple EKS cluster
 Edge Computing: EKS can help run applications at the edge where data is processed closer to where it is generated. This reduces latency and increases real-time decision-making capabilities.
 High-Performance Computing (HPC): EKS supports compute-optimized and GPU-optimized instances making it perfect for computationally expensive workloads and EKS can handel workloads that require high-performance computing
 Features of AWS EKS
-Following are the Features of using Amazon EKS
+- Following are the Features of using Amazon EKS
 
 Managed Kubernetes Control Plane: AWS automatically applies the latest patches and updates to the control plane keeping it secure and up to date with the latest Kubernetes versions it make sure that control plane is distributed across multiple Availability Zones so that application should be highly available to us.
 Native Kubernetes Compatibility: Integrating EKS with any Kubernetes-native tools such as kubectl, Helm and more easily As EKS runs upstream Kubernetes where user can move their workload from other Kubernetes environments with minimal fiction.
@@ -298,87 +298,88 @@ Hybrid and Multi-Cloud Support: EKS can be deployed across different regions and
 Get started with Amazon EKS
 Learn how to get started with Amazon EKS - Please Refer to this Article Get started with Amazon EKS
 
-Pricing of EKS
-Below Is The Pricing Model of AWS EKS:
+- Pricing of EKS
 
-Service
+- Below Is The Pricing Model of AWS EKS:
 
-Pricing
+- Service
 
-Description
+- Pricing
 
-Amazon EKS Cluster
+- Description
 
-$0.10 per hour
+- Amazon EKS Cluster
 
-For each EKS cluster that you create you are charged this flat rate irrespective of the size of the cluster or the number of nodes
+- $0.10 per hour
 
-AWS Fargate for EKS
+- For each EKS cluster that you create you are charged this flat rate irrespective of the size of the cluster or the number of nodes.
 
-$0.04025 per vCPU per hour + $0.004445 per GB-hour
+- AWS Fargate for EKS
 
-You are charged for the vCPU and memory resources your Kubernetes pods use on Fargate
+- $0.04025 per vCPU per hour + $0.004445 per GB-hour.
 
-Amazon EKS on AWS Outposts
+- You are charged for the vCPU and memory resources your Kubernetes pods use on Fargate.
 
-$0.01375 per vCPU per hour + EC2 instance pricing
+- Amazon EKS on AWS Outposts
 
-Pricing includes the $0.01375 per vCPU per hour for EKS and the cost of running EC2 instances on AWS Outposts, which varies by instance type
+- $0.01375 per vCPU per hour + EC2 instance pricing
 
-EC2 Worker Nodes
+- Pricing includes the $0.01375 per vCPU per hour for EKS and the cost of running EC2 instances on AWS Outposts, which varies by instance type.
 
-Varies based on EC2 instance type
+- EC2 Worker Nodes
 
-You pay for the EC2 instances that you run as worker nodes in your EKS cluster. Pricing depends on the instance type, size and the region
+- Varies based on EC2 instance type
 
-EBS Volumes
+- You pay for the EC2 instances that you run as worker nodes in your EKS cluster. Pricing depends on the instance type, size and the region.
 
-Varies by type and size
+- EBS Volumes.
 
-If you attach Elastic Block Store (EBS) volumes to your worker nodes you are charged for the volume size and type
+- Varies by type and size.
 
-Data Transfer (In/Out)
+- If you attach Elastic Block Store (EBS) volumes to your worker nodes you are charged for the volume size and type.
 
-Varies by region
+- Data Transfer (In/Out).
 
-Data transfer between Availability Zones, VPC, or external networks incurs additional costs. Data transfer within the same Availability Zone is free.
+- Varies by region.
 
-Difference between Self Managed Kubernetes cluster and Amazon EKS
-Aspect
+- Data transfer between Availability Zones, VPC, or external networks incurs additional costs. Data transfer within the same Availability Zone is free.
 
-Self-Managed Kubernetes
+- Difference between Self Managed Kubernetes cluster and Amazon EKS.
+- Aspect
 
-Amazon EKS
+- Self-Managed Kubernetes
 
-Management Responsibility
+- Amazon EKS
 
-Full control and responsibility for managing the cluster.
+- Management Responsibility
 
-AWS manages the control plane you manage the worker nodes.
+- Full control and responsibility for managing the cluster.
 
-Control Plane
+- AWS manages the control plane you manage the worker nodes.
 
-You need to install, configure, and manage the Kubernetes control plane, including the API server , scheduler and etcd.
+- Control Plane
 
-AWS handles the control plane including high availability, scaling and updates.
+- You need to install, configure, and manage the Kubernetes control plane, including the API server , scheduler and etcd.
 
-Operational Overhead
+- AWS handles the control plane including high availability, scaling and updates.
 
-Higher overhead due to managing updates, security patches and monitoring of the entire cluster.
+- Operational Overhead
 
-AWS manages the control plane’s availability, security and scaling, reducing operational overhead
+- Higher overhead due to managing updates, security patches and monitoring of the entire cluster.
 
-Infrastructure Setup
+- AWS manages the control plane’s availability, security and scaling, reducing operational overhead.
 
-You need to configure and provision the infrastructure.
+- Infrastructure Setup
 
-AWS simplifies infrastructure management; you only need to provision worker nodes
+- You need to configure and provision the infrastructure.
 
-Security and Compliance
+- AWS simplifies infrastructure management; you only need to provision worker nodes
 
-You are responsible for securing the cluster, applying patches and ensuring compliance
+- Security and Compliance
 
-AWS provides built-in security, automatic control plane updates and compliance certifications
+- You are responsible for securing the cluster, applying patches and ensuring compliance.
+
+- AWS provides built-in security, automatic control plane updates and compliance certifications.
 
 Monitoring and Logging
 
