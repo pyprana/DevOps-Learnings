@@ -257,28 +257,34 @@ Introduction to Amazon EKS-FAQs
 
 - Master Node and Worker Node
 
-Amazon EKS Workflow
-Step 1: Provision an EKS Cluster (Masters)
-The first step in setting up Amazon EKS is provisioning the EKS Cluster. When you create a cluster:
+- Amazon EKS Workflow
+- Step 1: Provision an EKS Cluster (Masters)
+- The first step in setting up Amazon EKS is provisioning the EKS Cluster. When you create a cluster:
 
-EKS automatically deploys Kubernetes master nodes (also known as the control plane) across multiple Availability Zones.
-These master nodes are managed by AWS handling Kubernetes tasks such as scheduling pods maintaining cluster state and managing API requests. You don’t need to manage these components manually, which ensures high availability and redundancy.
-Step 2: Provision Worker Nodes
-After the EKS cluster (control plane) is up and running, you can provision worker nodes that will run your application workloads. Key points here
+- EKS automatically deploys Kubernetes master nodes (also known as the control plane) across multiple Availability Zones.
+- These master nodes are managed by AWS handling Kubernetes tasks such as scheduling pods maintaining cluster state and managing API requests.
+- You don’t need to manage these components manually, which ensures high availability and redundancy.
 
-Worker nodes are instances that run in your AWS account and communicate with the master nodes to ensure the health and availability of your applications.
-These nodes can automatically scale based on the workload ensuring that you have the resources needed to handle dynamic demand.
-Step 3: Connect to EKS
-Once the EKS cluster is running with worker nodes:
+- Step 2: Provision Worker Nodes
+- After the EKS cluster (control plane) is up and running, you can provision worker nodes that will run your application workloads. Key points here.
 
-You can connect to the EKS cluster using Kubernetes command-line tools such as kubectl. These tools allow you to interact with the cluster and manage deployments, services, and other resources.
-By pointing your Kubernetes tooling at the EKS cluster, you can start deploying applications.
-Step 4: Deploy and Run Kubernetes Applications
-With the cluster set up and connected:
+- Worker nodes are instances that run in your AWS account and communicate with the master nodes to ensure the health and availability of your applications.
+- These nodes can automatically scale based on the workload ensuring that you have the resources needed to handle dynamic demand.
 
-You can deploy your containerized applications onto the worker nodes. Kubernetes orchestrates these deployments, ensuring containers are distributed across the nodes and scaling them as needed.
-Applications can be updated, scaled, and monitored using Kubernetes-native features such as deployments, services, and DaemonSets.
-Below is a breakdown of the Amazon EKS workflow using the provided diagram to visually explain how it all works.
+- Step 3: Connect to EKS
+- Once the EKS cluster is running with worker nodes:
+
+- You can connect to the EKS cluster using Kubernetes command-line tools such as kubectl. 
+- These tools allow you to interact with the cluster and manage deployments, services, and other resources.
+- By pointing your Kubernetes tooling at the EKS cluster, you can start deploying applications.
+
+- Step 4: Deploy and Run Kubernetes Applications
+- With the cluster set up and connected:
+
+- You can deploy your containerized applications onto the worker nodes. 
+- Kubernetes orchestrates these deployments, ensuring containers are distributed across the nodes and scaling them as needed.
+- Applications can be updated, scaled, and monitored using Kubernetes-native features such as deployments, services, and DaemonSets.
+- Below is a breakdown of the Amazon EKS workflow using the provided diagram to visually explain how it all works.
 
 Amazon-EKS-Workflow
 Use Cases of AWS EKS
