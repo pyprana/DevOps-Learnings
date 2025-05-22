@@ -4,3 +4,31 @@
 - It is commonly used for development, testing, and staging environments. 
 - A docker-compose.yml file defines the services that make up the application. 
 - Each service definition specifies the image to use, any dependencies on other services, environment variables, ports to expose, and volumes to mount.
+
+
+version: "3.9"
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+  app:
+    image: python:3.9
+    volumes:
+      - ./app:/app
+    command: python app.py
+
+- In this example, there are two services: web and app. 
+- The web service uses the nginx:latest image and maps port 80 on the host to port 80 on the container. 
+- It also depends on the app service. 
+- The app service uses the python:3.9 image, mounts the ./app directory on the host to the /app directory on the container, and runs the command python app.py.
+- To start the application, run the following command in the same directory as the docker-compose.yml file:
+
+- docker compose up -d
+
+- This command will create and start the web and app containers in detached mode. To stop the application, run the following command:
+
+- docker compose down
+
