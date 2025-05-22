@@ -1,0 +1,52 @@
+Amazon SES (Simple Email Service) is a cloud-based email sending service designed to send transactional, marketing, or notification emails.
+
+🔹 What is SES?
+A scalable and cost-effective email service by AWS used to send and receive email via your application.
+
+🔹 Key Features:
+Send Emails (SMTP or API)
+
+Receive Emails
+
+Email Monitoring (deliveries, bounces, complaints)
+
+Supports DKIM, SPF, DMARC
+
+Integrated with CloudWatch, SNS, S3
+
+🔹 Use Cases:
+Password reset links
+
+Order confirmations
+
+Marketing newsletters
+
+System alerts
+
+🔹 When to Use:
+When you need automated, bulk or transactional email delivery
+
+For applications requiring high deliverability & reputation control
+
+🔹 Pricing:
+Free Tier: 62,000 emails/month (from EC2 only)
+
+Beyond Free: ~$0.10 per 1,000 emails
+
+🔹 How It Works:
+Verify identity (email/domain)
+
+Request production access
+
+Send email using API/SMTP
+
+Track status using CloudWatch/SNS
+
+🔹 Example (Send via CLI):
+bash
+Copy
+Edit
+aws ses send-email \
+  --from "you@example.com" \
+  --destination "ToAddresses=someone@example.com" \
+  --message "Subject={Data=Hello},Body={Text={Data=Test email from SES}}"
