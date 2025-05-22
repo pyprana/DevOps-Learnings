@@ -1,131 +1,145 @@
 
-1. EKS Cluster
-What: Managed Kubernetes control plane by AWS
+1. EKS Cluster.
 
-Why: To run containerized workloads easily without managing control plane
+- What: Managed Kubernetes control plane by AWS.
 
-Where: Deployed in AWS VPC
+- Why: To run containerized workloads easily without managing control plane.
 
-When: Used when running Kubernetes workloads in AWS
+- Where: Deployed in AWS VPC.
 
-Example: eksctl create cluster
+- When: Used when running Kubernetes workloads in AWS.
 
-2. Node Groups
-What: EC2 instances (worker nodes) part of EKS cluster
+- Example: eksctl create cluster.
 
-Types: Managed Node Group, Self-managed Node Group, Fargate
+2. Node Groups.
 
-Why: Run your containers (pods)
+- What: EC2 instances (worker nodes) part of EKS cluster.
 
-When: You want more control over compute (EC2/Fargate)
+- Types: Managed Node Group, Self-managed Node Group, Fargate.
 
-Example: eksctl create nodegroup
+- Why: Run your containers (pods).
+
+- When: You want more control over compute (EC2/Fargate).
+
+- Example: eksctl create nodegroup.
 
 3. Fargate Profiles
-What: Serverless nodes for running pods without EC2
 
-Why: Reduce ops overhead, pay-per-use
+- What: Serverless nodes for running pods without EC2.
 
-Where: Best for short-lived jobs
+- Why: Reduce ops overhead, pay-per-use.
 
-When: Prefer cost-effective, managed compute
+- Where: Best for short-lived jobs.
 
-Example: aws eks create-fargate-profile
+- When: Prefer cost-effective, managed compute.
+
+- Example: aws eks create-fargate-profile.
 
 4. IAM Roles and Policies
-What: Permissions for EKS components (nodes, service accounts)
 
-Why: Secure access to AWS resources
+- What: Permissions for EKS components (nodes, service accounts)
 
-When: Binding AWS access with Kubernetes resources
+- Why: Secure access to AWS resources
 
-Example: IRSA (IAM Roles for Service Accounts)
+- When: Binding AWS access with Kubernetes resources
+
+- Example: IRSA (IAM Roles for Service Accounts)
 
 5. EKS Add-ons
-What: AWS-managed add-ons like CoreDNS, KubeProxy, VPC CNI
 
-Why: Automatic version updates and management
+- What: AWS-managed add-ons like CoreDNS, KubeProxy, VPC CNI
 
-When: You want less manual maintenance
+- Why: Automatic version updates and management
 
-Example: aws eks create-addon --addon-name coredns
+- When: You want less manual maintenance
+
+- Example: aws eks create-addon --addon-name coredns
 
 6. VPC & Networking
-What: Underlying networking infrastructure
 
-Includes: Subnets (public/private), VPC CNI plugin
+- What: Underlying networking infrastructure
 
-Why: Needed for pod communication, service discovery
+- Includes: Subnets (public/private), VPC CNI plugin
 
-When: Setting up a new cluster
+- Why: Needed for pod communication, service discovery
 
-Example: eksctl utils associate-iam-oidc-provider
+- When: Setting up a new cluster
+
+- Example: eksctl utils associate-iam-oidc-provider
 
 7. Kubeconfig
-What: Configuration file for kubectl to access cluster
 
-Why: Needed to interact with the cluster
+- What: Configuration file for kubectl to access cluster
 
-When: After cluster is created
+- Why: Needed to interact with the cluster
 
-Example: aws eks update-kubeconfig --name my-cluster
+- When: After cluster is created
+
+- Example: aws eks update-kubeconfig --name my-cluster
 
 8. Ingress & Load Balancer
-What: Route external traffic to services (ALB/ELB)
 
-Why: Handle HTTP/HTTPS traffic securely
+- What: Route external traffic to services (ALB/ELB)
 
-When: Exposing apps publicly
+- Why: Handle HTTP/HTTPS traffic securely
 
-Example: AWS ALB Ingress Controller
+- When: Exposing apps publicly
+
+- Example: AWS ALB Ingress Controller
 
 9. EBS CSI Driver / EFS CSI Driver
-What: Storage solutions for persistent volumes
 
-Why: Required for stateful workloads
+- What: Storage solutions for persistent volumes
 
-When: Need dynamic storage provisioning
+- Why: Required for stateful workloads
 
-Example: kubectl apply -f ebs-csi-driver.yaml
+- When: Need dynamic storage provisioning
+
+- Example: kubectl apply -f ebs-csi-driver.yaml
 
 10. Cluster Autoscaler
-What: Auto scales EC2 worker nodes
 
-Why: Adjusts nodes based on workload
+- What: Auto scales EC2 worker nodes
 
-When: Running dynamic workloads
+- Why: Adjusts nodes based on workload
 
-Example: Deploy with Helm
+- When: Running dynamic workloads
+
+- Example: Deploy with Helm
 
 11. Horizontal Pod Autoscaler (HPA)
-What: Scales pods based on CPU/memory
 
-Why: Handle fluctuating traffic
+- What: Scales pods based on CPU/memory
 
-When: Web apps or APIs
+- Why: Handle fluctuating traffic
 
-Example: kubectl autoscale deployment
+- When: Web apps or APIs
+
+- Example: kubectl autoscale deployment
 
 12. Security Groups & NACLs
-What: Network-level access control
 
-Why: Control traffic to nodes and pods
+- What: Network-level access control
 
-When: Setting secure access to workloads
+- Why: Control traffic to nodes and pods
 
-Example: Allow 443 for ALB access
+- When: Setting secure access to workloads
+
+- Example: Allow 443 for ALB access
 
 13. IRSA (IAM Roles for Service Accounts)
-What: Map IAM roles to Kubernetes service accounts
 
-Why: Fine-grained IAM permissions per pod
+- What: Map IAM roles to Kubernetes service accounts
 
-When: Pods access AWS services
+- Why: Fine-grained IAM permissions per pod
 
-Example: Configure with eksctl and kubectl
+- When: Pods access AWS services
+
+- Example: Configure with eksctl and kubectl
 
 14. Logging & Monitoring
-Tools: CloudWatch, Prometheus, Grafana
+
+- Tools: CloudWatch, Prometheus, Grafana
 
 Why: Observability, debugging, health monitoring
 
@@ -159,3 +173,211 @@ Why: Reusable EKS setups
 When: Automating EKS provisioning
 
 Example: AWS EKS Blueprints GitHub repo
+
+
+
+
+------------
+
+
+Amazon Web Services - Introduction to Amazon EKS
+Last Updated : 16 Oct, 2024
+Amazon Elastic Kubernetes Service(EKS) is a fully managed service that you can use to run Kubernetes on Amazon Web Service. Kubernetes is open-source software that enables you to install and manage applications at a high scale. 
+
+
+
+Table of Content
+
+What is Amazon EKS
+Benefits of Amazon EKS
+How Amazon EKS Works
+Amazon EKS Workflow
+Use Cases of AWS EKS
+Features of AWS EKS
+Get started with Amazon EKS
+Pricing of EKS
+Difference between Self Managed Kubernetes cluster and Amazon EKS
+Conclusion
+Introduction to Amazon EKS-FAQs
+What is Amazon EKS
+Amazon Elastic Kubernetes Service (EKS) is a fully managed service that simplifies the process of running Kubernetes on AWS. With EKS you can easily deploy manage and scale containerized applications using Kubernetes without the need to install and operate your own control plane or nodes
+
+Architecture of EKS
+Architecture of EKS
+Benefits of Amazon EKS
+Amazon Elastic Kubernetes Service (EKS) provides a highly scalable and very secure way to run Kubernetes in the cloud. One of the key benefits of Amazon EKS is its seamless integration with other AWS services. This ensures that your applications can leverage the powerful ecosystem of AWS without complex configurations. EKS also make sure of the heavy lifting in terms of managing the Kubernetes control plane which is automatically distributed across multiple availability zones. This enhances the availability and fault tolerance of your workloads. Auto-scaling and scalability features of K8s let your cluster dynamically adjust based on the demand making it an ideal solution for applications that experience variable traffic patterns At the End EKS provides multi-region support which Let you to deploy your Kubernetes applications across different regions for disaster recovery and high availability. The open-source nature of Kubernetes means that Amazon EKS is compatible with existing Kubernetes tooling making it easy to migrate workloads.
+
+How Amazon EKS Works
+Amazon Elastic Kubernetes Service (EKS) simplifies running Kubernetes clusters on AWS by managing the control plane while allowing you to focus on application deployment and scaling. Below we break down the main components and how they work within the Amazon EKS environment using the diagram provided as a reference
+
+Amazon-EKS-Components
+1. Control Plane (AWS Managed)
+The control plane is managed by AWS and is responsible for handling the core management tasks of the Kubernetes cluster. The control plane includes key components like
+
+kube-api-server: Handles API requests and coordinates communication between Kubernetes components.
+etcd: Stores cluster data and configuration.
+kube-scheduler: Ensures pods are placed on nodes with available resources.
+cloud-controller-manager: Interacts with AWS infrastructure services.
+kube-controller-manager: Manages various Kubernetes controllers responsible for ensuring desired states of resources like replicas and nodes.
+Since the control plane is fully managed AWS ensures high availability across multiple Availability Zones. This means you don't need to worry about the operational overhead of managing the control plane.
+
+2. Worker Nodes (Customer Managed)
+
+Worker nodes are managed by the customer and run the actual application workloads. Each worker node runs multiple pods and consists of components like:
+
+Kubelet: Responsible for managing pods and containers on the node.
+kube-proxy: Manages network communication for pods.
+Container Runtime: The underlying software responsible for running containers such as Docker or containerd.
+master-worker-nodes
+Worker nodes are deployed across different Availability Zones ensuring fault tolerance and scalability. You can scale the number of worker nodes depending on the application load making it flexible to meet changing requirements.
+
+3. Pods
+Pods are the smallest deployable units in Kubernetes and can consist of one or more containers. In Amazon EKS
+
+Pods run on the Worker Nodes.
+Each pod is assigned an IP address and can communicate with other pods or external services.
+4. DaemonSets
+A DaemonSet ensures that a copy of a pod runs on all worker nodes or a selected group of them. In EKS DaemonSets are often used for tasks like
+
+Log collection
+Monitoring
+Running essential services like networking or security agents on each node.
+For More Please Refer to Article
+
+Kubernetes Architecture
+
+Master Node and Worker Node
+
+Amazon EKS Workflow
+Step 1: Provision an EKS Cluster (Masters)
+The first step in setting up Amazon EKS is provisioning the EKS Cluster. When you create a cluster:
+
+EKS automatically deploys Kubernetes master nodes (also known as the control plane) across multiple Availability Zones.
+These master nodes are managed by AWS handling Kubernetes tasks such as scheduling pods maintaining cluster state and managing API requests. You don’t need to manage these components manually, which ensures high availability and redundancy.
+Step 2: Provision Worker Nodes
+After the EKS cluster (control plane) is up and running, you can provision worker nodes that will run your application workloads. Key points here
+
+Worker nodes are instances that run in your AWS account and communicate with the master nodes to ensure the health and availability of your applications.
+These nodes can automatically scale based on the workload ensuring that you have the resources needed to handle dynamic demand.
+Step 3: Connect to EKS
+Once the EKS cluster is running with worker nodes:
+
+You can connect to the EKS cluster using Kubernetes command-line tools such as kubectl. These tools allow you to interact with the cluster and manage deployments, services, and other resources.
+By pointing your Kubernetes tooling at the EKS cluster, you can start deploying applications.
+Step 4: Deploy and Run Kubernetes Applications
+With the cluster set up and connected:
+
+You can deploy your containerized applications onto the worker nodes. Kubernetes orchestrates these deployments, ensuring containers are distributed across the nodes and scaling them as needed.
+Applications can be updated, scaled, and monitored using Kubernetes-native features such as deployments, services, and DaemonSets.
+Below is a breakdown of the Amazon EKS workflow using the provided diagram to visually explain how it all works.
+
+Amazon-EKS-Workflow
+Use Cases of AWS EKS
+Microservices Architecture: EKS ensures that any failure within one microservice doesn’t bring down the entire application, providing better resilience and fault tolerance and also Kubernetes is designed to handle microservices architectures where each service runs in its own container and scales independently
+Hybrid Cloud Deployments: EKS ensures consistency in how Kubernetes clusters are deployed and managed across on-premises environments and AWS it also integrated into hybrid cloud environments where workloads are split between on-premises and AWS
+CI/CD Pipelines and Automation: CI/CD workflows can spin up multiple EKS clusters to test changes at scale, ensuring code quality before going to production and can automate the deployment of new application versions using CI/CD pipelines.
+Edge Computing: EKS can help run applications at the edge where data is processed closer to where it is generated. This reduces latency and increases real-time decision-making capabilities.
+High-Performance Computing (HPC): EKS supports compute-optimized and GPU-optimized instances making it perfect for computationally expensive workloads and EKS can handel workloads that require high-performance computing
+Features of AWS EKS
+Following are the Features of using Amazon EKS
+
+Managed Kubernetes Control Plane: AWS automatically applies the latest patches and updates to the control plane keeping it secure and up to date with the latest Kubernetes versions it make sure that control plane is distributed across multiple Availability Zones so that application should be highly available to us.
+Native Kubernetes Compatibility: Integrating EKS with any Kubernetes-native tools such as kubectl, Helm and more easily As EKS runs upstream Kubernetes where user can move their workload from other Kubernetes environments with minimal fiction.
+EKS Managed Node Groups: KS manages node updates and security patches keeping your worker nodes secure without manual intervention and can automatically scale the number of worker nodes in response to application demands, ensuring you have the right amount of compute power at all times.
+Security and Compliance: IAM Roles Feature allows Kubernetes service accounts to assume specific IAM roles giving you fine-grained permissions for your Kubernetes workloads.
+Hybrid and Multi-Cloud Support: EKS can be deployed across different regions and used in combination with other cloud providers for a true multi-cloud strategy and can use EKS on AWS Outposts to brings native AWS Services to your on-premise environments.
+Get started with Amazon EKS
+Learn how to get started with Amazon EKS - Please Refer to this Article Get started with Amazon EKS
+
+Pricing of EKS
+Below Is The Pricing Model of AWS EKS:
+
+Service
+
+Pricing
+
+Description
+
+Amazon EKS Cluster
+
+$0.10 per hour
+
+For each EKS cluster that you create you are charged this flat rate irrespective of the size of the cluster or the number of nodes
+
+AWS Fargate for EKS
+
+$0.04025 per vCPU per hour + $0.004445 per GB-hour
+
+You are charged for the vCPU and memory resources your Kubernetes pods use on Fargate
+
+Amazon EKS on AWS Outposts
+
+$0.01375 per vCPU per hour + EC2 instance pricing
+
+Pricing includes the $0.01375 per vCPU per hour for EKS and the cost of running EC2 instances on AWS Outposts, which varies by instance type
+
+EC2 Worker Nodes
+
+Varies based on EC2 instance type
+
+You pay for the EC2 instances that you run as worker nodes in your EKS cluster. Pricing depends on the instance type, size and the region
+
+EBS Volumes
+
+Varies by type and size
+
+If you attach Elastic Block Store (EBS) volumes to your worker nodes you are charged for the volume size and type
+
+Data Transfer (In/Out)
+
+Varies by region
+
+Data transfer between Availability Zones, VPC, or external networks incurs additional costs. Data transfer within the same Availability Zone is free.
+
+Difference between Self Managed Kubernetes cluster and Amazon EKS
+Aspect
+
+Self-Managed Kubernetes
+
+Amazon EKS
+
+Management Responsibility
+
+Full control and responsibility for managing the cluster.
+
+AWS manages the control plane you manage the worker nodes.
+
+Control Plane
+
+You need to install, configure, and manage the Kubernetes control plane, including the API server , scheduler and etcd.
+
+AWS handles the control plane including high availability, scaling and updates.
+
+Operational Overhead
+
+Higher overhead due to managing updates, security patches and monitoring of the entire cluster.
+
+AWS manages the control plane’s availability, security and scaling, reducing operational overhead
+
+Infrastructure Setup
+
+You need to configure and provision the infrastructure.
+
+AWS simplifies infrastructure management; you only need to provision worker nodes
+
+Security and Compliance
+
+You are responsible for securing the cluster, applying patches and ensuring compliance
+
+AWS provides built-in security, automatic control plane updates and compliance certifications
+
+Monitoring and Logging
+
+You need to set up and manage your monitoring, logging and alerting systems
+
+EKS integrates with AWS CloudWatch and AWS CloudTrail for monitoring, logging and auditing with minimal setup.
+
+Conclusion
+Amazon EKS offers a robust, fully managed Kubernetes service that simplifies container orchestration and allows organizations to focus on building and scaling their applications rather than managing Kubernetes infrastructure. With features like automatic control plane management, deep integration with AWS services, and high availability across multiple Availability Zones, EKS provides a reliable, scalable, and secure platform for running containerized workloads. Whether you're deploying microservices, handling real-time data, or managing hybrid cloud environments, Amazon EKS empowers teams to innovate quickly and securely, making it a top choice for modern application development.
+
+
