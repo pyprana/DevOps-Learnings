@@ -1,3 +1,25 @@
+- Docker Compose is a tool to define and run multi-container Docker applications.
+
+- What
+- A YAML file (docker-compose.yml) defines services, networks, and volumes.
+
+- Why
+- Simplifies multi-container app setup.
+
+- Avoids running multiple docker run commands.
+
+- Easy to scale services.
+
+- When
+- Use when your app needs multiple services (e.g., web + DB).
+
+- During local development or CI pipelines.
+
+- Where
+- Runs on any system with Docker and Docker Compose installed.
+
+- Common in local/dev/test environments.
+
 - Docker Compose is a tool for defining and running multi-container Docker applications.
 - It uses a YAML file to configure the application's services, networks, and volumes. 
 - With a single command, Docker Compose can create and start all the services defined in the configuration file.
