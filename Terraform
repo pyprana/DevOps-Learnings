@@ -55,7 +55,7 @@
 - Why: Dynamic and intelligent config.
 - Example: count = var.create ? 1 : 0
 
-- Expressions & Functions in Terraform (HCL)
+- Expressions & Functions in Terraform (HCL)?
 ✅ What
 - Expressions and functions in HCL (HashiCorp Configuration Language) allow you to write dynamic, conditional, and reusable configurations.
 
