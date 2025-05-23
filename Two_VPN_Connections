@@ -2,7 +2,9 @@
 - You can achieve this by using a virtual machine (VM) to run a second VPN, or by using split tunneling and a separate VPN client. 
 
 - Split tunneling is a VPN feature that allows you to direct some of your internet traffic through a VPN tunnel while allowing other traffic to bypass the VPN and use the internet 
-  directly. This provides a balance between security and speed, as it allows you to encrypt sensitive data while maintaining faster speeds for everyday browsing and streaming.
+  directly. 
+
+- This provides a balance between security and speed, as it allows you to encrypt sensitive data while maintaining faster speeds for everyday browsing and streaming.
 
 - Here's a more detailed explanation of each method:
 1. Using a Virtual Machine (VM):
