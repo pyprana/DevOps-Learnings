@@ -40,7 +40,7 @@
 - To utilize two VPN connections in AWS, you can establish multiple Site-to-Site VPN connections to the same virtual private gateway (VPG) or transit gateway. 
 - This allows for redundancy, increased bandwidth, and the ability to connect to different on-premises networks or different VPCs
 
-Here's a breakdown of how to achieve this:
+- Here's a breakdown of how to achieve this:
 1. Establish the first VPN connection:
 - Configure a standard Site-to-Site VPN connection, including a VPG, customer gateway, and routing options (static or dynamic)
 
