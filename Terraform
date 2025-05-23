@@ -554,24 +554,24 @@ json
  - What are the benefits of using terraform over cloud formation ?
  - Multi Cloud Support : Terraform works with AWS, GCP and Azure while cloud formation in AWS specific.
 
- - Modularity & Reusability
+ - Modularity & Reusability.
  - Terraform support modules improving reusability. 
 
- - State Management  
+ - State Management.
  - Terraform maintains a state file making it easier to track changes.
 
- - Execution Plan 
+ - Execution Plan. 
  - Terraform provides a preview (Terraform plan) before applying changes.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 - How do you optimize cloud costs in AWS?
-- Right Sizing : Use auto-scaling and choose instance types,
+- Right Sizing : Use auto-scaling and choose instance types.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  - You have an existing infrastructure on you and need to use terraform to manage it.?
  - how could you import these resources into your terraform configuration.?
- - Lets say you have an infrastructure created manually, now you wamt to manage that infrastructure 
+ - Lets say you have an infrastructure created manually, now you want to manage that infrastructure. 
  - To import existing resource use terraform import command.
  - syntax - teraform import [options] Address ID
 
