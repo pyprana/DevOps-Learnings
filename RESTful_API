@@ -1,0 +1,37 @@
+- RESTful APIs (Representational State Transfer) are web services that follow REST architecture principles.
+
+- What:
+- A RESTful API allows systems to communicate over HTTP using standard methods like:
+
+- GET – Retrieve data
+
+- POST – Create data
+
+- PUT – Update data
+
+- DELETE – Remove data
+
+- Why:
+- Simple, stateless communication
+
+- Scalable and easily consumed
+
+- Uses standard HTTP protocols
+
+- When:
+- Use REST when:
+
+- You need simple CRUD operations
+
+- Interacting over the web (e.g., web apps, mobile apps)
+
+- Where:
+- Widely used in web services (e.g., Twitter API, GitHub API)
+
+- Backend systems for frontend applications
+
+- Example (JSON-based):
+- http
+
+- GET /users/123
+- Response: { "id": 123, "name": "Alice" }
