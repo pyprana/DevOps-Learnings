@@ -1,4 +1,4 @@
-To optimize the Coinome infrastructure, the following steps should be taken:
+- To optimize the Coinome infrastructure, the following steps should be taken:
 
 1. Performance Monitoring: Continuously monitor system performance and identify bottlenecks that affect speed and responsiveness.
 
@@ -18,4 +18,4 @@ To optimize the Coinome infrastructure, the following steps should be taken:
 
 9. Security: Implement robust security measures such as firewalls, encryption, and intrusion detection systems to protect against cyber threats and ensure data privacy.
 
-By following these steps, the Coinome infrastructure can be optimized for maximum performance, reliability, and security.
+- By following these steps, the Coinome infrastructure can be optimized for maximum performance, reliability, and security.
