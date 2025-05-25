@@ -1,4 +1,4 @@
-Key Features:
+- Key Features:
 - Serverless: Fargate manages the underlying infrastructure, freeing you from managing EC2 instances. 
 - Pay-as-you-go: You pay only for the compute time your containers use. 
 - Container Focus: Designed to run containers, eliminating the need to manage servers or clusters of VMs. 
