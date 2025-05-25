@@ -1,7 +1,7 @@
 - AWS CodePipeline is a continuous delivery service that automates the steps required to release software updates.
 - It allows you to model, visualize, and automate the processes of building, testing, and deploying your application. 
-- By automating these processes, CodePipeline helps increase the speed and quality of software updates, making it a valuable tool for teams practicing continuous integration and 
-  continuous delivery (CI/CD). 
+- By automating these processes, CodePipeline helps increase the speed and quality of software updates, making it a valuable tool for teams practicing continuous integration
+  and continuous delivery (CI/CD). 
 
 - Key Features and Benefits: 
 - Automated Release Process:
@@ -35,7 +35,7 @@
 4. Automated Deployment:
 - The final stage of the pipeline deploys the application to the target environment. 
 
-Use Cases: 
+- Use Cases: 
 - Automating Software Releases:
 - Automate the entire software release process, from building and testing to deploying to production. 
 
