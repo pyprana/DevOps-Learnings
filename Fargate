@@ -69,8 +69,8 @@ json
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-AWS Fargate ECS Architecture within a VPC
-Key Components:
+- AWS Fargate ECS Architecture within a VPC
+- Key Components:
 
 - Amazon ECS Cluster: Manages container orchestration.
 - AWS Fargate: Runs containers without managing servers.
