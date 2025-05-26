@@ -44,7 +44,35 @@ hashmap = {}
 - for i, num in enumerate(nums):
 - Loop over the array with index i and value num
 
+- complement = target - num
 
+- Calculate the number you need to reach the target.
+👉 Example: If target=9 and num=2, you need 9-2 = 7
 
+- if complement in hashmap:
+- Check if we already saw the number we need earlier.
+👉 Example: If 7 is already in hashmap, we now have both numbers
 
+- return [hashmap[complement], i]
+- Return the indices:
 
+- hashmap[complement] gives index of the earlier number
+
+- i is the current index
+
+- hashmap[num] = i
+
+- Store the current number and its index in case it's needed later.
+
+- Test Example:
+- nums = [3, 2, 4]
+- target = 6
+
+- Step 1: hashmap = {}
+- Step 2: i=0, num=3 → complement = 3 → not in hashmap → store 3:0
+- Step 3: i=1, num=2 → complement = 4 → not in hashmap → store 2:1
+- Step 4: i=2, num=4 → complement = 2 → 2 is in hashmap → return [1,2]
+
+- Output:
+- python
+- [1, 2]
