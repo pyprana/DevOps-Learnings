@@ -590,3 +590,35 @@ json
 - If the state file is deleted we can retrieve the state file by using terraform import command.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- How Terraform Works from Start to Finish
+
+- Terraform reads your HCL files – and parses them into an internal graph.
+
+- terraform init pulls provider plugins and sets up the backend.
+
+- Modules, variables, and providers are loaded into memory.
+
+- terraform plan builds a resource dependency graph.
+
+- It fetches real infra state from cloud provider APIs.
+
+- It reads the local or remote terraform.tfstate file.
+
+- Terraform compares desired vs actual – and computes a diff.
+
+- It shows what will change – add, modify, or destroy.
+
+- terraform apply executes changes in dependency order.
+
+- Terraform makes API calls to create or update resources.
+
+- Each step is tracked until the resource reaches the desired state.
+
+- The state file is updated with the new reality.
+
+- Future plans use this state to detect drift or required changes.
+
+- The loop keeps infra in sync with config – declaratively.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
