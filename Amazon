@@ -1,0 +1,50 @@
+- Problem: Two Sum.
+- Goal: Find two numbers in the array that add up to a given target, and return their indices.
+
+- Simple Explanation (Line by Line):
+- Step-by-step plan:
+- You’re given:
+
+- An array of integers nums.
+
+- A target number.
+
+- You need to find:
+
+- Two numbers in nums whose sum = target.
+
+- Return their indices, not the numbers themselves.
+
+- Example:
+- nums = [2, 7, 11, 15]
+- target = 9
+
+- Explanation:
+
+- 2 + 7 = 9
+
+- Their indices are [0, 1]
+
+- Optimal Code (Python):
+def twoSum(nums, target):
+    hashmap = {}  # Store numbers we’ve seen and their indices
+    for i, num in enumerate(nums):
+        complement = target - num  # What number do we need to make the sum?
+        if complement in hashmap:
+            return [hashmap[complement], i]  # Found the two numbers
+        hashmap[num] = i  # Store this number with its index
+
+Line-by-Line Breakdown:
+hashmap = {}
+
+👉 Create an empty dictionary.
+👉 It will store {number: index} pairs
+👉 Helps to find if we've already seen the number we need.
+
+- for i, num in enumerate(nums):
+- Loop over the array with index i and value num
+
+
+
+
+
