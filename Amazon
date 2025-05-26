@@ -5,13 +5,117 @@
 - A really brute force way would be to search for all possible pairs of numbers but that would be too slow. 
 - Again, it's best to try out brute force solutions for just for completeness. It is from these brute force solutions that you can come up with optimizations.
 
+- Hint 1: Brute Force Approach
+- What it says:
+- Try all possible pairs in the array.
+
+- Logic:
+
+- For every element x, try every other element y after it and check if x + y == target.
+
+- Code:
+
+- python
+for i in range(len(nums)):
+    for j in range(i + 1, len(nums)):
+        if nums[i] + nums[j] == target:
+            return [i, j]
+
+
 - Hint 2
 - So, if we fix one of the numbers, say x, we have to scan the entire array to find the next number y which is value - x where value is the input parameter. 
 - Can we change our array somehow so that this search becomes faster?
 
+- Hint 2: Can We Make Search Faster?
+- What it suggests:
+- Fix one number x, and try to find y = target - x.
+- You need to search if this y exists in the rest of the array.
+
+- Question posed:
+- Can we change the array (e.g., sort it) to make this search faster?
+
+- Example Idea:
+- Sort the array → use binary search to find target - x.
+
+- But sorting takes O(n log n), and you lose original indices.
+
+- So, while this is better than brute force, it's not ideal because:
+
+- You can't return original indices after sorting without extra work.
+
 - Hint 3
 - The second train of thought is, without changing the array, can we use additional space somehow? Like maybe a hash map to speed up the search?
 
+- Hint 3: Can We Use Extra Space (Hash Map)?
+- Best approach.
+
+- Idea:
+
+- Instead of scanning again and again, store previously seen numbers in a hash map.
+
+- While going through the array, for each number x, check if target - x is already in the hash map.
+
+- If yes → we’ve found our pair!
+
+- Code:
+def twoSum(nums, target):
+    hashmap = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in hashmap:
+            return [hashmap[complement], i]
+        hashmap[num] = i
+
+- Why this works:
+- We are using a hash map (dictionary) for O(1) average lookup.
+
+- Only one pass through the list — so total time is O(n).
+
+- We don’t change the array and keep the original indices.
+## ✅ Why the Hash Map Solution Works (Two Sum)
+
+### ⚙️ Time & Space Complexity
+- **Time Complexity:** `O(n)`  
+  → We iterate through the list only once.
+- **Space Complexity:** `O(n)`  
+  → We use a hash map to store previously seen numbers and their indices.
+
+---
+
+### 🧠 Key Benefits
+
+- **Fast Lookup:**  
+  Hash map provides **O(1)** average time for checking if a complement exists.
+
+- **Single Pass:**  
+  We only go through the list once, making it highly efficient.
+
+- **Preserves Indices:**  
+  Since we store each number’s **index** in the map, we don’t lose track of their original positions.
+
+- **No Array Modification:**  
+  The original input list is **not sorted or altered**, so we meet the requirement of using the indices directly.
+
+---
+
+### 🧪 Example Dry Run
+
+```python
+nums = [2, 7, 11, 15]
+target = 9
+hashmap = {}
+
+i=0, num=2 → complement=7 → not in hashmap → store 2:0  
+i=1, num=7 → complement=2 → found in hashmap → return [0,1]
+
+final Code
+def twoSum(nums, target):
+    hashmap = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in hashmap:
+            return [hashmap[complement], i]
+        hashmap[num] = i
 
 - Simple Explanation (Line by Line):
 - Step-by-step plan:
@@ -45,6 +149,8 @@ def twoSum(nums, target):
         if complement in hashmap:
             return [hashmap[complement], i]  # Found the two numbers
         hashmap[num] = i  # Store this number with its index
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Line-by-Line Breakdown:
 hashmap = {}
