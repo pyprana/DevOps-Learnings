@@ -472,3 +472,39 @@ A - CMD: Provides default arguments to ENTRYPOINT.
 - --driver : Network driver (bridge, overlay, etc.).
 
 - --subnet, --gateway : Set subnet/gateway.
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- When you run docker build, Docker reads the Dockerfile line by line. It uses your current folder as the build context.
+
+- Each line in the Dockerfile creates a new image layer. These layers are saved as compressed files inside Docker’s storage.
+
+- Docker uses a union filesystem like OverlayFS. It stacks all layers to form a single container filesystem.
+
+- When you run docker run, Docker takes the image and adds a writable layer on top. This becomes your container.
+
+- The container is just a process on your machine. It runs with its own isolated environment using Linux namespaces and cgroups.
+
+- Namespaces isolate process ID, hostname, network, mount points, and shared memory. Cgroups control CPU, RAM, and I/O usage.
+
+- Docker gives the container a virtual Ethernet interface. By default, it's connected to the docker0 bridge.
+
+- If you use -p to map ports, Docker sets up iptables rules. This forwards traffic from your host to the container.
+
+- The Docker daemon (dockerd) runs in the background. It handles builds, containers, images, volumes, and networks.
+
+- The Docker CLI talks to the daemon using a REST API. It connects over a Unix socket or TCP.
+
+- Docker volumes live outside the container layer. They’re stored in /var/lib/docker/volumes and survive container restarts.
+
+- Any change inside the container is temporary. If you delete the container, the changes are gone unless saved to a volume or image.
+
+- Docker uses content-based hashes for layers. This makes layers reusable, cacheable, and easy to share.
+
+- When you push an image, Docker checks which layers are already in the registry. It only uploads what’s missing.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
