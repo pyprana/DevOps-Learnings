@@ -1,3 +1,52 @@
+- Meaning of Indices
+- Indices (singular: index) refer to the position of an element in a list or array.
+
+- Example:
+- python
+- nums = [10, 20, 30]
+- nums[0] = 10 → index is 0
+
+- nums[1] = 20 → index is 1
+
+- nums[2] = 30 → index is 2
+
+- So, indices are: 0, 1, 2
+
+- In Two Sum:
+- When asked to return indices, it means:
+
+- Return the positions of the two numbers in the original list that add up to the target.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- brute force - Try every possible pair in the list and check if their sum equals the target.
+
+- Code (Python):
+- python
+def twoSum(nums, target):
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            if nums[i] + nums[j] == target:
+                return [i, j]
+
+- How It Works:
+- Loop through each number using index i
+
+- For each i, check all numbers after it using index j
+
+- If nums[i] + nums[j] == target, return their indices
+
+- Example:
+- python
+- nums = [2, 7, 11, 15]
+- target = 9
+- Try 2 + 7 → ✅ 9 → return [0, 1]
+
+- Time Complexity: O(n^2)
+- Slow for large lists. Use only for understanding or small inputs.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 - Problem: Two Sum.
 - Goal: Find two numbers in the array that add up to a given target, and return their indices.
 
