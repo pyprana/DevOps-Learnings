@@ -76,3 +76,90 @@ hashmap = {}
 - Output:
 - python
 - [1, 2]
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- Problem: Valid Parentheses
+- You’re given a string s with only brackets: (), {}, []
+- You must check if it’s valid:
+
+- Every open bracket must have a matching closing bracket.
+
+- Brackets must be closed in the correct order.
+
+- Key Idea: Use a stack
+- Why a stack?
+- It follows Last In, First Out (LIFO) — perfect for tracking open brackets.
+
+- Python Code:
+- python
+def isValid(s):
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
+
+    for char in s:
+        if char in mapping:  # If it's a closing bracket
+            top = stack.pop() if stack else '#'  # Get last open bracket
+            if mapping[char] != top:
+                return False  # Doesn't match
+        else:
+            stack.append(char)  # It's an open bracket
+
+    return not stack  # Return True if stack is empty (all matched)
+
+- Line-by-Line Breakdown:
+- python
+stack = []
+
+- Create an empty list to use as a stack.
+
+- python
+- mapping = {')': '(', '}': '{', ']': '['}
+
+- Define what each closing bracket should match.
+
+- python
+for char in s:
+
+- Loop through each character in the input string.
+
+- python
+if char in mapping:
+
+- Check if it’s a closing bracket like ), ], }.
+
+- python
+top = stack.pop() if stack else '#'
+
+- Try to pop the last open bracket.
+- If stack is empty (nothing to match), use # to force a mismatch.
+
+- python
+if mapping[char] != top:
+    return False
+
+- If the closing bracket doesn’t match the last open bracket → invalid.
+
+- python
+else:
+    stack.append(char)
+
+- If it’s an open bracket, just add it to the stack.
+
+- python
+- return not stack
+
+- If stack is empty → all brackets matched → return True.
+- If stack has leftover open brackets → return False.
+
+🧪 Example: s = "([])"
+( → push → stack: [(]
+
+[ → push → stack: [(, []
+
+] → pop [ → matches → continue
+
+) → pop ( → matches → continue
+✅ stack empty → return True
+
