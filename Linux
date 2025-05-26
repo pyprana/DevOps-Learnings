@@ -78,3 +78,22 @@ Q - You need to automate backups of a directory to a remote server ?
 - journalctl -u nginx        # Logs for a specific service
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### Common Mistakes in Linux/System Administration
+
+1. You confuse `/var/log`, `/etc`, and `/usr/bin`.  
+   You miss critical files or configs.
+
+2. You change the SSH port.  
+   You lock yourself out of the server.
+
+3. You try to kill a zombie process.  
+   It still shows up in `ps`.
+
+4. You install packages with `apt`.  
+   You don’t check what gets removed.
+
+5. You delete oversized logs.  
+   The app stops working.
+
+6. You create too many `.sh` files with `sud
